@@ -13,6 +13,9 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    const VERIFICATION_PENDING = 'Encours';
+    const VERIFICATION_VERIFIED = 'Non_verifie';
+
     /**
      * The attributes that are mass assignable.
      *
@@ -21,11 +24,12 @@ class User extends Authenticatable
     protected $fillable = [
         'nom',
         'prenom',
-        'pseudo',
         'email',
         'password',
-        'localisation',
-        'numero_telephone',
+        'birt-day',
+        'adresse',
+        'verification_status'=> self::VERIFICATION_PENDING, // Par défaut, en attente
+        'derniere_connexion',
     ];
 
     /**
@@ -38,9 +42,9 @@ class User extends Authenticatable
         'remember_token',
     ];
 
-    public function DocumentVerification()
+    public function Documents()
     {
-        return $this->hasMany(Documents_verification::class);
+        return $this->hasMany(Document::class);
     }
 
     public function tickets()
@@ -48,9 +52,9 @@ class User extends Authenticatable
         return $this->hasMany(Ticket::class);
     }
 
-    public function paiements()
+    public function pays()
     {
-        return $this->hasMany(Paiement::class);
+        return $this->hasMany(Pays::class);
     }
 
     public function gains()
@@ -58,14 +62,14 @@ class User extends Authenticatable
         return $this->hasMany(Gain::class);
     }
 
-    public function portefeuille()
+    public function user_types()
     {
-        return $this->hasOne(Portefeuille::class);
+        return $this->hasOne(user_type::class);
     }
 
-    public function compteInvestissement()
+    public function compte()
     {
-        return $this->hasOne(Compte_investissement::class);
+        return $this->hasOne(Compte::class);
     }
 
 
@@ -77,5 +81,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-}
 
+    public function getVerificationStatusAttribute()
+    {
+        return $this->verification_status;
+    }
+}
