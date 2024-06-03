@@ -10,7 +10,6 @@ class Compte extends Model
     protected $table = 'comptes';
 
     protected $fillable = [
-        'user_id',
         'statut', // Ex: "inactif", "actif"
         'solde',
         'devise',

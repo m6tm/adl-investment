@@ -7,5 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Paiement_method extends Model
 {
-    use HasFactory;
+    protected $fillable = [
+        'libelle',
+    ];
+
+    public function paiements()
+    {
+        return $this->belongsTo(Paiement::class);
+    }
+
 }

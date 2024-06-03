@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Roue extends Model
 {
     protected $fillable = [
-        'id',
         'intitule',
         'description',
     ];

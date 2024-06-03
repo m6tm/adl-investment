@@ -7,10 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Portefeuille_Investissement extends Model
 {
-    protected $table = 'portefeuilleinvestissements';
 
     protected $fillable = [
-        'id',
         'balance_libelle',
         'balance_numeric',
     ];

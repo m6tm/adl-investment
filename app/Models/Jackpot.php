@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Jackpot extends Model
 {
     protected $fillable = [
-        'roue_id',
         'montant',
     ];
 

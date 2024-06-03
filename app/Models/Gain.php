@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Gain extends Model
 {
     protected $fillable = [
-        'id',
         'montant',
         'montant_numeric',
     ];

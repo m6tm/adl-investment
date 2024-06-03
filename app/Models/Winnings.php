@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Winnings extends Model
 {
     protected $fillable = [
-        'montant',
+        'montant_total_libelle',
+        'montant_total_numeric',
     ];
 
     public function ticketsDraw()

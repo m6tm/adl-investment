@@ -5,15 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Portefeuille extends Model
+class Ticket_category extends Model
 {
     protected $fillable = [
-        'balance_libelle',
-        'balance_numeric',
+        'categorie',
     ];
 
-    public function compte()
+    public function tickets()
     {
-        return $this->belongsTo(Compte::class);
+        return $this->hasMany(Ticket::class);
     }
+
 }

@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Tirage extends Model
 {
     protected $fillable = [
-        'id',
         'type',  // Ex: normal, bonus
         'date_tirage',
         'heure_tirage',
