@@ -16,14 +16,11 @@ return new class extends Migration
             $table->foreignId('user_id');
             $table->foreignId('portefeuille_id');
             $table->foreignId('portefeuille_investissement_id');
-            $table->string('statut')->default('inactif');
-            $table->decimal('solde', 10, 2)->default(0.00);
+            $table->enum('statut')->default('inactif');
+            $table->float('solde');
             $table->string('devise')->default('EUR');
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('portefeuille_id')->references('id')->on('portefeuilles');
-            $table->foreign('portefeuille_investissement_id')->references('id')->on('portefeuille_investissements');
         });
     }
 

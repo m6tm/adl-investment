@@ -18,16 +18,11 @@ return new class extends Migration
             $table->foreignId('ticket_price_id');
             $table->foreignId('ticket_categorie_id');
             $table->foreignId('paiement_id');
-            $table->string('type')->default('normal');
-            $table->string('statut')->default('actif');
+            $table->enum('type')->default('bonus');
+            $table->enum('statut')->default('utilise');
             $table->boolean('gagnant');
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('tirage_id')->references('id')->on('tirages');
-            $table->foreign('ticket_price_id')->references('id')->on('ticket_prices');
-            $table->foreign('ticket_categorie_id')->references('id')->on('ticket_categories');
-            $table->foreign('paiement_id')->references('id')->on('paiements');
         });
     }
 

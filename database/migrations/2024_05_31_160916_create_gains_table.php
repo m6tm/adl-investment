@@ -16,11 +16,9 @@ return new class extends Migration
     $table->foreignId('user_id');
     $table->foreignId('tirage_id');
     $table->decimal('montant', 10, 2);
-    $table->double('montant_numeric');
+    $table->float('montant_numeric');
     $table->timestamps();
 
-    $table->foreign('user_id')->references('id')->on('users');
-    $table->foreign('tirage_id')->references('id')->on('tirages');
         });
     }
 

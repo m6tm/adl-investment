@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('portefeuille__investissements', function (Blueprint $table) {
             $table->id();
             $table->string('balance_libelle');
-            $table->double('balance_numeric');
+            $table->float('balance_numeric');
             $table->timestamps();
 
         });

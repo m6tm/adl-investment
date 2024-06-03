@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('libelle');
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

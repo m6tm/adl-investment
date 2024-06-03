@@ -14,10 +14,9 @@ return new class extends Migration
         Schema::create('jackpots', function (Blueprint $table) {
             $table->id();
             $table->foreignId('roue_id');
-            $table->decimal('montant', 10, 2);
+            $table->float('montant');
             $table->timestamps();
 
-            $table->foreign('roue_id')->references('id')->on('roues');
         });
     }
 

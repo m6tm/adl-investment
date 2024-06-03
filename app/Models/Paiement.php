@@ -10,7 +10,6 @@ class Paiement extends Model
     protected $fillable = [
         'montant',
         'statut',  // Ex: "reussir" , "echoué"
-        'mode_paiement',
     ];
 
     public function ticket()

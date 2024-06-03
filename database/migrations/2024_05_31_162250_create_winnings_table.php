@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('winnings', function (Blueprint $table) {
             $table->id();
             $table->string('montant_total_libelle');
-            $table->double('montant_total_numeric');
+            $table->float('montant_total_numeric');
             $table->timestamps();
         });
     }

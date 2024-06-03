@@ -16,11 +16,10 @@ return new class extends Migration
             $table->foreignId('user_id');
             $table->string('type');
             $table->string('adresse');
-            $table->string('verifié')->default('verifié');
+            $table->enum('verifier')->default('nonverifier');
             $table->string('fiche_document');
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

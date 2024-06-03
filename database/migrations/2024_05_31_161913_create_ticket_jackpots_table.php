@@ -19,8 +19,6 @@ return new class extends Migration
             $table->string('date_mise_a_jour');
             $table->timestamps();
 
-            $table->foreign('jackpot_id')->references('id')->on('jackpots');
-            $table->foreign('coefficient_id')->references('id')->on('coefficients');
         });
     }
 

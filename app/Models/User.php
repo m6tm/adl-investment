@@ -67,7 +67,7 @@ class User extends Authenticatable
         return $this->hasOne(user_type::class);
     }
 
-    public function comptes()
+    public function compte()
     {
         return $this->hasOne(Compte::class);
     }

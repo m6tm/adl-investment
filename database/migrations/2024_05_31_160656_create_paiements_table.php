@@ -14,12 +14,10 @@ return new class extends Migration
         Schema::create('paiements', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
-            $table->decimal('montant', 10, 2);
-            $table->string('statut')->default('reussi');
-            $table->string('mode_paiement');
+            $table->float('montant');
+            $table->enum('statut')->default('echoue');
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
