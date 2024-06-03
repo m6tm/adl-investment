@@ -20,14 +20,14 @@ class Compte extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function portefeuilles()
+    public function portefeuille()
     {
-        return $this->hasMany(Portefeuille::class);
+        return $this->hasOne(Portefeuille::class);
     }
 
-    public function portefeuillesInvestissements()
+    public function portefeuille_Investissement()
     {
-        return $this->hasMany(PortefeuilleInvestissement::class);
+        return $this->hasOne(Portefeuille_Investissement::class);
     }
 
 }
