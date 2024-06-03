@@ -20,7 +20,7 @@ return new class extends Migration
             $table->foreignId('paiement_id');
             $table->enum('type')->default('bonus');
             $table->enum('statut')->default('utilise');
-            $table->boolean('gagnant');
+            $table->boolean('gagnant')->default('non');
             $table->timestamps();
 
         });

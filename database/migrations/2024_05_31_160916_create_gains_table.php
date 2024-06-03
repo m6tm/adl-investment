@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('gains', function (Blueprint $table) {
             $table->id();
-    $table->foreignId('user_id');
-    $table->foreignId('tirage_id');
-    $table->decimal('montant', 10, 2);
-    $table->float('montant_numeric');
-    $table->timestamps();
+            $table->foreignId('user_id');
+            $table->foreignId('tirage_id');
+            $table->float('montant');
+            $table->float('montant_numeric');
+            $table->timestamps();
 
         });
     }
