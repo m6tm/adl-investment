@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('winnings', function (Blueprint $table) {
             $table->id();
-            $table->decimal('montant', 10, 2);
+            $table->string('montant_total_libelle');
+            $table->double('montant_total_numeric');
             $table->timestamps();
         });
     }

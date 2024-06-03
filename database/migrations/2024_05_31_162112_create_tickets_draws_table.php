@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('tickets_draws', function (Blueprint $table) {
              $table->id();
-            $table->unsignedBigInteger('coefficient_id');
-            $table->unsignedBigInteger('winning_id');
-            $table->integer('nombre_tickets');
+            $table->foreignId('coefficient_id');
+            $table->foreignId('winning_id');
+            $table->integer('nombre_ticket_a_tirer');
+            $table->string('date_mise_a_jour');
             $table->timestamps();
 
             $table->foreign('coefficient_id')->references('id')->on('coefficients');

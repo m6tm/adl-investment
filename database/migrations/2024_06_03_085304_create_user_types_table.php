@@ -13,7 +13,11 @@ return new class extends Migration
     {
         Schema::create('user_types', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id');
+            $table->string('libelle');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

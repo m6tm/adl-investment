@@ -13,8 +13,13 @@ return new class extends Migration
     {
         Schema::create('tirages', function (Blueprint $table) {
             $table->id();
-            $table->dateTime('date_tirage');
+            $table->foreignId('roue_id');
+            $table->date('date_tirage');
+            $table->time('heure_tirage');
+            $table->string('statut')->default('encours');
             $table->timestamps();
+
+            $table->foreign('roue_id')->references('id')->on('roues');
         });
     }
 

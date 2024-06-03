@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('roues', function (Blueprint $table) {
             $table->id();
-            $table->string('nom');
+            $table->string('intitule');
+            $table->string('description');
             $table->timestamps();
         });
     }

@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('pays_id');
             $table->string('nom');
             $table->string('prenom');
             $table->string('email')->unique();
@@ -24,6 +25,8 @@ return new class extends Migration
             $table->string('derniere_connexion');
             $table->rememberToken();
             $table->timestamps();
+
+            $table->foreign('pays_id')->references('id')->on('pays');
         });
     }
 

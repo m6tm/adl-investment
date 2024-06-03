@@ -13,8 +13,10 @@ return new class extends Migration
     {
         Schema::create('ticket_jackpots', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('jackpot_id');
-            $table->unsignedBigInteger('coefficient_id');
+            $table->foreignId('jackpot_id');
+            $table->foreignId('coefficient_id');
+            $table->string('date_creation');
+            $table->string('date_mise_a_jour');
             $table->timestamps();
 
             $table->foreign('jackpot_id')->references('id')->on('jackpots');

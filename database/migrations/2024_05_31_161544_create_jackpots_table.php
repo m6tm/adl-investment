@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('jackpots', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('roue_id');
+            $table->foreignId('roue_id');
             $table->decimal('montant', 10, 2);
             $table->timestamps();
 

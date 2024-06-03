@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('gains', function (Blueprint $table) {
             $table->id();
-    $table->unsignedBigInteger('user_id');
-    $table->unsignedBigInteger('tirage_id');
+    $table->foreignId('user_id');
+    $table->foreignId('tirage_id');
     $table->decimal('montant', 10, 2);
+    $table->double('montant_numeric');
     $table->timestamps();
 
     $table->foreign('user_id')->references('id')->on('users');

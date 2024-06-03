@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('ticket_prices', function (Blueprint $table) {
             $table->id();
+            $table->string('libelle');
+            $table->double('prix');
+            $table->string('devise');
+            $table->boolean('is_promotion');
             $table->timestamps();
         });
     }

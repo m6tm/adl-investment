@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('libelle');
             $table->string('libelle_court');
             $table->string('code_iso');
-            $table->decimal('taxe', 5, 2);
+            $table->double('taxe');
             $table->timestamps();
         });
     }

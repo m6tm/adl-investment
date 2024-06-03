@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('coefficients', function (Blueprint $table) {
-            $table->decimal('valeur', 5, 2);
+            $table->integer('valeur');
             $table->timestamps();
         });
     }
