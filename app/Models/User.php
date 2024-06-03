@@ -54,7 +54,7 @@ class User extends Authenticatable
 
     public function pays()
     {
-        return $this->hasMany(Pays::class);
+        return $this->belongsTo(Pays::class);
     }
 
     public function gains()
@@ -67,7 +67,7 @@ class User extends Authenticatable
         return $this->hasOne(user_type::class);
     }
 
-    public function compte()
+    public function comptes()
     {
         return $this->hasOne(Compte::class);
     }

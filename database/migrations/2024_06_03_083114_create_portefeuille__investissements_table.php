@@ -11,13 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('compte_investissements', function (Blueprint $table) {
+        Schema::create('portefeuille__investissements', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->decimal('montant_investi', 10, 2);
+            $table->unsignedBigInteger('compte_id');
+            $table->string('balance_libelle');
+            $table->double('balance_numeric');
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('compte_id')->references('id')->on('compte');
         });
     }
 
@@ -26,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('compte_investissements');
+        Schema::dropIfExists('portefeuille__investissements');
     }
 };

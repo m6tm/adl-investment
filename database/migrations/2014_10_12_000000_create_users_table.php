@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('birt_day');
+            $table->date('birt_day');
             $table->string('adresse');
             $table->string('verification_status')->default('Encours')->default('Nonverifié');
             $table->string('derniere_connexion');

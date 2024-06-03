@@ -5,9 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Portefeuille extends Model
+class Portefeuille_Investissement extends Model
 {
-    protected $table = 'portefeuilles';
+    protected $table = 'portefeuilleinvestissements';
+
     protected $fillable = [
         'id',
         'balance_libelle',

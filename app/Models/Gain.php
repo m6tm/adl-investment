@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Gain extends Model
 {
     protected $fillable = [
-        'user_id',
-        'tirage_id',
+        'id',
         'montant',
+        'montant_numeric',
     ];
 
     public function user()

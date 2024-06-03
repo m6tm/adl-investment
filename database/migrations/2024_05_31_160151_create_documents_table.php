@@ -11,12 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pays', function (Blueprint $table) {
+        Schema::create('documents', function (Blueprint $table) {
             $table->id();
-            $table->string('libelle');
-            $table->string('libelle_court');
-            $table->string('code_iso');
-            $table->decimal('taxe', 5, 2);
+            $table->unsignedBigInteger('user_id');
+            $table->string('type');
+            $table->string('adresse');
+            $table->string('verifié')->default('verifié');
+            $table->string('fiche_document');
             $table->timestamps();
         });
     }
@@ -26,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('pays');
+        Schema::dropIfExists('documents');
     }
 };

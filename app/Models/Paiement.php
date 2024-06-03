@@ -10,11 +10,17 @@ class Paiement extends Model
     protected $fillable = [
         'user_id',
         'montant',
+        'statut',  // Ex: "reussir" , "echoué"
         'mode_paiement',
     ];
 
-    public function user()
+    public function ticket()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(Ticket::class);
+    }
+
+    public function paiement_method()
+    {
+        return $this->hasMany(Paiement_method::class);
     }
 }

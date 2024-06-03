@@ -11,13 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pays', function (Blueprint $table) {
+        Schema::create('comptes', function (Blueprint $table) {
             $table->id();
-            $table->string('libelle');
-            $table->string('libelle_court');
-            $table->string('code_iso');
-            $table->decimal('taxe', 5, 2);
+            $table->unsignedBigInteger('user_id');
+            $table->string('statut')->default('inactif');
+            $table->decimal('solde', 10, 2)->default(0.00);
+            $table->string('devise')->default('EUR');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
@@ -26,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('pays');
+        Schema::dropIfExists('comptes');
     }
 };

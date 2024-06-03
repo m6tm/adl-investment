@@ -13,11 +13,12 @@ return new class extends Migration
     {
         Schema::create('portefeuilles', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->decimal('solde', 10, 2);
+            $table->unsignedBigInteger('compte_id');
+            $table->string('balance_libelle');
+            $table->double('balance_numeric');
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('compte_id')->references('id')->on('compte');
         });
     }
 

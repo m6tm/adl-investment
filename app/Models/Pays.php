@@ -8,7 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Pays extends Model
 {
     protected $fillable = [
-        'nom',
-        'taux_taxe',
+        'libelle',
+        'libelle_court',
+        'code_iso',
+        'taxe',
     ];
+
+    public function user()
+    {
+        return $this->hasMany(User::class);
+    }
 }

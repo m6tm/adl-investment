@@ -5,11 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Compte_investissement extends Model
+class Document extends Model
 {
     protected $fillable = [
-        'user_id',
-        'montant_investi',
+        'id',
+        'type',
+        'adresse',
+        'statut',
+        'fiche_document',
     ];
 
     public function user()
