@@ -26,7 +26,7 @@ return new class extends Migration
             $table->rememberToken();
             $table->timestamps();
 
-            $table->foreign('pays_id')->references('id')->on('pays');
+            // $table->foreignId('pays_id')->references('id')->on('pays');
         });
     }
 

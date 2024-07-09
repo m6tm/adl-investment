@@ -18,9 +18,12 @@ return new class extends Migration
             $table->foreignId('ticket_price_id');
             $table->foreignId('ticket_categorie_id');
             $table->foreignId('paiement_id');
-            $table->enum('type')->default('bonus');
-            $table->enum('statut')->default('utilise');
-            $table->boolean('gagnant')->default('non');
+            $table->enum('type', ['bonus', 'mallus']);
+            $table->enum('status', ['utilise', 'non utilise']);
+            $table->boolean('gagnant',['non', 'oui']);
+            // $table->enum('type')->default('bonus');
+            // $table->enum('statut')->default('utilise');
+            // $table->boolean('gagnant')->default('non');
             $table->timestamps();
 
         });
