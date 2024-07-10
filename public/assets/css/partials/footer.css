@@ -106,10 +106,8 @@
   }
   
   .footer .copyright {
-    --background-color: #db1b1b;
     padding-top: 30px;
     padding-bottom: 30px;
-    background-color: var(--background-color) ;
     border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
   }
   
