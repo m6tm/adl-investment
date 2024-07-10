@@ -14,8 +14,9 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
-    @include('partials.header')
+    {{-- @include('partials.header') --}}
     @yield('content')
+    @include('partials.footer')
     <!-- Inclure le JS compilé -->
     <script src="{{ asset('assets/js/app.js') }}"></script>
 </body>
