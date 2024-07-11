@@ -1,1 +1,52 @@
 @import url('../utils.css');
+
+/*--------------------------------------------------------------
+  # Global Sections
+  --------------------------------------------------------------*/
+  section,
+  .section {
+    padding: 60px 0;
+    scroll-margin-top: 112px;
+    overflow: clip;
+  }
+  
+  @media (max-width: 1199px) {
+  
+    section,
+    .section {
+      scroll-margin-top: 100px;
+    }
+  }
+  
+  .hero {
+    width: 100%;
+    position: relative;
+    padding: 140px 0 0 0;
+  }
+  
+  .hero .container {
+    position: relative;
+    z-index: 3;
+  }
+  
+  .hero h2 {
+    font-size: 48px;
+    color: black;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  
+  .hero h2 .accent {
+    color: red;
+  }
+  
+  .hero p {
+    font-weight: 400;
+    margin-bottom: 30px;
+  }
+
+@media (max-width: 640px) {
+  .hero h2 {
+    font-size: 36px;
+  }
+}
