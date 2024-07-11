@@ -21,12 +21,12 @@
 
     <main class="main">
         {{-- Hero section  --}}
-            @yield('content')
+            {{-- @yield('content') --}}
 
     </main>
 
     <footer id="footer" class="footer accent-background">
-        @include('partials.footer')
+        {{-- @include('partials.footer') --}}
     </footer>
     <!-- Inclure le JS compilé -->
     <script src="{{ asset('assets/js/app.js') }}"></script>
