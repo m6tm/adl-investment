@@ -17,6 +17,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+/*route d'appel du fichier de configuration de l'application */
 Route::get('/', function () {
     return view('layout.app');
+});
+
+Route::get('/', function () {
+    return view('pages.home.home');
 });

@@ -14,9 +14,20 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
-    {{-- @include('partials.header') --}}
-    @yield('content')
-    @include('partials.footer')
+    {{-- Globla header  --}}
+    <header id="header" class="header fixed">
+        @include('partials.header')
+    </header>
+
+    <main class="main">
+        {{-- Hero section  --}}
+            @yield('content')
+
+    </main>
+
+    <footer id="footer" class="footer accent-background">
+        @include('partials.footer')
+    </footer>
     <!-- Inclure le JS compilé -->
     <script src="{{ asset('assets/js/app.js') }}"></script>
 </body>
