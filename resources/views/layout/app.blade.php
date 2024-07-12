@@ -15,7 +15,7 @@
   <!-- Vendor CSS Files -->
   <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
   <link href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
-  {{-- <link href="{{ asset('assets/vendor/aos/aos.css') }}" rel="stylesheet"> --}}
+  <link href="{{ asset('assets/vendor/aos/aos.css') }}" rel="stylesheet">
   <link href="{{ asset('assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
   <link href="{{ asset('assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
 
@@ -23,17 +23,17 @@
   <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
 </head>
 
-<body>
+<body class="index-page">
     <header>
-
-    </header>
+        @include('partials.header')
+    </header id="header" class="header fixed-top">
     <main class="main">
         {{-- HERO SECTION    --}}
         @yield('content')
     </main>
     
-    <footer>
-
+    <footer id="footer" class="footer accent-background">
+        @include('partials.footer')
     </footer>
 
     <!-- Scroll Top -->
