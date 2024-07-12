@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('user_id');
             $table->string('type');
             $table->string('adresse');
-            $table->enum('status')->default('verifier');
+            $table->enum('statuts', ['verifier','non verifier']);
             $table->string('fiche_document');
             $table->timestamps();
 

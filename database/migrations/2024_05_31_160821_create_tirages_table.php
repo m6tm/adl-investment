@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('roue_id');
             $table->date('date_tirage');
             $table->time('heure_tirage');
-            $table->enum('statut',['attente', 'en cours', 'terminé']);
+            $table->enum('statut',['attente','encours','terminé']);
             $table->timestamps();
 
         });
