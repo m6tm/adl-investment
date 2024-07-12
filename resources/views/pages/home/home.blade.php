@@ -7,7 +7,7 @@
 
 @section('content')
     <!-- Hero Section -->
-    <section id="hero" class="hero section accent-background">
+    <section id="hero" class="hero section accent-background my-5">
 
       <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
           <div class="row gy-5 justify-content-between">
@@ -27,15 +27,15 @@
           </div>
       </div>
   
-      <div class="icon-boxes position-relative" data-aos="fade-up" data-aos-delay="200">
+      <div class="icon-boxes position-relative py-5" data-aos="fade-up" data-aos-delay="200">
           <div class="container position-relative">
               <div class="row gy-4 mt-5">
                   <div class="col-xl-3 col-md-6">
                       <article>
                           <div class="article-wrapper align-items-center">
-                              <!-- <figure>
+                              {{-- <figure>
                         <img src="assets/img/blog/blog-1.jpg" alt="" />
-                      </figure> -->
+                      </figure> --}}
                               <div class="article-body">
                                   <h2 class="article-title">Forfait 3 Jours</h2>
                                   <h5 class="text-white">
@@ -132,7 +132,7 @@
 
 
     <!-- About Section -->
-    <section id="about" class="about section">
+    <section id="about" class="about section my-5">
 
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
@@ -192,7 +192,7 @@
 
 
     <!-- Clients Section -->
-    <section id="clients" class="clients section">
+    <section id="clients" class="clients section my-5">
 
         <div class="container">
 
@@ -259,7 +259,7 @@
 
 
     <!-- Stats Section -->
-    <section id="stats" class="stats section">
+    <section id="stats" class="stats section my-5">
 
         <div class="container" data-aos="fade-up" data-aos-delay="100">
 
@@ -331,7 +331,7 @@
 
 
     <!-- Call To Action Section -->
-    <section id="call-to-action" class="call-to-action section dark-background">
+    <section id="call-to-action" class="call-to-action section dark-background my-5">
 
         <div class="container">
             <img src="assets/img/cta-bg.jpg" alt="">
@@ -355,7 +355,7 @@
 
 
     <!-- Services Section -->
-    <section id="services" class="services section">
+    <section id="services" class="services section my-5">
 
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
@@ -454,7 +454,7 @@
 
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials section">
+    <section id="testimonials" class="testimonials section my-10">
 
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
@@ -603,7 +603,7 @@
 
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio section">
+    <section id="portfolio" class="portfolio section my-5">
 
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
@@ -780,7 +780,7 @@
 
 
     <!-- Team Section -->
-    <section id="team" class="team section">
+    <section id="team" class="team section my-5">
 
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
@@ -857,7 +857,7 @@
 
 
     <!-- Pricing Section -->
-    <section id="pricing" class="pricing section">
+    <section id="pricing" class="pricing section my-5">
 
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
@@ -932,7 +932,7 @@
 
 
     <!-- Faq Section -->
-    <section id="faq" class="faq section">
+    <section id="faq" class="faq section my-5">
 
         <div class="container">
 
@@ -1020,7 +1020,7 @@
 
 
     <!-- Recent Posts Section -->
-    <section id="recent-posts" class="recent-posts section">
+    <section id="recent-posts" class="recent-posts section my-5">
 
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
@@ -1121,7 +1121,7 @@
 
 
     <!-- Contact Section -->
-    <section id="contact" class="contact section">
+    <section id="contact" class="contact section my-5">
 
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">

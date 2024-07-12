@@ -25,3 +25,7 @@ Route::get('/', function () {
 Route::get('/', function () {
     return view('pages.home.home');
 });
+
+// Route::get('/', function () {
+//     return view('pages.blog.blog');
+// });
