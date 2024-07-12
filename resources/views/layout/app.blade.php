@@ -21,7 +21,7 @@
 
     <main class="main">
         {{-- Hero section  --}}
-            {{-- @yield('content') --}}
+            @yield('content')
 
     </main>
 

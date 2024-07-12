@@ -43,12 +43,12 @@
                 <h2><span>Welcome to </span><span class="accent">ADL Gaming</span></h2>
                 <p>Plongez dans l'univers excitant du jeu en ligne ADL et tentez votre chance avec notre système de tirage de roue unique!</p>
               <div class="d-flex">
-                <a href="#about" class="btn-get-started">Get Started</a>
-                <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
+                <a href="#about" class="btn-get-started">Découvrir</a>
+                <a href="#" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Tutoriel</span></a>
               </div>
             </div>
             <div class="col-lg-5 order-1 order-lg-2">
-              <img src="assets/img/hero-img.svg" class="img-fluid" alt="">
+              <img src="{{ asset('img/index-illus.png') }}" class="img-fluid" alt="">
             </div>
           </div>
         </div>
