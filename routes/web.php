@@ -34,11 +34,3 @@ Route::get('/', function () {
 Route::middleware(['auth.dashboard'])->group(function () {
 });
 
-<<<<<<< HEAD
-// Route vers les fichiers du site
-
-Route::get('/service-details', function () {
-    return view('pages.service-details');
-});
-=======
->>>>>>> e7f35cc91329ac1cefc7a097c89de7748f0d9a0e
