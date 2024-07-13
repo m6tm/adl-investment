@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id');
             $table->float('montant');
-            $table->enum('statut')->default('echoue');
+            $table->enum('statut',['echoue','succes']);
             $table->timestamps();
 
         });
