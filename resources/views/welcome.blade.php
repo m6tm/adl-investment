@@ -11,7 +11,6 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
         @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     </head>
-    <body class="mh-screen">
-        <h1 class="bg-white dark:bg-black">Hello !!</h1>
+    <body class="mh-screen bg-white">
     </body>
 </html>
