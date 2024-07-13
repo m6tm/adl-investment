@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('user_id');
             $table->foreignId('portefeuille_id');
             $table->foreignId('portefeuille_investissement_id');
-            $table->enum('statut')->default('inactif');
+            $table->enum('statut',['inactif','actif']);
             $table->float('solde');
             $table->string('devise')->default('EUR');
             $table->timestamps();

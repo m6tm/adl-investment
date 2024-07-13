@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('pays_id');
+            $table->foreignId('pays_id')->nullable()->default(1);
             $table->string('nom');
             $table->string('prenom');
             $table->string('email')->unique();
@@ -26,7 +26,7 @@ return new class extends Migration
             $table->rememberToken();
             $table->timestamps();
 
-            $table->foreign('pays_id')->references('id')->on('pays');
+            // $table->foreign('pays_id')->references('id')->on('pays');
         });
     }
 

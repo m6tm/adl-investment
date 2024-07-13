@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,9 +31,7 @@ Route::get('/', function () {
     return view('pages.home.home');
 });
 
+Route::middleware(['auth.dashboard'])->group(function () {
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
+});
 
-// Route vers les fichiers du site
-
-// Route::get('/service-details', function () {
-//     return view('pages.service-details');
-// });
