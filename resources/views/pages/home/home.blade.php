@@ -178,7 +178,7 @@
 
                         <div class="position-relative mt-4">
                             <img src="assets/img/about-2.jpg" class="img-fluid rounded-4" alt="">
-                            <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox pulsating-play-btn"></a>
+                            <a href="assets/img/Nobody -「AMV」- Anime MV.mp4" class="glightbox pulsating-play-btn"></a>
                         </div>
                     </div>
                 </div>
@@ -375,7 +375,7 @@
                         <h3>Nesciunt Mete</h3>
                         <p>Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores iure
                             perferendis tempore et consequatur.</p>
-                        <a href="service-details.html" class="readmore stretched-link">Read more <i
+                        <a href="{{ url('service-details') }}" class="readmore stretched-link">Read more <i
                                 class="bi bi-arrow-right"></i></a>
                     </div>
                 </div><!-- End Service Item -->
@@ -388,7 +388,7 @@
                         <h3>Eosle Commodi</h3>
                         <p>Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non
                             ut nesciunt dolorem.</p>
-                        <a href="service-details.html" class="readmore stretched-link">Read more <i
+                        <a href="{{ url('service-details') }}" class="readmore stretched-link">Read more <i
                                 class="bi bi-arrow-right"></i></a>
                     </div>
                 </div><!-- End Service Item -->
@@ -401,7 +401,7 @@
                         <h3>Ledo Markt</h3>
                         <p>Ut excepturi voluptatem nisi sed. Quidem fuga consequatur. Minus ea aut. Vel qui id voluptas
                             adipisci eos earum corrupti.</p>
-                        <a href="service-details.html" class="readmore stretched-link">Read more <i
+                        <a href="{{ url('service-details') }}" class="readmore stretched-link">Read more <i
                                 class="bi bi-arrow-right"></i></a>
                     </div>
                 </div><!-- End Service Item -->
@@ -414,7 +414,7 @@
                         <h3>Asperiores Commodit</h3>
                         <p>Non et temporibus minus omnis sed dolor esse consequatur. Cupiditate sed error ea fuga sit
                             provident adipisci neque.</p>
-                        <a href="service-details.html" class="readmore stretched-link">Read more <i
+                        <a href="{{ url('service-details') }}" class="readmore stretched-link">Read more <i
                                 class="bi bi-arrow-right"></i></a>
                     </div>
                 </div><!-- End Service Item -->
@@ -427,7 +427,7 @@
                         <h3>Velit Doloremque</h3>
                         <p>Cumque et suscipit saepe. Est maiores autem enim facilis ut aut ipsam corporis aut. Sed animi at
                             autem alias eius labore.</p>
-                        <a href="service-details.html" class="readmore stretched-link">Read more <i
+                        <a href="{{ url('service-details') }}" class="readmore stretched-link">Read more <i
                                 class="bi bi-arrow-right"></i></a>
                     </div>
                 </div><!-- End Service Item -->
@@ -440,7 +440,7 @@
                         <h3>Dolori Architecto</h3>
                         <p>Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque non et debitis iure. Corrupti
                             recusandae ducimus enim.</p>
-                        <a href="service-details.html" class="readmore stretched-link">Read more <i
+                        <a href="{{ url('service-details') }}" class="readmore stretched-link">Read more <i
                                 class="bi bi-arrow-right"></i></a>
                     </div>
                 </div><!-- End Service Item -->
@@ -631,7 +631,7 @@
                                 class="glightbox"><img src="assets/img/portfolio/app-1.jpg" class="img-fluid"
                                     alt=""></a>
                             <div class="portfolio-info">
-                                <h4><a href="portfolio-details.html" title="More Details">App 1</a></h4>
+                                <h4><a href="{{ url('/portfolio-details') }}" title="More Details">App 1</a></h4>
                                 <p>Lorem ipsum, dolor sit amet consectetur</p>
                             </div>
                         </div>
@@ -643,7 +643,7 @@
                                 class="glightbox"><img src="assets/img/portfolio/product-1.jpg" class="img-fluid"
                                     alt=""></a>
                             <div class="portfolio-info">
-                                <h4><a href="portfolio-details.html" title="More Details">Product 1</a></h4>
+                                <h4><a href="{{ url('/portfolio-details') }}" title="More Details">Product 1</a></h4>
                                 <p>Lorem ipsum, dolor sit amet consectetur</p>
                             </div>
                         </div>
@@ -655,7 +655,7 @@
                                 class="glightbox"><img src="assets/img/portfolio/branding-1.jpg" class="img-fluid"
                                     alt=""></a>
                             <div class="portfolio-info">
-                                <h4><a href="portfolio-details.html" title="More Details">Branding 1</a></h4>
+                                <h4><a href="{{ url('/portfolio-details') }}" title="More Details">Branding 1</a></h4>
                                 <p>Lorem ipsum, dolor sit amet consectetur</p>
                             </div>
                         </div>
@@ -667,7 +667,7 @@
                                 class="glightbox"><img src="assets/img/portfolio/books-1.jpg" class="img-fluid"
                                     alt=""></a>
                             <div class="portfolio-info">
-                                <h4><a href="portfolio-details.html" title="More Details">Books 1</a></h4>
+                                <h4><a href="{{ url('/portfolio-details') }}" title="More Details">Books 1</a></h4>
                                 <p>Lorem ipsum, dolor sit amet consectetur</p>
                             </div>
                         </div>
@@ -679,7 +679,7 @@
                                 class="glightbox"><img src="assets/img/portfolio/app-2.jpg" class="img-fluid"
                                     alt=""></a>
                             <div class="portfolio-info">
-                                <h4><a href="portfolio-details.html" title="More Details">App 2</a></h4>
+                                <h4><a href="{{ url('/portfolio-details') }}" title="More Details">App 2</a></h4>
                                 <p>Lorem ipsum, dolor sit amet consectetur</p>
                             </div>
                         </div>
@@ -691,7 +691,7 @@
                                 class="glightbox"><img src="assets/img/portfolio/product-2.jpg" class="img-fluid"
                                     alt=""></a>
                             <div class="portfolio-info">
-                                <h4><a href="portfolio-details.html" title="More Details">Product 2</a></h4>
+                                <h4><a href="{{ url('/portfolio-details') }}" title="More Details">Product 2</a></h4>
                                 <p>Lorem ipsum, dolor sit amet consectetur</p>
                             </div>
                         </div>
@@ -703,7 +703,7 @@
                                 class="glightbox"><img src="assets/img/portfolio/branding-2.jpg" class="img-fluid"
                                     alt=""></a>
                             <div class="portfolio-info">
-                                <h4><a href="portfolio-details.html" title="More Details">Branding 2</a></h4>
+                                <h4><a href="{{ url('/portfolio-details') }}" title="More Details">Branding 2</a></h4>
                                 <p>Lorem ipsum, dolor sit amet consectetur</p>
                             </div>
                         </div>
@@ -715,7 +715,7 @@
                                 class="glightbox"><img src="assets/img/portfolio/books-2.jpg" class="img-fluid"
                                     alt=""></a>
                             <div class="portfolio-info">
-                                <h4><a href="portfolio-details.html" title="More Details">Books 2</a></h4>
+                                <h4><a href="{{ url('/portfolio-details') }}" title="More Details">Books 2</a></h4>
                                 <p>Lorem ipsum, dolor sit amet consectetur</p>
                             </div>
                         </div>
@@ -727,7 +727,7 @@
                                 class="glightbox"><img src="assets/img/portfolio/app-3.jpg" class="img-fluid"
                                     alt=""></a>
                             <div class="portfolio-info">
-                                <h4><a href="portfolio-details.html" title="More Details">App 3</a></h4>
+                                <h4><a href="{{ url('/portfolio-details') }}" title="More Details">App 3</a></h4>
                                 <p>Lorem ipsum, dolor sit amet consectetur</p>
                             </div>
                         </div>
@@ -739,7 +739,7 @@
                                 class="glightbox"><img src="assets/img/portfolio/product-3.jpg" class="img-fluid"
                                     alt=""></a>
                             <div class="portfolio-info">
-                                <h4><a href="portfolio-details.html" title="More Details">Product 3</a></h4>
+                                <h4><a href="{{ url('/portfolio-details') }}" title="More Details">Product 3</a></h4>
                                 <p>Lorem ipsum, dolor sit amet consectetur</p>
                             </div>
                         </div>
@@ -751,7 +751,7 @@
                                 class="glightbox"><img src="assets/img/portfolio/branding-3.jpg" class="img-fluid"
                                     alt=""></a>
                             <div class="portfolio-info">
-                                <h4><a href="portfolio-details.html" title="More Details">Branding 3</a></h4>
+                                <h4><a href="{{ url('/portfolio-details') }}" title="More Details">Branding 3</a></h4>
                                 <p>Lorem ipsum, dolor sit amet consectetur</p>
                             </div>
                         </div>
@@ -763,7 +763,7 @@
                                 class="glightbox"><img src="assets/img/portfolio/books-3.jpg" class="img-fluid"
                                     alt=""></a>
                             <div class="portfolio-info">
-                                <h4><a href="portfolio-details.html" title="More Details">Books 3</a></h4>
+                                <h4><a href="{{ url('/portfolio-details') }}" title="More Details">Books 3</a></h4>
                                 <p>Lorem ipsum, dolor sit amet consectetur</p>
                             </div>
                         </div>
