@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 /*route d'appel du fichier de configuration de l'application */
 Route::get('/', function () {
     return view('layout.app');
-});
+})->name('welcome');
 
 Route::get('/home', function () {
     return view('pages.home.home');
@@ -32,6 +32,5 @@ Route::get('/', function () {
 });
 
 Route::middleware(['auth.dashboard'])->group(function () {
-    Route::get('/home', [HomeController::class, 'index'])->name('home');
 });
 
