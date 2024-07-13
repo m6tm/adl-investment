@@ -146,8 +146,9 @@
                 <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
                     <h3>Voluptatem dignissimos provident laboris nisi ut aliquip ex ea commodo</h3>
                     <img src="assets/img/about.jpg" class="img-fluid rounded-4 mb-4" alt="">
-                    <p>Ut fugiat ut sunt quia veniam. Voluptate perferendis perspiciatis quod nisi et. Placeat debitis quia
-                        recusandae odit et consequatur voluptatem. Dignissimos pariatur consectetur fugiat voluptas ea.</p>
+                    <p>Bienvenue sur ADL, la plateforme de jeu en ligne révolutionnaire basée sur des tirages de roue!
+                        Notre mission est de fournir une expérience de jeu unique et sécurisée à nos utilisateurs.
+                        Rejoignez-nous pour des tirages palpitants et des gains incroyables!</p>
                     <p>Temporibus nihil enim deserunt sed ea. Provident sit expedita aut cupiditate nihil vitae quo officia
                         vel. Blanditiis eligendi possimus et in cum. Quidem eos ut sint rem veniam qui. Ut ut repellendus
                         nobis tempore doloribus debitis explicabo similique sit. Accusantium sed ut omnis beatae neque
@@ -504,9 +505,7 @@
                             </div>
                             <p>
                                 <i class="bi bi-quote quote-icon-left"></i>
-                                <span>Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit
-                                    rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam,
-                                    risus at semper.</span>
+                                <span>ADL a changé ma vie! Les tirages sont incroyables et les gains sont réels.</span>
                                 <i class="bi bi-quote quote-icon-right"></i>
                             </p>
                         </div>
@@ -524,9 +523,7 @@
                             </div>
                             <p>
                                 <i class="bi bi-quote quote-icon-left"></i>
-                                <span>Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid
-                                    cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet
-                                    legam anim culpa.</span>
+                                <span>Je ne peux plus m'arrêter de jouer sur ADL. C'est addictif et tellement amusant!</span>
                                 <i class="bi bi-quote quote-icon-right"></i>
                             </p>
                         </div>
@@ -544,9 +541,7 @@
                             </div>
                             <p>
                                 <i class="bi bi-quote quote-icon-left"></i>
-                                <span>Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam
-                                    duis minim tempor labore quem eram duis noster aute amet eram fore quis sint
-                                    minim.</span>
+                                <span>ADL m'a permis de gagner de l'argent tout en m'amusant. Une expérience unique!</span>
                                 <i class="bi bi-quote quote-icon-right"></i>
                             </p>
                         </div>
@@ -564,9 +559,7 @@
                             </div>
                             <p>
                                 <i class="bi bi-quote quote-icon-left"></i>
-                                <span>Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat
-                                    minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore
-                                    labore illum veniam.</span>
+                                <span>Les tirages sur ADL sont palpitants! Je recommande à tous les amateurs de jeux.</span>
                                 <i class="bi bi-quote quote-icon-right"></i>
                             </p>
                         </div>
@@ -584,9 +577,7 @@
                             </div>
                             <p>
                                 <i class="bi bi-quote quote-icon-left"></i>
-                                <span>Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster
-                                    veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam
-                                    culpa fore nisi cillum quid.</span>
+                                <span>ADL est la meilleure plateforme de jeu en ligne que j'ai jamais utilisée. Des gains incroyables!</span>
                                 <i class="bi bi-quote quote-icon-right"></i>
                             </p>
                         </div>
@@ -952,12 +943,10 @@
 
                     <div class="faq-container">
                         <div class="faq-item faq-active">
-                            <h3><span class="num">1.</span> <span>Non consectetur a erat nam at lectus urna duis?</span>
+                            <h3><span class="num">1.</span> <span>Comment participer aux tirages ?</span>
                             </h3>
                             <div class="faq-content">
-                                <p>Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non
-                                    curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus
-                                    non.</p>
+                                <p>Pour participer, choisissez votre type de tirage, achetez des tickets et attendez le tirage!</p>
                             </div>
                             <i class="faq-toggle bi bi-chevron-right"></i>
                         </div><!-- End Faq item-->
@@ -975,36 +964,25 @@
                         </div><!-- End Faq item-->
 
                         <div class="faq-item">
-                            <h3><span class="num">3.</span> <span>Dolor sit amet consectetur adipiscing elit
-                                    pellentesque?</span></h3>
+                            <h3><span class="num">3.</span> <span>Quand ont lieu les tirages?</span></h3>
                             <div class="faq-content">
-                                <p>Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus
-                                    pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum
-                                    tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna
-                                    molestie at elementum eu facilisis sed odio morbi quis</p>
+                                <p>Les tirages se déroulent tous les lundis, mercredis et samedis à 19h00 GMT.</p>
                             </div>
                             <i class="faq-toggle bi bi-chevron-right"></i>
                         </div><!-- End Faq item-->
 
                         <div class="faq-item">
-                            <h3><span class="num">4.</span> <span>Ac odio tempor orci dapibus. Aliquam eleifend mi in
-                                    nulla?</span></h3>
+                            <h3><span class="num">4.</span> <span>Quelle est la durée de validité des tickets?</span></h3>
                             <div class="faq-content">
-                                <p>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit
-                                    laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec
-                                    pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus
-                                    turpis massa tincidunt dui.</p>
+                                <p>La validité des tickets varie en fonction du type choisi: 3 jours, 1 semaine ou 1 mois.</p>
                             </div>
                             <i class="faq-toggle bi bi-chevron-right"></i>
                         </div><!-- End Faq item-->
 
                         <div class="faq-item">
-                            <h3><span class="num">5.</span> <span>Tempus quam pellentesque nec nam aliquam sem et tortor
-                                    consequat?</span></h3>
+                            <h3><span class="num">5.</span> <span>Comment valider mon accès à la plateforme?</span></h3>
                             <div class="faq-content">
-                                <p>Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est
-                                    ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit
-                                    adipiscing bibendum est. Purus gravida quis blandit turpis cursus in</p>
+                                <p>La validité des tickets varie en fonction du type choisi: 3 jours, 1 semaine ou 1 mois.</p>
                             </div>
                             <i class="faq-toggle bi bi-chevron-right"></i>
                         </div><!-- End Faq item-->
