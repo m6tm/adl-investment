@@ -2,12 +2,12 @@
 @extends('layout.app')
 
 <link rel="stylesheet" href="{{ asset('assets/css/pages/home.css') }}">
-<link rel="stylesheet" href="{{ asset('assets/css/partials/card.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/pages/card.css') }}">
 
 
 @section('content')
     <!-- Hero Section -->
-    <section id="hero" class="hero section accent-background my-5">
+    <section id="hero" class="hero section accent-background">
 
       <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
           <div class="row gy-5 justify-content-between">
@@ -132,7 +132,7 @@
 
 
     <!-- About Section -->
-    <section id="about" class="about section my-5">
+    <section id="about" class="about section padding-vert">
 
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
@@ -193,7 +193,7 @@
 
 
     <!-- Clients Section -->
-    <section id="clients" class="clients section my-5">
+    <section id="clients" class="clients section padding-vert">
 
         <div class="container">
 
@@ -260,7 +260,7 @@
 
 
     <!-- Stats Section -->
-    <section id="stats" class="stats section my-5">
+    <section id="stats" class="stats section padding-vert">
 
         <div class="container" data-aos="fade-up" data-aos-delay="100">
 
@@ -332,7 +332,7 @@
 
 
     <!-- Call To Action Section -->
-    <section id="call-to-action" class="call-to-action section dark-background my-5">
+    <section id="call-to-action" class="call-to-action section dark-background padding-vert">
 
         <div class="container">
             <img src="assets/img/cta-bg.jpg" alt="">
@@ -356,7 +356,7 @@
 
 
     <!-- Services Section -->
-    <section id="services" class="services section my-5">
+    <section id="services" class="services section padding-vert">
 
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
@@ -455,7 +455,7 @@
 
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials section my-10">
+    <section id="testimonials" class="testimonials section padding-vert">
 
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
@@ -594,7 +594,7 @@
 
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio section my-5">
+    <section id="portfolio" class="portfolio section padding-vert">
 
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
@@ -771,7 +771,7 @@
 
 
     <!-- Team Section -->
-    <section id="team" class="team section my-5">
+    <section id="team" class="team section padding-vert">
 
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
@@ -848,7 +848,7 @@
 
 
     <!-- Pricing Section -->
-    <section id="pricing" class="pricing section my-5">
+    <section id="pricing" class="pricing section padding-vert">
 
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
@@ -923,7 +923,7 @@
 
 
     <!-- Faq Section -->
-    <section id="faq" class="faq section my-5">
+    <section id="faq" class="faq section padding-vert">
 
         <div class="container">
 
@@ -998,7 +998,7 @@
 
 
     <!-- Recent Posts Section -->
-    <section id="recent-posts" class="recent-posts section my-5">
+    <section id="recent-posts" class="recent-posts section padding-vert">
 
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
@@ -1099,7 +1099,7 @@
 
 
     <!-- Contact Section -->
-    <section id="contact" class="contact section my-5">
+    <section id="contact" class="contact section padding-vert">
 
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">

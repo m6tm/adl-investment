@@ -1,7 +1,9 @@
+@import url(../utils.css);
+
 /*--------------------------------------------------------------
-# Global Footer
---------------------------------------------------------------*/
-.footer {
+  # Global Footer
+  --------------------------------------------------------------*/
+  .footer {
     color: var(--default-color);
     background-color: black;
     font-size: 14px;
@@ -115,3 +117,4 @@
     margin-top: 4px;
     font-size: 13px;
   }
+  

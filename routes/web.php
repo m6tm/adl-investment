@@ -32,18 +32,7 @@ Route::get('/', function () {
 
 
 // Route vers les fichiers du site
-Route::get('/blog', function () {
-    return view('pages.blog.blog');
-});
 
-Route::get('/blog-details', function () {
-    return view('pages.blog.blog-details');
-});
-
-Route::get('/service-details', function () {
-    return view('pages.service-details');
-});
-
-Route::get('/portfolio-details', function () {
-    return view('pages.portfolio-details');
-});
+// Route::get('/service-details', function () {
+//     return view('pages.service-details');
+// });

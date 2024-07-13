@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="{{ asset('assets/css/partials/header.css') }}">
+
 <header id="header" class="header fixed-top">
   <div class="topbar d-flex align-items-center">
     <div class="container d-flex justify-content-center justify-content-md-between">
@@ -31,11 +32,7 @@
               <li><a href="#">About Us </a></li>
               <li class="dropdown"><a href="#"><span>Agents</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
-                  <li><a href="#">El 1</a></li>
-                  <li><a href="#">El 2</a></li>
-                  <li><a href="#">El 3</a></li>
-                  <li><a href="#">El 4</a></li>
-                  <li><a href="#">El 5</a></li>
+                  <li><a href="#"></a></li>
                 </ul>
               </li>
               <li><a href="#">Contact Us</a></li>
@@ -44,9 +41,7 @@
             </ul>
           </li>
           <li><a href="#services">Services</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
           <li><a href="#team">Team</a></li>
-          <li><a href="{{ url('/blog') }}">Blog</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>

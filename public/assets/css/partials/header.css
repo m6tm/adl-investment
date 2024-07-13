@@ -1,15 +1,4 @@
-
-/*--------------------------------------------------------------
-# Global Header
---------------------------------------------------------------*/
-.header {
-    /* --background-color: #ac1010; */
-    --heading-color: #ffffff;
-    color: var(--default-color);
-    transition: all 0.5s;
-    z-index: 997;
-    background-color: black;
-  }
+@import url(../utils.css);
   
   .header .topbar {
     background-color: color-mix(in srgb, var(--accent-color) 90%, black 10%);
@@ -91,12 +80,11 @@
     box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);
   }
   
-
   /*--------------------------------------------------------------
-# Navigation Menu
---------------------------------------------------------------*/
-/* Desktop Navigation */
-@media (min-width: 1200px) {
+  # Navigation Menu
+  --------------------------------------------------------------*/
+  /* Desktop Navigation */
+  @media (min-width: 1200px) {
     .navmenu {
       padding: 0;
     }
