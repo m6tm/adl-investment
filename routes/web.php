@@ -33,6 +33,6 @@ Route::get('/', function () {
 
 // Route vers les fichiers du site
 
-// Route::get('/service-details', function () {
-//     return view('pages.service-details');
-// });
+Route::get('/service-details', function () {
+    return view('pages.service-details');
+});

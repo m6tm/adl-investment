@@ -1,5 +1,7 @@
 @extends('layout.app')
 
+<link rel="stylesheet" href="{{ asset('assets/css/pages/home.css') }}">
+
 @section('content')
 <!-- Page Title -->
 <div class="page-title">

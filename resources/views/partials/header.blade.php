@@ -32,12 +32,10 @@
               <li><a href="#">About Us </a></li>
               <li class="dropdown"><a href="#"><span>Agents</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
-                  <li><a href="#"></a></li>
+                  <li><a href="#">El1</a></li>
                 </ul>
               </li>
-              <li><a href="#">Contact Us</a></li>
-              <li><a href="#">Terms 3</a></li>
-              <li><a href="#">Galley 4</a></li>
+              <li><a href="#">El1</a></li>
             </ul>
           </li>
           <li><a href="#services">Services</a></li>
