@@ -27,17 +27,8 @@
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="{{ url('/home') }}" class="active">Home<br></a></li>
-          <li class="dropdown"><a href="#about"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="#">About Us </a></li>
-              <li class="dropdown"><a href="#"><span>Agents</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">El1</a></li>
-                </ul>
-              </li>
-              <li><a href="#">El1</a></li>
-            </ul>
-          </li>
+          
+          <li><a href="#about">About Us</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#team">Team</a></li>
           <li><a href="#contact">Contact</a></li>
