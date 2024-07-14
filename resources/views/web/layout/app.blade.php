@@ -2,20 +2,20 @@
 <html lang="en">
 
 <head>
-  @include('links-head.css-link')
+  @include('web.links-head.css-link')
 </head>
 
 <body class="index-page">
-    <header>
-        @include('partials.header')
-    </header id="header" class="header fixed-top">
+    <header id="header" class="header fixed-top">
+        @include('web.partials.header')
+    </header>
     <main class="main">
         {{-- HERO SECTION    --}}
         @yield('content')
     </main>
     
     <footer id="footer" class="footer accent-background">
-        @include('partials.footer')
+        @include('web.partials.footer')
     </footer>
 
     <!-- Scroll Top -->
@@ -24,7 +24,7 @@
   <!-- Preloader -->
   {{-- <div id="preloader"></div> --}}
         {{-- Importation de tous les fichiers JS utilisés dans l'application  --}}
-    @include('links-head.js-link')
+    @include('web.links-head.js-link')
 </body>
 
 </html>

@@ -1,5 +1,5 @@
 <!-- resources/views/home/home.blade.php -->
-@extends('layout.app')
+@extends('web.layout.app')
 
 <link rel="stylesheet" href="{{ asset('assets/css/pages/home.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/css/pages/card.css') }}">
@@ -9,127 +9,125 @@
     <!-- Hero Section -->
     <section id="hero" class="hero section accent-background">
 
-      <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
-          <div class="row gy-5 justify-content-between">
-              <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
-                  <h2><span>Welcome to </span><span class="accent">ADL </span></h2>
-                  <p class="hero-text">Plongez dans l'univers excitant du jeu en ligne ADL et tentez votre chance avec
-                      notre système de tirage de roue unique!</p>
-                  <div class="d-flex">
-                      <a href="#" class="btn-get-started">Achetez un Ticket</a>
-                      <a href="#" class="glightbox btn-watch-video d-flex align-items-center"><i
-                              class="bi bi-play-circle"></i><span>Tutoriel</span></a>
-                  </div>
-              </div>
-              <div class="col-lg-5 order-1 order-lg-2">
-                  <img src="assets/img/index-illus.png" class="img-fluid" alt="">
-              </div>
-          </div>
-      </div>
-  
-      <div class="icon-boxes position-relative py-5" data-aos="fade-up" data-aos-delay="200">
-          <div class="container position-relative">
-              <div class="row gy-4 mt-5">
-                  <div class="col-xl-3 col-md-6">
-                      <article>
-                          <div class="article-wrapper align-items-center">
-                              {{-- <figure>
+        <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+            <div class="row gy-5 justify-content-between">
+                <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
+                    <h2><span>Welcome to </span><span class="accent">ADL </span></h2>
+                    <p class="hero-text">Plongez dans l'univers excitant du jeu en ligne ADL et tentez votre chance avec
+                        notre système de tirage de roue unique!</p>
+                    <div class="d-flex">
+                        <a href="#" class="btn-get-started">Achetez un Ticket</a>
+                        <a href="#" class="glightbox btn-watch-video d-flex align-items-center"><i
+                                class="bi bi-play-circle"></i><span>Tutoriel</span></a>
+                    </div>
+                </div>
+                <div class="col-lg-5 order-1 order-lg-2">
+                    <img src="assets/img/index-illus.png" class="img-fluid" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="icon-boxes position-relative py-5" data-aos="fade-up" data-aos-delay="200">
+            <div class="container position-relative">
+                <div class="row gy-4 mt-5">
+                    <div class="col-xl-3 col-md-6">
+                        <article>
+                            <div class="article-wrapper align-items-center">
+                                {{-- <figure>
                         <img src="assets/img/blog/blog-1.jpg" alt="" />
                       </figure> --}}
-                              <div class="article-body">
-                                  <h2 class="article-title">Forfait 3 Jours</h2>
-                                  <h5 class="text-white">
-                                      10/Jours
-                                  </h5>
-                                  <p>
-                                      Participez à des tirages quotidiens pendant 3 jours et gagnez gros!
-                                  </p>
-                                  <a href="#" class="btn btn-light align-item-center">
-                                      Participer<span class="sr-only"></span>
-                                  </a>
-                              </div>
-                          </div>
-                      </article>
-                  </div>
-                  <!-- End of Card  -->
-  
-                  <div class="col-xl-3 col-md-6">
-                      <article>
-                          <div class="article-wrapper align-items-center">
-                              <!-- <figure>
-                          <img src="assets/img/blog/blog-2.jpg" alt="" />
-                        </figure> -->
-                              <div class="article-body">
-                                  <h2 class="article-title">Forfait 1 semaine</h2>
-                                  <h5 class="text-white">
-                                      25/Jours
-                                  </h5>
-                                  <p>
-                                      Profitez d'une semaine complète de divertissement et de gains sur ADL!
-                                  </p>
-                                  <a href="#" class="btn btn-light align-item-center">
-                                      Participer<span class="sr-only"></span>
-                                  </a>
-                              </div>
-                          </div>
-                      </article>
-                  </div>
-                  <!-- End of Card  -->
-  
-                  <div class="col-xl-3 col-md-6">
-                      <article>
-                          <div class="article-wrapper align-items-center">
-                              <!-- <figure>
-                            <img src="assets/img/blog/blog-3.jpg" alt="" />
-                          </figure> -->
-                              <div class="article-body">
-                                  <h2 class="article-title">Forfait 1 mois</h2>
-                                  <h5 class="text-white">
-                                      80/Jours
-                                  </h5>
-                                  <p>
-                                      Accédez à un mois entier de tirages exclusifs et de prix sensationnels!
-                                  </p>
-                                  <a href="#" class="btn btn-light align-item-center">
-                                      Participer<span class="sr-only"></span>
-                                  </a>
-                              </div>
-                          </div>
-                      </article>
-                  </div>
-                  <!-- End of Card  -->
-  
-                  <div class="col-xl-3 col-md-6">
-                      <article>
-                          <div class="article-wrapper align-items-center">
-                              <!-- <figure>
-                              <img src="assets/img/blog/blog-4.jpg" alt="" />
-                            </figure> -->
-                              <div class="article-body">
-                                  <h2 class="article-title">VIP Illimité</h2>
-                                  <h5 class="text-white">
-                                      150/Jours
-                                  </h5>
-                                  <p>
-                                      Devenez un VIP avec un accès illimité à nos services
-                                  </p>
-                                  <a href="#" class="btn btn-light align-item-center">
-                                      Participer<span class="sr-only"></span>
-                                  </a>
-                              </div>
-                          </div>
-                      </article>
-                  </div>
-                  <!-- End of Card  -->
-  
-              </div>
-          </div>
-      </div>
-  
-  
-  </section><!-- /Hero Section -->
+                                <div class="article-body">
+                                    <h2 class="article-title">Forfait 3 Jours</h2>
+                                    <h5 class="text-white">
+                                        10/Jours
+                                    </h5>
+                                    <p>
+                                        Participez à des tirages quotidiens pendant 3 jours et gagnez gros!
+                                    </p>
+                                    <a href="#" class="btn btn-light align-item-center">
+                                        Participer<span class="sr-only"></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <!-- End of Card  -->
+
+                    <div class="col-xl-3 col-md-6">
+                        <article>
+                            <div class="article-wrapper align-items-center">
+                                <!-- <figure>
+                                  <img src="assets/img/blog/blog-2.jpg" alt="" />
+                                </figure> -->
+                                <div class="article-body">
+                                    <h2 class="article-title">Forfait 1 semaine</h2>
+                                    <h5 class="text-white">
+                                        25/Jours
+                                    </h5>
+                                    <p>
+                                        Profitez d'une semaine complète de divertissement et de gains sur ADL!
+                                    </p>
+                                    <a href="#" class="btn btn-light align-item-center">
+                                        Participer<span class="sr-only"></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <!-- End of Card  -->
+
+                    <div class="col-xl-3 col-md-6">
+                        <article>
+                            <div class="article-wrapper align-items-center">
+                                <!-- <figure>
+                                    <img src="assets/img/blog/blog-3.jpg" alt="" />
+                                  </figure> -->
+                                <div class="article-body">
+                                    <h2 class="article-title">Forfait 1 mois</h2>
+                                    <h5 class="text-white">
+                                        80/Jours
+                                    </h5>
+                                    <p>
+                                        Accédez à un mois entier de tirages exclusifs et de prix sensationnels!
+                                    </p>
+                                    <a href="#" class="btn btn-light align-item-center">
+                                        Participer<span class="sr-only"></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <!-- End of Card  -->
+
+                    <div class="col-xl-3 col-md-6">
+                        <article>
+                            <div class="article-wrapper align-items-center">
+                                <!-- <figure>
+                                      <img src="assets/img/blog/blog-4.jpg" alt="" />
+                                    </figure> -->
+                                <div class="article-body">
+                                    <h2 class="article-title">VIP Illimité</h2>
+                                    <h5 class="text-white">
+                                        150/Jours
+                                    </h5>
+                                    <p>
+                                        Devenez un VIP avec un accès illimité à nos services
+                                    </p>
+                                    <a href="#" class="btn btn-light align-item-center">
+                                        Participer<span class="sr-only"></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <!-- End of Card  -->
+
+                </div>
+            </div>
+        </div>
 
 
+    </section><!-- /Hero Section -->
 
     <!-- About Section -->
     <section id="about" class="about section padding-vert">
@@ -188,9 +186,6 @@
         </div>
 
     </section><!-- /About Section -->
-
-
-
 
     <!-- Clients Section -->
     <section id="clients" class="clients section padding-vert">
@@ -254,10 +249,6 @@
         </div>
 
     </section><!-- /Clients Section -->
-
-
-
-
 
     <!-- Stats Section -->
     <section id="stats" class="stats section padding-vert">
@@ -328,9 +319,6 @@
 
     </section><!-- /Stats Section -->
 
-
-
-
     <!-- Call To Action Section -->
     <section id="call-to-action" class="call-to-action section dark-background padding-vert">
 
@@ -351,9 +339,6 @@
         </div>
 
     </section><!-- /Call To Action Section -->
-
-
-
 
     <!-- Services Section -->
     <section id="services" class="services section padding-vert">
@@ -376,7 +361,7 @@
                         <h3>Nesciunt Mete</h3>
                         <p>Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores iure
                             perferendis tempore et consequatur.</p>
-                        <a href="{{ url('service-details') }}" class="readmore stretched-link">Read more <i
+                        <a href="{{ route('load.page', 'services-details') }}" class="readmore stretched-link">Read more <i
                                 class="bi bi-arrow-right"></i></a>
                     </div>
                 </div><!-- End Service Item -->
@@ -389,7 +374,7 @@
                         <h3>Eosle Commodi</h3>
                         <p>Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non
                             ut nesciunt dolorem.</p>
-                        <a href="{{ url('service-details') }}" class="readmore stretched-link">Read more <i
+                        <a href="{{ route('load.page', 'services-details') }}" class="readmore stretched-link">Read more <i
                                 class="bi bi-arrow-right"></i></a>
                     </div>
                 </div><!-- End Service Item -->
@@ -402,7 +387,7 @@
                         <h3>Ledo Markt</h3>
                         <p>Ut excepturi voluptatem nisi sed. Quidem fuga consequatur. Minus ea aut. Vel qui id voluptas
                             adipisci eos earum corrupti.</p>
-                        <a href="{{ url('service-details') }}" class="readmore stretched-link">Read more <i
+                        <a href="{{ route('load.page', 'services-details') }}" class="readmore stretched-link">Read more <i
                                 class="bi bi-arrow-right"></i></a>
                     </div>
                 </div><!-- End Service Item -->
@@ -415,7 +400,7 @@
                         <h3>Asperiores Commodit</h3>
                         <p>Non et temporibus minus omnis sed dolor esse consequatur. Cupiditate sed error ea fuga sit
                             provident adipisci neque.</p>
-                        <a href="{{ url('service-details') }}" class="readmore stretched-link">Read more <i
+                        <a href="{{ route('load.page', 'services-details') }}" class="readmore stretched-link">Read more <i
                                 class="bi bi-arrow-right"></i></a>
                     </div>
                 </div><!-- End Service Item -->
@@ -428,7 +413,7 @@
                         <h3>Velit Doloremque</h3>
                         <p>Cumque et suscipit saepe. Est maiores autem enim facilis ut aut ipsam corporis aut. Sed animi at
                             autem alias eius labore.</p>
-                        <a href="{{ url('service-details') }}" class="readmore stretched-link">Read more <i
+                        <a href="{{ route('load.page', 'services-details') }}" class="readmore stretched-link">Read more <i
                                 class="bi bi-arrow-right"></i></a>
                     </div>
                 </div><!-- End Service Item -->
@@ -441,7 +426,7 @@
                         <h3>Dolori Architecto</h3>
                         <p>Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque non et debitis iure. Corrupti
                             recusandae ducimus enim.</p>
-                        <a href="{{ url('service-details') }}" class="readmore stretched-link">Read more <i
+                        <a href="{{ route('load.page', 'services-details') }}" class="readmore stretched-link">Read more <i
                                 class="bi bi-arrow-right"></i></a>
                     </div>
                 </div><!-- End Service Item -->
@@ -451,8 +436,6 @@
         </div>
 
     </section><!-- /Services Section -->
-
-
 
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials section padding-vert">
@@ -523,7 +506,8 @@
                             </div>
                             <p>
                                 <i class="bi bi-quote quote-icon-left"></i>
-                                <span>Je ne peux plus m'arrêter de jouer sur ADL. C'est addictif et tellement amusant!</span>
+                                <span>Je ne peux plus m'arrêter de jouer sur ADL. C'est addictif et tellement
+                                    amusant!</span>
                                 <i class="bi bi-quote quote-icon-right"></i>
                             </p>
                         </div>
@@ -577,7 +561,8 @@
                             </div>
                             <p>
                                 <i class="bi bi-quote quote-icon-left"></i>
-                                <span>ADL est la meilleure plateforme de jeu en ligne que j'ai jamais utilisée. Des gains incroyables!</span>
+                                <span>ADL est la meilleure plateforme de jeu en ligne que j'ai jamais utilisée. Des gains
+                                    incroyables!</span>
                                 <i class="bi bi-quote quote-icon-right"></i>
                             </p>
                         </div>
@@ -591,8 +576,180 @@
 
     </section><!-- /Testimonials Section -->
 
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio section">
 
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Portfolio</h2>
+            <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        </div><!-- End Section Title -->
 
+        <div class="container">
+
+            <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+                <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+                    <li data-filter="*" class="filter-active">All</li>
+                    <li data-filter=".filter-app">App</li>
+                    <li data-filter=".filter-product">Product</li>
+                    <li data-filter=".filter-branding">Branding</li>
+                    <li data-filter=".filter-books">Books</li>
+                </ul><!-- End Portfolio Filters -->
+
+                <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+
+                    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+                        <div class="portfolio-content h-100">
+                            <a href="assets/img/portfolio/app-1.jpg" data-gallery="portfolio-gallery-app"
+                                class="glightbox"><img src="assets/img/portfolio/app-1.jpg" class="img-fluid"
+                                    alt=""></a>
+                            <div class="portfolio-info">
+                                <h4><a href="{{ route('load.page', 'portfolio-details') }}" title="More Details">App 1</a></h4>
+                                <p>Lorem ipsum, dolor sit amet consectetur</p>
+                            </div>
+                        </div>
+                    </div><!-- End Portfolio Item -->
+
+                    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+                        <div class="portfolio-content h-100">
+                            <a href="assets/img/portfolio/product-1.jpg" data-gallery="portfolio-gallery-app"
+                                class="glightbox"><img src="assets/img/portfolio/product-1.jpg" class="img-fluid"
+                                    alt=""></a>
+                            <div class="portfolio-info">
+                                <h4><a href="{{ route('load.page', 'portfolio-details') }}" title="More Details">Product 1</a></h4>
+                                <p>Lorem ipsum, dolor sit amet consectetur</p>
+                            </div>
+                        </div>
+                    </div><!-- End Portfolio Item -->
+
+                    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+                        <div class="portfolio-content h-100">
+                            <a href="assets/img/portfolio/branding-1.jpg" data-gallery="portfolio-gallery-app"
+                                class="glightbox"><img src="assets/img/portfolio/branding-1.jpg" class="img-fluid"
+                                    alt=""></a>
+                            <div class="portfolio-info">
+                                <h4><a href="{{ route('load.page', 'portfolio-details') }}" title="More Details">Branding 1</a></h4>
+                                <p>Lorem ipsum, dolor sit amet consectetur</p>
+                            </div>
+                        </div>
+                    </div><!-- End Portfolio Item -->
+
+                    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
+                        <div class="portfolio-content h-100">
+                            <a href="assets/img/portfolio/books-1.jpg" data-gallery="portfolio-gallery-app"
+                                class="glightbox"><img src="assets/img/portfolio/books-1.jpg" class="img-fluid"
+                                    alt=""></a>
+                            <div class="portfolio-info">
+                                <h4><a href="{{ route('load.page', 'portfolio-details') }}" title="More Details">Books 1</a></h4>
+                                <p>Lorem ipsum, dolor sit amet consectetur</p>
+                            </div>
+                        </div>
+                    </div><!-- End Portfolio Item -->
+
+                    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+                        <div class="portfolio-content h-100">
+                            <a href="assets/img/portfolio/app-2.jpg" data-gallery="portfolio-gallery-app"
+                                class="glightbox"><img src="assets/img/portfolio/app-2.jpg" class="img-fluid"
+                                    alt=""></a>
+                            <div class="portfolio-info">
+                                <h4><a href="{{ route('load.page', 'portfolio-details') }}" title="More Details">App 2</a></h4>
+                                <p>Lorem ipsum, dolor sit amet consectetur</p>
+                            </div>
+                        </div>
+                    </div><!-- End Portfolio Item -->
+
+                    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+                        <div class="portfolio-content h-100">
+                            <a href="assets/img/portfolio/product-2.jpg" data-gallery="portfolio-gallery-app"
+                                class="glightbox"><img src="assets/img/portfolio/product-2.jpg" class="img-fluid"
+                                    alt=""></a>
+                            <div class="portfolio-info">
+                                <h4><a href="{{ route('load.page', 'portfolio-details') }}" title="More Details">Product 2</a></h4>
+                                <p>Lorem ipsum, dolor sit amet consectetur</p>
+                            </div>
+                        </div>
+                    </div><!-- End Portfolio Item -->
+
+                    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+                        <div class="portfolio-content h-100">
+                            <a href="assets/img/portfolio/branding-2.jpg" data-gallery="portfolio-gallery-app"
+                                class="glightbox"><img src="assets/img/portfolio/branding-2.jpg" class="img-fluid"
+                                    alt=""></a>
+                            <div class="portfolio-info">
+                                <h4><a href="{{ route('load.page', 'portfolio-details') }}" title="More Details">Branding 2</a></h4>
+                                <p>Lorem ipsum, dolor sit amet consectetur</p>
+                            </div>
+                        </div>
+                    </div><!-- End Portfolio Item -->
+
+                    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
+                        <div class="portfolio-content h-100">
+                            <a href="assets/img/portfolio/books-2.jpg" data-gallery="portfolio-gallery-app"
+                                class="glightbox"><img src="assets/img/portfolio/books-2.jpg" class="img-fluid"
+                                    alt=""></a>
+                            <div class="portfolio-info">
+                                <h4><a href="{{ route('load.page', 'portfolio-details') }}" title="More Details">Books 2</a></h4>
+                                <p>Lorem ipsum, dolor sit amet consectetur</p>
+                            </div>
+                        </div>
+                    </div><!-- End Portfolio Item -->
+
+                    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+                        <div class="portfolio-content h-100">
+                            <a href="assets/img/portfolio/app-3.jpg" data-gallery="portfolio-gallery-app"
+                                class="glightbox"><img src="assets/img/portfolio/app-3.jpg" class="img-fluid"
+                                    alt=""></a>
+                            <div class="portfolio-info">
+                                <h4><a href="{{ route('load.page', 'portfolio-details') }}" title="More Details">App 3</a></h4>
+                                <p>Lorem ipsum, dolor sit amet consectetur</p>
+                            </div>
+                        </div>
+                    </div><!-- End Portfolio Item -->
+
+                    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+                        <div class="portfolio-content h-100">
+                            <a href="assets/img/portfolio/product-3.jpg" data-gallery="portfolio-gallery-app"
+                                class="glightbox"><img src="assets/img/portfolio/product-3.jpg" class="img-fluid"
+                                    alt=""></a>
+                            <div class="portfolio-info">
+                                <h4><a href="{{ route('load.page', 'portfolio-details') }}" title="More Details">Product 3</a></h4>
+                                <p>Lorem ipsum, dolor sit amet consectetur</p>
+                            </div>
+                        </div>
+                    </div><!-- End Portfolio Item -->
+
+                    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+                        <div class="portfolio-content h-100">
+                            <a href="assets/img/portfolio/branding-3.jpg" data-gallery="portfolio-gallery-app"
+                                class="glightbox"><img src="assets/img/portfolio/branding-3.jpg" class="img-fluid"
+                                    alt=""></a>
+                            <div class="portfolio-info">
+                                <h4><a href="{{ route('load.page', 'portfolio-details') }}" title="More Details">Branding 3</a></h4>
+                                <p>Lorem ipsum, dolor sit amet consectetur</p>
+                            </div>
+                        </div>
+                    </div><!-- End Portfolio Item -->
+
+                    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
+                        <div class="portfolio-content h-100">
+                            <a href="assets/img/portfolio/books-3.jpg" data-gallery="portfolio-gallery-app"
+                                class="glightbox"><img src="assets/img/portfolio/books-3.jpg" class="img-fluid"
+                                    alt=""></a>
+                            <div class="portfolio-info">
+                                <h4><a href="{{ route('load.page', 'portfolio-details') }}" title="More Details">Books 3</a></h4>
+                                <p>Lorem ipsum, dolor sit amet consectetur</p>
+                            </div>
+                        </div>
+                    </div><!-- End Portfolio Item -->
+
+                </div><!-- End Portfolio Container -->
+
+            </div>
+
+        </div>
+
+    </section><!-- /Portfolio Section -->
 
     <!-- Team Section -->
     <section id="team" class="team section padding-vert">
@@ -669,8 +826,6 @@
 
     </section><!-- /Team Section -->
 
-
-
     <!-- Pricing Section -->
     <section id="pricing" class="pricing section padding-vert">
 
@@ -745,7 +900,6 @@
 
     </section><!-- /Pricing Section -->
 
-
     <!-- Faq Section -->
     <section id="faq" class="faq section padding-vert">
 
@@ -770,7 +924,8 @@
                             <h3><span class="num">1.</span> <span>Comment participer aux tirages ?</span>
                             </h3>
                             <div class="faq-content">
-                                <p>Pour participer, choisissez votre type de tirage, achetez des tickets et attendez le tirage!</p>
+                                <p>Pour participer, choisissez votre type de tirage, achetez des tickets et attendez le
+                                    tirage!</p>
                             </div>
                             <i class="faq-toggle bi bi-chevron-right"></i>
                         </div><!-- End Faq item-->
@@ -796,9 +951,11 @@
                         </div><!-- End Faq item-->
 
                         <div class="faq-item">
-                            <h3><span class="num">4.</span> <span>Quelle est la durée de validité des tickets?</span></h3>
+                            <h3><span class="num">4.</span> <span>Quelle est la durée de validité des tickets?</span>
+                            </h3>
                             <div class="faq-content">
-                                <p>La validité des tickets varie en fonction du type choisi: 3 jours, 1 semaine ou 1 mois.</p>
+                                <p>La validité des tickets varie en fonction du type choisi: 3 jours, 1 semaine ou 1 mois.
+                                </p>
                             </div>
                             <i class="faq-toggle bi bi-chevron-right"></i>
                         </div><!-- End Faq item-->
@@ -806,7 +963,8 @@
                         <div class="faq-item">
                             <h3><span class="num">5.</span> <span>Comment valider mon accès à la plateforme?</span></h3>
                             <div class="faq-content">
-                                <p>La validité des tickets varie en fonction du type choisi: 3 jours, 1 semaine ou 1 mois.</p>
+                                <p>La validité des tickets varie en fonction du type choisi: 3 jours, 1 semaine ou 1 mois.
+                                </p>
                             </div>
                             <i class="faq-toggle bi bi-chevron-right"></i>
                         </div><!-- End Faq item-->
@@ -819,7 +977,6 @@
         </div>
 
     </section><!-- /Faq Section -->
-
 
     <!-- Recent Posts Section -->
     <section id="recent-posts" class="recent-posts section padding-vert">
@@ -920,7 +1077,6 @@
         </div>
 
     </section><!-- /Recent Posts Section -->
-
 
     <!-- Contact Section -->
     <section id="contact" class="contact section padding-vert">
