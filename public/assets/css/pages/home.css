@@ -1361,3 +1361,85 @@
   .contact .php-email-form button[type=submit]:hover {
     background: color-mix(in srgb, var(--accent-color), transparent 20%);
   }
+
+  .how-works::before {
+    background-image: url(../../img/cta-bg.jpg);
+  }
+  .how-works .shape-area img {
+    position: absolute;
+    animation: spin 15s infinite linear;
+  }
+  .how-works .shape-area .shape-1 {
+    top: 25%;
+    right: 5%;
+    width: 55px;
+  }
+  .how-works .shape-area .shape-2 {
+    bottom: 15%;
+    left: 5%;
+  }
+  .how-works .shape-area .shape-3 {
+    bottom: 15%;
+    right: 5%;
+  }
+  .how-works .shape-area .shape-4 {
+    top: 20%;
+    left: 5%;
+    width: 30px;
+  }
+  .how-works .shape-area .shape-5 {
+    top: 8%;
+    left: 20%;
+  }
+  .how-works .shape-area .shape-6 {
+    bottom: 10%;
+    left: 3%;
+    width: 30px;
+  }
+  .how-works .shape-area .shape-7 {
+    bottom: 15%;
+    right: 10%;
+  }
+  .how-works .single-box {
+    padding: 0;
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  .how-works .single-box .icon-area img {
+    max-width: unset;
+  }
+  .how-works .scroll-line {
+    position: relative;
+    justify-content: center;
+    margin: -15px 0;
+    overflow: hidden;
+  }
+  .how-works .scroll-line::before {
+    position: absolute;
+    content: "";
+    width: 1px;
+    height: 100%;
+    left: calc(50% - 0px);
+    top: 0;
+    background: var(--border-2nd-color);
+    z-index: -1;
+  }
+  .how-works .scroll-line .point-area {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #b40a0a;
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    margin: auto;
+  }
+  .how-works .scroll-line .point-area span {
+    color: var(--bs-white);
+    font-weight: 700;
+  }
+
+  

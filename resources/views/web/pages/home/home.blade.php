@@ -37,7 +37,7 @@
                         <img src="assets/img/blog/blog-1.jpg" alt="" />
                       </figure> --}}
                                 <div class="article-body">
-                                    <h2 class="article-title">Forfait 3 Jours</h2>
+                                    <h2 class="article-title text-white fs-2">Forfait 3 Jours</h2>
                                     <h5 class="text-white">
                                         10/Jours
                                     </h5>
@@ -60,7 +60,7 @@
                                   <img src="assets/img/blog/blog-2.jpg" alt="" />
                                 </figure> -->
                                 <div class="article-body">
-                                    <h2 class="article-title">Forfait 1 semaine</h2>
+                                    <h2 class="article-title text-white fs-2">Forfait 1 semaine</h2>
                                     <h5 class="text-white">
                                         25/Jours
                                     </h5>
@@ -79,11 +79,9 @@
                     <div class="col-xl-3 col-md-6">
                         <article>
                             <div class="article-wrapper align-items-center">
-                                <!-- <figure>
-                                    <img src="assets/img/blog/blog-3.jpg" alt="" />
-                                  </figure> -->
+                              
                                 <div class="article-body">
-                                    <h2 class="article-title">Forfait 1 mois</h2>
+                                    <h2 class="article-title text-white fs-2">Forfait 1 mois</h2>
                                     <h5 class="text-white">
                                         80/Jours
                                     </h5>
@@ -102,11 +100,9 @@
                     <div class="col-xl-3 col-md-6">
                         <article>
                             <div class="article-wrapper align-items-center">
-                                <!-- <figure>
-                                      <img src="assets/img/blog/blog-4.jpg" alt="" />
-                                    </figure> -->
+                             
                                 <div class="article-body">
-                                    <h2 class="article-title">VIP Illimité</h2>
+                                    <h2 class="article-title text-white fs-2">VIP Illimité</h2>
                                     <h5 class="text-white">
                                         150/Jours
                                     </h5>
@@ -125,7 +121,6 @@
                 </div>
             </div>
         </div>
-
 
     </section><!-- /Hero Section -->
 
@@ -751,80 +746,7 @@
 
     </section><!-- /Portfolio Section -->
 
-    <!-- Team Section -->
-    <section id="team" class="team section padding-vert">
-
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-            <h2>Our Team</h2>
-            <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-        </div><!-- End Section Title -->
-
-        <div class="container">
-
-            <div class="row gy-4">
-
-                <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
-                    <div class="member">
-                        <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
-                        <h4>Walter White</h4>
-                        <span>Web Development</span>
-                        <div class="social">
-                            <a href=""><i class="bi bi-twitter-x"></i></a>
-                            <a href=""><i class="bi bi-facebook"></i></a>
-                            <a href=""><i class="bi bi-instagram"></i></a>
-                            <a href=""><i class="bi bi-linkedin"></i></a>
-                        </div>
-                    </div>
-                </div><!-- End Team Member -->
-
-                <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
-                    <div class="member">
-                        <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
-                        <h4>Sarah Jhinson</h4>
-                        <span>Marketing</span>
-                        <div class="social">
-                            <a href=""><i class="bi bi-twitter-x"></i></a>
-                            <a href=""><i class="bi bi-facebook"></i></a>
-                            <a href=""><i class="bi bi-instagram"></i></a>
-                            <a href=""><i class="bi bi-linkedin"></i></a>
-                        </div>
-                    </div>
-                </div><!-- End Team Member -->
-
-                <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
-                    <div class="member">
-                        <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
-                        <h4>William Anderson</h4>
-                        <span>Content</span>
-                        <div class="social">
-                            <a href=""><i class="bi bi-twitter-x"></i></a>
-                            <a href=""><i class="bi bi-facebook"></i></a>
-                            <a href=""><i class="bi bi-instagram"></i></a>
-                            <a href=""><i class="bi bi-linkedin"></i></a>
-                        </div>
-                    </div>
-                </div><!-- End Team Member -->
-
-                <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
-                    <div class="member">
-                        <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
-                        <h4>Amanda Jepson</h4>
-                        <span>Accountant</span>
-                        <div class="social">
-                            <a href=""><i class="bi bi-twitter-x"></i></a>
-                            <a href=""><i class="bi bi-facebook"></i></a>
-                            <a href=""><i class="bi bi-instagram"></i></a>
-                            <a href=""><i class="bi bi-linkedin"></i></a>
-                        </div>
-                    </div>
-                </div><!-- End Team Member -->
-
-            </div>
-
-        </div>
-
-    </section><!-- /Team Section -->
+   @include('web.partials.team')
 
     <!-- Pricing Section -->
     <section id="pricing" class="pricing section padding-vert">
