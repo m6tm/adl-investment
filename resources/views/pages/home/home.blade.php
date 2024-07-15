@@ -26,7 +26,7 @@
               </div>
           </div>
       </div>
-  
+
       <div class="icon-boxes position-relative py-5" data-aos="fade-up" data-aos-delay="200">
           <div class="container position-relative">
               <div class="row gy-4 mt-5">
@@ -52,7 +52,7 @@
                       </article>
                   </div>
                   <!-- End of Card  -->
-  
+
                   <div class="col-xl-3 col-md-6">
                       <article>
                           <div class="article-wrapper align-items-center">
@@ -75,7 +75,7 @@
                       </article>
                   </div>
                   <!-- End of Card  -->
-  
+
                   <div class="col-xl-3 col-md-6">
                       <article>
                           <div class="article-wrapper align-items-center">
@@ -98,7 +98,7 @@
                       </article>
                   </div>
                   <!-- End of Card  -->
-  
+
                   <div class="col-xl-3 col-md-6">
                       <article>
                           <div class="article-wrapper align-items-center">
@@ -121,12 +121,12 @@
                       </article>
                   </div>
                   <!-- End of Card  -->
-  
+
               </div>
           </div>
       </div>
-  
-  
+
+
   </section><!-- /Hero Section -->
 
 
@@ -145,7 +145,7 @@
             <div class="row gy-4">
                 <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
                     <h3>Voluptatem dignissimos provident laboris nisi ut aliquip ex ea commodo</h3>
-                    <img src="assets/img/about.jpg" class="img-fluid rounded-4 mb-4" alt="">
+                    <img src="assets/img/Free Vector _ Casino games design.jpg" class="img-fluid rounded-4 mb-4" alt="">
                     <p>Bienvenue sur ADL, la plateforme de jeu en ligne révolutionnaire basée sur des tirages de roue!
                         Notre mission est de fournir une expérience de jeu unique et sécurisée à nos utilisateurs.
                         Rejoignez-nous pour des tirages palpitants et des gains incroyables!</p>
@@ -178,7 +178,7 @@
                         </p>
 
                         <div class="position-relative mt-4">
-                            <img src="assets/img/about-2.jpg" class="img-fluid rounded-4" alt="">
+                            <img src="assets/img/Best Casino Roulette Games.jpg" class="img-fluid rounded-4" alt="">
                             <a href="assets/img/Nobody -「AMV」- Anime MV.mp4" class="glightbox pulsating-play-btn"></a>
                         </div>
                     </div>
@@ -335,7 +335,7 @@
     <section id="call-to-action" class="call-to-action section dark-background padding-vert">
 
         <div class="container">
-            <img src="assets/img/cta-bg.jpg" alt="">
+            <img src="assets/img/agent alice.jpg" alt="">
             <div class="content row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
                 <div class="col-xl-10">
                     <div class="text-center">
@@ -618,8 +618,8 @@
 
                     <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
                         <div class="portfolio-content h-100">
-                            <a href="assets/img/portfolio/app-1.jpg" data-gallery="portfolio-gallery-app"
-                                class="glightbox"><img src="assets/img/portfolio/app-1.jpg" class="img-fluid"
+                            <a href="assets/img/télécharger.jpg" data-gallery="portfolio-gallery-app"
+                                class="glightbox"><img src="assets/img/télécharger.jpg" class="img-fluid"
                                     alt=""></a>
                             <div class="portfolio-info">
                                 <h4><a href="{{ url('/portfolio-details') }}" title="More Details">App 1</a></h4>
@@ -630,8 +630,8 @@
 
                     <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
                         <div class="portfolio-content h-100">
-                            <a href="assets/img/portfolio/product-1.jpg" data-gallery="portfolio-gallery-app"
-                                class="glightbox"><img src="assets/img/portfolio/product-1.jpg" class="img-fluid"
+                            <a href="assets/img/ordinateur.jpg" data-gallery="portfolio-gallery-app"
+                                class="glightbox"><img src="assets/img/ordinateur.jpg" class="img-fluid"
                                     alt=""></a>
                             <div class="portfolio-info">
                                 <h4><a href="{{ url('/portfolio-details') }}" title="More Details">Product 1</a></h4>
@@ -642,8 +642,8 @@
 
                     <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
                         <div class="portfolio-content h-100">
-                            <a href="assets/img/portfolio/branding-1.jpg" data-gallery="portfolio-gallery-app"
-                                class="glightbox"><img src="assets/img/portfolio/branding-1.jpg" class="img-fluid"
+                            <a href="assets/img/portfolio/winroma.jpg" data-gallery="portfolio-gallery-app"
+                                class="glightbox"><img src="assets/img/portfolio/winroma.jpg" class="img-fluid"
                                     alt=""></a>
                             <div class="portfolio-info">
                                 <h4><a href="{{ url('/portfolio-details') }}" title="More Details">Branding 1</a></h4>
@@ -654,8 +654,8 @@
 
                     <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
                         <div class="portfolio-content h-100">
-                            <a href="assets/img/portfolio/books-1.jpg" data-gallery="portfolio-gallery-app"
-                                class="glightbox"><img src="assets/img/portfolio/books-1.jpg" class="img-fluid"
+                            <a href="assets/img/portfolio/telephone master.jpg" data-gallery="portfolio-gallery-app"
+                                class="glightbox"><img src="assets/img/portfolio/telephone master.jpg" class="img-fluid"
                                     alt=""></a>
                             <div class="portfolio-info">
                                 <h4><a href="{{ url('/portfolio-details') }}" title="More Details">Books 1</a></h4>
@@ -666,8 +666,8 @@
 
                     <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
                         <div class="portfolio-content h-100">
-                            <a href="assets/img/portfolio/app-2.jpg" data-gallery="portfolio-gallery-app"
-                                class="glightbox"><img src="assets/img/portfolio/app-2.jpg" class="img-fluid"
+                            <a href="assets/img/portfolio/Best Casino Roulette Games.jpg" data-gallery="portfolio-gallery-app"
+                                class="glightbox"><img src="assets/img/portfolio/Best Casino Roulette Games.jpg" class="img-fluid"
                                     alt=""></a>
                             <div class="portfolio-info">
                                 <h4><a href="{{ url('/portfolio-details') }}" title="More Details">App 2</a></h4>
@@ -678,8 +678,8 @@
 
                     <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
                         <div class="portfolio-content h-100">
-                            <a href="assets/img/portfolio/product-2.jpg" data-gallery="portfolio-gallery-app"
-                                class="glightbox"><img src="assets/img/portfolio/product-2.jpg" class="img-fluid"
+                            <a href="assets/img/portfolio/Casino.jpg" data-gallery="portfolio-gallery-app"
+                                class="glightbox"><img src="assets/img/portfolio/Casino.jpg" class="img-fluid"
                                     alt=""></a>
                             <div class="portfolio-info">
                                 <h4><a href="{{ url('/portfolio-details') }}" title="More Details">Product 2</a></h4>
@@ -690,8 +690,8 @@
 
                     <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
                         <div class="portfolio-content h-100">
-                            <a href="assets/img/portfolio/branding-2.jpg" data-gallery="portfolio-gallery-app"
-                                class="glightbox"><img src="assets/img/portfolio/branding-2.jpg" class="img-fluid"
+                            <a href="assets/img/portfolio/telephone.jpg" data-gallery="portfolio-gallery-app"
+                                class="glightbox"><img src="assets/img/portfolio/telephone.jpg" class="img-fluid"
                                     alt=""></a>
                             <div class="portfolio-info">
                                 <h4><a href="{{ url('/portfolio-details') }}" title="More Details">Branding 2</a></h4>
@@ -702,8 +702,8 @@
 
                     <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
                         <div class="portfolio-content h-100">
-                            <a href="assets/img/portfolio/books-2.jpg" data-gallery="portfolio-gallery-app"
-                                class="glightbox"><img src="assets/img/portfolio/books-2.jpg" class="img-fluid"
+                            <a href="assets/img/portfolio/casino best.jpg" data-gallery="portfolio-gallery-app"
+                                class="glightbox"><img src="assets/img/portfolio/casino best.jpg" class="img-fluid"
                                     alt=""></a>
                             <div class="portfolio-info">
                                 <h4><a href="{{ url('/portfolio-details') }}" title="More Details">Books 2</a></h4>
@@ -714,8 +714,8 @@
 
                     <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
                         <div class="portfolio-content h-100">
-                            <a href="assets/img/portfolio/app-3.jpg" data-gallery="portfolio-gallery-app"
-                                class="glightbox"><img src="assets/img/portfolio/app-3.jpg" class="img-fluid"
+                            <a href="assets/img/portfolio/casino en ligne.jpg" data-gallery="portfolio-gallery-app"
+                                class="glightbox"><img src="assets/img/portfolio/casino en ligne.jpg" class="img-fluid"
                                     alt=""></a>
                             <div class="portfolio-info">
                                 <h4><a href="{{ url('/portfolio-details') }}" title="More Details">App 3</a></h4>
@@ -726,8 +726,8 @@
 
                     <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
                         <div class="portfolio-content h-100">
-                            <a href="assets/img/portfolio/product-3.jpg" data-gallery="portfolio-gallery-app"
-                                class="glightbox"><img src="assets/img/portfolio/product-3.jpg" class="img-fluid"
+                            <a href="assets/img/portfolio/casino jeton.jpg" data-gallery="portfolio-gallery-app"
+                                class="glightbox"><img src="assets/img/portfolio/casino jeton.jpg" class="img-fluid"
                                     alt=""></a>
                             <div class="portfolio-info">
                                 <h4><a href="{{ url('/portfolio-details') }}" title="More Details">Product 3</a></h4>
@@ -738,8 +738,8 @@
 
                     <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
                         <div class="portfolio-content h-100">
-                            <a href="assets/img/portfolio/branding-3.jpg" data-gallery="portfolio-gallery-app"
-                                class="glightbox"><img src="assets/img/portfolio/branding-3.jpg" class="img-fluid"
+                            <a href="assets/img/portfolio/Daryl Predovic infl on Twitter (2) - Copie.jpg" data-gallery="portfolio-gallery-app"
+                                class="glightbox"><img src="assets/img/portfolio/Daryl Predovic infl on Twitter (2) - Copie.jpg" class="img-fluid"
                                     alt=""></a>
                             <div class="portfolio-info">
                                 <h4><a href="{{ url('/portfolio-details') }}" title="More Details">Branding 3</a></h4>
@@ -750,8 +750,8 @@
 
                     <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
                         <div class="portfolio-content h-100">
-                            <a href="assets/img/portfolio/books-3.jpg" data-gallery="portfolio-gallery-app"
-                                class="glightbox"><img src="assets/img/portfolio/books-3.jpg" class="img-fluid"
+                            <a href="assets/img/portfolio/Les bonus sans dépôt des casinos en ligne _ Gadgeek_fr - Copie.jpg" data-gallery="portfolio-gallery-app"
+                                class="glightbox"><img src="assets/img/portfolio/Les bonus sans dépôt des casinos en ligne _ Gadgeek_fr - Copie.jpg" class="img-fluid"
                                     alt=""></a>
                             <div class="portfolio-info">
                                 <h4><a href="{{ url('/portfolio-details') }}" title="More Details">Books 3</a></h4>
