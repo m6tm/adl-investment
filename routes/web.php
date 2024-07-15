@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\web\StaticPagesController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -19,17 +21,20 @@ use Illuminate\Support\Facades\Route;
 // });
 
 /*route d'appel du fichier de configuration de l'application */
+
+// Appel des pages web 
+Route::get('/{page}', [StaticPagesController::class, 'loadPage'])->name('load.page');
+
+
+
 Route::get('/', function () {
-    return view('layout.app');
+    return view('web.layout.app');
 })->name('welcome');
 
-Route::get('/home', function () {
-    return view('pages.home.home');
-});
-
 Route::get('/', function () {
-    return view('pages.home.home');
-});
+    return view('web.pages.home.home');
+})->name('home');
+
 
 Route::middleware(['auth.dashboard'])->group(function () {
 });

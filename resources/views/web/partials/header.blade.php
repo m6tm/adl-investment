@@ -26,23 +26,20 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="{{ url('/home') }}" class="active">Home<br></a></li>
-          <li class="dropdown"><a href="#about"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="#">About Us </a></li>
-              <li class="dropdown"><a href="#"><span>Agents</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#"></a></li>
-                </ul>
-              </li>
-              <li><a href="#">Contact Us</a></li>
-              <li><a href="#">Terms 3</a></li>
-              <li><a href="#">Galley 4</a></li>
-            </ul>
-          </li>
+          <li><a href="{{ route('load.page', 'home') }}" class="active">Home<br></a></li>
+          
+          <li><a href="#portfolio">Portfolio</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#team">Team</a></li>
           <li><a href="#contact">Contact</a></li>
+          <li><a href="{{ route('load.page', 'tutoriel') }}">Tutoriel</a></li>
+          <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#about"  data-bs-toggle="" aria-expanded="false">About</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{{ route('load.page', 'about') }}">About Us</a></li>
+              <li><a class="dropdown-item" href="{{ route('load.page', 'conditions') }}">Condition Term</a></li>
+            </ul>
+          </li>
+  
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>

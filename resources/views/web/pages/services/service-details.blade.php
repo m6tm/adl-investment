@@ -1,4 +1,6 @@
-@extends('layout.app')
+@extends('web.layout.app')
+
+<link rel="stylesheet" href="{{ asset('assets/css/pages/home.css') }}">
 
 @section('content')
 <!-- Page Title -->
@@ -24,7 +26,7 @@
   </div><!-- End Page Title -->
 
   <!-- Service Details Section -->
-  <section id="service-details" class="service-details section">
+  <section id="service-details" class="service-details section padding-vert">
 
     <div class="container">
 
