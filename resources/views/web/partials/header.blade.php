@@ -32,6 +32,7 @@
           <li><a href="#services">Services</a></li>
           <li><a href="#team">Team</a></li>
           <li><a href="#contact">Contact</a></li>
+          <li><a href="{{ route('load.page', 'tutoriel') }}">Tutoriel</a></li>
           <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#about"  data-bs-toggle="" aria-expanded="false">About</a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="{{ route('load.page', 'about') }}">About Us</a></li>
