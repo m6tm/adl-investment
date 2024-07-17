@@ -18,6 +18,9 @@ class StaticPagesController extends Controller
 
     case 'tutoriel':
       return view('web.pages.tutoriel.tutoriel');
+    
+    case 'tutoriel-details':
+      return view('web.pages.tutoriel.tutoriel-details');
 
     case 'services-details':
       return view('web.pages.services.service-details'); 
@@ -31,8 +34,10 @@ class StaticPagesController extends Controller
     case 'conditions':
       return view('web.pages.home.conditions');
     
-    case '404';
+    case '404':
         return view('web.pages.errors.404');
+    case 'login':
+      return view('auth.login');
 
   }
 

@@ -13,6 +13,16 @@
         <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
         <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
       </div>
+      <div class="social-links d-none d-md-flex align-items-center">
+        <a href="#">
+          <i class="bi bi-person-fill"></i>
+          <span>Sign In</span>
+        </a>
+        <a href="#">
+          <i class="bi bi-pencil-square"></i>
+          <span>Sign Up</span>
+        </a>
+      </div>
     </div>
   </div><!-- End Top Bar -->
 

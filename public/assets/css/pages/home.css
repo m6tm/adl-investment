@@ -1443,3 +1443,66 @@
   }
 
   
+
+  .lottery-house .shape-area img {
+    position: absolute;
+    animation: spin 15s infinite linear;
+  }
+  .lottery-house .shape-area .shape-1 {
+    top: 25%;
+    right: 5%;
+    width: 55px;
+  }
+  .lottery-house .shape-area .shape-2 {
+    bottom: 15%;
+    left: 5%;
+  }
+  .lottery-house .shape-area .shape-3 {
+    bottom: 15%;
+    right: 5%;
+  }
+  .lottery-house .shape-area .shape-4 {
+    top: 20%;
+    left: 5%;
+    width: 30px;
+  }
+  .lottery-house .shape-area .shape-5 {
+    top: 8%;
+    left: 20%;
+  }
+  .lottery-house .shape-area .shape-6 {
+    bottom: 10%;
+    left: 3%;
+    width: 30px;
+  }
+  .lottery-house .shape-area .shape-7 {
+    bottom: 15%;
+    right: 10%;
+  }
+  .lottery-house .single-slide {
+    margin: 0;
+    margin-bottom: 30px;
+  }
+  .lottery-house.syndicate .single-slide {
+    padding: 30px;
+  }
+  .lottery-house.syndicate .lgtxt {
+    color: var(--secondary-color);
+    margin: 25px 0 10px;
+  }
+  .lottery-house.syndicate p span {
+    color: #3F7FCA;
+  }
+  .lottery-house.syndicate .in-time {
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    margin-top: 10px;
+  }
+  .lottery-house.syndicate .countdown h5 {
+    margin: 0;
+    color: var(--heading-2nd-color);
+  }
+  .lottery-house.syndicate .countdown .days, .lottery-house.syndicate .countdown .hours, .lottery-house.syndicate .countdown .minutes {
+    color: var(--heading-2nd-color);
+  }
