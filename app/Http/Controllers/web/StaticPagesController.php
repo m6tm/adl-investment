@@ -7,37 +7,44 @@ use Illuminate\Http\Request;
 
 class StaticPagesController extends Controller
 {
-    // Fichier d'appel des différentes pages du site web 
-    public function loadPage($page) 
-{
-
-  switch($page) {
-
-    case 'home':
+  // Fichier d'appel des différentes pages du site web 
+  public function home()
+  {
       return view('web.pages.home.home');
-
-    case 'tutoriel':
-      return view('web.pages.tutoriel.tutoriel');
-    
-    case 'tutoriel-details':
-      return view('web.pages.tutoriel.tutoriel-details');
-
-    case 'services-details':
-      return view('web.pages.services.service-details'); 
-
-    case 'portfolio-details': 
-      return view('web.pages.portfolio.portfolio-details');
-
-    case 'about':
-      return view('web.pages.home.about');
-
-    case 'conditions':
-      return view('web.pages.home.conditions');
-    
-    case '404':
-        return view('web.pages.errors.404');
-
   }
 
-}
+  public function tutoriel()
+  {
+      return view('web.pages.tutoriel.tutoriel');
+  }
+
+  public function tutorielDetails()
+  {
+      return view('web.pages.tutoriel.tutoriel-details');
+  }
+
+  public function servicesDetails()
+  {
+      return view('web.pages.services.service-details');
+  }
+
+  public function portfolioDetails()
+  {
+      return view('web.pages.portfolio.portfolio-details');
+  }
+
+  public function about()
+  {
+      return view('web.pages.home.about');
+  }
+
+  public function conditions()
+  {
+      return view('web.pages.home.conditions');
+  }
+
+  public function notFound()
+  {
+      return view('web.pages.errors.404');
+  }
 }

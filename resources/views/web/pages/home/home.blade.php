@@ -474,7 +474,7 @@
                         <h3>Nesciunt Mete</h3>
                         <p>Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores iure
                             perferendis tempore et consequatur.</p>
-                        <a href="{{ route('load.page', 'services-details') }}" class="readmore stretched-link">Read more <i
+                        <a href="{{ route('services-details') }}" class="readmore stretched-link">Read more <i
                                 class="bi bi-arrow-right"></i></a>
                     </div>
                 </div><!-- End Service Item -->
@@ -487,7 +487,7 @@
                         <h3>Eosle Commodi</h3>
                         <p>Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non
                             ut nesciunt dolorem.</p>
-                        <a href="{{ route('load.page', 'services-details') }}" class="readmore stretched-link">Read more <i
+                        <a href="{{ route('services-details') }}" class="readmore stretched-link">Read more <i
                                 class="bi bi-arrow-right"></i></a>
                     </div>
                 </div><!-- End Service Item -->
@@ -500,7 +500,7 @@
                         <h3>Ledo Markt</h3>
                         <p>Ut excepturi voluptatem nisi sed. Quidem fuga consequatur. Minus ea aut. Vel qui id voluptas
                             adipisci eos earum corrupti.</p>
-                        <a href="{{ route('load.page', 'services-details') }}" class="readmore stretched-link">Read more <i
+                        <a href="{{ route('services-details') }}" class="readmore stretched-link">Read more <i
                                 class="bi bi-arrow-right"></i></a>
                     </div>
                 </div><!-- End Service Item -->
@@ -513,7 +513,7 @@
                         <h3>Asperiores Commodit</h3>
                         <p>Non et temporibus minus omnis sed dolor esse consequatur. Cupiditate sed error ea fuga sit
                             provident adipisci neque.</p>
-                        <a href="{{ route('load.page', 'services-details') }}" class="readmore stretched-link">Read more <i
+                        <a href="{{ route('services-details') }}" class="readmore stretched-link">Read more <i
                                 class="bi bi-arrow-right"></i></a>
                     </div>
                 </div><!-- End Service Item -->
@@ -526,7 +526,7 @@
                         <h3>Velit Doloremque</h3>
                         <p>Cumque et suscipit saepe. Est maiores autem enim facilis ut aut ipsam corporis aut. Sed animi at
                             autem alias eius labore.</p>
-                        <a href="{{ route('load.page', 'services-details') }}" class="readmore stretched-link">Read more <i
+                        <a href="{{ route('services-details') }}" class="readmore stretched-link">Read more <i
                                 class="bi bi-arrow-right"></i></a>
                     </div>
                 </div><!-- End Service Item -->
@@ -539,7 +539,7 @@
                         <h3>Dolori Architecto</h3>
                         <p>Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque non et debitis iure. Corrupti
                             recusandae ducimus enim.</p>
-                        <a href="{{ route('load.page', 'services-details') }}" class="readmore stretched-link">Read more <i
+                        <a href="{{ route('services-details') }}" class="readmore stretched-link">Read more <i
                                 class="bi bi-arrow-right"></i></a>
                     </div>
                 </div><!-- End Service Item -->
@@ -718,7 +718,7 @@
                                 class="glightbox"><img src="assets/img/télécharger.jpg" class="img-fluid"
                                     alt=""></a>
                             <div class="portfolio-info">
-                                <h4><a href="{{ route('load.page', 'portfolio-details') }}" title="More Details">App 1</a></h4>
+                                <h4><a href="{{ route('portfolio-details') }}" title="More Details">App 1</a></h4>
                                 <p>Lorem ipsum, dolor sit amet consectetur</p>
                             </div>
                         </div>
@@ -730,7 +730,7 @@
                                 class="glightbox"><img src="assets/img/ordinateur.jpg" class="img-fluid"
                                     alt=""></a>
                             <div class="portfolio-info">
-                                <h4><a href="{{ route('load.page', 'portfolio-details') }}" title="More Details">Product 1</a></h4>
+                                <h4><a href="{{ route('portfolio-details') }}" title="More Details">Product 1</a></h4>
                                 <p>Lorem ipsum, dolor sit amet consectetur</p>
                             </div>
                         </div>
@@ -742,7 +742,7 @@
                                 class="glightbox"><img src="assets/img/portfolio/winroma.jpg" class="img-fluid"
                                     alt=""></a>
                             <div class="portfolio-info">
-                                <h4><a href="{{ route('load.page', 'portfolio-details') }}" title="More Details">Branding 1</a></h4>
+                                <h4><a href="{{ route('portfolio-details') }}" title="More Details">Branding 1</a></h4>
                                 <p>Lorem ipsum, dolor sit amet consectetur</p>
                             </div>
                         </div>
@@ -754,7 +754,7 @@
                                 class="glightbox"><img src="assets/img/portfolio/telephone master.jpg" class="img-fluid"
                                     alt=""></a>
                             <div class="portfolio-info">
-                                <h4><a href="{{ route('load.page', 'portfolio-details') }}" title="More Details">Books 1</a></h4>
+                                <h4><a href="{{ route('portfolio-details') }}" title="More Details">Books 1</a></h4>
                                 <p>Lorem ipsum, dolor sit amet consectetur</p>
                             </div>
                         </div>
@@ -766,7 +766,7 @@
                                 class="glightbox"><img src="assets/img/portfolio/Best Casino Roulette Games.jpg" class="img-fluid"
                                     alt=""></a>
                             <div class="portfolio-info">
-                                <h4><a href="{{ route('load.page', 'portfolio-details') }}" title="More Details">App 2</a></h4>
+                                <h4><a href="{{ route('portfolio-details') }}" title="More Details">App 2</a></h4>
                                 <p>Lorem ipsum, dolor sit amet consectetur</p>
                             </div>
                         </div>
@@ -778,7 +778,7 @@
                                 class="glightbox"><img src="assets/img/portfolio/Casino.jpg" class="img-fluid"
                                     alt=""></a>
                             <div class="portfolio-info">
-                                <h4><a href="{{ route('load.page', 'portfolio-details') }}" title="More Details">Product 2</a></h4>
+                                <h4><a href="{{ route('portfolio-details') }}" title="More Details">Product 2</a></h4>
                                 <p>Lorem ipsum, dolor sit amet consectetur</p>
                             </div>
                         </div>
@@ -790,7 +790,7 @@
                                 class="glightbox"><img src="assets/img/portfolio/telephone.jpg" class="img-fluid"
                                     alt=""></a>
                             <div class="portfolio-info">
-                                <h4><a href="{{ route('load.page', 'portfolio-details') }}" title="More Details">Branding 2</a></h4>
+                                <h4><a href="{{ route('portfolio-details') }}" title="More Details">Branding 2</a></h4>
                                 <p>Lorem ipsum, dolor sit amet consectetur</p>
                             </div>
                         </div>
@@ -802,7 +802,7 @@
                                 class="glightbox"><img src="assets/img/portfolio/casino best.jpg" class="img-fluid"
                                     alt=""></a>
                             <div class="portfolio-info">
-                                <h4><a href="{{ route('load.page', 'portfolio-details') }}" title="More Details">Books 2</a></h4>
+                                <h4><a href="{{ route('portfolio-details') }}" title="More Details">Books 2</a></h4>
                                 <p>Lorem ipsum, dolor sit amet consectetur</p>
                             </div>
                         </div>
@@ -814,7 +814,7 @@
                                 class="glightbox"><img src="assets/img/portfolio/casino en ligne.jpg" class="img-fluid"
                                     alt=""></a>
                             <div class="portfolio-info">
-                                <h4><a href="{{ route('load.page', 'portfolio-details') }}" title="More Details">App 3</a></h4>
+                                <h4><a href="{{ route('portfolio-details') }}" title="More Details">App 3</a></h4>
                                 <p>Lorem ipsum, dolor sit amet consectetur</p>
                             </div>
                         </div>
@@ -826,7 +826,7 @@
                                 class="glightbox"><img src="assets/img/portfolio/casino jeton.jpg" class="img-fluid"
                                     alt=""></a>
                             <div class="portfolio-info">
-                                <h4><a href="{{ route('load.page', 'portfolio-details') }}" title="More Details">Product 3</a></h4>
+                                <h4><a href="{{ route('portfolio-details') }}" title="More Details">Product 3</a></h4>
                                 <p>Lorem ipsum, dolor sit amet consectetur</p>
                             </div>
                         </div>
@@ -838,7 +838,7 @@
                                 class="glightbox"><img src="assets/img/portfolio/Daryl Predovic infl on Twitter (2) - Copie.jpg" class="img-fluid"
                                     alt=""></a>
                             <div class="portfolio-info">
-                                <h4><a href="{{ route('load.page', 'portfolio-details') }}" title="More Details">Branding 3</a></h4>
+                                <h4><a href="{{ route('portfolio-details') }}" title="More Details">Branding 3</a></h4>
                                 <p>Lorem ipsum, dolor sit amet consectetur</p>
                             </div>
                         </div>
@@ -850,7 +850,7 @@
                                 class="glightbox"><img src="assets/img/portfolio/Les bonus sans dépôt des casinos en ligne _ Gadgeek_fr - Copie.jpg" class="img-fluid"
                                     alt=""></a>
                             <div class="portfolio-info">
-                                <h4><a href="{{ route('load.page', 'portfolio-details') }}" title="More Details">Books 3</a></h4>
+                                <h4><a href="{{ route('portfolio-details') }}" title="More Details">Books 3</a></h4>
                                 <p>Lorem ipsum, dolor sit amet consectetur</p>
                             </div>
                         </div>

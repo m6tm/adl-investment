@@ -17,7 +17,7 @@
       <div class="container">
         <ol>
           <li><a href="{{ url('home') }}">Home</a></li>
-          <li class="current"><a href="{{ route('load.page', 'tutoriel') }}">Tutoriel</a></li>
+          <li class="current"><a href="{{ route('tutoriel') }}">Tutoriel</a></li>
           <li class="current">Tutoriel Details</li>
         </ol>
       </div>
