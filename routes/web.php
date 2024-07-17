@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\web\StaticPagesController;
 
 
@@ -22,7 +23,7 @@ use App\Http\Controllers\web\StaticPagesController;
 
 /*route d'appel du fichier de configuration de l'application */
 
-// Appel des pages web 
+// Appel des pages web
 Route::get('/{page}', [StaticPagesController::class, 'loadPage'])->name('load.page');
 
 
@@ -35,7 +36,9 @@ Route::get('/', function () {
     return view('web.pages.home.home');
 })->name('home');
 
-
 Route::middleware(['auth.dashboard'])->group(function () {
 });
 
+
+Route::get('/{contact}', [ContactController::class, 'create'])->name('contact.create');
+Route::post('/{contact}', [ContactController::class, 'store'])->name('contact.store');
