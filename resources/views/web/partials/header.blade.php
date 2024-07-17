@@ -31,24 +31,17 @@
     <div class="container position-relative d-flex align-items-center justify-content-between">
       <a href="index.html" class="logo d-flex align-items-center">
         <h1 class="sitename">ADL</h1>
-        <span>.</span>
+        <span>.Investment</span>
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="{{ route('load.page', 'home') }}" class="active">Home<br></a></li>
-          
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#team">Team</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="{{ route('load.page', 'home') }}#portfolio">Portfolio</a></li>
+          <li><a href="{{ route('load.page', 'home') }}#services">Services</a></li>
+          <li><a href="{{ route('load.page', 'home') }}#contact">Contact</a></li>
           <li><a href="{{ route('load.page', 'tutoriel') }}">Tutoriel</a></li>
-          <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#about"  data-bs-toggle="" aria-expanded="false">About</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="{{ route('load.page', 'about') }}">About Us</a></li>
-              <li><a class="dropdown-item" href="{{ route('load.page', 'conditions') }}">Condition Term</a></li>
-            </ul>
-          </li>
+          <li><a href="{{ route('load.page', 'about') }}">About Us</a></li>
   
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
