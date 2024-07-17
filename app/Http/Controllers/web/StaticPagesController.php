@@ -36,8 +36,6 @@ class StaticPagesController extends Controller
     
     case '404':
         return view('web.pages.errors.404');
-    case 'login':
-      return view('auth.login');
 
   }
 
