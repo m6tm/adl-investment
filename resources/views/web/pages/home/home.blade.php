@@ -8,6 +8,7 @@
 @section('content')
     <!-- Hero Section -->
     <section id="hero" class="hero section accent-background">
+<<<<<<< HEAD
 
       <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
           <div class="row gy-5 justify-content-between">
@@ -128,13 +129,54 @@
 
 
   </section><!-- /Hero Section -->
+=======
+        <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+            <div class="row gy-5 justify-content-between">
+                <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
+                    <h2><span>Welcome to </span><span class="accent">ADL</span></h2>
+                    <p class="hero-text">Plongez dans l'univers excitant du jeu en ligne ADL et tentez votre chance avec
+                        notre système de tirage de roue unique!</p>
+                    <div class="d-flex">
+                        <a href="#" class="btn-get-started">Achetez un Ticket</a>
+                        <a href="#" class="glightbox btn-watch-video d-flex align-items-center"><i
+                                class="bi bi-play-circle"></i><span>Tutoriel</span></a>
+                    </div>
+                </div>
+                <div class="col-lg-5 order-1 order-lg-2">
+                    <img src="assets/img/index-illus.png" class="img-fluid" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="icon-boxes position-relative py-5" data-aos="fade-up" data-aos-delay="200">
+            <div class="container position-relative">
+                <div class="row gy-4 mt-5">
+                    <div class="col-xl-3 col-md-6">
+                        <article>
+                            <div class="article-wrapper align-items-center">
+                                
+                                <div class="article-body">
+                                    <h2 class="article-title text-white fs-2">Forfait 3 Jours</h2>
+                                    <h5 class="text-white">
+                                        10/Jours
+                                    </h5>
+                                    <p>
+                                        Participez à des tirages quotidiens pendant 3 jours et gagnez gros!
+                                    </p>
+                                    <a href="#" class="btn btn-light align-item-center">
+                                        Participer<span class="sr-only"></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <!-- End of Card  -->
+>>>>>>> ac17056b40da4223b21f94b832b7fcda6d03d8be
 
                     <div class="col-xl-3 col-md-6">
                         <article>
                             <div class="article-wrapper align-items-center">
-                                <!-- <figure>
-                                  <img src="assets/img/blog/blog-2.jpg" alt="" />
-                                </figure> -->
+                               
                                 <div class="article-body">
                                     <h2 class="article-title text-white fs-2">Forfait 1 semaine</h2>
                                     <h5 class="text-white">
@@ -265,38 +307,38 @@
 
             <div class="swiper init-swiper">
                 <script type="application/json" class="swiper-config">
-              {
-                "loop": true,
-                "speed": 600,
-                "autoplay": {
-                  "delay": 5000
-                },
-                "slidesPerView": "auto",
-                "pagination": {
-                  "el": ".swiper-pagination",
-                  "type": "bullets",
-                  "clickable": true
-                },
-                "breakpoints": {
-                  "320": {
-                    "slidesPerView": 2,
-                    "spaceBetween": 40
-                  },
-                  "480": {
-                    "slidesPerView": 3,
-                    "spaceBetween": 60
-                  },
-                  "640": {
-                    "slidesPerView": 4,
-                    "spaceBetween": 80
-                  },
-                  "992": {
-                    "slidesPerView": 6,
-                    "spaceBetween": 120
-                  }
+                {
+                    "loop": true,
+                    "speed": 600,
+                    "autoplay": {
+                    "delay": 5000
+                    },
+                    "slidesPerView": "auto",
+                    "pagination": {
+                    "el": ".swiper-pagination",
+                    "type": "bullets",
+                    "clickable": true
+                    },
+                    "breakpoints": {
+                    "320": {
+                        "slidesPerView": 2,
+                        "spaceBetween": 40
+                    },
+                    "480": {
+                        "slidesPerView": 3,
+                        "spaceBetween": 60
+                    },
+                    "640": {
+                        "slidesPerView": 4,
+                        "spaceBetween": 80
+                    },
+                    "992": {
+                        "slidesPerView": 6,
+                        "spaceBetween": 120
+                    }
+                    }
                 }
-              }
-            </script>
+                </script>
                 <div class="swiper-wrapper align-items-center">
                     <div class="swiper-slide"><img src="assets/img/clients/client-1.png" class="img-fluid" alt="">
                     </div>
@@ -648,7 +690,7 @@
     </section><!-- /Testimonials Section -->
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio section">
+    <section id="portfolio" class="portfolio section padding-vert">
 
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">

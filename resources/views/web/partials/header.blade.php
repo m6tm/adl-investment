@@ -31,12 +31,13 @@
     <div class="container position-relative d-flex align-items-center justify-content-between">
       <a href="index.html" class="logo d-flex align-items-center">
         <h1 class="sitename">ADL</h1>
-        <span>.</span>
+        <span>.Investment</span>
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="{{ route('load.page', 'home') }}" class="active">Home<br></a></li>
+<<<<<<< HEAD
 
           <li><a href="#portfolio">Portfolio</a></li>
           <li><a href="#services">Services</a></li>
@@ -50,6 +51,14 @@
             </ul>
           </li>
 
+=======
+          <li><a href="{{ route('load.page', 'home') }}#portfolio">Portfolio</a></li>
+          <li><a href="{{ route('load.page', 'home') }}#services">Services</a></li>
+          <li><a href="{{ route('load.page', 'home') }}#contact">Contact</a></li>
+          <li><a href="{{ route('load.page', 'tutoriel') }}">Tutoriel</a></li>
+          <li><a href="{{ route('load.page', 'about') }}">About Us</a></li>
+  
+>>>>>>> ac17056b40da4223b21f94b832b7fcda6d03d8be
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
