@@ -8,132 +8,11 @@
 @section('content')
     <!-- Hero Section -->
     <section id="hero" class="hero section accent-background">
-<<<<<<< HEAD
 
-      <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
-          <div class="row gy-5 justify-content-between">
-              <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
-                  <h2><span>Welcome to </span><span class="accent">ADL </span></h2>
-                  <p class="hero-text">Plongez dans l'univers excitant du jeu en ligne ADL et tentez votre chance avec
-                      notre système de tirage de roue unique!</p>
-                  <div class="d-flex">
-                      <a href="#" class="btn-get-started">Achetez un Ticket</a>
-                      <a href="#" class="glightbox btn-watch-video d-flex align-items-center"><i
-                              class="bi bi-play-circle"></i><span>Tutoriel</span></a>
-                  </div>
-              </div>
-              <div class="col-lg-5 order-1 order-lg-2">
-                  <img src="assets/img/index-illus.png" class="img-fluid" alt="">
-              </div>
-          </div>
-      </div>
-
-      <div class="icon-boxes position-relative py-5" data-aos="fade-up" data-aos-delay="200">
-          <div class="container position-relative">
-              <div class="row gy-4 mt-5">
-                  <div class="col-xl-3 col-md-6">
-                      <article>
-                          <div class="article-wrapper align-items-center">
-                              {{-- <figure>
-                        <img src="assets/img/blog/blog-1.jpg" alt="" />
-                      </figure> --}}
-                              <div class="article-body">
-                                  <h2 class="article-title">Forfait 3 Jours</h2>
-                                  <h5 class="text-white">
-                                      10/Jours
-                                  </h5>
-                                  <p>
-                                      Participez à des tirages quotidiens pendant 3 jours et gagnez gros!
-                                  </p>
-                                  <a href="#" class="btn btn-light align-item-center">
-                                      Participer<span class="sr-only"></span>
-                                  </a>
-                              </div>
-                          </div>
-                      </article>
-                  </div>
-                  <!-- End of Card  -->
-
-                  <div class="col-xl-3 col-md-6">
-                      <article>
-                          <div class="article-wrapper align-items-center">
-                              <!-- <figure>
-                          <img src="assets/img/blog/blog-2.jpg" alt="" />
-                        </figure> -->
-                              <div class="article-body">
-                                  <h2 class="article-title">Forfait 1 semaine</h2>
-                                  <h5 class="text-white">
-                                      25/Jours
-                                  </h5>
-                                  <p>
-                                      Profitez d'une semaine complète de divertissement et de gains sur ADL!
-                                  </p>
-                                  <a href="#" class="btn btn-light align-item-center">
-                                      Participer<span class="sr-only"></span>
-                                  </a>
-                              </div>
-                          </div>
-                      </article>
-                  </div>
-                  <!-- End of Card  -->
-
-                  <div class="col-xl-3 col-md-6">
-                      <article>
-                          <div class="article-wrapper align-items-center">
-                              <!-- <figure>
-                            <img src="assets/img/blog/blog-3.jpg" alt="" />
-                          </figure> -->
-                              <div class="article-body">
-                                  <h2 class="article-title">Forfait 1 mois</h2>
-                                  <h5 class="text-white">
-                                      80/Jours
-                                  </h5>
-                                  <p>
-                                      Accédez à un mois entier de tirages exclusifs et de prix sensationnels!
-                                  </p>
-                                  <a href="#" class="btn btn-light align-item-center">
-                                      Participer<span class="sr-only"></span>
-                                  </a>
-                              </div>
-                          </div>
-                      </article>
-                  </div>
-                  <!-- End of Card  -->
-
-                  <div class="col-xl-3 col-md-6">
-                      <article>
-                          <div class="article-wrapper align-items-center">
-                              <!-- <figure>
-                              <img src="assets/img/blog/blog-4.jpg" alt="" />
-                            </figure> -->
-                              <div class="article-body">
-                                  <h2 class="article-title">VIP Illimité</h2>
-                                  <h5 class="text-white">
-                                      150/Jours
-                                  </h5>
-                                  <p>
-                                      Devenez un VIP avec un accès illimité à nos services
-                                  </p>
-                                  <a href="#" class="btn btn-light align-item-center">
-                                      Participer<span class="sr-only"></span>
-                                  </a>
-                              </div>
-                          </div>
-                      </article>
-                  </div>
-                  <!-- End of Card  -->
-
-              </div>
-          </div>
-      </div>
-
-
-  </section><!-- /Hero Section -->
-=======
         <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
             <div class="row gy-5 justify-content-between">
                 <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
-                    <h2><span>Welcome to </span><span class="accent">ADL</span></h2>
+                    <h2><span>Welcome to </span><span class="accent">ADL </span></h2>
                     <p class="hero-text">Plongez dans l'univers excitant du jeu en ligne ADL et tentez votre chance avec
                         notre système de tirage de roue unique!</p>
                     <div class="d-flex">
@@ -148,14 +27,13 @@
             </div>
         </div>
 
-        <div class="icon-boxes position-relative py-5" data-aos="fade-up" data-aos-delay="200">
+        <div class="icon-boxes position-relative py-5 " data-aos="fade-up" data-aos-delay="200">
             <div class="container position-relative">
                 <div class="row gy-4 mt-5">
                     <div class="col-xl-3 col-md-6">
                         <article>
                             <div class="article-wrapper align-items-center">
-                                
-                                <div class="article-body">
+                                <div class="article-body text-white">
                                     <h2 class="article-title text-white fs-2">Forfait 3 Jours</h2>
                                     <h5 class="text-white">
                                         10/Jours
@@ -171,12 +49,10 @@
                         </article>
                     </div>
                     <!-- End of Card  -->
->>>>>>> ac17056b40da4223b21f94b832b7fcda6d03d8be
 
                     <div class="col-xl-3 col-md-6">
                         <article>
                             <div class="article-wrapper align-items-center">
-                               
                                 <div class="article-body">
                                     <h2 class="article-title text-white fs-2">Forfait 1 semaine</h2>
                                     <h5 class="text-white">
@@ -197,7 +73,6 @@
                     <div class="col-xl-3 col-md-6">
                         <article>
                             <div class="article-wrapper align-items-center">
-                              
                                 <div class="article-body">
                                     <h2 class="article-title text-white fs-2">Forfait 1 mois</h2>
                                     <h5 class="text-white">
@@ -218,7 +93,6 @@
                     <div class="col-xl-3 col-md-6">
                         <article>
                             <div class="article-wrapper align-items-center">
-                             
                                 <div class="article-body">
                                     <h2 class="article-title text-white fs-2">VIP Illimité</h2>
                                     <h5 class="text-white">
@@ -240,6 +114,7 @@
             </div>
         </div>
 
+
     </section><!-- /Hero Section -->
 
     <!-- About Section -->
@@ -256,7 +131,8 @@
             <div class="row gy-4">
                 <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
                     <h3>Voluptatem dignissimos provident laboris nisi ut aliquip ex ea commodo</h3>
-                    <img src="assets/img/Free Vector _ Casino games design.jpg" class="img-fluid rounded-4 mb-4" alt="">
+                    <img src="assets/img/Free Vector _ Casino games design.jpg" class="img-fluid rounded-4 mb-4"
+                        alt="">
                     <p>Bienvenue sur ADL, la plateforme de jeu en ligne révolutionnaire basée sur des tirages de roue!
                         Notre mission est de fournir une expérience de jeu unique et sécurisée à nos utilisateurs.
                         Rejoignez-nous pour des tirages palpitants et des gains incroyables!</p>
@@ -289,7 +165,8 @@
                         </p>
 
                         <div class="position-relative mt-4">
-                            <img src="assets/img/Best Casino Roulette Games.jpg" class="img-fluid rounded-4" alt="">
+                            <img src="assets/img/Best Casino Roulette Games.jpg" class="img-fluid rounded-4"
+                                alt="">
                             <a href="assets/img/Nobody -「AMV」- Anime MV.mp4" class="glightbox pulsating-play-btn"></a>
                         </div>
                     </div>
@@ -340,7 +217,8 @@
                 }
                 </script>
                 <div class="swiper-wrapper align-items-center">
-                    <div class="swiper-slide"><img src="assets/img/clients/client-1.png" class="img-fluid" alt="">
+                    <div class="swiper-slide"><img src="assets/img/clients/client-1.png" class="img-fluid"
+                            alt="">
                     </div>
                     <div class="swiper-slide"><img src="assets/img/clients/client-2.png" class="img-fluid"
                             alt=""></div>
@@ -474,7 +352,7 @@
                         <h3>Nesciunt Mete</h3>
                         <p>Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores iure
                             perferendis tempore et consequatur.</p>
-                        <a href="{{ route('load.page', 'services-details') }}" class="readmore stretched-link">Read more <i
+                        <a href="{{ route('services-details') }}" class="readmore stretched-link">Read more <i
                                 class="bi bi-arrow-right"></i></a>
                     </div>
                 </div><!-- End Service Item -->
@@ -487,7 +365,7 @@
                         <h3>Eosle Commodi</h3>
                         <p>Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non
                             ut nesciunt dolorem.</p>
-                        <a href="{{ route('load.page', 'services-details') }}" class="readmore stretched-link">Read more <i
+                        <a href="{{ route('services-details') }}" class="readmore stretched-link">Read more <i
                                 class="bi bi-arrow-right"></i></a>
                     </div>
                 </div><!-- End Service Item -->
@@ -500,7 +378,7 @@
                         <h3>Ledo Markt</h3>
                         <p>Ut excepturi voluptatem nisi sed. Quidem fuga consequatur. Minus ea aut. Vel qui id voluptas
                             adipisci eos earum corrupti.</p>
-                        <a href="{{ route('load.page', 'services-details') }}" class="readmore stretched-link">Read more <i
+                        <a href="{{ route('services-details') }}" class="readmore stretched-link">Read more <i
                                 class="bi bi-arrow-right"></i></a>
                     </div>
                 </div><!-- End Service Item -->
@@ -513,7 +391,7 @@
                         <h3>Asperiores Commodit</h3>
                         <p>Non et temporibus minus omnis sed dolor esse consequatur. Cupiditate sed error ea fuga sit
                             provident adipisci neque.</p>
-                        <a href="{{ route('load.page', 'services-details') }}" class="readmore stretched-link">Read more <i
+                        <a href="{{ route('services-details') }}" class="readmore stretched-link">Read more <i
                                 class="bi bi-arrow-right"></i></a>
                     </div>
                 </div><!-- End Service Item -->
@@ -526,7 +404,7 @@
                         <h3>Velit Doloremque</h3>
                         <p>Cumque et suscipit saepe. Est maiores autem enim facilis ut aut ipsam corporis aut. Sed animi at
                             autem alias eius labore.</p>
-                        <a href="{{ route('load.page', 'services-details') }}" class="readmore stretched-link">Read more <i
+                        <a href="{{ route('services-details') }}" class="readmore stretched-link">Read more <i
                                 class="bi bi-arrow-right"></i></a>
                     </div>
                 </div><!-- End Service Item -->
@@ -539,7 +417,7 @@
                         <h3>Dolori Architecto</h3>
                         <p>Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque non et debitis iure. Corrupti
                             recusandae ducimus enim.</p>
-                        <a href="{{ route('load.page', 'services-details') }}" class="readmore stretched-link">Read more <i
+                        <a href="{{ route('services-details') }}" class="readmore stretched-link">Read more <i
                                 class="bi bi-arrow-right"></i></a>
                     </div>
                 </div><!-- End Service Item -->
@@ -718,7 +596,7 @@
                                 class="glightbox"><img src="assets/img/télécharger.jpg" class="img-fluid"
                                     alt=""></a>
                             <div class="portfolio-info">
-                                <h4><a href="{{ route('load.page', 'portfolio-details') }}" title="More Details">App 1</a></h4>
+                                <h4><a href="{{ route('portfolio-details') }}" title="More Details">App 1</a></h4>
                                 <p>Lorem ipsum, dolor sit amet consectetur</p>
                             </div>
                         </div>
@@ -730,7 +608,7 @@
                                 class="glightbox"><img src="assets/img/ordinateur.jpg" class="img-fluid"
                                     alt=""></a>
                             <div class="portfolio-info">
-                                <h4><a href="{{ route('load.page', 'portfolio-details') }}" title="More Details">Product 1</a></h4>
+                                <h4><a href="{{ route('portfolio-details') }}" title="More Details">Product 1</a></h4>
                                 <p>Lorem ipsum, dolor sit amet consectetur</p>
                             </div>
                         </div>
@@ -742,7 +620,7 @@
                                 class="glightbox"><img src="assets/img/portfolio/winroma.jpg" class="img-fluid"
                                     alt=""></a>
                             <div class="portfolio-info">
-                                <h4><a href="{{ route('load.page', 'portfolio-details') }}" title="More Details">Branding 1</a></h4>
+                                <h4><a href="{{ route('portfolio-details') }}" title="More Details">Branding 1</a></h4>
                                 <p>Lorem ipsum, dolor sit amet consectetur</p>
                             </div>
                         </div>
@@ -754,7 +632,7 @@
                                 class="glightbox"><img src="assets/img/portfolio/telephone master.jpg" class="img-fluid"
                                     alt=""></a>
                             <div class="portfolio-info">
-                                <h4><a href="{{ route('load.page', 'portfolio-details') }}" title="More Details">Books 1</a></h4>
+                                <h4><a href="{{ route('portfolio-details') }}" title="More Details">Books 1</a></h4>
                                 <p>Lorem ipsum, dolor sit amet consectetur</p>
                             </div>
                         </div>
@@ -762,11 +640,12 @@
 
                     <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
                         <div class="portfolio-content h-100">
-                            <a href="assets/img/portfolio/Best Casino Roulette Games.jpg" data-gallery="portfolio-gallery-app"
-                                class="glightbox"><img src="assets/img/portfolio/Best Casino Roulette Games.jpg" class="img-fluid"
+                            <a href="assets/img/portfolio/Best Casino Roulette Games.jpg"
+                                data-gallery="portfolio-gallery-app" class="glightbox"><img
+                                    src="assets/img/portfolio/Best Casino Roulette Games.jpg" class="img-fluid"
                                     alt=""></a>
                             <div class="portfolio-info">
-                                <h4><a href="{{ route('load.page', 'portfolio-details') }}" title="More Details">App 2</a></h4>
+                                <h4><a href="{{ route('portfolio-details') }}" title="More Details">App 2</a></h4>
                                 <p>Lorem ipsum, dolor sit amet consectetur</p>
                             </div>
                         </div>
@@ -778,7 +657,7 @@
                                 class="glightbox"><img src="assets/img/portfolio/Casino.jpg" class="img-fluid"
                                     alt=""></a>
                             <div class="portfolio-info">
-                                <h4><a href="{{ route('load.page', 'portfolio-details') }}" title="More Details">Product 2</a></h4>
+                                <h4><a href="{{ route('portfolio-details') }}" title="More Details">Product 2</a></h4>
                                 <p>Lorem ipsum, dolor sit amet consectetur</p>
                             </div>
                         </div>
@@ -790,7 +669,7 @@
                                 class="glightbox"><img src="assets/img/portfolio/telephone.jpg" class="img-fluid"
                                     alt=""></a>
                             <div class="portfolio-info">
-                                <h4><a href="{{ route('load.page', 'portfolio-details') }}" title="More Details">Branding 2</a></h4>
+                                <h4><a href="{{ route('portfolio-details') }}" title="More Details">Branding 2</a></h4>
                                 <p>Lorem ipsum, dolor sit amet consectetur</p>
                             </div>
                         </div>
@@ -802,7 +681,7 @@
                                 class="glightbox"><img src="assets/img/portfolio/casino best.jpg" class="img-fluid"
                                     alt=""></a>
                             <div class="portfolio-info">
-                                <h4><a href="{{ route('load.page', 'portfolio-details') }}" title="More Details">Books 2</a></h4>
+                                <h4><a href="{{ route('portfolio-details') }}" title="More Details">Books 2</a></h4>
                                 <p>Lorem ipsum, dolor sit amet consectetur</p>
                             </div>
                         </div>
@@ -814,7 +693,7 @@
                                 class="glightbox"><img src="assets/img/portfolio/casino en ligne.jpg" class="img-fluid"
                                     alt=""></a>
                             <div class="portfolio-info">
-                                <h4><a href="{{ route('load.page', 'portfolio-details') }}" title="More Details">App 3</a></h4>
+                                <h4><a href="{{ route('portfolio-details') }}" title="More Details">App 3</a></h4>
                                 <p>Lorem ipsum, dolor sit amet consectetur</p>
                             </div>
                         </div>
@@ -826,7 +705,7 @@
                                 class="glightbox"><img src="assets/img/portfolio/casino jeton.jpg" class="img-fluid"
                                     alt=""></a>
                             <div class="portfolio-info">
-                                <h4><a href="{{ route('load.page', 'portfolio-details') }}" title="More Details">Product 3</a></h4>
+                                <h4><a href="{{ route('portfolio-details') }}" title="More Details">Product 3</a></h4>
                                 <p>Lorem ipsum, dolor sit amet consectetur</p>
                             </div>
                         </div>
@@ -834,11 +713,12 @@
 
                     <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
                         <div class="portfolio-content h-100">
-                            <a href="assets/img/portfolio/Daryl Predovic infl on Twitter (2) - Copie.jpg" data-gallery="portfolio-gallery-app"
-                                class="glightbox"><img src="assets/img/portfolio/Daryl Predovic infl on Twitter (2) - Copie.jpg" class="img-fluid"
-                                    alt=""></a>
+                            <a href="assets/img/portfolio/Daryl Predovic infl on Twitter (2) - Copie.jpg"
+                                data-gallery="portfolio-gallery-app" class="glightbox"><img
+                                    src="assets/img/portfolio/Daryl Predovic infl on Twitter (2) - Copie.jpg"
+                                    class="img-fluid" alt=""></a>
                             <div class="portfolio-info">
-                                <h4><a href="{{ route('load.page', 'portfolio-details') }}" title="More Details">Branding 3</a></h4>
+                                <h4><a href="{{ route('portfolio-details') }}" title="More Details">Branding 3</a></h4>
                                 <p>Lorem ipsum, dolor sit amet consectetur</p>
                             </div>
                         </div>
@@ -846,11 +726,12 @@
 
                     <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
                         <div class="portfolio-content h-100">
-                            <a href="assets/img/portfolio/Les bonus sans dépôt des casinos en ligne _ Gadgeek_fr - Copie.jpg" data-gallery="portfolio-gallery-app"
-                                class="glightbox"><img src="assets/img/portfolio/Les bonus sans dépôt des casinos en ligne _ Gadgeek_fr - Copie.jpg" class="img-fluid"
-                                    alt=""></a>
+                            <a href="assets/img/portfolio/Les bonus sans dépôt des casinos en ligne _ Gadgeek_fr - Copie.jpg"
+                                data-gallery="portfolio-gallery-app" class="glightbox"><img
+                                    src="assets/img/portfolio/Les bonus sans dépôt des casinos en ligne _ Gadgeek_fr - Copie.jpg"
+                                    class="img-fluid" alt=""></a>
                             <div class="portfolio-info">
-                                <h4><a href="{{ route('load.page', 'portfolio-details') }}" title="More Details">Books 3</a></h4>
+                                <h4><a href="{{ route('portfolio-details') }}" title="More Details">Books 3</a></h4>
                                 <p>Lorem ipsum, dolor sit amet consectetur</p>
                             </div>
                         </div>
@@ -864,7 +745,7 @@
 
     </section><!-- /Portfolio Section -->
 
-   @include('web.partials.team')
+    @include('web.partials.team')
 
     <!-- Pricing Section -->
     <section id="pricing" class="pricing section padding-vert">

@@ -21,7 +21,7 @@
     <nav class="breadcrumbs">
         <div class="container">
             <ol>
-                <li><a href="{{ route('load.page', 'home') }}">Home</a></li>
+                <li><a href="{{ route('home') }}">Home</a></li>
                 <li class="">Pages</li>
                 <li class="current">Tutoriel</li>
             </ol>
@@ -49,7 +49,7 @@
                             class="glightbox"><img src="assets/img/ticket-checker-illus.png " class="img-fluid"
                                 alt=""></a>
                         <div class="portfolio-info">
-                            <h4><a href="{{ route('load.page', 'tutoriel-details') }}" title="More Details">Tutoriel 1</a></h4>
+                            <h4><a href="{{ route('tutoriel-details') }}" title="More Details">Tutoriel 1</a></h4>
                             <p>Lorem ipsum, dolor sit amet consectetur</p>
                         </div>
                     </div>
@@ -61,7 +61,7 @@
                             class="glightbox"><img src="assets/img/ticket-checker-illus.png" class="img-fluid"
                                 alt=""></a>
                         <div class="portfolio-info">
-                            <h4><a href="{{ route('load.page', 'tutoriel-details') }}" title="More Details">Tutoriel 1</a></h4>
+                            <h4><a href="{{ route('tutoriel-details') }}" title="More Details">Tutoriel 1</a></h4>
                             <p>Lorem ipsum, dolor sit amet consectetur</p>
                         </div>
                     </div>
@@ -73,7 +73,7 @@
                             class="glightbox"><img src="assets/img/ticket-checker-illus.png" class="img-fluid"
                                 alt=""></a>
                         <div class="portfolio-info">
-                            <h4><a href="{{ route('load.page', 'tutoriel-details') }}" title="More Details">Tutoriel 1</a></h4>
+                            <h4><a href="{{ route('tutoriel-details') }}" title="More Details">Tutoriel 1</a></h4>
                             <p>Lorem ipsum, dolor sit amet consectetur</p>
                         </div>
                     </div>
