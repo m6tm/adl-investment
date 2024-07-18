@@ -247,7 +247,7 @@
     <section id="call-to-action" class="call-to-action section dark-background padding-vert">
 
         <div class="container">
-            <img src="assets/img/agent alice.jpg" alt="">
+            <img src="assets/img/Experience the Thrill with Mini Roulette 🎰✨.jpg" alt="">
             <div class="content row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
                 <div class="col-xl-10">
                     <div class="text-center">
