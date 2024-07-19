@@ -18,22 +18,13 @@
       <div class="col-lg-2 col-6 footer-links">
         <h4>Useful Links</h4>
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About us</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Terms of service</a></li>
-          <li><a href="#">Privacy policy</a></li>
-        </ul>
-      </div>
-
-      <div class="col-lg-2 col-6 footer-links">
-        <h4>Our Services</h4>
-        <ul>
-          <li><a href="#">1</a></li>
-          <li><a href="#">2</a></li>
-          <li><a href="#">3</a></li>
-          <li><a href="#">4</a></li>
-          <li><a href="#">5</a></li>
+            <li><a href="{{ route('home') }}">Home<br></a></li>
+            <li><a href="{{ route('home') }}#services">Services</a></li>
+            <li><a href="{{ route('home') }}#contact">Contact</a></li>
+            <li><a href="{{ route('tutoriel') }}#tutoriel">Tutoriel</a></li>
+            <li><a href="{{ route('about') }}#aboutus">About Us</a></li>
+            <li><a href="{{ route('conditions') }}#condition">Terms</a></li>
+            <li><a href="{{ route('privacy') }}#privacy">Privacy Policy</a></li>
         </ul>
       </div>
 
