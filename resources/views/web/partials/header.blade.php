@@ -43,7 +43,8 @@
                     <li><a href="{{ route('home') }}#services">Services</a></li>
                     <li><a href="{{ route('home') }}#contact">Contact</a></li>
                     <li><a href="{{ route('tutoriel') }}">Tutoriel</a></li>
-                    <li><a href="{{ route('about') }}">About</a>
+                    <li><a href="{{ route('about') }}">About Us</a>
+                    <li><a href="{{ route('conditions') }}">Terms</a>
                     </li>
 
                 </ul>
