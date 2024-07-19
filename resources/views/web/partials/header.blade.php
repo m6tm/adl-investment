@@ -38,8 +38,6 @@
             <nav id="navmenu" class="navmenu">
                 <ul>
                     <li><a href="{{ route('home') }}" class="active">Home<br></a></li>
-
-                    <li><a href="{{ route('home') }}#portfolio">Portfolio</a></li>
                     <li><a href="{{ route('home') }}#services">Services</a></li>
                     <li><a href="{{ route('home') }}#contact">Contact</a></li>
                     <li><a href="{{ route('tutoriel') }}">Tutoriel</a></li>
