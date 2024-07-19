@@ -15,11 +15,11 @@
                 <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
             </div>
             <div class="social-links d-none d-md-flex align-items-center">
-                <a href="#">
+                <a href="{{ route('signin') }}">
                     <i class="bi bi-person-fill"></i>
                     <span>Sign In</span>
                 </a>
-                <a href="#">
+                <a href="{{ route('signup') }}">
                     <i class="bi bi-pencil-square"></i>
                     <span>Sign Up</span>
                 </a>
@@ -37,7 +37,7 @@
 
             <nav id="navmenu" class="navmenu">
                 <ul>
-                    <li><a href="{{ route('home') }}" class="active">Home<br></a></li>
+                    <li><a href="{{ route('home') }}">Home<br></a></li>
                     <li><a href="{{ route('home') }}#services">Services</a></li>
                     <li><a href="{{ route('home') }}#contact">Contact</a></li>
                     <li><a href="{{ route('tutoriel') }}">Tutoriel</a></li>

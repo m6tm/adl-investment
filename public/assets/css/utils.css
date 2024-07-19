@@ -1,87 +1,86 @@
+:root {
+    --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --heading-font: "Roboto", sans-serif;
+    --nav-font: "Poppins", sans-serif;
+}
+
 
 :root {
-    --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    --heading-font: "Roboto",  sans-serif;
-    --nav-font: "Poppins",  sans-serif;
-  }
-  
- 
-  :root { 
-    --background-color: #ffffff; 
-    --default-color: #222222; 
-    --heading-color: #172a28; 
-    --accent-color: #ac1010; 
-    --surface-color: #ffffff; 
-    --contrast-color: #fffcfc; 
-  }
-  
-  :root {
-    --nav-color: #ffffff;  
-    --nav-hover-color: #ac1010; 
-    --nav-mobile-background-color: #ffffff;
-    --nav-dropdown-background-color: #ffffff; 
-    --nav-dropdown-color: #01433c; 
-    --nav-dropdown-hover-color: #ac1010; 
-  }
-  
+    --background-color: #ffffff;
+    --default-color: #222222;
+    --heading-color: #172a28;
+    --accent-color: #ac1010;
+    --surface-color: #ffffff;
+    --contrast-color: #fffcfc;
+}
 
-  
-  .light-background {
+:root {
+    --nav-color: #ffffff;
+    --nav-hover-color: #ac1010;
+    --nav-mobile-background-color: #ffffff;
+    --nav-dropdown-background-color: #ffffff;
+    --nav-dropdown-color: #01433c;
+    --nav-dropdown-hover-color: #ac1010;
+}
+
+
+
+.light-background {
     --background-color: #f2f9f9;
     --surface-color: #ffffff;
-  }
-  
-  .dark-background {
+}
+
+.dark-background {
     --background-color: #060606;
     --default-color: #ffffff;
     --heading-color: #ffffff;
     --surface-color: #252525;
     --contrast-color: #ffffff;
-  }
-  
-  .accent-background {
+}
+
+.accent-background {
     --background-color: #ac1010;
     --default-color: #ffffff;
     --heading-color: #ffffff;
     --accent-color: #ffffff;
     --surface-color: #00b6a1;
     --contrast-color: #ffffff;
-  }
-  
-  :root {
+}
+
+:root {
     scroll-behavior: smooth;
-  }
-  
-  /*--------------------------------------------------------------
+}
+
+/*--------------------------------------------------------------
   # General Styling & Shared Classes
   --------------------------------------------------------------*/
-  body {
+body {
     color: var(--default-color);
     background-color: var(--background-color);
     font-family: var(--default-font);
-  }
-  
-  a {
+}
+
+a {
     color: var(--accent-color);
     text-decoration: none;
     transition: 0.3s;
-  }
-  
-  a:hover {
+}
+
+a:hover {
     color: color-mix(in srgb, var(--accent-color), transparent 25%);
     text-decoration: none;
-  }
-  
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     color: var(--heading-color);
     font-family: var(--heading-font);
-  }
+}
 
-  .padding-vert{
+.padding-vert {
     padding: 60px 0;
-  }
+}

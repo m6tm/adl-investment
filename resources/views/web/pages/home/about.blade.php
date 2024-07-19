@@ -200,7 +200,7 @@
                                             <p>Playing the lottery is gambling, so keep it fun by treating it as part of your entertainment budget.</p>
                                         </div>
                                         <div class="icon-area">
-                                            <img src="assets/img/counter/counter-icon-4.png" alt="icon">
+                                            <img src="assets/img/ball/counter-icon-1.png" alt="icon">
                                         </div>
                                     </div>
                                 </div>
@@ -219,7 +219,7 @@
                                 <div class="col-xl-5 col-md-7 col-sm-10">
                                     <div class="single-box wow fadeInRight">
                                         <div class="icon-area">
-                                            <img src="assets/img/counter/counter-icon-4.png" alt="icon">
+                                            <img src="assets/img/ball/counter-icon-2.png" alt="icon">
                                         </div>
                                         <div class="text-area">
                                             <h4>Choose Your Lottery.</h4>
@@ -236,7 +236,7 @@
                                             <p>Playing the lottery is gambling, so keep it fun by treating it as part of your entertainment budget.</p>
                                         </div>
                                         <div class="icon-area">
-                                            <img src="assets/img/counter/counter-icon-4.png" alt="icon">
+                                            <img src="assets/img/ball/counter-icon-3.png" alt="icon">
                                         </div>
                                     </div>
                                 </div>
@@ -255,7 +255,7 @@
                                 <div class="col-xl-5 col-md-7 col-sm-10">
                                     <div class="single-box wow fadeInRight">
                                         <div class="icon-area">
-                                            <img src="assets/img/counter/counter-icon-4.png" alt="icon">
+                                            <img src="assets/img/ball/counter-icon-4.png" alt="icon">
                                         </div>
                                         <div class="text-area">
                                             <h4>Check Your Numbers.</h4>
