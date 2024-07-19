@@ -29,12 +29,12 @@
       </div>
 
       <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
-        <h4>Contact Us</h4>
+        <h4>+1 5589 55488 55</h4>
         <p>Quartier</p>
         <p>Ville</p>
         <p>Pays</p>
-        <p class="mt-4"><strong>Phone:</strong> <span>numéro</span></p>
-        <p><strong>Email:</strong> <span>addres email</span></p>
+        <p class="mt-4"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
+        <p><strong>Email:</strong> <span>adl.investment.55@gmail.com</span></p>
       </div>
 
     </div>
