@@ -189,6 +189,84 @@
 
         </div>
 
+    </section>
+{{--
+<!-- Privacy Policy Section -->
+<section id="privacy-policy" class="privacy-policy section padding-vert">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2>Politique de Confidentialité<br></h2>
+    </div><!-- End Section Title -->
+
+    <div class="container">
+
+        <div class="row gy-4">
+            <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">
+                <p>Chez ADL, nous prenons votre confidentialité très au sérieux. Notre politique de confidentialité est conçue pour vous informer sur les types de renseignements personnels que nous recueillons, comment nous les utilisons, avec qui nous les partageons, et comment nous les protégeons. Nous nous engageons à assurer la sécurité et la confidentialité de vos données personnelles, et à respecter toutes les lois et réglementations applicables en matière de protection des données.</p>
+                <p>Nous recueillons des informations personnelles lorsque vous créez un compte, jouez à des jeux, participez à des tirages, ou utilisez nos services. Ces informations peuvent inclure votre nom, adresse, adresse e-mail, numéro de téléphone, informations de paiement, et toute autre information que vous choisissez de nous fournir. Nous utilisons ces informations pour gérer votre compte, traiter vos transactions, vous envoyer des notifications, et améliorer nos services.</p>
+                <p>Nous pouvons également recueillir des informations non personnelles telles que des données de navigation, des adresses IP, des informations sur les appareils, et des données d'utilisation. Ces informations nous aident à comprendre comment nos utilisateurs interagissent avec notre plateforme, à améliorer nos services, et à offrir une expérience utilisateur plus personnalisée. Nous utilisons des cookies et des technologies similaires pour recueillir ces informations et pour faciliter votre navigation sur notre site.</p>
+            </div>
+            <div class="col-lg-12" data-aos="fade-up" data-aos-delay="250">
+                <div class="content ps-0 ps-lg-5">
+                    <ul>
+                        <li><i class="bi bi-check-circle-fill"></i> <span>Nous ne vendons, n'échangeons ni ne louons vos informations personnelles à des tiers sans votre consentement.</span></li>
+                        <li><i class="bi bi-check-circle-fill"></i> <span>Nous pouvons partager vos informations avec des prestataires de services tiers qui nous aident à fournir et améliorer nos services.</span></li>
+                        <li><i class="bi bi-check-circle-fill"></i> <span>Nous pouvons également divulguer vos informations si la loi l'exige ou pour protéger nos droits et ceux de nos utilisateurs.</span></li>
+                        <li><i class="bi bi-check-circle-fill"></i> <span>Nous mettons en œuvre des mesures de sécurité pour protéger vos informations contre l'accès non autorisé, la perte, l'altération ou la divulgation.</span></li>
+                    </ul>
+                    <p>
+                        Nous nous engageons à maintenir vos informations personnelles à jour et à les corriger ou les supprimer sur demande. Vous avez le droit d'accéder à vos informations personnelles, de les corriger ou de les supprimer à tout moment. Si vous avez des questions ou des préoccupations concernant notre politique de confidentialité, n'hésitez pas à nous contacter.
+                    </p>
+
+                    <div class="position-relative mt-4">
+                        <p>Pour en savoir plus sur la manière dont nous protégeons vos informations personnelles, veuillez consulter notre politique de confidentialité complète sur notre site web. Nous vous encourageons à lire cette politique régulièrement, car nous pouvons la mettre à jour de temps à autre pour refléter les changements dans nos pratiques ou les modifications de la loi. Votre utilisation continue de nos services après la publication des modifications constitue votre acceptation de ces modifications.</p>
+                        <p>Chez ADL, nous nous efforçons de fournir une expérience de jeu sécurisée et agréable. Nous comprenons l'importance de la confidentialité et de la sécurité des données, et nous faisons tout notre possible pour protéger vos informations. Merci de nous faire confiance et de jouer sur notre plateforme.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+    <!-- Team Of Service Section -->
+<section id="team" class="team section padding-vert">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2>Notre Équipe<br></h2>
+    </div><!-- End Section Title -->
+
+    <div class="container">
+
+        <div class="row gy-4">
+            <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">
+                <p>Chez ADL, notre équipe est composée de passionnés de jeux, de techniciens innovants et de professionnels dévoués. Ensemble, nous travaillons sans relâche pour offrir à nos utilisateurs la meilleure expérience de jeu en ligne possible. Chacun de nos membres apporte une expertise unique, garantissant que chaque aspect de notre plateforme est optimisé pour la satisfaction de nos joueurs.</p>
+                <p>Notre mission est de transformer chaque interaction en une aventure palpitante et chaque tirage en une opportunité excitante de gagner. Avec une interface sécurisée et intuitive, nous nous assurons que tous les utilisateurs peuvent jouer en toute tranquillité d'esprit, sachant que leurs informations sont protégées et que leurs gains sont garantis.</p>
+                <p>Nous croyons fermement en l'innovation et en l'amélioration continue. Nos développeurs travaillent constamment sur de nouvelles fonctionnalités et des améliorations pour rendre votre expérience de jeu encore plus engageante et gratifiante. Rejoignez-nous et faites partie d'une communauté dynamique de joueurs partageant les mêmes passions et objectifs.</p>
+            </div>
+            <div class="col-lg-12" data-aos="fade-up" data-aos-delay="250">
+                <div class="content ps-0 ps-lg-5">
+                    <ul>
+                        <li><i class="bi bi-check-circle-fill"></i> <span>Des experts en développement de jeux en ligne pour garantir des tirages équitables et passionnants.</span></li>
+                        <li><i class="bi bi-check-circle-fill"></i> <span>Une équipe de support client dévouée pour vous assister 24/7.</span></li>
+                        <li><i class="bi bi-check-circle-fill"></i> <span>Des spécialistes en sécurité pour protéger vos données personnelles et financières.</span></li>
+                        <li><i class="bi bi-check-circle-fill"></i> <span>Des designers créatifs pour une interface utilisateur attrayante et facile à utiliser.</span></li>
+                    </ul>
+                    <p>
+                        Chez ADL, nous sommes plus qu'une simple plateforme de jeu. Nous sommes une équipe engagée à créer une communauté de joueurs où chacun se sent valorisé et récompensé. Notre objectif est de vous offrir non seulement des jeux passionnants, mais aussi un environnement où vous pouvez vous divertir, rencontrer des amis et partager vos succès.
+                    </p>
+
+                    <div class="position-relative mt-4">
+                        <p>Découvrez l'engagement et la passion qui animent notre équipe et comment nous travaillons ensemble pour faire de chaque moment sur ADL une expérience inoubliable. Rejoignez-nous et faites tourner la roue en votre faveur avec la certitude que vous êtes entre de bonnes mains.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section> --}}
 
     <!-- Stats Section -->
 

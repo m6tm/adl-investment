@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 
 class StaticPagesController extends Controller
 {
-    // Fichier d'appel des différentes pages du site web 
-    public function loadPage($page) 
+    // Fichier d'appel des différentes pages du site web
+    public function loadPage($page)
 {
 
   switch($page) {
@@ -20,17 +20,23 @@ class StaticPagesController extends Controller
       return view('web.pages.tutoriel.tutoriel');
 
     case 'services-details':
-      return view('web.pages.services.service-details'); 
+      return view('web.pages.services.service-details');
 
-    case 'portfolio-details': 
+    case 'portfolio-details':
       return view('web.pages.portfolio.portfolio-details');
 
     case 'about':
       return view('web.pages.home.about');
 
+    case 'team':
+        return view('web.pages.home.team');
+
+    case 'privacy':
+        return view('web.pages.home.privacy');
+
     case 'conditions':
       return view('web.pages.home.conditions');
-    
+
     case '404';
         return view('web.pages.errors.404');
 

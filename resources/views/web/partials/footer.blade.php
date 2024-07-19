@@ -16,16 +16,16 @@
       </div>
 
       <div class="col-lg-2 col-6 footer-links">
-        <h4>Useful Links</h4>
+        <h4>Liens utiles</h4>
         <ul>
           <li><a href="#">Home</a></li>
           <li><a href="#">About us</a></li>
           <li><a href="#">Services</a></li>
-          <li><a href="#">Terms of service</a></li>
-          <li><a href="#">Privacy policy</a></li>
+          <li><a href="{{ route('load.page', 'team') }}">Terms of service</a></li>
+          <li><a href="{{ route('load.page', 'privacy') }}">Privacy policy</a></li>
         </ul>
       </div>
-
+{{--
       <div class="col-lg-2 col-6 footer-links">
         <h4>Our Services</h4>
         <ul>
@@ -35,7 +35,7 @@
           <li><a href="#">4</a></li>
           <li><a href="#">5</a></li>
         </ul>
-      </div>
+      </div> --}}
 
       <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
         <h4>Contact Us</h4>
