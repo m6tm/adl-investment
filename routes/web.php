@@ -31,9 +31,17 @@ Route::get('/portfolio-details', [StaticPagesController::class, 'portfolioDetail
 Route::get('/about', [StaticPagesController::class, 'about'])->name('about');
 Route::get('/conditions', [StaticPagesController::class, 'conditions'])->name('conditions');
 
-Route::get('/', function () {
-    return view('web.layout.app');
+// Route::get('/', function () {
+//     return view('welcome');
+// })->name('welcome');
+
+Route::get('/welcome', function() {
+    return view('welcome');
 })->name('welcome');
+
+Route::get('/app', function () {
+    return view('web.layout.app');
+})->name('app');
 
 Route::get('/', function () {
     return view('web.pages.home.home');

@@ -269,22 +269,23 @@
                 <div class="row gy-4">
 
                     <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                        <div class="service-item  position-relative">
-                            <div class="icon">
-                                <i class="bi bi-box-arrow-in-right"></i>
-                            </div>
-                            <div class="position-relative mt-4">
-                                <h3>Inscription descriptif</h3>
-                                <p>Inscrivez-vous dès maintenant sur ADL pour accéder à une expérience de jeu inégalée et
-                                    laisser la roue tourner en votre faveur !
-                                </p>
-                                <a href="{{ route('tutoriel') }}" class="readmore stretched-link"></a>
-                            </div>
-                        </div>
-
+                                <a href="{{ route('tutoriel') }}" class="readmore stretched-link text-black">
+                                    <div class="service-item  position-relative element">
+                                        <div class="icon">
+                                            <i class="bi bi-box-arrow-in-right"></i>
+                                        </div>
+                                        <div class="position-relative mt-4">
+                                            <h3>Inscription descriptif</h3>
+                                            <p>Inscrivez-vous dès maintenant sur ADL pour accéder à une expérience de jeu inégalée et
+                                                laisser la roue tourner en votre faveur !
+                                            </p>
+                                        </div>
+                                    </div>
+                                </a>
                     </div><!-- End Service Item -->
 
                     <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                        <a href="{{ route('tutoriel') }}" class="readmore stretched-link text-black">
                         <div class="service-item position-relative ">
                             <div class="icon">
                                 <i class="bi bi-currency-dollar"></i>
@@ -294,12 +295,13 @@
                                 <p>Déposez de l'argent sur votre compte ADL et débloquerez des bonus exclusifs, des tours
                                     supplémentaires et
                                     l'accès à des tirages spéciaux avec des prix encore plus impressionnants. </p>
-                                    <a href="{{ route('tutoriel') }}" class="readmore stretched-link"></a>
                             </div>
                         </div>
+                        </a>
                     </div><!-- End Service Item -->
 
                     <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                        <a href="{{ route('tutoriel') }}" class="readmore stretched-link text-black">
                         <div class="service-item position-relative">
                             <div class="icon">
                                 <i class="bi bi-ticket"></i>
@@ -310,12 +312,13 @@
                                     gagner des prix
                                     et décrochez des jackpots!
                                 </p>
-                                <a href="{{ route('tutoriel') }}" class="readmore stretched-link"></a>
                             </div>
                         </div>
+                        </a>
                     </div><!-- End Service Item -->
 
                     <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                        <a href="{{ route('tutoriel') }}" class="readmore stretched-link text-black">
                         <div class="service-item position-relative">
                             <div class="icon">
                                 <i class="bi bi-ui-radios"></i>
@@ -326,12 +329,13 @@
                                     quotidiens,
                                     hebdomadaires, ou mensuels, chacun offrant des récompenses uniques et des opportunités
                                     de gains exceptionnels.</p>
-                                <a href="{{ route('tutoriel') }}" class="readmore stretched-link"></a>
                             </div>
                         </div>
+                        </a>
                     </div><!-- End Service Item -->
 
                     <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+                        <a href="{{ route('tutoriel') }}" class="readmore stretched-link text-black">
                         <div class="service-item position-relative">
                             <div class="icon">
                                 <i class="bi bi-gift"></i>
@@ -340,12 +344,13 @@
                                 <h3>Bonus</h3>
                                 <p>Profitez de nos bonus exclusifs en achetant des tickets et en participant régulièrement
                                     aux tirages.</p>
-                                    <a href="{{ route('tutoriel') }}" class="readmore stretched-link"></a>
                             </div>
                         </div>
+                        </a>
                     </div><!-- End Service Item -->
 
                     <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+                        <a href="{{ route('tutoriel') }}" class="readmore stretched-link text-black">
                         <div class="service-item position-relative">
                             <div class="icon">
                                 <i class="bi bi-chat"></i>
@@ -355,9 +360,9 @@
                                 <p>
                                     Rejoignez notre chat en direct pour discuter avec d'autres joueurs passionnés,
                                     partager des astuces et des stratégies, et célébrer vos victoires ensemble..</p>
-                                    <a href="{{ route('tutoriel') }}" class="readmore stretched-link"></a>
                             </div>
                         </div>
+                        </a>
                     </div><!-- End Service Item -->
 
                 </div>

@@ -21,7 +21,7 @@
     <nav class="breadcrumbs">
         <div class="container">
             <ol>
-                <li><a href="{{ route('home') }}">Home</a></li>
+                <li><a href="{{ route('home') }}#services">Home</a></li>
                 <li class="">Pages</li>
                 <li class="current">Tutoriel</li>
             </ol>
