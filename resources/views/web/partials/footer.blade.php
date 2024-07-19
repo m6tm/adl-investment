@@ -29,7 +29,7 @@
       </div>
 
       <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
-        <h4>+1 5589 55488 55</h4>
+        <h4>Contact Us</h4>
         <p>Quartier</p>
         <p>Ville</p>
         <p>Pays</p>
