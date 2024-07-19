@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="{{ asset('assets/css/partials/header.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/utils.css') }}">
 
 <header id="header" class="header fixed-top">
     <div class="topbar d-flex align-items-center">
@@ -43,9 +44,9 @@
                     <li><a href="{{ route('home') }}" class="active">Home<br></a></li>
                     <li><a href="{{ route('home') }}#services">Services</a></li>
                     <li><a href="{{ route('home') }}#contact">Contact</a></li>
-                    <li><a href="{{ route('tutoriel') }}">Tutoriel</a></li>
-                    <li><a href="{{ route('about') }}">About Us</a>
-                    <li><a href="{{ route('conditions') }}">Terms</a>
+                    <li><a href="{{ route('tutoriel') }}#tutoriel">Tutoriel</a></li>
+                    <li><a href="{{ route('about') }}#aboutus">About Us</a>
+                    <li><a href="{{ route('conditions') }}#condition">Terms</a>
                     </li>
 
                 </ul>

@@ -35,13 +35,10 @@ Route::get('/conditions', [StaticPagesController::class, 'conditions'])->name('c
 //     return view('welcome');
 // })->name('welcome');
 
-Route::get('/welcome', function() {
-    return view('welcome');
-})->name('welcome');
 
 Route::get('/app', function () {
     return view('web.layout.app');
-})->name('app');
+})->name('welcome');
 
 Route::get('/', function () {
     return view('web.pages.home.home');
