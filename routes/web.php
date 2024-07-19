@@ -30,6 +30,7 @@ Route::get('/services-details', [StaticPagesController::class, 'servicesDetails'
 Route::get('/portfolio-details', [StaticPagesController::class, 'portfolioDetails'])->name('portfolio-details');
 Route::get('/about', [StaticPagesController::class, 'about'])->name('about');
 Route::get('/conditions', [StaticPagesController::class, 'conditions'])->name('conditions');
+Route::get('/privacy', [StaticPagesController::class, 'privacy'])->name('privacy');
 
 // Route::get('/', function () {
 //     return view('welcome');

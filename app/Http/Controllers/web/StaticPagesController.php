@@ -43,6 +43,11 @@ class StaticPagesController extends Controller
         return view('web.pages.home.conditions');
     }
 
+    public function privacy()
+    {
+        return view('web.pages.home.privacy');
+    }
+
     public function notFound()
     {
         return view('web.pages.errors.404');

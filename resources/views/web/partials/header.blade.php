@@ -45,9 +45,10 @@
                     <li><a href="{{ route('home') }}#services">Services</a></li>
                     <li><a href="{{ route('home') }}#contact">Contact</a></li>
                     <li><a href="{{ route('tutoriel') }}#tutoriel">Tutoriel</a></li>
-                    <li><a href="{{ route('about') }}#aboutus">About Us</a>
-                    <li><a href="{{ route('conditions') }}#condition">Terms</a>
-                    </li>
+                    <li><a href="{{ route('about') }}#aboutus">About Us</a></li>
+                    <li><a href="{{ route('conditions') }}#condition">Terms</a></li>
+                    <li><a href="{{ route('privacy') }}#privacy">Privacy Policy</a></li>
+                    
 
                 </ul>
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
