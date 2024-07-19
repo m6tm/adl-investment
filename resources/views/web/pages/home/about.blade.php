@@ -20,7 +20,7 @@
         <nav class="breadcrumbs">
             <div class="container">
                 <ol>
-                    <li><a href="{{ route('load.page', 'home') }}">Home</a></li>
+                    <li><a href="{{ route('home') }}">Home</a></li>
                     <li class="current">About Us</li>
                 </ol>
             </div>
@@ -130,7 +130,7 @@
     
                 <div class="col-xl-3 col-md-6 d-flex" >
                     <div class="member">
-                        <img src="assets/img/counter/counter-icon-1.png" class="img-fluid" alt="">
+                        <img src="assets/img/ball/counter-icon-1.png" class="img-fluid" alt="">
                         <h4 data-purecounter-start="0" data-purecounter-end="502010"
                         data-purecounter-duration="1" class="purecounter">K</h4>
                         <span>Players</span>
@@ -139,7 +139,7 @@
     
                 <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
                     <div class="member">
-                        <img src="assets/img/counter/counter-icon-2.png" class="img-fluid" alt="">
+                        <img src="assets/img/ball/counter-icon-2.png" class="img-fluid" alt="">
                         <h4 data-purecounter-start="0" data-purecounter-end="521000"
                         data-purecounter-duration="1" class="purecounter"></h4>
                         <span>Lotteries</span>
@@ -148,7 +148,7 @@
     
                 <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
                     <div class="member">
-                        <img src="assets/img/counter/counter-icon-3.png" class="img-fluid" alt="">
+                        <img src="assets/img/ball/counter-icon-3.png" class="img-fluid" alt="">
                         <h4 data-purecounter-start="0" data-purecounter-end="521000"
                         data-purecounter-duration="1" class="purecounter">K</h4>
                         <span>Jackpot</span>
@@ -157,7 +157,7 @@
     
                 <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
                     <div class="member">
-                        <img src="assets/img/counter/counter-icon-4.png" class="img-fluid" alt="">
+                        <img src="assets/img/ball/counter-icon-4.png" class="img-fluid" alt="">
                         <h4 data-purecounter-start="0" data-purecounter-end="521000"
                         data-purecounter-duration="1" class="purecounter text-xxl">K</h4>
                         <span>Satisfied</span>

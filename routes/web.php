@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SigninController;
+use App\Http\Controllers\SignUpController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\web\StaticPagesController;
@@ -17,16 +19,17 @@ use App\Http\Controllers\web\StaticPagesController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 /*route d'appel du fichier de configuration de l'application */
 
 // Appel des pages web
-Route::get('/{page}', [StaticPagesController::class, 'loadPage'])->name('load.page');
-
-
+Route::get('/home-page', [StaticPagesController::class, 'loadPage'])->name('load.page');
+Route::get('/home', [StaticPagesController::class, 'home'])->name('home');
+Route::get('/tutoriel', [StaticPagesController::class, 'tutoriel'])->name('tutoriel');
+Route::get('/tutoriel-details', [StaticPagesController::class, 'tutorielDetails'])->name('tutoriel-details');
+Route::get('/services-details', [StaticPagesController::class, 'servicesDetails'])->name('services-details');
+Route::get('/portfolio-details', [StaticPagesController::class, 'portfolioDetails'])->name('portfolio-details');
+Route::get('/about', [StaticPagesController::class, 'about'])->name('about');
+Route::get('/conditions', [StaticPagesController::class, 'conditions'])->name('conditions');
 
 Route::get('/', function () {
     return view('web.layout.app');
@@ -36,9 +39,11 @@ Route::get('/', function () {
     return view('web.pages.home.home');
 })->name('home');
 
+Route::get('/signin', [SigninController::class, 'index'])->name('signin');
+Route::get('/signup', [SignUpController::class, 'index'])->name('signup');
+
 Route::middleware(['auth.dashboard'])->group(function () {
 });
-
 
 Route::get('/contact', [ContactController::class, 'create'])->name('contact.create');
 Route::post('/contact', [ContactController::class, 'store'])->name('Contact.store');
