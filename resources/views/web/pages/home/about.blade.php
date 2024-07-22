@@ -97,10 +97,10 @@
                 </div>
                 <div class="col-lg-8">
                     <h2 class="text-danger text-xxl font-weight-bold">We dream big so you can win big</h2>
-                    
+
                     <p class="hero-text">
-                        There are many variations of passages of Lorem Ipsum available, 
-                        but the majority have suffered alteration in some form, by injected humour, 
+                        There are many variations of passages of Lorem Ipsum available,
+                        but the majority have suffered alteration in some form, by injected humour,
                         or randomised words which don't look even ...
                     </p>
                     <br>
@@ -114,7 +114,7 @@
 
                 </div>
                 <div class="col-lg-6" data-aos="fade-up" data-aos-delay="250">
-                    
+
                 </div>
             </div>
 
@@ -123,11 +123,11 @@
     </section>
 
     <section id="team" class="team section padding-vert">
-    
+
         <div class="container">
-    
+
             <div class="row gy-4">
-    
+
                 <div class="col-xl-3 col-md-6 d-flex" >
                     <div class="member">
                         <img src="assets/img/ball/counter-icon-1.png" class="img-fluid" alt="">
@@ -136,7 +136,7 @@
                         <span>Players</span>
                     </div>
                 </div><!-- End Team Member -->
-    
+
                 <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
                     <div class="member">
                         <img src="assets/img/ball/counter-icon-2.png" class="img-fluid" alt="">
@@ -145,7 +145,7 @@
                         <span>Lotteries</span>
                     </div>
                 </div><!-- End Team Member -->
-    
+
                 <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
                     <div class="member">
                         <img src="assets/img/ball/counter-icon-3.png" class="img-fluid" alt="">
@@ -154,7 +154,7 @@
                         <span>Jackpot</span>
                     </div>
                 </div><!-- End Team Member -->
-    
+
                 <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
                     <div class="member">
                         <img src="assets/img/ball/counter-icon-4.png" class="img-fluid" alt="">
@@ -163,11 +163,11 @@
                         <span>Satisfied</span>
                     </div>
                 </div><!-- End Team Member -->
-    
+
             </div>
-    
+
         </div>
-    
+
     </section>
 
      <!-- How it works start -->
@@ -271,6 +271,6 @@
         </div>
     </section>
 
-    @include('web.partials.team')
+    {{-- @include('web.partials.team') --}}
 
 @endsection

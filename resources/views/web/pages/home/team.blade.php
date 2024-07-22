@@ -80,6 +80,6 @@
     </section><!-- End Team of Service Section -->
 
 
-    @include('web.partials.team')
+    {{-- @include('web.partials.team') --}}
 
 @endsection

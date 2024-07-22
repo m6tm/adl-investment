@@ -29,6 +29,8 @@ Route::get('/tutoriel-details', [StaticPagesController::class, 'tutorielDetails'
 Route::get('/services-details', [StaticPagesController::class, 'servicesDetails'])->name('services-details');
 Route::get('/portfolio-details', [StaticPagesController::class, 'portfolioDetails'])->name('portfolio-details');
 Route::get('/about', [StaticPagesController::class, 'about'])->name('about');
+Route::get('/team', [StaticPagesController::class, 'team'])->name('team');
+Route::get('/privacy', [StaticPagesController::class, 'privacy'])->name('privacy');
 Route::get('/conditions', [StaticPagesController::class, 'conditions'])->name('conditions');
 
 Route::get('/', function () {

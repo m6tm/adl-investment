@@ -21,8 +21,8 @@
           <li><a href="#">Home</a></li>
           <li><a href="#">About us</a></li>
           <li><a href="#">Services</a></li>
-          <li><a href="{{ route('load.page', 'team') }}">Terms of service</a></li>
-          <li><a href="{{ route('load.page', 'privacy') }}">Privacy policy</a></li>
+          <li><a href="{{ route('team') }}">Terms of service</a></li>
+          <li><a href="{{ route('privacy') }}">Privacy policy</a></li>
         </ul>
       </div>
 {{--
