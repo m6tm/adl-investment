@@ -156,13 +156,13 @@
                                 <table style="width:100%">
                                     <tr>
                                         <td>
-                                            <button type="submit" class="btn btn-outline-danger">Acheter Maintenant</button>
+                                            <a href="#" class="btn btn-outline-danger">Acheter maintenant</a>
                                         </td>
                                         <td>
-                                            <button type="submit" class="btn btn-outline-danger">Acheter Maintenant</button>
+                                            <a href="#" class="btn btn-outline-danger">Acheter maintenant</a>
                                         </td>
                                         <td>
-                                            <button type="submit" class="btn btn-outline-danger">Acheter Maintenant</button>
+                                            <a href="#" class="btn btn-outline-danger">Acheter maintenant</a>
                                         </td>
                                     </tr>
                                 </table>
