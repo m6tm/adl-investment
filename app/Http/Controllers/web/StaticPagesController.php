@@ -48,14 +48,5 @@ class StaticPagesController extends Controller
         return view('web.pages.errors.404');
     }
 
-    public function team()
-    {
-        return view('web.pages.home.team');
-    }
-
-    public function privacy()
-    {
-        return view('web.pages.home.privacy');
-    }
-
 }
+
