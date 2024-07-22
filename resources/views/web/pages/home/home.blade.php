@@ -114,7 +114,6 @@
 
     </section><!-- /Hero Section -->
 
-    </section><!-- /Hero Section -->
 
     <!-- About Section -->
     <section id="about" class="about section padding-vert">
@@ -174,7 +173,7 @@
 
         </div>
 
-
+    </section>
         <!-- Stats Section -->
 
         <section id="stats" class="stats section padding-vert">
@@ -231,7 +230,7 @@
             </div>
         </section><!-- /Stats Section -->
 
-
+        @include('web.partials.pricing')
         <!-- Call To Action Section -->
         <section id="call-to-action" class="call-to-action section dark-background padding-vert">
 
@@ -269,99 +268,105 @@
                 <div class="row gy-4">
 
                     <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                                <a href="{{ route('tutoriel') }}" class="readmore stretched-link text-black">
-                                    <div class="service-item  position-relative element">
-                                        <div class="icon">
-                                            <i class="bi bi-box-arrow-in-right"></i>
-                                        </div>
-                                        <div class="position-relative mt-4">
-                                            <h3>Inscription descriptif</h3>
-                                            <p>Inscrivez-vous dès maintenant sur ADL pour accéder à une expérience de jeu inégalée et
-                                                laisser la roue tourner en votre faveur !
-                                            </p>
-                                        </div>
-                                    </div>
-                                </a>
+                        <a href="{{ route('tutoriel') }}" class="readmore stretched-link text-black">
+                            <div class="service-item  position-relative element">
+                                <div class="icon">
+                                    <i class="bi bi-box-arrow-in-right"></i>
+                                </div>
+                                <div class="position-relative mt-4">
+                                    <h3>Inscription descriptif</h3>
+                                    <p>Inscrivez-vous dès maintenant sur ADL pour accéder à une expérience de jeu inégalée
+                                        et
+                                        laisser la roue tourner en votre faveur !
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
                     </div><!-- End Service Item -->
 
                     <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
                         <a href="{{ route('tutoriel') }}" class="readmore stretched-link text-black">
-                        <div class="service-item position-relative ">
-                            <div class="icon">
-                                <i class="bi bi-currency-dollar"></i>
+                            <div class="service-item position-relative ">
+                                <div class="icon">
+                                    <i class="bi bi-currency-dollar"></i>
+                                </div>
+                                <div class="position-relative mt-2">
+                                    <h3>Dépôt d'argent</h3>
+                                    <p>Déposez de l'argent sur votre compte ADL et débloquerez des bonus exclusifs, des
+                                        tours
+                                        supplémentaires et
+                                        l'accès à des tirages spéciaux avec des prix encore plus impressionnants. </p>
+                                </div>
                             </div>
-                            <div class="position-relative mt-2">
-                                <h3>Dépôt d'argent</h3>
-                                <p>Déposez de l'argent sur votre compte ADL et débloquerez des bonus exclusifs, des tours
-                                    supplémentaires et
-                                    l'accès à des tirages spéciaux avec des prix encore plus impressionnants. </p>
-                            </div>
-                        </div>
                         </a>
                     </div><!-- End Service Item -->
 
                     <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
                         <a href="{{ route('tutoriel') }}" class="readmore stretched-link text-black">
-                        <div class="service-item position-relative">
-                            <div class="icon">
-                                <i class="bi bi-ticket"></i>
+                            <div class="service-item position-relative">
+                                <div class="icon">
+                                    <i class="bi bi-ticket"></i>
+                                </div>
+                                <div class="position-relative mt-4 align-items-center">
+                                    <h3>Achat de ticket</h3>
+                                    <p>Achetez des tickets pour participer à nos tirages excitants et augmentez vos chances
+                                        de
+                                        gagner des prix
+                                        et décrochez des jackpots!
+                                    </p>
+                                </div>
                             </div>
-                            <div class="position-relative mt-4 align-items-center">
-                                <h3>Achat de ticket</h3>
-                                <p>Achetez des tickets pour participer à nos tirages excitants et augmentez vos chances de
-                                    gagner des prix
-                                    et décrochez des jackpots!
-                                </p>
-                            </div>
-                        </div>
                         </a>
                     </div><!-- End Service Item -->
 
                     <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
                         <a href="{{ route('tutoriel') }}" class="readmore stretched-link text-black">
-                        <div class="service-item position-relative">
-                            <div class="icon">
-                                <i class="bi bi-ui-radios"></i>
+                            <div class="service-item position-relative">
+                                <div class="icon">
+                                    <i class="bi bi-ui-radios"></i>
+                                </div>
+                                <div class="position-relative mt-4">
+                                    <h3>type de tirage</h3>
+                                    <p>Nos tirages offrent une variété de possibilités pour gagner. Choisissez entre des
+                                        tirages
+                                        quotidiens,
+                                        hebdomadaires, ou mensuels, chacun offrant des récompenses uniques et des
+                                        opportunités
+                                        de gains exceptionnels.</p>
+                                </div>
                             </div>
-                            <div class="position-relative mt-4">
-                                <h3>type de tirage</h3>
-                                <p>Nos tirages offrent une variété de possibilités pour gagner. Choisissez entre des tirages
-                                    quotidiens,
-                                    hebdomadaires, ou mensuels, chacun offrant des récompenses uniques et des opportunités
-                                    de gains exceptionnels.</p>
-                            </div>
-                        </div>
                         </a>
                     </div><!-- End Service Item -->
 
                     <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
                         <a href="{{ route('tutoriel') }}" class="readmore stretched-link text-black">
-                        <div class="service-item position-relative">
-                            <div class="icon">
-                                <i class="bi bi-gift"></i>
+                            <div class="service-item position-relative">
+                                <div class="icon">
+                                    <i class="bi bi-gift"></i>
+                                </div>
+                                <div class="position-relative mt-4">
+                                    <h3>Bonus</h3>
+                                    <p>Profitez de nos bonus exclusifs en achetant des tickets et en participant
+                                        régulièrement
+                                        aux tirages.</p>
+                                </div>
                             </div>
-                            <div class="position-relative mt-4">
-                                <h3>Bonus</h3>
-                                <p>Profitez de nos bonus exclusifs en achetant des tickets et en participant régulièrement
-                                    aux tirages.</p>
-                            </div>
-                        </div>
                         </a>
                     </div><!-- End Service Item -->
 
                     <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
                         <a href="{{ route('tutoriel') }}" class="readmore stretched-link text-black">
-                        <div class="service-item position-relative">
-                            <div class="icon">
-                                <i class="bi bi-chat"></i>
+                            <div class="service-item position-relative">
+                                <div class="icon">
+                                    <i class="bi bi-chat"></i>
+                                </div>
+                                <div class="position-relative mt-4">
+                                    <h3>Chat </h3>
+                                    <p>
+                                        Rejoignez notre chat en direct pour discuter avec d'autres joueurs passionnés,
+                                        partager des astuces et des stratégies, et célébrer vos victoires ensemble..</p>
+                                </div>
                             </div>
-                            <div class="position-relative mt-4">
-                                <h3>Chat </h3>
-                                <p>
-                                    Rejoignez notre chat en direct pour discuter avec d'autres joueurs passionnés,
-                                    partager des astuces et des stratégies, et célébrer vos victoires ensemble..</p>
-                            </div>
-                        </div>
                         </a>
                     </div><!-- End Service Item -->
 
@@ -519,12 +524,10 @@
 
         <!-- Portfolio Section -->
         {{-- <section id="portfolio" class="portfolio section">
-
-        <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
             <h2>Portfolio</h2>
             <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-        </div><!-- End Section Title -->
+        </div>
 
         <div class="container"> --}}
 
@@ -688,86 +691,12 @@
 
             </div>
 
-        </div>
+        </div>--}}
 
-    </section><!-- /Portfolio Section --> --}}
 
         {{-- @include('web.partials.team') --}}
 
-        <section id="pricing" class="pricing section padding-vert">
 
-            <!-- Section Title -->
-            <div class="container section-title" data-aos="fade-up">
-                <h2>Prix du ticket</h2>
-            </div><!-- End Section Title -->
-
-            <div class="container" data-aos="zoom-in" data-aos-delay="100">
-
-                <div class="row g-4">
-
-                    <div class="col-lg-4">
-                        <div class="pricing-item">
-                            <h3>Ticket 3 Jours</h3>
-                            <div class="icon">
-                                <i class="bi bi-calendar3"></i>
-                            </div>
-                            <h4><sup>$</sup>2<span> / ticket</span></h4>
-                            <ul>
-                                <li><i class="bi bi-check"></i> <span>Valide 3 jours</span></li>
-                                <li><i class="bi bi-check"></i> <span>1 seul tirage</span></li>
-                                <li><i class="bi bi-check"></i> <span>Participer aux tirages les Lundi, Mercredi, et Samedi
-                                        à 19h00 GMT</span></li>
-                                <li><i class="bi bi-check"></i> <span>Bonus : $1 si dépensé entre $25 et $50 ce
-                                        mois-ci</span></li>
-                            </ul>
-                            <div class="text-center"><a href="#" class="buy-btn">Acheter maintenant</a></div>
-                        </div>
-                    </div><!-- End Pricing Item 3 Days -->
-
-                    <div class="col-lg-4">
-                        <div class="pricing-item featured">
-                            <h3>Ticket 1 Semaine</h3>
-                            <div class="icon">
-                                <i class="bi bi-calendar-week"></i>
-                            </div>
-
-                            <h4><sup>$</sup>5<span> / tickets</span></h4>
-                            <ul>
-                                <li><i class="bi bi-check"></i> <span>Valide 1 semaine</span></li>
-                                <li><i class="bi bi-check"></i> <span>2 tirages consécutifs</span></li>
-                                <li><i class="bi bi-check"></i> <span>Participer aux tirages les Lundi, Mercredi, et Samedi
-                                        à 19h00 GMT</span></li>
-                                <li><i class="bi bi-check"></i> <span>Bonus : $2 si dépensé entre $51 et $100 ce
-                                        mois-ci</span></li>
-                            </ul>
-                            <div class="text-center"><a href="#" class="buy-btn">Acheter maintenant</a></div>
-                        </div>
-                    </div><!-- End Pricing Item -->
-
-                    <div class="col-lg-4">
-                        <div class="pricing-item">
-                            <h3>Ticket 1 Mois</h3>
-                            <div class="icon">
-                                <i class="bi bi-calendar-month"></i>
-                            </div>
-                            <h4><sup>$</sup>10<span> / tickets</span></h4>
-                            <ul>
-                                <li><i class="bi bi-check"></i> <span>Valide 1 mois</span></li>
-                                <li><i class="bi bi-check"></i> <span>8 tirages consécutifs</span></li>
-                                <li><i class="bi bi-check"></i> <span>Participer aux tirages les Lundi, Mercredi, et Samedi
-                                        à 19h00 GMT</span></li>
-                                <li><i class="bi bi-check"></i> <span>Bonus : $5 si dépensé entre $101 et $200 ce
-                                        mois-ci</span></li>
-                            </ul>
-                            <div class="text-center"><a href="#" class="buy-btn">Acheter maintenant</a></div>
-                        </div>
-                    </div><!-- End Pricing Item -->
-
-                </div>
-
-            </div>
-
-        </section><!-- /Pricing Section -->
 
         <!-- Faq Section -->
         <section id="faq" class="faq section padding-vert">
