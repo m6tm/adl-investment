@@ -8,7 +8,7 @@
 	<!-- Hero Section -->
 	<section id="hero" class="hero section accent-background">
 
-		<div class=" container position-relative py-5" data-aos="fade-up" data-aos-delay="200">
+		<div class=" container position-relative py-5 " data-aos="fade-up" data-aos-delay="200">
 			<div class="row gy-4 mt-5 justify-content-between">
 				<div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
 					<h2><span>Welcome to </span><span class="accent">ADL </span></h2>
@@ -29,15 +29,6 @@
 				</div>
 			</div>
 		</div>
-{{--         
-       <div class="icon-boxes position-relative py-5" data-aos="fade-up" data-aos-delay="200">
-          <div class="container position-relative">
-              <div class="row gy-4 mt-5">
-        
-                </div>
-            </div>
-        </div>
-   --}}
 
 	</section><!-- /Hero Section -->
 
