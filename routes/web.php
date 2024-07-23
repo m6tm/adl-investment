@@ -22,6 +22,7 @@ use App\Http\Controllers\web\StaticPagesController;
 /*route d'appel du fichier de configuration de l'application */
 
 // Appel des pages web
+
 Route::get('/home-page', [StaticPagesController::class, 'loadPage'])->name('load.page');
 Route::get('/home', [StaticPagesController::class, 'home'])->name('home');
 Route::get('/tutoriel', [StaticPagesController::class, 'tutoriel'])->name('tutoriel');
@@ -29,6 +30,8 @@ Route::get('/tutoriel-details', [StaticPagesController::class, 'tutorielDetails'
 Route::get('/services-details', [StaticPagesController::class, 'servicesDetails'])->name('services-details');
 Route::get('/portfolio-details', [StaticPagesController::class, 'portfolioDetails'])->name('portfolio-details');
 Route::get('/about', [StaticPagesController::class, 'about'])->name('about');
+Route::get('/team', [StaticPagesController::class, 'team'])->name('team');
+Route::get('/privacy', [StaticPagesController::class, 'privacy'])->name('privacy');
 Route::get('/conditions', [StaticPagesController::class, 'conditions'])->name('conditions');
 Route::get('/privacy', [StaticPagesController::class, 'privacy'])->name('privacy');
 

@@ -287,5 +287,4 @@
         </section>
     </main>
 
-    @include('web.partials.team')
 @endsection
