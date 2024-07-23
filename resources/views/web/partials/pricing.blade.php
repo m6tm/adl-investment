@@ -14,8 +14,8 @@
                     <tbody>
                         <tr>
                             <td width="30%" class="pricing-table-text">
-                                <h2>Choisis l'abonnement qui vous convient.</h2>
-                                <p><button class="btn btn-info">Read More</button></p>
+                                <h2>Choisissez ce qui vous convient</h2>
+                                <p></p>
                             </td>
                             <td width="20%">
                                 <div class="pricing-table-item">
@@ -65,61 +65,61 @@
                         </tr>
 
                         <tr class="pricing-table-list">
-                            <td>Free Domain</td>
+                            <td class="element-list">Free Domain</td>
                             <td><span class="bi bi-check-lg"></span></td>
                             <td><span class="bi bi-check-lg"></span></td>
                             <td><span class="bi bi-check-lg"></span></td>
                         </tr>
                         <tr class="pricing-table-list">
-                            <td>Websites</td>
+                            <td class="element-list">Websites</td>
                             <td>1</td>
                             <td>Unlimited</td>
                             <td>Unlimited</td>
                         </tr>
                         <tr class="pricing-table-list">
-                            <td>Bandwidth</td>
+                            <td class="element-list">Bandwidth</td>
                             <td>Unlimited</td>
                             <td>Unlimited</td>
                             <td>Unlimited</td>
                         </tr>
                         <tr class="pricing-table-list">
-                            <td>Disk Space</td>
+                            <td class="element-list">Disk Space</td>
                             <td>100GB SSD</td>
                             <td>300GB SSD</td>
                             <td>Unlimited</td>
                         </tr>
                         <tr class="pricing-table-list">
-                            <td>MySQL Databases</td>
+                            <td class="element-list">MySQL Databases</td>
                             <td>2</td>
                             <td>10</td>
                             <td>Unlimited</td>
                         </tr>
                         <tr class="pricing-table-list">
-                            <td>Email Addresses</td>
+                            <td class="element-list">Email Addresses</td>
                             <td>100</td>
                             <td>500</td>
                             <td>1000</td>
                         </tr>
                         <tr class="pricing-table-list">
-                            <td>Premium DNS</td>
+                            <td class="element-list">Premium DNS</td>
                             <td><span class="bi bi-x-lg"></span></td>
                             <td><span class="bi bi-check-lg"></span></td>
                             <td><span class="bi bi-check-lg"></span></td>
                         </tr>
                         <tr class="pricing-table-list">
-                            <td>SSL Certificate</td>
+                            <td class="element-list">SSL Certificate</td>
                             <td><span class="bi bi-x-lg"></span></td>
                             <td><span class="bi bi-check-lg"></span></td>
                             <td><span class="bi bi-check-lg"></span></td>
                         </tr>
                         <tr class="pricing-table-list">
-                            <td>Support</td>
+                            <td class="element-list">Support</td>
                             <td>24/7</td>
                             <td>24/7</td>
                             <td>24/7</td>
                         </tr>
                         <tr class="pricing-table-list">
-                            <td>Support</td>
+                            <td class="element-list">Support</td>
                             <td>24/7</td>
                             <td>24/7</td>
                             <td>24/7</td>
