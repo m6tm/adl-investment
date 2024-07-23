@@ -7,172 +7,127 @@
     <div class="container section-title" data-aos="fade-up">
         <h2>Prix du ticket</h2>
     </div><!-- End Section Title -->
+    <div class="container">
+        <div class="row gy-4">
+            <div class="col-xs-12 col-md-12 price">
+                <table class="pricing-table">
+                    <tbody>
+                        <tr>
+                            <td width="30%" class="pricing-table-text">
+                                <h2>Choisis l'abonnement qui vous convient.</h2>
+                                <p><button class="btn btn-info">Read More</button></p>
+                            </td>
+                            <td width="20%">
+                                <div class="pricing-table-item">
+                                    <div class="pricing-table-item-head">
+                                        <p>Sales</p>
+                                        <span>loremp ipsum</span>
+                                    </div>
+                                    <div class="pricing-table-item-price">
+                                        <p>$2,40<span>/ yr</span></p>
+                                        <span>per month</span>
+                                    </div>
+                                    <div class="pricing-table-item-purchase">
+                                        <button class="btn btn-danger btn-block">Acheter</button>
+                                    </div>
+                                </div>
+                            </td>
+                            <td width="20%">
+                                <div class="pricing-table-item">
+                                    <div class="pricing-table-item-head">
+                                        <p>Office</p>
+                                        <span>Lorem ipsum</span>
+                                    </div>
+                                    <div class="pricing-table-item-price">
+                                        <p>$320<span>/ yr</span></p>
+                                        <span>per month</span>
+                                    </div>
+                                    <div class="pricing-table-item-purchase">
+                                        <button class="btn btn-danger btn-block">Acheter</button>
+                                    </div>
+                                </div>
+                            </td>
+                            <td width="20%">
+                                <div class="pricing-table-item">
+                                    <div class="pricing-table-item-head">
+                                        <p>Pro</p>
+                                        <span>Ideal for projects with high load</span>
+                                    </div>
+                                    <div class="pricing-table-item-price">
+                                        <p>$500<span>/ yr</span></p>
+                                        <span>Per month</span>
+                                    </div>
+                                    <div class="pricing-table-item-purchase">
+                                        <button class="btn btn-danger btn-block">Achter</button>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
 
-    <div class="container" data-aos="zoom-in" data-aos-delay="100">
-
-        <div class="row g-4">
-
+                        <tr class="pricing-table-list">
+                            <td>Free Domain</td>
+                            <td><span class="bi bi-check-lg"></span></td>
+                            <td><span class="bi bi-check-lg"></span></td>
+                            <td><span class="bi bi-check-lg"></span></td>
+                        </tr>
+                        <tr class="pricing-table-list">
+                            <td>Websites</td>
+                            <td>1</td>
+                            <td>Unlimited</td>
+                            <td>Unlimited</td>
+                        </tr>
+                        <tr class="pricing-table-list">
+                            <td>Bandwidth</td>
+                            <td>Unlimited</td>
+                            <td>Unlimited</td>
+                            <td>Unlimited</td>
+                        </tr>
+                        <tr class="pricing-table-list">
+                            <td>Disk Space</td>
+                            <td>100GB SSD</td>
+                            <td>300GB SSD</td>
+                            <td>Unlimited</td>
+                        </tr>
+                        <tr class="pricing-table-list">
+                            <td>MySQL Databases</td>
+                            <td>2</td>
+                            <td>10</td>
+                            <td>Unlimited</td>
+                        </tr>
+                        <tr class="pricing-table-list">
+                            <td>Email Addresses</td>
+                            <td>100</td>
+                            <td>500</td>
+                            <td>1000</td>
+                        </tr>
+                        <tr class="pricing-table-list">
+                            <td>Premium DNS</td>
+                            <td><span class="bi bi-x-lg"></span></td>
+                            <td><span class="bi bi-check-lg"></span></td>
+                            <td><span class="bi bi-check-lg"></span></td>
+                        </tr>
+                        <tr class="pricing-table-list">
+                            <td>SSL Certificate</td>
+                            <td><span class="bi bi-x-lg"></span></td>
+                            <td><span class="bi bi-check-lg"></span></td>
+                            <td><span class="bi bi-check-lg"></span></td>
+                        </tr>
+                        <tr class="pricing-table-list">
+                            <td>Support</td>
+                            <td>24/7</td>
+                            <td>24/7</td>
+                            <td>24/7</td>
+                        </tr>
+                        <tr class="pricing-table-list">
+                            <td>Support</td>
+                            <td>24/7</td>
+                            <td>24/7</td>
+                            <td>24/7</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-
-        <div class="row g-4">
-            <table>
-                <thead>
-                    <tr class="pricing-top-heading">
-                        <th class="free table-top-left">3 Jours</th>
-                        <th class="basic">1 Semaine</th>
-                        <th class="pro table-top-rigth">1 Mois</th>
-                    </tr>
-                    <tr class="pricing-bottom-heading small">
-                        <th class="free"><strong>Ideal for:</strong> Lorem ipsum dolor sit amet, consectetur
-                            adipiscing elit. Cras porttitor pulvinar diam id interdum.</th>
-                        <th class="basic"><strong>Ideal for:</strong> Lorem ipsum dolor sit amet, consectetur
-                            adipiscing elit. Cras porttitor pulvinar diam id interdum.</th>
-                        <th class="pro"><strong>Ideal for:</strong> Lorem ipsum dolor sit amet, consectetur
-                            adipiscing elit. Cras porttitor pulvinar diam id interdum.</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- SECTION 1 -->
-                    <tr>
-                        <td class="collapsible-section-header" colspan="3">
-                            <a data-toggle="collapse" href="#collapse_section_one">Ticket 1</a>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="no-padding" colspan="3">
-                            <div id="collapse_section_one">
-                                <table style="width:100%">
-                                    <tr>
-                                        <td>3 Jrs</td>
-                                        <td>1 Semaine</td>
-                                        <td>1 Mois</td>
-                                    </tr>
-                                    <tr>
-                                        <td>3 Jrs</td>
-                                        <td>1 Semaine</td>
-                                        <td>1 Mois</td>
-                                    </tr>
-                                    <tr>
-                                        <td>3 Jrs</td>
-                                        <td>1 Semaine</td>
-                                        <td>1 Mois</td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td class="collapsible-section-header" colspan="3">
-                            <a data-toggle="collapse" href="#collapse_section_two">Ticket 2</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="no-padding" colspan="3">
-                            <div id="collapse_section_two">
-                                <table style="width:100%">
-                                    <tr>
-                                        <td>3 Jrs</td>
-                                        <td>1 Semaine</td>
-                                        <td>1 Mois</td>
-                                    </tr>
-                                    <tr>
-                                        <td>3 Jrs</td>
-                                        <td>1 Semaine</td>
-                                        <td>1 Mois</td>
-                                    </tr>
-                                    <tr>
-                                        <td>3 Jrs</td>
-                                        <td>1 Semaine</td>
-                                        <td>1 Mois</td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td class="collapsible-section-header" colspan="3">
-                            <a data-toggle="collapse" href="#collapse_section_three">Ticket 3</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="no-padding align-item-center" colspan="3">
-                            <div id="collapse_section_three">
-                                <table style="width:100%">
-                                    <tr>
-                                        <td>3 Jrs</td>
-                                        <td>1 Semaine</td>
-                                        <td>1 Mois</td>
-                                    </tr>
-                                    <tr>
-                                        <td>3 Jrs</td>
-                                        <td>1 Semaine</td>
-                                        <td>1 Mois</td>
-                                    </tr>
-                                    <tr>
-                                        <td>3 Jrs</td>
-                                        <td>1 Semaine</td>
-                                        <td>1 Mois</td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td class="collapsible-section-header" colspan="3">
-                            <a data-toggle="collapse" href="#collapse_section_four">Ticket 4</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="no-padding" colspan="3">
-                            <div id="collapse_section_four">
-                                <table style="width:100%">
-                                    <tr>
-                                        <td>3 Jrs</td>
-                                        <td>1 Semaine</td>
-                                        <td>1 Mois</td>
-                                    </tr>
-                                    <tr>
-                                        <td>3 Jrs</td>
-                                        <td>1 Semaine</td>
-                                        <td>1 Mois</td>
-                                    </tr>
-                                    <tr>
-                                        <td>3 Jrs</td>
-                                        <td>1 Semaine</td>
-                                        <td>1 Mois</td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td class="no-padding" colspan="3">
-                            <div id="collapse_section_four">
-                                <table style="width:100%">
-                                    <tr>
-                                        <td>
-                                            <a href="#" class="btn btn-outline-danger">Acheter maintenant</a>
-                                        </td>
-                                        <td>
-                                            <a href="#" class="btn btn-outline-danger">Acheter maintenant</a>
-                                        </td>
-                                        <td>
-                                            <a href="#" class="btn btn-outline-danger">Acheter maintenant</a>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
     </div>
-</section><!-- /Pricing Section -->
+</section>
 
