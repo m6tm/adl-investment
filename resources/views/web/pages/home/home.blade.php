@@ -175,6 +175,7 @@
 
     </section>
         <!-- Stats Section -->
+        @include('web.partials.pricing')
 
         <section id="stats" class="stats section padding-vert">
             <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -230,7 +231,6 @@
             </div>
         </section><!-- /Stats Section -->
 
-        @include('web.partials.pricing')
         <!-- Call To Action Section -->
         <section id="call-to-action" class="call-to-action section dark-background padding-vert">
 
