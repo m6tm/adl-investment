@@ -36,6 +36,7 @@
             </a>
 
       <nav id="navmenu" class="navmenu">
+        <ul>
         <li><a href="{{ route('home') }}" class="active">Home<br></a></li>
         <li><a href="#contact">Contact</a></li>
         <li><a href="{{ route('tutoriel') }}">Tutoriel</a></li>
@@ -47,10 +48,10 @@
         </li>
         <li><a href="{{ route('team') }}">Team</a></li>
         <li><a href="{{route ('privacy')}}">Privacy police</a></li>
-        </ul>
+
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
             </nav>
-
+        </ul>
         </div>
 
     </div>
