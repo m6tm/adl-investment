@@ -24,7 +24,7 @@
 								class="bi bi-play-circle"></i><span>Tutoriel</span></a>
 					</div>
 				</div>
-				<div class="col-lg-5 order-1 order-lg-2">
+				<div class="col-lg-3 order-1 order-lg-1">
 					<img src="assets/img/index-illus.png" class="img-fluid" alt="">
 				</div>
 			</div>
