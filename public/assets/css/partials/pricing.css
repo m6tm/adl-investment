@@ -1,0 +1,93 @@
+@import url('../utils.css');
+
+/* Table Heading */
+.pricing-top-heading th {
+    text-align: center;
+    font-weight: 700;
+    font-size: 2rem;
+    width: 33%;
+}
+
+.pricing-bottom-heading th {
+    padding: 0 2%;
+    font-weight: 300;
+}
+
+.pricing-top-heading .free {
+    background-color: none;
+    color: black;
+}
+
+.pricing-bottom-heading .free {
+    background-color: none;
+    color: black;
+}
+
+.pricing-top-heading .basic {
+    background-color: none;
+    color: black;
+}
+
+.pricing-bottom-heading .basic {
+    background-color: none;
+    color: black;
+}
+
+.pricing-top-heading .pro {
+    background-color: none;
+    color: black;
+}
+
+.pricing-bottom-heading .pro {
+    background-color: none;
+    color: black;
+}
+
+.pricing-top-heading,
+.pricing-bottom-heading {
+    color: white;
+    height: 90px;
+}
+
+.table-top-left{
+    border-top-left-radius: 15px;
+}
+.table-top-rigth{
+    border-top-right-radius: 15px;
+}
+
+table thead th {
+    border: 0;
+
+}
+
+/* table */
+table {
+    width: 100%;
+}
+
+.collapsible-section-header {
+    background-color: #ac1010a9;
+}
+
+.collapsible-section-header a {
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.collapsible-section-header a:after {
+    content: "\25bc";
+    padding-left: 0.5em;
+}
+
+.collapsible-section-header a.collapsed:after {
+    content: "\25ba";
+    padding-left: 0.5em;
+}
+
+tbody td {
+    background-color: rgb(255, 255, 255);
+    padding: 1.25rem;
+    text-align: center;
+}
