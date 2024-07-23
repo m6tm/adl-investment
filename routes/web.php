@@ -33,9 +33,14 @@ Route::get('/about', [StaticPagesController::class, 'about'])->name('about');
 Route::get('/team', [StaticPagesController::class, 'team'])->name('team');
 Route::get('/privacy', [StaticPagesController::class, 'privacy'])->name('privacy');
 Route::get('/conditions', [StaticPagesController::class, 'conditions'])->name('conditions');
+Route::get('/privacy', [StaticPagesController::class, 'privacy'])->name('privacy');
+
+// Route::get('/', function () {
+//     return view('welcome');
+// })->name('welcome');
 
 
-Route::get('/', function () {
+Route::get('/app', function () {
     return view('web.layout.app');
 })->name('welcome');
 

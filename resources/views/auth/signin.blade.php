@@ -6,7 +6,7 @@
 			<div class="flex flex-wrap items-center">
 				<div class="hidden w-full xl:block xl:w-1/2">
 					<div class="px-26 py-17.5 text-center">
-						<a class="mb-5.5 inline-block" href="{{ route('welcome') }}">
+						<a class="mb-5.5 inline-block" href="{{ route('home') }}">
 							<img class="block" src="https://place-hold.it/86" alt="Logo">
 						</a>
 

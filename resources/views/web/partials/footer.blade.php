@@ -19,31 +19,20 @@
         <h4>Liens utiles</h4>
         <ul>
           <li><a href="#">Home</a></li>
-          <li><a href="#">About us</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="{{ route('team') }}">Terms of service</a></li>
+					<li><a href="{{ route('about') }}#aboutus">About Us</a></li>
+					<li><a href="{{ route('tutoriel') }}#tutoriel">Tutoriel</a></li>
+          <li><a href="{{ route('conditions') }}">Terms of service</a></li>
           <li><a href="{{ route('privacy') }}">Privacy policy</a></li>
         </ul>
       </div>
-{{--
-      <div class="col-lg-2 col-6 footer-links">
-        <h4>Our Services</h4>
-        <ul>
-          <li><a href="#">1</a></li>
-          <li><a href="#">2</a></li>
-          <li><a href="#">3</a></li>
-          <li><a href="#">4</a></li>
-          <li><a href="#">5</a></li>
-        </ul>
-      </div> --}}
 
       <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
         <h4>Contact Us</h4>
-        <p>Quartier</p>
-        <p>Ville</p>
-        <p>Pays</p>
-        <p class="mt-4"><strong>Phone:</strong> <span>numéro</span></p>
-        <p><strong>Email:</strong> <span>addres email</span></p>
+        <p>Quartier:</p>
+        <p>Ville:</p>
+        <p>Pays:</p>
+        <p class="mt-4"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
+        <p><strong>Email:</strong> <span>adl.investment.55@gmail.com</span></p>
       </div>
 
     </div>

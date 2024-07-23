@@ -13,7 +13,7 @@
         {{-- HERO SECTION    --}}
         @yield('content')
     </main>
-    
+
     <footer id="footer" class="footer accent-background">
         @include('web.partials.footer')
     </footer>
@@ -22,8 +22,8 @@
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
-  {{-- <div id="preloader"></div> --}}
-        {{-- Importation de tous les fichiers JS utilisés dans l'application  --}}
+<!-- <div id="preloader"></div> -->
+        <!-- Importation de tous les fichiers JS utilisés dans l'application -->
     @include('web.links-head.js-link')
 </body>
 
