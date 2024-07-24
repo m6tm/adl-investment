@@ -5,128 +5,196 @@
 
     <!-- Section Title -->
     <div class="container section-title" data-aos="fade-up">
-        <h2>Prix du ticket</h2>
-    </div><!-- End Section Title -->
-    <div class="container">
-        <div class="row gy-4">
-            <div class="col-xs-12 col-md-12 price">
-                <table class="pricing-table">
-                    <tbody>
-                        <tr>
-                            <td width="30%" class="pricing-table-text">
-                                <h2>Choisissez ce qui vous convient</h2>
-                                <p></p>
-                            </td>
-                            <td width="20%">
-                                <div class="pricing-table-item">
-                                    <div class="pricing-table-item-head">
-                                        <p>Sales</p>
-                                        <span>loremp ipsum</span>
-                                    </div>
-                                    <div class="pricing-table-item-price">
-                                        <p>$2,40<span>/ yr</span></p>
-                                        <span>per month</span>
-                                    </div>
-                                    <div class="pricing-table-item-purchase">
-                                        <button class="btn btn-danger btn-block">Acheter</button>
-                                    </div>
-                                </div>
-                            </td>
-                            <td width="20%">
-                                <div class="pricing-table-item">
-                                    <div class="pricing-table-item-head">
-                                        <p>Office</p>
-                                        <span>Lorem ipsum</span>
-                                    </div>
-                                    <div class="pricing-table-item-price">
-                                        <p>$320<span>/ yr</span></p>
-                                        <span>per month</span>
-                                    </div>
-                                    <div class="pricing-table-item-purchase">
-                                        <button class="btn btn-danger btn-block">Acheter</button>
-                                    </div>
-                                </div>
-                            </td>
-                            <td width="20%">
-                                <div class="pricing-table-item">
-                                    <div class="pricing-table-item-head">
-                                        <p>Pro</p>
-                                        <span>Ideal for projects with high load</span>
-                                    </div>
-                                    <div class="pricing-table-item-price">
-                                        <p>$500<span>/ yr</span></p>
-                                        <span>Per month</span>
-                                    </div>
-                                    <div class="pricing-table-item-purchase">
-                                        <button class="btn btn-danger btn-block">Achter</button>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
+        <h2>Prix du <span class="headline">Ticket</span></h2>
+    </div>
 
-                        <tr class="pricing-table-list">
-                            <td class="element-list">Free Domain</td>
-                            <td><span class="bi bi-check-lg"></span></td>
-                            <td><span class="bi bi-check-lg"></span></td>
-                            <td><span class="bi bi-check-lg"></span></td>
-                        </tr>
-                        <tr class="pricing-table-list">
-                            <td class="element-list">Websites</td>
-                            <td>1</td>
-                            <td>Unlimited</td>
-                            <td>Unlimited</td>
-                        </tr>
-                        <tr class="pricing-table-list">
-                            <td class="element-list">Bandwidth</td>
-                            <td>Unlimited</td>
-                            <td>Unlimited</td>
-                            <td>Unlimited</td>
-                        </tr>
-                        <tr class="pricing-table-list">
-                            <td class="element-list">Disk Space</td>
-                            <td>100GB SSD</td>
-                            <td>300GB SSD</td>
-                            <td>Unlimited</td>
-                        </tr>
-                        <tr class="pricing-table-list">
-                            <td class="element-list">MySQL Databases</td>
-                            <td>2</td>
-                            <td>10</td>
-                            <td>Unlimited</td>
-                        </tr>
-                        <tr class="pricing-table-list">
-                            <td class="element-list">Email Addresses</td>
-                            <td>100</td>
-                            <td>500</td>
-                            <td>1000</td>
-                        </tr>
-                        <tr class="pricing-table-list">
-                            <td class="element-list">Premium DNS</td>
-                            <td><span class="bi bi-x-lg"></span></td>
-                            <td><span class="bi bi-check-lg"></span></td>
-                            <td><span class="bi bi-check-lg"></span></td>
-                        </tr>
-                        <tr class="pricing-table-list">
-                            <td class="element-list">SSL Certificate</td>
-                            <td><span class="bi bi-x-lg"></span></td>
-                            <td><span class="bi bi-check-lg"></span></td>
-                            <td><span class="bi bi-check-lg"></span></td>
-                        </tr>
-                        <tr class="pricing-table-list">
-                            <td class="element-list">Support</td>
-                            <td>24/7</td>
-                            <td>24/7</td>
-                            <td>24/7</td>
-                        </tr>
-                        <tr class="pricing-table-list">
-                            <td class="element-list">Support</td>
-                            <td>24/7</td>
-                            <td>24/7</td>
-                            <td>24/7</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+
+    <div class="w-full container mx-auto relative py-8 full-table">
+
+        <div class="w-full h-auto">
+            <table class="w-full table-ticket">
+
+                <tr>
+                    <th class="w-1/4 h-52"></th>
+                    <th class="w-1/4 h-52 space-y-3 align-text-center pt-8 relative">
+
+                        <h3 class="text-3xl text-gray-600 font-normal">Days</h3>
+                        <p class="text-gray-400 text-center font-normal">Lorem, ipsum dolor.</p>
+                        <div class="p-3 rounded  mx-auto w-64 transform translate-y-4">
+                            <p class="text-[70px] font-normal text-black">3 <sup class="text-[28px] font-normal">Days</sup></p>
+                            <span class="uppercase text-black text-sm font-normal">per month</span>
+                        </div>
+
+                    </th>
+                    <th class="w-1/4 h-52 space-y-3 align-text-top pt-8 title-ticket">
+
+                        <h3 class="text-3xl text-white font-normal">Months</h3>
+                        <p class="text-white text-center font-normal">Magni placeat dolore inventore</p>
+                        <div class="p-3 rounded bg-[#ffffff] border border-cyan-400 mx-auto w-64 transform translate-y-4">
+                            <p class="text-[70px] font-normal text-black">30 <sup class="text-[28px] font-normal">Days</sup></p>
+                            <span class="uppercase text-black text-sm font-normal">per month</span>
+                        </div>
+
+                    </th>
+                    <th class="w-1/4 h-52 space-y-3 align-text-top pt-8">
+
+                        <h3 class="text-3xl text-gray-600 font-normal">Week</h3>
+                        <p class="text-gray-400 text-center font-normal">Lorem, ipsum dolor.</p>
+                        <div class="p-3 rounded mx-auto w-64 transform translate-y-4">
+                            <p class="text-[70px] font-normal text-black">7 <sup class="text-[28px] font-normal">Days</sup></p>
+                            <span class="uppercase text-black text-sm font-normal">per month</span>
+                        </div>
+                    </th>
+                </tr>
+
+                <tbody>
+                    <tr>
+                        <td class=" w-64  bg-[#F5F5F5] p-4 h-16  ">
+                            <div class="w-full flex space-x-1 items-center">
+                                
+                                <p class="text-[40px] font-normal text-[#f10a0a]"><sup class="text-[18px] font-normal text-black">Ticket</sup> 1$</p>
+                            </div>
+                        </td>
+                        <td class=" w-64  p-2 h-16 ">
+                            <div class="justify-center text-white">
+                                <ul class="list-none">
+                                    <li>avantage 1</li>
+                                    <li>avantage 2</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td class=" w-64  p-2 h-16 ticket-element">
+                            <div class="justify-center text-white">
+                                <ul class="list-none">
+                                    <li>avantage 1</li>
+                                    <li>avantage 2</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td class=" w-64  p-2 h-16 ">
+                            <div class="justify-center text-white">
+                                <ul class="list-none">
+                                    <li>avantage 1</li>
+                                    <li>avantage 2</li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="w-64  bg-[#F5F5F5] p-4 h-16">
+                            <div class="w-full flex space-x-1 items-center">
+                                
+                                <p class="text-[40px] font-normal text-[#f10a0a]"><sup class="text-[18px] font-normal text-black">Ticket</sup> 3$</p>
+                            </div>
+                        </td>
+                        <td class=" w-64  p-2 h-16 ">
+                            <div class="justify-center text-white">
+                                <ul class="list-none">
+                                    <li>avantage 1</li>
+                                    <li>avantage 2</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td class=" w-64  p-2 h-16 ticket-element">
+                            <div class="justify-center text-white">
+                                <ul class="list-none">
+                                    <li>avantage 1</li>
+                                    <li>avantage 2</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td class=" w-64  p-2 h-16 ">
+                            <div class="justify-center text-white">
+                                <ul class="list-none">
+                                    <li>avantage 1</li>
+                                    <li>avantage 2</li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class=" w-64  bg-[#F5F5F5] p-4 h-16  ">
+                            <div class="w-full flex space-x-1 items-center">
+                                
+                                <p class="text-[40px] font-normal text-[#f10a0a]"><sup class="text-[18px] font-normal text-black">Ticket</sup> 5$</p>
+                            </div>
+                        </td>
+                        <td class=" w-64  p-2 h-16 ">
+                            <div class="justify-center text-white">
+                                <ul class="list-none">
+                                    <li>avantage 1</li>
+                                    <li>avantage 2</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td class=" w-64  p-2 h-16 ticket-element">
+                            <div class="justify-center text-white">
+                                <ul class="list-none">
+                                    <li>avantage 1</li>
+                                    <li>avantage 2</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td class=" w-64  p-2 h-16 ">
+                            <div class="justify-center text-white">
+                                <ul class="list-none">
+                                    <li>avantage 1</li>
+                                    <li>avantage 2</li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class=" w-64 bg-[#F5F5F5] p-4 h-16">
+                            <div class="w-full flex space-x-1 items-center">
+                                <p class="text-[40px] font-normal text-[#f10a0a]"><sup class="text-[18px] font-normal text-black">Ticket</sup> 10$</p>
+                            </div>
+                        </td>
+                        <td class=" w-64  p-2 h-16 ">
+                            <div class="justify-center text-white">
+                                <ul class="list-none">
+                                    <li>avantage 1</li>
+                                    <li>avantage 2</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td class=" w-64  p-2 h-16 ticket-element">
+                            <div class="justify-center text-white">
+                                <ul class="list-none">
+                                    <li>avantage 1</li>
+                                    <li>avantage 2</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td class=" w-64  p-2 h-16 ">
+                            <div class="justify-center text-white">
+                                <ul class="list-none">
+                                    <li>avantage 1</li>
+                                    <li>avantage 2</li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="w-1/4 h-52"></th>
+                        <td class=" w-64  p-2 h-16 align-center">
+                            <div class="align-center justify-center text-white">
+                               <a href="#" class="btn btn-outline-danger">Commencer Maintenant</a>
+                            </div>
+                        </td>
+                        <td class=" w-64  p-2 h-16 align-center ticket-element">
+                            <div class="align-center justify-center text-white">
+                               <a href="#" class="btn btn-outline-danger">Commencer Maintenant</a>
+                            </div>
+                        </td>
+                        <td class=" w-64  p-2 h-16 align-center">
+                            <div class="align-center justify-center text-white">
+                               <a href="#" class="btn btn-outline-danger">Commencer Maintenant</a>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </section>
