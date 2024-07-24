@@ -16,6 +16,12 @@
 
 .title-ticket{
     border-radius: 15px 15px 15px 15px;
+    color: white;
+    border: 1px solid;
+    align-items: center;
+}
+.title-ticket-center{
+    border-radius: 15px 15px 15px 15px;
     box-shadow: 0 0 29px 0 rgba(0, 0, 0, 0.1);
     background-color: rgba(109, 109, 109, 0.377);
     color: white;
