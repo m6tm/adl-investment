@@ -8,27 +8,27 @@
     <!-- Hero Section -->
     <section id="hero" class="hero section accent-background">
 
-        <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
-            <div class="row gy-5 justify-content-between">
-                <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
-                    <h2><span>Welcome to </span><span class="accent">ADL </span></h2>
-                    <p class="hero-text">Plongez dans l'univers excitant du jeu en ligne ADL et tentez votre chance avec
-                        notre système de tirage de roue unique!
-                        Préparez-vous à vivre une expérience de jeu inégalée avec notre roue de la fortune;
-                        Tournez la roue et gagnez des prix incroyables en un instant,
-                        connectez-vous chaque jour pour obtenir des tours gratuits et des récompenses supplémentaires;
-                        participez à nos tournois hebdomadaires pour des prix encore plus grands .</p>
-                    <div class="d-flex">
-                        <a href="#" class="btn-get-started">Achetez un Ticket</a>
-                        <a href="#" class="glightbox btn-watch-video d-flex align-items-center"><i
-                                class="bi bi-play-circle"></i><span>Tutoriel</span></a>
-                    </div>
-                </div>
-                <div class="col-lg-5 order-1 order-lg-2">
-                    <img src="assets/img/index-illus.png" class="img-fluid" alt="">
-                </div>
-            </div>
-        </div>
+		<div class=" container position-relative py-5 " data-aos="fade-up" data-aos-delay="200">
+			<div class="row gy-4 mt-5 justify-content-between">
+				<div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
+					<h2><span>Welcome to </span><span class="accent">ADL </span></h2>
+					<p class="hero-text">Plongez dans l'univers excitant du jeu en ligne ADL et tentez votre chance avec
+						notre système de tirage de roue unique!
+						Préparez-vous à vivre une expérience de jeu inégalée avec notre roue de la fortune;
+						Tournez la roue et gagnez des prix incroyables en un instant,
+						connectez-vous chaque jour pour obtenir des tours gratuits et des récompenses supplémentaires;
+						participez à nos tournois hebdomadaires pour des prix encore plus grands .</p>
+					<div class="d-flex">
+						<a href="#" class="btn-get-started">Achetez un Ticket</a>
+						<a href="#" class="glightbox btn-watch-video d-flex align-items-center"><i
+								class="bi bi-play-circle"></i><span>Tutoriel</span></a>
+					</div>
+				</div>
+				<div class="col-lg-3 order-1 order-lg-1">
+					<img src="assets/img/index-illus.png" class="img-fluid" alt="">
+				</div>
+			</div>
+		</div>
 
     </section>
     <!-- /Hero Section -->
