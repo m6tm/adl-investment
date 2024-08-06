@@ -7,7 +7,12 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+    /**
+     * Display a listing of the user list.
+     *
+     * @return \Illuminate\View\View
+     */
     function index() {
-        view('dashboard.pages.users.index');
+        return view('dashboard.pages.users.index');
     }
 }

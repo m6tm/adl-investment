@@ -1,5 +1,6 @@
 // Importation de la bibliothèque bootstrap
 import 'bootstrap'
+import './templately/js/index'
 
 
 /**
@@ -12,6 +13,11 @@ import axios from 'axios';
 window.axios = axios;
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+
+window.addEventListener('load', () => {
+    const loader = document.querySelector('div[x-show="loaded"]')
+    if (loader) loader.classList.add('invisible')
+}, false)
 
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
