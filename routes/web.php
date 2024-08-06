@@ -57,7 +57,7 @@ Route::get('/', function () {
 Route::get('/signin', [SigninController::class, 'index'])->name('signin');
 Route::get('/signup', [SignUpController::class, 'index'])->name('signup');
 
-Route::prefix('loop')->group(function() {
+Route::prefix('dashboard')->group(function() {
     Route::get('users', [UserController::class, 'index'])->name('user.list');
 });
 // Route::middleware(['auth.dashboard'])->group(function () {

@@ -26,9 +26,15 @@
     <div class="flex h-screen overflow-hidden">
         <!-- ===== Sidebar Start ===== -->
         <x-dashboard.sidebar />
-        <x-dashboard.header />
-        @yield('content')
+        <!-- ===== Content Area Start ===== -->
+        <div
+          class="relative flex flex-1 flex-col overflow-y-auto overflow-x-hidden"
+        >
+            <x-dashboard.header />
+            @yield('content')
+        </div>
     </div>
+    <script src="https://unpkg.com/lucide@latest"></script>
     @vite(['resources/js/app.js'])
 </body>
 </html>

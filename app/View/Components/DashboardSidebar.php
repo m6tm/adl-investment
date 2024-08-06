@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class dashboard.header extends Component
+class DashboardSidebar extends Component
 {
     /**
      * Create a new component instance.
@@ -21,6 +21,6 @@ class dashboard.header extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.dashboard.header');
+        return view('components.dashboard.sidebar');
     }
 }
