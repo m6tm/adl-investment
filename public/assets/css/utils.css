@@ -9,18 +9,18 @@
     --background-color: #ffffff;
     --default-color: #222222;
     --heading-color: #172a28;
-    --accent-color: #ac1010;
+    --accent-color: #B22234;
     --surface-color: #ffffff;
     --contrast-color: #fffcfc;
 }
 
 :root {
     --nav-color: #ffffff;
-    --nav-hover-color: #ac1010;
+    --nav-hover-color: #B22234;
     --nav-mobile-background-color: #ffffff;
     --nav-dropdown-background-color: #ffffff;
     --nav-dropdown-color: #01433c;
-    --nav-dropdown-hover-color: #ac1010;
+    --nav-dropdown-hover-color: #B22234;
 }
 
 
@@ -39,7 +39,7 @@
 }
 
 .accent-background {
-    --background-color: #ac1010;
+    --background-color: #B22234;
     --default-color: #ffffff;
     --heading-color: #ffffff;
     --accent-color: #ffffff;

@@ -21,7 +21,7 @@
 }
 
 .hero h2 {
-    color: #d61111;
+    color: #B22234;
     font-size: 48px;
     font-weight: 700;
     margin-bottom: 20px;
@@ -1444,7 +1444,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #b40a0a;
+    background: #B22234;
     border: 1px solid var(--border-color);
     border-radius: 50%;
     margin: auto;

@@ -39,10 +39,6 @@ Route::get('/privacy', [StaticPagesController::class, 'privacy'])->name('privacy
 //     return view('welcome');
 // })->name('welcome');
 
-// Route::get('/', function () {
-//     return view('welcome');
-// })->name('welcome');
-
 
 Route::get('/app', function () {
     return view('web.layout.app');
