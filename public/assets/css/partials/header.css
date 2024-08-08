@@ -1,7 +1,7 @@
 @import url(../utils.css);
 
 .header .topbar {
-    background-color: color-mix(in srgb, var(--accent-color) 90%, black 10%);
+    background-color: color-mix(in srgb, #061c7e 90%, black 10%);
     height: 40px;
     padding: 0;
     font-size: 14px;
@@ -52,6 +52,7 @@
     min-height: 60px;
     box-shadow: 0px 6px 36px rgba(0, 0, 0, 0.3);
     padding: 10px 0;
+    background-color: #e01414ec;
 }
 
 .header .logo {
@@ -73,7 +74,8 @@
 .header .logo span {
     font-size: 32px;
     margin-left: 2px;
-    color: var(--nav-hover-color);
+    color: #061c7e;
+    font-weight: 500;
 }
 
 .scrolled .header {
@@ -139,7 +141,7 @@
         height: 2px;
         bottom: -6px;
         left: 0;
-        background-color: var(--nav-hover-color);
+        background-color: #fff;
         visibility: hidden;
         width: 0px;
         transition: all 0.3s ease-in-out 0s;

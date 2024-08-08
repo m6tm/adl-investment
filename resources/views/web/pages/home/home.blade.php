@@ -1,4 +1,4 @@
-<!-- resources/views/home/home.blade.php -->
+_<!-- resources/views/home/home.blade.php -->
 @extends('web.layout.app')
 
 <link rel="stylesheet" href="{{ asset('assets/css/pages/home.css') }}">
