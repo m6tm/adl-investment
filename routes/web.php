@@ -4,6 +4,7 @@ use App\Http\Controllers\SigninController;
 use App\Http\Controllers\SignUpController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\Dashboard\NotificationController;
 use App\Http\Controllers\Dashboard\UserController;
 use App\Http\Controllers\web\StaticPagesController;
 
@@ -61,6 +62,8 @@ Route::prefix('dashboard')->group(function() {
     Route::get('users', [UserController::class, 'index'])->name('user.list');
     Route::get('users/create', [UserController::class, 'create'])->name('user.create');
     Route::get('users/edit-{user_id}', [UserController::class, 'edit'])->name('user.edit')->whereAlpha('user_id');
+    // Notifications
+    Route::get('notifications', [NotificationController::class, 'index'])->name('notifications');
 });
 // Route::middleware(['auth.dashboard'])->group(function () {
 // })->prefix('dashboard');
