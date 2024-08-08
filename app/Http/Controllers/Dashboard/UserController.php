@@ -24,4 +24,13 @@ class UserController extends Controller
     function create() {
         return view('dashboard.pages.users.create');
     }
+
+    /**
+     * Display a listing of the user list.
+     *
+     * @return \Illuminate\View\View
+     */
+    function edit(string $user_id) {
+        return view('dashboard.pages.users.edit');
+    }
 }
