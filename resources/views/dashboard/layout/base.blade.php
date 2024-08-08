@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }} @yield('title')</title>
+    <title>{{ config('app.name', 'ADL Investment') }} .:. @yield('title')</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
@@ -16,7 +16,7 @@
     <!-- Scripts -->
     @vite(['resources/sass/app.scss'])
 </head>
-<body>
+<body class="bg-neutral-100 dark:bg-slate-800 dark:text-white">
     <!-- ===== Preloader Start ===== -->
     <div x-show="loaded" class="fixed left-0 top-0 z-999999 flex h-screen w-screen items-center justify-center bg-white dark:bg-black">
         <div class="h-16 w-16 animate-spin rounded-full border-4 border-solid border-primary border-t-transparent"></div>

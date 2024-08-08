@@ -15,4 +15,13 @@ class UserController extends Controller
     function index() {
         return view('dashboard.pages.users.index');
     }
+
+    /**
+     * Display a listing of the user list.
+     *
+     * @return \Illuminate\View\View
+     */
+    function create() {
+        return view('dashboard.pages.users.create');
+    }
 }

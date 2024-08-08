@@ -59,6 +59,7 @@ Route::get('/signup', [SignUpController::class, 'index'])->name('signup');
 
 Route::prefix('dashboard')->group(function() {
     Route::get('users', [UserController::class, 'index'])->name('user.list');
+    Route::get('users/create', [UserController::class, 'create'])->name('user.create');
 });
 // Route::middleware(['auth.dashboard'])->group(function () {
 // })->prefix('dashboard');

@@ -1,5 +1,9 @@
 @extends('dashboard.layout.base')
 
+@section('title')
+	Liste des utilisateurs
+@endsection
+
 @section('content')
 	<!-- ===== Main Content Start ===== -->
 	<main>
@@ -23,9 +27,21 @@
 
 			<!-- ====== Table Section Start -->
 			<div class="flex flex-col gap-10 mt-10">
-				<!-- ====== Table Four Start -->
-                <x-ui.table-primary :headers="['Name', 'Title', 'Email', 'Role']" :rows="[['Musharof Chowdhury', 'Multidisciplinary Web Entrepreneur', 'musharof@example.com', 'Owner']]" />
-				<!-- ====== Table Four End -->
+				<div class="bg-white dark:bg-meta-4 dark:bg-none px-5 pt-6 pb-8 shadow-default dark:shadow-none rounded-[10px] p-5">
+					<a href="http://" class="px-4 py-2 inline-block rounded-md bg-primary text-white">
+						<i data-lucide="plus" class="w-5"></i>
+						Créer un utilisateur
+					</a>
+					<!-- ====== Table Four Start -->
+					<x-ui.table-primary :headers="['Name', 'Title', 'Email', 'Role']" :rows="[
+						['Musharof Chowdhury', 'Multidisciplinary Web Entrepreneur', 'musharof@example.com', 'Owner'],
+						['John Doe', 'Software Developer', 'john.doe@example.com', 'Admin'],
+						['Jane Smith', 'UX Designer', 'jane.smith@example.com', 'User'],
+						['Mike Johnson', 'Project Manager', 'mike.johnson@example.com', 'Manager'],
+						['Emily Brown', 'Data Analyst', 'emily.brown@example.com', 'User']
+					]" />
+					<!-- ====== Table Four End -->
+				</div>
 			</div>
 			<!-- ====== Table Section End -->
 		</div>
