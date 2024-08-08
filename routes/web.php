@@ -1,10 +1,10 @@
 <?php
 
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SigninController;
 use App\Http\Controllers\SignUpController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\Dashboard\UserController;
 use App\Http\Controllers\web\StaticPagesController;
 
 
@@ -34,6 +34,8 @@ Route::get('/team', [StaticPagesController::class, 'team'])->name('team');
 Route::get('/privacy', [StaticPagesController::class, 'privacy'])->name('privacy');
 Route::get('/conditions', [StaticPagesController::class, 'conditions'])->name('conditions');
 Route::get('/privacy', [StaticPagesController::class, 'privacy'])->name('privacy');
+Route::get('/contact', [ContactController::class, 'create'])->name('contact.create');
+Route::post('/contact', [ContactController::class, 'store'])->name('Contact.store');
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -51,8 +53,8 @@ Route::get('/', function () {
 Route::get('/signin', [SigninController::class, 'index'])->name('signin');
 Route::get('/signup', [SignUpController::class, 'index'])->name('signup');
 
-Route::middleware(['auth.dashboard'])->group(function () {
+Route::prefix('loop')->group(function() {
+    Route::get('users', [UserController::class, 'index'])->name('user.list');
 });
-
-Route::get('/contact', [ContactController::class, 'create'])->name('contact.create');
-Route::post('/contact', [ContactController::class, 'store'])->name('Contact.store');
+// Route::middleware(['auth.dashboard'])->group(function () {
+// })->prefix('dashboard');
