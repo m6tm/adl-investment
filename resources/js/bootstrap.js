@@ -10,13 +10,15 @@ import './templately/js/index'
  */
 
 import axios from 'axios';
+import { notificationTabs } from './utilities/notification';
 window.axios = axios;
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 window.addEventListener('load', () => {
     const loader = document.querySelector('div[x-show="loaded"]')
-    if (loader) loader.classList.add('invisible')
+    if (loader) loader.classList.add('invisible');
+    notificationTabs();
 }, false)
 
 lucide.createIcons();
