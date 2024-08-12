@@ -15,7 +15,9 @@
             <table class="w-full table-ticket">
 
                 <tr>
-                    <th class="w-1/4 h-52"></th>
+                    <th class="w-1/4 h-52">
+                        <img src="assets/img/web/usa-1439858_640.jpg" class="img-fluid rounded-4" alt="">
+                    </th>
                     <th class="w-1/4 h-52 space-y-3 align-text-center pt-8 relative title-ticket">
 
                         <h3 class="text-3xl text-gray-600 font-normal">Days</h3>

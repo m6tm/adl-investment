@@ -5,7 +5,7 @@
   --------------------------------------------------------------*/
   .footer {
     color: var(--default-color);
-    background-color: black;
+    background-color: #03478b;
     font-size: 14px;
     position: relative;
   }

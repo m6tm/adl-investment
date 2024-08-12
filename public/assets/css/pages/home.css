@@ -6,18 +6,26 @@
 .hero {
         width: 100%;
         position: relative;
-        background-image: url('../../img/Roue_ADL.png');
+        background-image: url('../../img/web/finance-8037839_1280.jpg');
         background-position: center;
         background-repeat: no-repeat;
-        background-size: 50% auto;
+        background-size: cover;
         padding: 140px 0 0 0;
-        background-color: rgba(0, 0, 0, 0.582);
+        background-color: rgba(0, 0, 0, 0.507);
         background-blend-mode: multiply;
     }
 
 .hero .container {
     position: relative;
     z-index: 3;
+}
+
+.hero .image-ban {
+    transform: scale(1.7);
+}
+
+.isotope-layout .tuto-img {
+    max-width: 300px;
 }
 
 .hero h2 {

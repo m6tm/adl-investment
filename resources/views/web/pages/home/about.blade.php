@@ -42,7 +42,7 @@
                 <div class="row gy-4">
                     <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
                         <h3>Voluptatem dignissimos provident laboris nisi ut aliquip ex ea commodo</h3>
-                        <img src="assets/img/about.jpg" class="img-fluid rounded-4 mb-4" alt="">
+                        <img src="assets/img/web/usa-1177272_640.png" class="img-fluid rounded-4 mb-4" alt="">
                         <p>Bienvenue sur ADL, la plateforme de jeu en ligne révolutionnaire basée sur des tirages de roue!
                             Notre mission est de fournir une expérience de jeu unique et sécurisée à nos utilisateurs.
                             Rejoignez-nous pour des tirages palpitants et des gains incroyables!</p>
@@ -81,7 +81,7 @@
                             </p>
 
                             <div class="position-relative mt-4">
-                                <img src="assets/img/about-2.jpg" class="img-fluid rounded-4" alt="">
+                                <img src="assets/img/web/ai-generated-8725989_1280.jpg" class="img-fluid rounded-4" alt="">
                                 <a href="assets/img/Nobody -「AMV」- Anime MV.mp4" class="glightbox pulsating-play-btn"></a>
                             </div>
                         </div>
@@ -99,7 +99,7 @@
                 <div class="row gy-4">
                     <div class="col-lg-4">
                         <div class="content">
-                            <img src="assets/img/about-illus.png" class="img-fluid">
+                            <img src="assets/img/web/graph-8928602_640.png" class="img-fluid">
                         </div>
                     </div>
                     <div class="col-lg-8">

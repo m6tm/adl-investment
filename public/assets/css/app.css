@@ -140,7 +140,7 @@
     color: var(--default-color);
     transition: all 0.5s;
     z-index: 997;
-    background-color: black;
+    background-color: #03478b;
   }
   
   /*--------------------------------------------------------------

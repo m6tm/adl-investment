@@ -25,7 +25,7 @@
 					</div>
 				</div>
 				<div class="col-lg-3 order-1 order-lg-1">
-					<img src="assets/img/index-illus.png" class="img-fluid" alt="">
+					<img src="assets/img/web/interface-3614766_1280.png" class="img-fluid image-ban" alt="">
 				</div>
 			</div>
 		</div>
@@ -45,7 +45,7 @@
 
             <div class="row gy-4">
                 <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                    <img src="assets/img/Free Vector _ Casino games design.jpg" class="img-fluid rounded-4 mb-4"
+                    <img src="assets/img/web/usa-1197608_640.jpg" class="img-fluid rounded-4 mb-4"
                         alt="">
                     <p>Bienvenue sur ADL, la plateforme de jeu en ligne révolutionnaire basée sur des tirages de roue!
                         Notre mission est de fournir une expérience de jeu unique et sécurisée à nos utilisateurs.
@@ -82,7 +82,7 @@
                         </p>
 
                         <div class="position-relative mt-4">
-                            <img src="assets/img/Best Casino Roulette Games.jpg" class="img-fluid rounded-4" alt="">
+                            <img src="assets/img/web/AmericanDream1_1024x630.jpeg" class="img-fluid rounded-4" alt="">
                             <a href="assets/img/Nobody -「AMV」- Anime MV.mp4" class="glightbox pulsating-play-btn"></a>
                         </div>
                     </div>
@@ -152,7 +152,7 @@
     <section id="call-to-action" class="call-to-action section dark-background padding-vert">
 
         <div class="container">
-            <img src="assets/img/Experience the Thrill with Mini Roulette 🎰✨.jpg" alt="">
+            <img src="assets/img/web/broker-6882754_1280.jpg" alt="">
             <div class="content row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
                 <div class="col-xl-10">
                     <div class="text-center">
