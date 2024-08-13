@@ -9,3 +9,4 @@
 
     {{-- importation du fichier de configuration JS de l'application  --}}
     <script src="{{ asset('assets/js/app.js') }}"></script>
+    @vite(['resources/js/app.js'])

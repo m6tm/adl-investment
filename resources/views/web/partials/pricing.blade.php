@@ -9,7 +9,7 @@
     </div>
 
 
-    <div class="w-full container mx-auto relative py-8 full-table">
+    <div class="w-full container mx-auto relative py-8">
 
         <div class="w-full h-auto">
             <table class="w-full table-ticket">
@@ -58,23 +58,23 @@
                             </div>
                         </td>
                         <td class=" w-64  p-2 h-16 ">
-                            <div class="justify-center text-white">
+                            <div class="flex justify-center text-white">
                                 <ul class="list-none">
-                                    <li>Ne participe qu'à 1 seul tirage</li>
+                                    <li>Disponible</li>
                                 </ul>
                             </div>
                         </td>
                         <td class=" w-64  p-2 h-16 ticket-element">
-                            <div class="justify-center text-white">
+                            <div class="flex justify-center text-white">
                                 <ul class="list-none">
-                                    <li> Participe à 8 tirages consécutifs</li>
+                                    <li>Disponible</li>
                                 </ul>
                             </div>
                         </td>
                         <td class=" w-64  p-2 h-16 ">
-                            <div class="justify-center text-white">
+                            <div class="flex justify-center text-white">
                                 <ul class="list-none">
-                                    <li>Participe à 2 tirages consécutifs</li>
+                                    <li>Disponible</li>
                                 </ul>
                             </div>
                         </td>
@@ -82,30 +82,27 @@
                     <tr>
                         <td class="w-64  bg-[#F5F5F5] p-4 h-16">
                             <div class="w-full flex space-x-1 items-center">
-                                <p class="text-[40px] font-normal text-[#f10a0a]"><sup class="text-[18px] font-normal text-black">Ticket</sup> 3$</p>
+                                <p class="text-[40px] font-normal text-[#f10a0a]"><sup class="text-[18px] font-normal text-black">Ticket</sup> 2$</p>
                             </div>
                         </td>
                         <td class=" w-64  p-2 h-16 ">
-                            <div class="justify-center text-white">
+                            <div class="flex justify-center text-white">
                                 <ul class="list-none">
-                                    <li>avantage 1</li>
-                                    <li>avantage 2</li>
+                                    <li>Disponible</li>
                                 </ul>
                             </div>
                         </td>
                         <td class=" w-64  p-2 h-16 ticket-element">
-                            <div class="text-white mx-auto">
+                            <div class="flex justify-center text-white mx-auto">
                                 <ul class="list-none text-center">
-                                    <li>avantage 1</li>
-                                    <li>avantage 2</li>
+                                    <li>Disponible</li>
                                 </ul>
                             </div>
                         </td>
                         <td class=" w-64  p-2 h-16 ">
-                            <div class="justify-center text-white">
+                            <div class="flex justify-center text-white">
                                 <ul class="list-none">
-                                    <li>avantage 1</li>
-                                    <li>avantage 2</li>
+                                    <li>Disponible</li>
                                 </ul>
                             </div>
                         </td>
@@ -118,26 +115,23 @@
                             </div>
                         </td>
                         <td class=" w-64  p-2 h-16 ">
-                            <div class="justify-center text-white">
+                            <div class="flex justify-center text-white">
                                 <ul class="list-none">
-                                    <li>avantage 1</li>
-                                    <li>avantage 2</li>
+                                    <li>Disponible</li>
                                 </ul>
                             </div>
                         </td>
                         <td class=" w-64  p-2 h-16 ticket-element">
-                            <div class="justify-center text-white">
+                            <div class="flex justify-center text-white">
                                 <ul class="list-none">
-                                    <li>avantage 1</li>
-                                    <li>avantage 2</li>
+                                    <li>Disponible</li>
                                 </ul>
                             </div>
                         </td>
                         <td class=" w-64  p-2 h-16 ">
-                            <div class="justify-center text-white">
+                            <div class="flex justify-center text-white">
                                 <ul class="list-none">
-                                    <li>avantage 1</li>
-                                    <li>avantage 2</li>
+                                    <li>Disponible</li>
                                 </ul>
                             </div>
                         </td>
@@ -149,45 +143,42 @@
                             </div>
                         </td>
                         <td class=" w-64  p-2 h-16 ">
-                            <div class="justify-center text-white">
+                            <div class="flex justify-center text-white">
                                 <ul class="list-none">
-                                    <li>avantage 1</li>
-                                    <li>avantage 2</li>
+                                    <li>Disponible</li>
                                 </ul>
                             </div>
                         </td>
                         <td class=" w-64  p-2 h-16 ticket-element">
-                            <div class="justify-center text-white">
+                            <div class="flex justify-center text-white">
                                 <ul class="list-none">
-                                    <li>avantage 1</li>
-                                    <li>avantage 2</li>
+                                    <li>Disponible</li>
                                 </ul>
                             </div>
                         </td>
                         <td class=" w-64  p-2 h-16 ">
-                            <div class="justify-center text-white">
+                            <div class="flex justify-center text-white">
                                 <ul class="list-none">
-                                    <li>avantage 1</li>
-                                    <li>avantage 2</li>
+                                    <li>Disponible</li>
                                 </ul>
                             </div>
                         </td>
                     </tr>
                     <tr>
                         <th class="w-1/4 h-52"></th>
-                        <td class=" w-64  p-2 h-16 align-center">
+                        <td class=" w-64  p-2 h-16">
                             <div class="align-center justify-center text-white">
-                               <a href="#" class="btn btn-outline-danger">Commencer Maintenant</a>
+                               <a href="#" class="btn btn-outline-danger block mx-auto">Commencer Maintenant</a>
                             </div>
                         </td>
-                        <td class=" w-64  p-2 h-16 align-center ticket-element">
+                        <td class=" w-64  p-2 h-16 ticket-element">
                             <div class="align-center justify-center text-white">
-                               <a href="#" class="btn btn-outline-danger">Commencer Maintenant</a>
+                               <a href="#" class="btn btn-outline-danger block mx-auto">Commencer Maintenant</a>
                             </div>
                         </td>
-                        <td class=" w-64  p-2 h-16 align-center">
+                        <td class=" w-64  p-2 h-16">
                             <div class="align-center justify-center text-white">
-                               <a href="#" class="btn btn-outline-danger">Commencer Maintenant</a>
+                               <a href="#" class="btn btn-outline-danger block mx-auto">Commencer Maintenant</a>
                             </div>
                         </td>
                     </tr>

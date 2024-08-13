@@ -93,6 +93,7 @@
 
     </section>
     @include('web.partials.pricing')
+    @include('web.partials.winning')
     <section id="stats" class="stats section padding-vert">
         <div class="container" data-aos="fade-up" data-aos-delay="100">
             <div class="row gy-4 justify-content-center">
