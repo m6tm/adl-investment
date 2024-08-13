@@ -1,0 +1,29 @@
+@import url('../utils.css');
+
+.table-ticket{
+    /* background-color: aqua; */
+    /* box-shadow: 0 0 29px 0 rgba(0, 0, 0, 0.1); */
+    border-radius: 15px;
+}
+
+.full-table{
+    box-shadow: 0 0 29px 0 #58585852;
+    border-radius: 8px;
+    border: none;
+    border-color: none;
+}
+
+
+.title-ticket{
+    border-radius: 15px 15px 15px 15px;
+    color: white;
+    border: 1px solid;
+    align-items: center;
+}
+.title-ticket-center{
+    border-radius: 15px 15px 15px 15px;
+    box-shadow: 0 0 29px 0 rgba(0, 0, 0, 0.1);
+    background-color: rgba(109, 109, 109, 0.377);
+    color: white;
+    align-items: center;
+}

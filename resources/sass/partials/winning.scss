@@ -1,0 +1,36 @@
+
+
+.bg-winning-jackpot-1:not(.bg-winning-yello) {
+    background-color: white;
+}
+
+.bg-winning-jackpot-2:not(.bg-winning-yello) {
+    background-color: #3385ff;
+}
+
+.bg-winning-jackpot-3:not(.bg-winning-yello) {
+    // background-color: #3ef83e;
+    background-color: white;
+}
+
+.bg-winning-jackpot-4:not(.bg-winning-yello) {
+    background-color: #f83e3e;
+}
+
+.bg-winning-yello {
+    background-color: #f8ec3e;
+}
+
+.winning {
+    table {
+        border-collapse: collapse;
+        
+        td, th {
+            border: 1px solid #9c9c9c;
+            padding: 8px;
+        }
+    }
+    tr {
+        height: 40px;
+    }
+}

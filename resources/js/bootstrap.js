@@ -1,4 +1,7 @@
-import 'bootstrap';
+// Importation de la bibliothèque bootstrap
+import 'bootstrap'
+import './templately/js/index'
+
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
@@ -7,9 +10,16 @@ import 'bootstrap';
  */
 
 import axios from 'axios';
+import { notificationTabs } from './utilities/notification';
 window.axios = axios;
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+
+window.addEventListener('load', () => {
+    const loader = document.querySelector('div[x-show="loaded"]')
+    if (loader) loader.classList.add('invisible');
+    notificationTabs();
+}, false)
 
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
@@ -26,7 +36,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     broadcaster: 'pusher',
 //     key: import.meta.env.VITE_PUSHER_APP_KEY,
 //     cluster: import.meta.env.VITE_PUSHER_APP_CLUSTER ?? 'mt1',
-//     wsHost: import.meta.env.VITE_PUSHER_HOST ?? `ws-${import.meta.env.VITE_PUSHER_APP_CLUSTER}.pusher.com`,
+//     wsHost: import.meta.env.VITE_PUSHER_HOST ? import.meta.env.VITE_PUSHER_HOST : `ws-${import.meta.env.VITE_PUSHER_APP_CLUSTER}.pusher.com`,
 //     wsPort: import.meta.env.VITE_PUSHER_PORT ?? 80,
 //     wssPort: import.meta.env.VITE_PUSHER_PORT ?? 443,
 //     forceTLS: (import.meta.env.VITE_PUSHER_SCHEME ?? 'https') === 'https',
