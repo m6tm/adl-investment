@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Dashboard\NotificationController;
 use App\Http\Controllers\Dashboard\UserController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\web\StaticPagesController;
 
 
@@ -36,22 +37,7 @@ Route::get('privacy', [StaticPagesController::class, 'privacy'])->name('privacy'
 Route::get('contact', [ContactController::class, 'create'])->name('contact.create');
 Route::post('contact', [ContactController::class, 'store'])->name('Contact.store');
 
-// Route::get('/', function () {
-//     return view('welcome');
-// })->name('welcome');
-
-// Route::get('/', function () {
-//     return view('welcome');
-// })->name('welcome');
-
-
-Route::get('app', function () {
-    return view('web.layout.app');
-})->name('welcome');
-
-Route::get('', function () {
-    return view('web.pages.home.home');
-})->name('home');
+Route::get('', [HomeController::class, 'index'])->name('home');
 
 Route::get('signin', [SigninController::class, 'index'])->name('signin');
 Route::get('signup', [SignUpController::class, 'index'])->name('signup');

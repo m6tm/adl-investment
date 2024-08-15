@@ -25,7 +25,7 @@
 					</div>
 				</div>
 				<div class="col-lg-3 order-1 order-lg-1">
-					<img src="assets/img/web/interface-3614766_1280.png" class="img-fluid image-ban" alt="">
+					<img src="assets/img/Roue_ADL-transparent.png" class="img-fluid" alt="Image de la banière ADL">
 				</div>
 			</div>
 		</div>

@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="{{ asset('assets/css/partials/header.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/css/utils.css') }}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css"/>
 
 <header id="header" class="header fixed-top">
 	<div class="topbar d-flex align-items-center">
@@ -35,8 +36,8 @@
 
 		<div class="container position-relative d-flex align-items-center justify-content-between">
 			<a href="{{ route('home') }}" class="logo d-flex align-items-center">
-				<h1 class="sitename">ADL</h1>
-				<span>.Investment</span>
+				<h1 class="sitename">ADL - </h1>
+				<span class="accent">Investment</span>
 			</a>
 
 			<nav id="navmenu" class="navmenu">
@@ -47,6 +48,15 @@
 					<li><a href="{{ route('about') }}#aboutus">About Us</a></li>
 					<li><a href="{{ route('conditions') }}">Terms & service</a></li>
 					<li><a href="{{ route('privacy') }}">Privacy Policy</a></li>
+					<li>
+						<label for="lang-country">
+							<span class="fi fi-fr"></span>
+						</label>
+						<select name="lang" id="lang-country" class="ms-2 bg-transparent text-white outline-none">
+							<option value="fr">Français</option>
+							<option value="us">Anglais</option>
+						</select>
+					</li>
 					<i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
 				</ul>
 			</nav>

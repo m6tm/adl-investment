@@ -29,7 +29,7 @@
 }
 
 .hero h2 {
-    color: #d61111;
+    color: var(--danger-color);
     font-size: 48px;
     font-weight: 700;
     margin-bottom: 20px;

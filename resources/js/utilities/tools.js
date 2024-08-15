@@ -32,3 +32,19 @@ function aligText(element, orientation) {
             break;
     }
 }
+
+function selectLanguage() {
+    /**
+     * @type {HTMLSelectElement | null}
+     */
+    const languauge_input = document.getElementById('lang-country')
+    const language_icon = languauge_input.parentElement.querySelector('span.fi')
+
+    if (!languauge_input || !language_icon) return
+    
+    languauge_input.addEventListener('change', () => {
+        const selected_language = languauge_input.selectedOptions[0].value
+        language_icon.setAttribute('class', `fi fi-${selected_language}`)
+    })
+}
+selectLanguage()

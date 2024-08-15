@@ -1,14 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
   @include('web.links-head.css-link')
 </head>
 
 <body class="index-page">
-    <header id="header" class="header fixed-top">
-        @include('web.partials.header')
-    </header>
+    @include('web.partials.header')
     <main class="main">
         {{-- HERO SECTION    --}}
         @yield('content')

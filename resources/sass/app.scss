@@ -194,3 +194,12 @@ tbody td {
     padding: 1.25rem;
 }
 
+#lang-country option {
+    background-color: #03478b;
+    color: white;
+}
+
+#lang-country option:hover {
+    background-color: #03478b;
+    color: #363636;
+}
