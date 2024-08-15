@@ -5,5 +5,6 @@ return [
     "contact" => "Our contact",
     "tuto" => "Tutorial",
     "about" => "About",
-    "service" => "Service",
-    "privacy_policy" => "Privacy Policy",];
+    "service" => "Terms of Service",
+    "privacy_policy" => "Privacy Policy",
+];

@@ -16,7 +16,7 @@
 
                 <tr>
                     <th class="w-1/4 h-52">
-                        <img src="assets/img/web/usa-1439858_640.jpg" class="img-fluid rounded-4" alt="">
+                        <img src="{{ asset('assets/img/web/usa-1439858_640.jpg') }}" class="img-fluid rounded-4" alt="">
                     </th>
                     <th class="w-1/4 h-52 space-y-3 align-text-center pt-8 relative title-ticket">
 

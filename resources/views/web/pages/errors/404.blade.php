@@ -8,7 +8,7 @@
         <div class="container wow fadeInUp">
             <div class="row justify-content-center">
                 <div class="col-lg-12">
-                    <img src="assets/img/error-page-illus.png" class="max-un" alt="Illustration">
+                    <img src="{{ asset('assets/img/error-page-illus.png') }}" class="max-un" alt="Illustration">
                 </div>
             </div>
         </div>

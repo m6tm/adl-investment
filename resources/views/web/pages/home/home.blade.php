@@ -25,7 +25,7 @@
 					</div>
 				</div>
 				<div class="col-lg-3 order-1 order-lg-1">
-					<img src="assets/img/Roue_ADL-transparent.png" class="img-fluid" alt="Image de la banière ADL">
+					<img src="{{ asset('assets/img/Roue_ADL-transparent.png') }}" class="img-fluid" alt="Image de la banière ADL">
 				</div>
 			</div>
 		</div>
@@ -45,7 +45,7 @@
 
             <div class="row gy-4">
                 <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                    <img src="assets/img/web/usa-1197608_640.jpg" class="img-fluid rounded-4 mb-4"
+                    <img src="{{ asset('assets/img/web/usa-1197608_640.jpg') }}" class="img-fluid rounded-4 mb-4"
                         alt="">
                     <p>Bienvenue sur ADL, la plateforme de jeu en ligne révolutionnaire basée sur des tirages de roue!
                         Notre mission est de fournir une expérience de jeu unique et sécurisée à nos utilisateurs.
@@ -82,7 +82,7 @@
                         </p>
 
                         <div class="position-relative mt-4">
-                            <img src="assets/img/web/AmericanDream1_1024x630.jpeg" class="img-fluid rounded-4" alt="">
+                            <img src="{{ asset('assets/img/web/AmericanDream1_1024x630.jpeg') }}" class="img-fluid rounded-4" alt="">
                             <a href="assets/img/Nobody -「AMV」- Anime MV.mp4" class="glightbox pulsating-play-btn"></a>
                         </div>
                     </div>
@@ -98,7 +98,7 @@
         <div class="container" data-aos="fade-up" data-aos-delay="100">
             <div class="row gy-4 justify-content-center">
                 {{-- <div class="col-lg-5">
-                    <img src="assets/img/stats-img.svg" alt="" class="img-fluid">
+                    <img src="{{ asset('assets/img/stats-img.svg') }}" alt="" class="img-fluid">
                 </div> --}}
                 <div class="col-lg-8">
                     <div class="row gy-4 justify-content-center">
@@ -153,7 +153,7 @@
     <section id="call-to-action" class="call-to-action section dark-background padding-vert">
 
         <div class="container">
-            <img src="assets/img/web/broker-6882754_1280.jpg" alt="">
+            <img src="{{ asset('assets/img/web/broker-6882754_1280.jpg') }}" alt="">
             <div class="content row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
                 <div class="col-xl-10">
                     <div class="text-center">
@@ -336,7 +336,7 @@
 
                     <div class="swiper-slide">
                         <div class="testimonial-item">
-                            <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                            <img src="{{ asset('assets/img/testimonials/testimonials-1.jpg') }}" class="testimonial-img" alt="">
                             <h3>Saul Goodman</h3>
                             <h4>Ceo &amp; Founder</h4>
                             <div class="stars">
@@ -354,7 +354,7 @@
 
                     <div class="swiper-slide">
                         <div class="testimonial-item">
-                            <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                            <img src="{{ asset('assets/img/testimonials/testimonials-2.jpg') }}" class="testimonial-img" alt="">
                             <h3>Sara Wilsson</h3>
                             <h4>Designer</h4>
                             <div class="stars">
@@ -373,7 +373,7 @@
 
                     <div class="swiper-slide">
                         <div class="testimonial-item">
-                            <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+                            <img src="{{ asset('assets/img/testimonials/testimonials-3.jpg') }}" class="testimonial-img" alt="">
                             <h3>Jena Karlis</h3>
                             <h4>Store Owner</h4>
                             <div class="stars">
@@ -392,7 +392,7 @@
 
                     <div class="swiper-slide">
                         <div class="testimonial-item">
-                            <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+                            <img src="{{ asset('assets/img/testimonials/testimonials-4.jpg') }}" class="testimonial-img" alt="">
                             <h3>Matt Brandon</h3>
                             <h4>Freelancer</h4>
                             <div class="stars">
@@ -411,7 +411,7 @@
 
                     <div class="swiper-slide">
                         <div class="testimonial-item">
-                            <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+                            <img src="{{ asset('assets/img/testimonials/testimonials-5.jpg') }}" class="testimonial-img" alt="">
                             <h3>John Larson</h3>
                             <h4>Entrepreneur</h4>
                             <div class="stars">

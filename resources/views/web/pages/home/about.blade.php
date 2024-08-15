@@ -42,7 +42,7 @@
                 <div class="row gy-4">
                     <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
                         <h3>Voluptatem dignissimos provident laboris nisi ut aliquip ex ea commodo</h3>
-                        <img src="assets/img/web/usa-1177272_640.png" class="img-fluid rounded-4 mb-4" alt="">
+                        <img src="{{ asset('assets/img/web/usa-1177272_640.png') }}" class="img-fluid rounded-4 mb-4" alt="">
                         <p>Bienvenue sur ADL, la plateforme de jeu en ligne révolutionnaire basée sur des tirages de roue!
                             Notre mission est de fournir une expérience de jeu unique et sécurisée à nos utilisateurs.
                             Rejoignez-nous pour des tirages palpitants et des gains incroyables!</p>
@@ -81,7 +81,7 @@
                             </p>
 
                             <div class="position-relative mt-4">
-                                <img src="assets/img/web/ai-generated-8725989_1280.jpg" class="img-fluid rounded-4" alt="">
+                                <img src="{{ asset('assets/img/web/ai-generated-8725989_1280.jpg') }}" class="img-fluid rounded-4" alt="">
                                 <a href="assets/img/Nobody -「AMV」- Anime MV.mp4" class="glightbox pulsating-play-btn"></a>
                             </div>
                         </div>
@@ -99,7 +99,7 @@
                 <div class="row gy-4">
                     <div class="col-lg-4">
                         <div class="content">
-                            <img src="assets/img/web/graph-8928602_640.png" class="img-fluid">
+                            <img src="{{ asset('assets/img/web/graph-8928602_640.png') }}" class="img-fluid">
                         </div>
                     </div>
                     <div class="col-lg-8">
@@ -140,7 +140,7 @@
 
                     <div class="col-xl-3 col-md-6 d-flex">
                         <div class="member">
-                            <img src="assets/img/ball/counter-icon-1.png" class="img-fluid" alt="">
+                            <img src="{{ asset('assets/img/ball/counter-icon-1.png') }}" class="img-fluid" alt="">
                             <h4 data-purecounter-start="0" data-purecounter-end="502010" data-purecounter-duration="1"
                                 class="purecounter">K</h4>
                             <span>Players</span>
@@ -149,7 +149,7 @@
 
                     <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
                         <div class="member">
-                            <img src="assets/img/ball/counter-icon-2.png" class="img-fluid" alt="">
+                            <img src="{{ asset('assets/img/ball/counter-icon-2.png') }}" class="img-fluid" alt="">
                             <h4 data-purecounter-start="0" data-purecounter-end="521000" data-purecounter-duration="1"
                                 class="purecounter"></h4>
                             <span>Lotteries</span>
@@ -158,7 +158,7 @@
 
                     <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
                         <div class="member">
-                            <img src="assets/img/ball/counter-icon-3.png" class="img-fluid" alt="">
+                            <img src="{{ asset('assets/img/ball/counter-icon-3.png') }}" class="img-fluid" alt="">
                             <h4 data-purecounter-start="0" data-purecounter-end="521000" data-purecounter-duration="1"
                                 class="purecounter">K</h4>
                             <span>Jackpot</span>
@@ -167,7 +167,7 @@
 
                     <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
                         <div class="member">
-                            <img src="assets/img/ball/counter-icon-4.png" class="img-fluid" alt="">
+                            <img src="{{ asset('assets/img/ball/counter-icon-4.png') }}" class="img-fluid" alt="">
                             <h4 data-purecounter-start="0" data-purecounter-end="521000" data-purecounter-duration="1"
                                 class="purecounter text-xxl">K</h4>
                             <span>Satisfied</span>
@@ -212,7 +212,7 @@
                                                     your entertainment budget.</p>
                                             </div>
                                             <div class="icon-area">
-                                                <img src="assets/img/ball/counter-icon-1.png" alt="icon">
+                                                <img src="{{ asset('assets/img/ball/counter-icon-1.png') }}" alt="icon">
                                             </div>
                                         </div>
                                     </div>
@@ -231,7 +231,7 @@
                                     <div class="col-xl-5 col-md-7 col-sm-10">
                                         <div class="single-box wow fadeInRight">
                                             <div class="icon-area">
-                                                <img src="assets/img/ball/counter-icon-2.png" alt="icon">
+                                                <img src="{{ asset('assets/img/ball/counter-icon-2.png') }}" alt="icon">
                                             </div>
                                             <div class="text-area">
                                                 <h4>Choose Your Lottery.</h4>
@@ -250,7 +250,7 @@
                                                     your entertainment budget.</p>
                                             </div>
                                             <div class="icon-area">
-                                                <img src="assets/img/ball/counter-icon-3.png" alt="icon">
+                                                <img src="{{ asset('assets/img/ball/counter-icon-3.png') }}" alt="icon">
                                             </div>
                                         </div>
                                     </div>
@@ -269,7 +269,7 @@
                                     <div class="col-xl-5 col-md-7 col-sm-10">
                                         <div class="single-box wow fadeInRight">
                                             <div class="icon-area">
-                                                <img src="assets/img/ball/counter-icon-4.png" alt="icon">
+                                                <img src="{{ asset('assets/img/ball/counter-icon-4.png') }}" alt="icon">
                                             </div>
                                             <div class="text-area">
                                                 <h4>Check Your Numbers.</h4>
