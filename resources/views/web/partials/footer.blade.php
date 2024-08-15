@@ -19,10 +19,10 @@
         <h4>Liens utiles</h4>
         <ul>
           <li><a href="#">Home</a></li>
-					<li><a href="{{ route('about') }}#aboutus">About Us</a></li>
-					<li><a href="{{ route('tutoriel') }}#tutoriel">Tutoriel</a></li>
-          <li><a href="{{ route('conditions') }}">Terms of service</a></li>
-          <li><a href="{{ route('privacy') }}">Privacy policy</a></li>
+					<li><a href="{{ route('about', ['lang' => app()->getLocale()]) }}#aboutus">About Us</a></li>
+					<li><a href="{{ route('tutoriel', ['lang' => app()->getLocale()]) }}#tutoriel">Tutoriel</a></li>
+          <li><a href="{{ route('conditions', ['lang' => app()->getLocale()]) }}">Terms of service</a></li>
+          <li><a href="{{ route('privacy', ['lang' => app()->getLocale()]) }}">Privacy policy</a></li>
         </ul>
       </div>
 

@@ -3,9 +3,11 @@
 
 <head>
   @include('web.links-head.css-link')
+  @cookieconsentscripts
 </head>
 
 <body class="index-page">
+  @cookieconsentview
     @include('web.partials.header')
     <main class="main">
         {{-- HERO SECTION    --}}

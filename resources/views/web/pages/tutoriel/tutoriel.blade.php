@@ -22,7 +22,7 @@
             <nav class="breadcrumbs">
                 <div class="container">
                     <ol>
-                        <li><a href="{{ route('home') }}#services">Home</a></li>
+                        <li><a href="{{ route('home', ['lang' => app()->getLocale()]) }}#services">Home</a></li>
                         <li class="">Pages</li>
                         <li class="current">Tutoriel</li>
                     </ol>
@@ -50,7 +50,7 @@
                                     class="glightbox"><img src="assets/img/Roue_ADL.png " class="img-fluid tuto-img mx-auto my-4"
                                         alt=""></a>
                                 <div class="portfolio-info">
-                                    <h4><a href="{{ route('tutoriel-details') }}" title="More Details">Tutoriel 1</a></h4>
+                                    <h4><a href="{{ route('tutoriel-details', ['lang' => app()->getLocale()]) }}" title="More Details">Tutoriel 1</a></h4>
                                     <p>Lorem ipsum, dolor sit amet consectetur</p>
                                 </div>
                             </div>
@@ -62,7 +62,7 @@
                                     class="glightbox"><img src="assets/img/Roue_ADL.png" class="img-fluid tuto-img mx-auto my-4"
                                         alt=""></a>
                                 <div class="portfolio-info">
-                                    <h4><a href="{{ route('tutoriel-details') }}" title="More Details">Tutoriel 1</a></h4>
+                                    <h4><a href="{{ route('tutoriel-details', ['lang' => app()->getLocale()]) }}" title="More Details">Tutoriel 1</a></h4>
                                     <p>Lorem ipsum, dolor sit amet consectetur</p>
                                 </div>
                             </div>
@@ -74,7 +74,7 @@
                                     class="glightbox"><img src="assets/img/Roue_ADL.png" class="img-fluid tuto-img mx-auto my-4"
                                         alt=""></a>
                                 <div class="portfolio-info">
-                                    <h4><a href="{{ route('tutoriel-details') }}" title="More Details">Tutoriel 1</a></h4>
+                                    <h4><a href="{{ route('tutoriel-details', ['lang' => app()->getLocale()]) }}" title="More Details">Tutoriel 1</a></h4>
                                     <p>Lorem ipsum, dolor sit amet consectetur</p>
                                 </div>
                             </div>

@@ -21,7 +21,7 @@
 			<nav class="breadcrumbs">
 				<div class="container">
 					<ol>
-						<li><a href="{{ route('home') }}">Home</a></li>
+						<li><a href="{{ route('home', ['lang' => app()->getLocale()]) }}">Home</a></li>
 						<li class="current">Privacy policy</li>
 					</ol>
 				</div>

@@ -10,7 +10,7 @@
                 <div class="card-body">
                     {{ __('Please confirm your password before continuing.') }}
 
-                    <form method="POST" action="{{ route('password.confirm') }}">
+                    <form method="POST" action="{{ route('password.confirm', ['lang' => app()->getLocale()]) }}">
                         @csrf
 
                         <div class="row mb-3">
@@ -34,7 +34,7 @@
                                 </button>
 
                                 @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                    <a class="btn btn-link" href="{{ route('password.request', ['lang' => app()->getLocale()]) }}">
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif

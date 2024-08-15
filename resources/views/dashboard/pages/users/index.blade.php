@@ -28,7 +28,7 @@
 			<!-- ====== Table Section Start -->
 			<div class="flex flex-col gap-10 mt-10">
 				<div class="bg-white dark:bg-meta-4 dark:bg-none px-5 pt-6 pb-8 shadow-default dark:shadow-none rounded-[10px] p-5">
-					<a href="{{ route('user.create') }}" class="px-4 py-2 mb-5 inline-block rounded-md bg-primary text-white">
+					<a href="{{ route('user.create', ['lang' => app()->getLocale()]) }}" class="px-4 py-2 mb-5 inline-block rounded-md bg-primary text-white">
 						Créer un utilisateur
 					</a>
 					<!-- ====== Table Four Start -->

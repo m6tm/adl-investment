@@ -6,7 +6,7 @@
 			<div class="flex flex-wrap items-center">
 				<div class="hidden w-full xl:block xl:w-1/2">
 					<div class="px-26 py-17.5 text-center">
-						<a class="mb-5.5 inline-block" href="{{ route('home') }}">
+						<a class="mb-5.5 inline-block" href="{{ route('home', ['lang' => app()->getLocale()]) }}">
 							<img class="block" src="https://place-hold.it/86" alt="Logo">
 						</a>
 
@@ -100,7 +100,7 @@
 											Vous n'avez pas de compte ?
 										</font>
 									</font>
-                                    <a href="{{ route('signup') }}" class="text-sky-600">
+                                    <a href="{{ route('signup', ['lang' => app()->getLocale()]) }}" class="text-sky-600">
 										<font style="vertical-align: inherit;">
 											<font style="vertical-align: inherit;">Inscrivez-vous</font>
 										</font>

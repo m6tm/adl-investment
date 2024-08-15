@@ -142,7 +142,7 @@
                                     <font style="vertical-align: inherit;">
                                         Vous avez déjà un compte ?
                                     </font>
-                                </font><a href="{{ route('signin') }}" class="text-sky-600">
+                                </font><a href="{{ route('signin', ['lang' => app()->getLocale()]) }}" class="text-sky-600">
                                     <font style="vertical-align: inherit;">
                                         <font style="vertical-align: inherit;">Connectez-vous</font>
                                     </font>

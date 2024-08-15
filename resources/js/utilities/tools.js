@@ -39,12 +39,21 @@ function selectLanguage() {
      */
     const languauge_input = document.getElementById('lang-country')
     const language_icon = languauge_input.parentElement.querySelector('span.fi')
-
+    const current_language = languauge_input.selectedOptions[0].value
+    const current_language_flag = languauge_input.selectedOptions[0].getAttribute('data-lang')
+    let url = location.href
+    
     if (!languauge_input || !language_icon) return
     
+    language_icon.setAttribute('class', `fi fi-${current_language}`)
     languauge_input.addEventListener('change', () => {
-        const selected_language = languauge_input.selectedOptions[0].value
-        language_icon.setAttribute('class', `fi fi-${selected_language}`)
+        const selected_language = languauge_input.selectedOptions[0].getAttribute('data-lang')
+        const selected_language_flag = languauge_input.selectedOptions[0].value
+        language_icon.setAttribute('class', `fi fi-${selected_language_flag}`)
+        console.log(url, current_language);
+        url = url.replace(`${location.origin}/${current_language_flag}`, `${location.origin}/${selected_language}`)
+        console.log(url);
+        location.href = url
     })
 }
 selectLanguage()

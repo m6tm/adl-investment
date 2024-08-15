@@ -20,11 +20,11 @@
 				<a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
 			</div>
 			<div class="social-links d-none d-md-flex align-items-center">
-				<a href="{{ route('signin') }}">
+				<a href="{{ route('signin', ['lang' => app()->getLocale()]) }}">
 					<i class="bi bi-person-fill"></i>
 					<span>Sign In</span>
 				</a>
-				<a href="{{ route('signup') }}">
+				<a href="{{ route('signup', ['lang' => app()->getLocale()]) }}">
 					<i class="bi bi-pencil-square"></i>
 					<span>Sign Up</span>
 				</a>
@@ -35,26 +35,26 @@
 	<div class="branding d-flex align-items-cente">
 
 		<div class="container position-relative d-flex align-items-center justify-content-between">
-			<a href="{{ route('home') }}" class="logo d-flex align-items-center">
+			<a href="{{ route('home', ['lang' => app()->getLocale()]) }}" class="logo d-flex align-items-center">
 				<h1 class="sitename">ADL - </h1>
 				<span class="accent">Investment</span>
 			</a>
 
 			<nav id="navmenu" class="navmenu">
 				<ul>
-					<li><a href="{{ route('home') }}" class="active">Home<br></a></li>
-					<li><a href="{{ route('home') }}#contact">Contact</a></li>
-					<li><a href="{{ route('tutoriel') }}#tutoriel">Tutoriel</a></li>
-					<li><a href="{{ route('about') }}#aboutus">About Us</a></li>
-					<li><a href="{{ route('conditions') }}">Terms & service</a></li>
-					<li><a href="{{ route('privacy') }}">Privacy Policy</a></li>
+					<li><a href="{{ route('home', ['lang' => app()->getLocale()]) }}" class="active">{{ __('partials/header.home') }}<br></a></li>
+					<li><a href="{{ route('home', ['lang' => app()->getLocale()]) }}#contact">{{ __('partials/header.contact') }}</a></li>
+					<li><a href="{{ route('tutoriel', ['lang' => app()->getLocale()]) }}#tutoriel">{{ __('partials/header.tuto') }}</a></li>
+					<li><a href="{{ route('about', ['lang' => app()->getLocale()]) }}#aboutus">{{ __('partials/header.about') }}</a></li>
+					<li><a href="{{ route('conditions', ['lang' => app()->getLocale()]) }}">{{ __('partials/header.service') }}</a></li>
+					<li><a href="{{ route('privacy', ['lang' => app()->getLocale()]) }}">{{ __('partials/header.privacy_policy') }}</a></li>
 					<li>
 						<label for="lang-country">
 							<span class="fi fi-fr"></span>
 						</label>
 						<select name="lang" id="lang-country" class="ms-2 bg-transparent text-white outline-none">
-							<option value="fr">Français</option>
-							<option value="us">Anglais</option>
+							<option value="fr" data-lang="fr" {{ app()->getLocale() == 'fr' ? 'selected' : '' }}>Français</option>
+							<option value="us" data-lang="en" {{ app()->getLocale() == 'en' ? 'selected' : '' }}>English</option>
 						</select>
 					</li>
 					<i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
