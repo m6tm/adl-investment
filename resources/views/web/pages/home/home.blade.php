@@ -5,309 +5,245 @@
 <link rel="stylesheet" href="{{ asset('assets/css/pages/card.css') }}">
 
 @section('content')
-    <!-- Hero Section -->
-    <section id="hero" class="hero section accent-background">
+	<!-- Hero Section -->
+	<section id="hero" class="hero section accent-background">
 
 		<div class=" container position-relative py-5 " data-aos="fade-up" data-aos-delay="200">
 			<div class="row gy-4 mt-5 justify-content-between">
 				<div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
-					<h2><span>Welcome to </span><span class="accent">ADL </span></h2>
-					<p class="hero-text">Plongez dans l'univers excitant du jeu en ligne ADL et tentez votre chance avec
-						notre système de tirage de roue unique!
-						Préparez-vous à vivre une expérience de jeu inégalée avec notre roue de la fortune;
-						Tournez la roue et gagnez des prix incroyables en un instant,
-						connectez-vous chaque jour pour obtenir des tours gratuits et des récompenses supplémentaires;
-						participez à nos tournois hebdomadaires pour des prix encore plus grands .</p>
+					<h2><span>{{ __('home.banner.title') }} </span><span class="accent">ADL </span></h2>
+					<p class="hero-text">{{ __('home.banner.text') }}</p>
 					<div class="d-flex">
-						<a href="#" class="btn-get-started">Achetez un Ticket</a>
-						<a href="#" class="glightbox btn-watch-video d-flex align-items-center"><i
-								class="bi bi-play-circle"></i><span>Tutoriel</span></a>
+						<a href="#" class="btn-get-started">{{ __('home.banner.call to action') }}</a>
 					</div>
 				</div>
 				<div class="col-lg-3 order-1 order-lg-1">
-					<img src="{{ asset('assets/img/Roue_ADL-transparent.png') }}" class="img-fluid" alt="Image de la banière ADL">
+					<img src="{{ asset('assets/img/Roue_ADL-transparent.png') }}" class="img-fluid"
+						alt="{{ __('home.banner.image alternative') }}">
 				</div>
 			</div>
 		</div>
 
-    </section>
-    <!-- /Hero Section -->
+	</section>
+	<!-- /Hero Section -->
 
-    <!-- About Section -->
-    <section id="about" class="about section padding-vert">
+	<!-- About Section -->
+	<section id="about" class="about section padding-vert">
 
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-            <h2>About Us<br></h2>
-        </div><!-- End Section Title -->
+		<!-- Section Title -->
+		<div class="container section-title" data-aos="fade-up">
+			<h2>{{ __('home.about.title') }}<br></h2>
+		</div>
+        <!-- End Section Title -->
 
-        <div class="container">
+		<div class="container">
+			<div class="row gy-4">
+				<div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+					<img src="{{ asset('assets/img/web/usa-1197608_640.jpg') }}" class="img-fluid rounded-4 mb-4"
+						alt="{{ __('home.about.american dream alt') }}">
+					<p>{{ __('home.about.text 1') }}</p>
+					<p>{{ __('home.about.text 2') }}</p>
+				</div>
+				<div class="col-lg-6" data-aos="fade-up" data-aos-delay="250">
+					<div class="content ps-0 ps-lg-5">
+						<ul>
+							<li><i class="bi bi-check-circle-fill"></i> <span>{{ __('home.about.list.1') }}</span></li>
+							<li><i class="bi bi-check-circle-fill"></i> <span>{{ __('home.about.list.2') }}</span></li>
+							<li><i class="bi bi-check-circle-fill"></i> <span>{{ __('home.about.list.3') }}</span></li>
+							<li><i class="bi bi-check-circle-fill"></i> <span>{{ __('home.about.list.4') }}</span></li>
+						</ul>
+						<p>
+							{{ __('home.about.text 3') }}
+						</p>
 
-            <div class="row gy-4">
-                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                    <img src="{{ asset('assets/img/web/usa-1197608_640.jpg') }}" class="img-fluid rounded-4 mb-4"
-                        alt="">
-                    <p>Bienvenue sur ADL, la plateforme de jeu en ligne révolutionnaire basée sur des tirages de roue!
-                        Notre mission est de fournir une expérience de jeu unique et sécurisée à nos utilisateurs.
-                        Rejoignez-nous pour des tirages palpitants et des gains incroyables!</p>
-                    <p> Profitez de l'opportunité de gagner gros chaque jour avec
-                        nos tirages réguliers et nos tournois palpitants. Avec une interface
-                        sécurisée et des gains garantis, ADL est la plateforme de jeu en ligne parfaite pour tous les
-                        amateurs
-                        de sensations fortes. Commencez à jouer dès maintenant et laissez la roue tourner en votre faveur !
+						<div class="position-relative mt-4">
+							<img src="{{ asset('assets/img/web/AmericanDream1_1024x630.jpeg') }}" class="img-fluid rounded-4"
+								alt="{{ __('about.img alt') }}">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-                    </p>
-                </div>
-                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="250">
-                    <div class="content ps-0 ps-lg-5">
-                        {{-- <p class="fst-italic">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore
-                            magna aliqua.
-                        </p> --}}
-                        <ul>
-                            <li><i class="bi bi-check-circle-fill"></i> <span> Possibilité de gagner de l'argent
-                                    instantanément lors de chaque tirage.</span></li>
-                            <li><i class="bi bi-check-circle-fill"></i> <span>Obtenir des tours supplémentaires gratuits
-                                    pour chaque jeu joué.</span></li>
-                            <li><i class="bi bi-check-circle-fill"></i> <span>Monter en niveau pour débloquer des avantages
-                                    exclusifs et des prix plus importants.</span></li>
-                            <li><i class="bi bi-check-circle-fill"></i> <span>Rejoignez une communauté de joueurs passionnés
-                                    et partagez vos succès.</span></li>
-                        </ul>
-                        <p>
-                            Découvrez l'excitation ultime avec notre incroyable roue de la fortune sur ADL !
-                            Chaque tour de roue vous rapproche de récompenses instantanées, des bonus exclusifs,
-                            et des prix sensationnels.
-                        </p>
+	</section>
+	@include('web.partials.pricing')
+	@include('web.partials.winning')
+	<section id="stats" class="stats section padding-vert">
+		<div class="container" data-aos="fade-up" data-aos-delay="100">
+			<div class="row gy-4 justify-content-center">
+				<div class="col-lg-8">
+					<div class="row gy-4 justify-content-center">
+						<div class="col-lg-6 mb-6">
+							<div class="stats-item d-flex  align-items-center ">
+								<i class="bi bi-emoji-smile flex-shrink-0"></i>
+								<div>
+									<span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1"
+										class="purecounter"></span>
+									<p><strong>{{ __('home.rate.stats.players.title') }}</strong>
+										<span>{{ __('home.rate.stats.players.subtitle') }}</span></p>
+								</div>
+							</div>
+						</div><!-- End Stats Item -->
+						<div class="col-lg-6 mb-6">
+							<div class="stats-item d-flex  align-items-center ">
+								<i class="bi bi-journal-richtext flex-shrink-0"></i>
+								<div>
+									<span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1"
+										class="purecounter"></span>
+									<p><strong>{{ __('home.rate.stats.winners.title') }}</strong>
+										<span>{{ __('home.rate.stats.winners.subtitle') }}</span></p>
+								</div>
+							</div>
+						</div><!-- End Stats Item -->
+						<div class="col-lg-6 mb-6">
+							<div class="stats-item d-flex  align-items-center ">
+								<i class="bi bi-headset flex-shrink-0"></i>
+								<div>
+									<span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1"
+										class="purecounter"></span>
+									<p><strong>{{ __('home.rate.stats.customer_service.title') }}</strong>
+										<span>{{ __('home.rate.stats.customer_service.subtitle') }}</span></p>
+								</div>
+							</div>
+						</div><!-- End Stats Item -->
+						<div class="col-lg-6 mb-6">
+							<div class="stats-item d-flex  align-items-center ">
+								<i class="bi bi-people flex-shrink-0"></i>
+								<div>
+									<span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1"
+										class="purecounter"></span>
+									<p><strong>{{ __('home.rate.stats.countries.title') }}</strong>
+										<span>{{ __('home.rate.stats.countries.subtitle') }}</span></p>
+								</div>
+							</div>
+						</div><!-- End Stats Item -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- /Stats Section -->
 
+	<!-- Call To Action Section -->
+	<section id="call-to-action" class="call-to-action section dark-background padding-vert">
+		<div class="container">
+			<img src="{{ asset('assets/img/web/broker-6882754_1280.jpg') }}" alt="">
+			<div class="content row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
+				<div class="col-xl-10">
+					<div class="text-center">
+						<h3>{{ __('home.call_to_action.title') }}</h3>
+						<p>{{ __('home.call_to_action.description') }}</p>
+						<a class="cta-btn" href="#">{{ __('home.call_to_action.button') }}</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- /Call To Action Section -->
+
+	<!-- Services Section -->
+	<section id="services" class="services section padding-vert">
+
+		<!-- Section Title -->
+		<div class="container section-title" data-aos="fade-up">
+			<h2>{{ __('home.services.title') }}</h2>
+		</div><!-- End Section Title -->
+
+		<div class="container">
+
+			<div class="row gy-4">
+
+				<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-item position-relative cursor-pointer" data-link="{{ route('tutoriel', ['lang' => app()->getLocale()]) }}">
+                        <div class="icon">
+                            <i class="bi bi-box-arrow-in-right"></i>
+                        </div>
                         <div class="position-relative mt-4">
-                            <img src="{{ asset('assets/img/web/AmericanDream1_1024x630.jpeg') }}" class="img-fluid rounded-4" alt="">
-                            <a href="assets/img/Nobody -「AMV」- Anime MV.mp4" class="glightbox pulsating-play-btn"></a>
+                            <h3>{{ __('home.services.items.0.title') }}</h3>
+                            <p>{{ __('home.services.items.0.description') }}</p>
                         </div>
                     </div>
-                </div>
-            </div>
+				</div><!-- End Service Item -->
 
-        </div>
-
-    </section>
-    @include('web.partials.pricing')
-    @include('web.partials.winning')
-    <section id="stats" class="stats section padding-vert">
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-            <div class="row gy-4 justify-content-center">
-                {{-- <div class="col-lg-5">
-                    <img src="{{ asset('assets/img/stats-img.svg') }}" alt="" class="img-fluid">
-                </div> --}}
-                <div class="col-lg-8">
-                    <div class="row gy-4 justify-content-center">
-                        <div class="col-lg-6 mb-6">
-                            <div class="stats-item d-flex  align-items-center ">
-                                <i class="bi bi-emoji-smile flex-shrink-0"></i>
-                                <div>
-                                    <span data-purecounter-start="0" data-purecounter-end="232"
-                                        data-purecounter-duration="1" class="purecounter"></span>
-                                    <p><strong>Nombre de joueur</strong> <span>présent dans l'application</span></p>
-                                </div>
-                            </div>
-                        </div><!-- End Stats Item -->
-                        <div class="col-lg-6 mb-6">
-                            <div class="stats-item d-flex  align-items-center ">
-                                <i class="bi bi-journal-richtext flex-shrink-0"></i>
-                                <div>
-                                    <span data-purecounter-start="0" data-purecounter-end="521"
-                                        data-purecounter-duration="1" class="purecounter"></span>
-                                    <p><strong>Nombre de gagnant</strong> <span>par semaine</span></p>
-                                </div>
-                            </div>
-                        </div><!-- End Stats Item -->
-                        <div class="col-lg-6 mb-6">
-                            <div class="stats-item d-flex  align-items-center ">
-                                <i class="bi bi-headset flex-shrink-0"></i>
-                                <div>
-                                    <span data-purecounter-start="0" data-purecounter-end="1453"
-                                        data-purecounter-duration="1" class="purecounter"></span>
-                                    <p><strong>Service client</strong> <span>disponible H24/7</span></p>
-                                </div>
-                            </div>
-                        </div><!-- End Stats Item -->
-                        <div class="col-lg-6 mb-6">
-                            <div class="stats-item d-flex  align-items-center ">
-                                <i class="bi bi-people flex-shrink-0"></i>
-                                <div>
-                                    <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1"
-                                        class="purecounter"></span>
-                                    <p><strong>Nombre de pays</strong> <span>accédant à la plateforme</span></p>
-                                </div>
-                            </div>
-                        </div><!-- End Stats Item -->
+				<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-item position-relative cursor-pointer" data-link="{{ route('tutoriel', ['lang' => app()->getLocale()]) }}">
+                        <div class="icon">
+                            <i class="bi bi-currency-dollar"></i>
+                        </div>
+                        <div class="position-relative mt-2">
+                            <h3>{{ __('home.services.items.1.title') }}</h3>
+                            <p>{{ __('home.services.items.1.description') }}</p>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- /Stats Section -->
+				</div><!-- End Service Item -->
 
-    <!-- Call To Action Section -->
-    <section id="call-to-action" class="call-to-action section dark-background padding-vert">
-
-        <div class="container">
-            <img src="{{ asset('assets/img/web/broker-6882754_1280.jpg') }}" alt="">
-            <div class="content row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
-                <div class="col-xl-10">
-                    <div class="text-center">
-                        <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox play-btn"></a>
-                        <h3>Commencer maintenant</h3>
-                        <p>Préparez-vous à vivre une expérience de jeu inégalée avec notre roue de la fortune !
-                            Tournez la roue et gagnez des prix incroyables en un instant,
-                            connectez-vous chaque jour pour obtenir des tours gratuits et des récompenses
-                            supplémentaires;
-                            participez à nos tournois hebdomadaires pour des prix encore plus grands .
-                        </p>
-                        <a class="cta-btn" href="#">Commencer maintenant</a>
+				<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-item position-relative cursor-pointer" data-link="{{ route('tutoriel', ['lang' => app()->getLocale()]) }}">
+                        <div class="icon">
+                            <i class="bi bi-ticket"></i>
+                        </div>
+                        <div class="position-relative mt-4 align-items-center">
+                            <h3>{{ __('home.services.items.2.title') }}</h3>
+                            <p>{{ __('home.services.items.2.description') }}</p>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
+				</div><!-- End Service Item -->
 
-    </section>
-    <!-- /Call To Action Section -->
-
-    <!-- Services Section -->
-    <section id="services" class="services section padding-vert">
-
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-            <h2>Comment ça marche? </h2>
-        </div><!-- End Section Title -->
-
-        <div class="container">
-
-            <div class="row gy-4">
-
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <a href="{{ route('tutoriel', ['lang' => app()->getLocale()]) }}" class="readmore stretched-link text-black">
-                        <div class="service-item  position-relative element">
-                            <div class="icon">
-                                <i class="bi bi-box-arrow-in-right"></i>
-                            </div>
-                            <div class="position-relative mt-4">
-                                <h3>Inscription descriptif</h3>
-                                <p>Inscrivez-vous dès maintenant sur ADL pour accéder à une expérience de jeu inégalée
-                                    et
-                                    laisser la roue tourner en votre faveur !
-                                </p>
-                            </div>
+				<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-item position-relative cursor-pointer" data-link="{{ route('tutoriel', ['lang' => app()->getLocale()]) }}">
+                        <div class="icon">
+                            <i class="bi bi-ui-radios"></i>
                         </div>
-                    </a>
-                </div><!-- End Service Item -->
-
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <a href="{{ route('tutoriel', ['lang' => app()->getLocale()]) }}" class="readmore stretched-link text-black">
-                        <div class="service-item position-relative ">
-                            <div class="icon">
-                                <i class="bi bi-currency-dollar"></i>
-                            </div>
-                            <div class="position-relative mt-2">
-                                <h3>Dépôt d'argent</h3>
-                                <p>Déposez de l'argent sur votre compte ADL et débloquerez des bonus exclusifs, des
-                                    tours
-                                    supplémentaires et
-                                    l'accès à des tirages spéciaux avec des prix encore plus impressionnants. </p>
-                            </div>
+                        <div class="position-relative mt-4">
+                            <h3>{{ __('home.services.items.3.title') }}</h3>
+                            <p>{{ __('home.services.items.3.description') }}</p>
                         </div>
-                    </a>
-                </div><!-- End Service Item -->
+                    </div>
+				</div><!-- End Service Item -->
 
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                    <a href="{{ route('tutoriel', ['lang' => app()->getLocale()]) }}" class="readmore stretched-link text-black">
-                        <div class="service-item position-relative">
-                            <div class="icon">
-                                <i class="bi bi-ticket"></i>
-                            </div>
-                            <div class="position-relative mt-4 align-items-center">
-                                <h3>Achat de ticket</h3>
-                                <p>Achetez des tickets pour participer à nos tirages excitants et augmentez vos chances
-                                    de
-                                    gagner des prix
-                                    et décrochez des jackpots!
-                                </p>
-                            </div>
+				<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-item position-relative cursor-pointer" data-link="{{ route('tutoriel', ['lang' => app()->getLocale()]) }}">
+                        <div class="icon">
+                            <i class="bi bi-gift"></i>
                         </div>
-                    </a>
-                </div><!-- End Service Item -->
-
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-                    <a href="{{ route('tutoriel', ['lang' => app()->getLocale()]) }}" class="readmore stretched-link text-black">
-                        <div class="service-item position-relative">
-                            <div class="icon">
-                                <i class="bi bi-ui-radios"></i>
-                            </div>
-                            <div class="position-relative mt-4">
-                                <h3>type de tirage</h3>
-                                <p>Nos tirages offrent une variété de possibilités pour gagner. Choisissez entre des
-                                    tirages
-                                    quotidiens,
-                                    hebdomadaires, ou mensuels, chacun offrant des récompenses uniques et des
-                                    opportunités
-                                    de gains exceptionnels.</p>
-                            </div>
+                        <div class="position-relative mt-4">
+                            <h3>{{ __('home.services.items.4.title') }}</h3>
+                            <p>{{ __('home.services.items.4.description') }}</p>
                         </div>
-                    </a>
-                </div><!-- End Service Item -->
+                    </div>
+				</div><!-- End Service Item -->
 
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-                    <a href="{{ route('tutoriel', ['lang' => app()->getLocale()]) }}" class="readmore stretched-link text-black">
-                        <div class="service-item position-relative">
-                            <div class="icon">
-                                <i class="bi bi-gift"></i>
-                            </div>
-                            <div class="position-relative mt-4">
-                                <h3>Bonus</h3>
-                                <p>Profitez de nos bonus exclusifs en achetant des tickets et en participant
-                                    régulièrement
-                                    aux tirages.</p>
-                            </div>
+				<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+                    <div class="service-item position-relative cursor-pointer" data-link="{{ route('tutoriel', ['lang' => app()->getLocale()]) }}">
+                        <div class="icon">
+                            <i class="bi bi-chat"></i>
                         </div>
-                    </a>
-                </div><!-- End Service Item -->
-
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-                    <a href="{{ route('tutoriel', ['lang' => app()->getLocale()]) }}" class="readmore stretched-link text-black">
-                        <div class="service-item position-relative">
-                            <div class="icon">
-                                <i class="bi bi-chat"></i>
-                            </div>
-                            <div class="position-relative mt-4">
-                                <h3>Chat </h3>
-                                <p>
-                                    Rejoignez notre chat en direct pour discuter avec d'autres joueurs passionnés,
-                                    partager des astuces et des stratégies, et célébrer vos victoires ensemble..</p>
-                            </div>
+                        <div class="position-relative mt-4">
+                            <h3>{{ __('home.services.items.5.title') }}</h3>
+                            <p>{{ __('home.services.items.5.description') }}</p>
                         </div>
-                    </a>
-                </div><!-- End Service Item -->
+                    </div>
+				</div><!-- End Service Item -->
 
-            </div>
+			</div>
 
-        </div>
+		</div>
 
-    </section>
-    <!-- /Services Section -->
+	</section>
+	<!-- /Services Section -->
 
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials section padding-vert">
+	<!-- Testimonials Section -->
+	<section id="testimonials" class="testimonials section padding-vert">
 
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-            <h2>Temoignages</h2>
-        </div><!-- End Section Title -->
+		<!-- Section Title -->
+		<div class="container section-title" data-aos="fade-up">
+			<h2>{{ __('home.testimonials.title') }}</h2>
+		</div><!-- End Section Title -->
 
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
+		<div class="container" data-aos="fade-up" data-aos-delay="100">
 
-            <div class="swiper init-swiper">
-                <script type="application/json" class="swiper-config">
+			<div class="swiper init-swiper">
+				<script type="application/json" class="swiper-config">
               {
                 "loop": true,
                 "speed": 600,
@@ -332,340 +268,308 @@
                 }
               }
             </script>
-                <div class="swiper-wrapper">
+				<div class="swiper-wrapper">
 
-                    <div class="swiper-slide">
-                        <div class="testimonial-item">
-                            <img src="{{ asset('assets/img/testimonials/testimonials-1.jpg') }}" class="testimonial-img" alt="">
-                            <h3>Saul Goodman</h3>
-                            <h4>Ceo &amp; Founder</h4>
-                            <div class="stars">
-                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                    class="bi bi-star-fill"></i>
-                            </div>
-                            <p>
-                                <i class="bi bi-quote quote-icon-left"></i>
-                                <span>ADL a changé ma vie! Les tirages sont incroyables et les gains sont réels.</span>
-                                <i class="bi bi-quote quote-icon-right"></i>
-                            </p>
-                        </div>
-                    </div><!-- End testimonial item -->
+					<div class="swiper-slide">
+						<div class="testimonial-item">
+							<img src="{{ asset('assets/img/testimonials/testimonials-1.jpg') }}" class="testimonial-img" alt="">
+							<h3>{{ __('home.testimonials.items.0.name') }}</h3>
+							<h4>{{ __('home.testimonials.items.0.position') }}</h4>
+							<div class="stars">
+								<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+									class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+							</div>
+							<p>
+								<i class="bi bi-quote quote-icon-left"></i>
+								<span>{{ __('home.testimonials.items.0.quote') }}</span>
+								<i class="bi bi-quote quote-icon-right"></i>
+							</p>
+						</div>
+					</div><!-- End testimonial item -->
 
-                    <div class="swiper-slide">
-                        <div class="testimonial-item">
-                            <img src="{{ asset('assets/img/testimonials/testimonials-2.jpg') }}" class="testimonial-img" alt="">
-                            <h3>Sara Wilsson</h3>
-                            <h4>Designer</h4>
-                            <div class="stars">
-                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                    class="bi bi-star-fill"></i>
-                            </div>
-                            <p>
-                                <i class="bi bi-quote quote-icon-left"></i>
-                                <span>Je ne peux plus m'arrêter de jouer sur ADL. C'est addictif et tellement
-                                    amusant!</span>
-                                <i class="bi bi-quote quote-icon-right"></i>
-                            </p>
-                        </div>
-                    </div><!-- End testimonial item -->
+					<div class="swiper-slide">
+						<div class="testimonial-item">
+							<img src="{{ asset('assets/img/testimonials/testimonials-2.jpg') }}" class="testimonial-img" alt="">
+							<h3>{{ __('home.testimonials.items.1.name') }}</h3>
+							<h4>{{ __('home.testimonials.items.1.position') }}</h4>
+							<div class="stars">
+								<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+									class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+							</div>
+							<p>
+								<i class="bi bi-quote quote-icon-left"></i>
+								<span>{{ __('home.testimonials.items.1.quote') }}</span>
+								<i class="bi bi-quote quote-icon-right"></i>
+							</p>
+						</div>
+					</div><!-- End testimonial item -->
 
-                    <div class="swiper-slide">
-                        <div class="testimonial-item">
-                            <img src="{{ asset('assets/img/testimonials/testimonials-3.jpg') }}" class="testimonial-img" alt="">
-                            <h3>Jena Karlis</h3>
-                            <h4>Store Owner</h4>
-                            <div class="stars">
-                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                    class="bi bi-star-fill"></i>
-                            </div>
-                            <p>
-                                <i class="bi bi-quote quote-icon-left"></i>
-                                <span>ADL m'a permis de gagner de l'argent tout en m'amusant. Une expérience
-                                    unique!</span>
-                                <i class="bi bi-quote quote-icon-right"></i>
-                            </p>
-                        </div>
-                    </div><!-- End testimonial item -->
+					<div class="swiper-slide">
+						<div class="testimonial-item">
+							<img src="{{ asset('assets/img/testimonials/testimonials-3.jpg') }}" class="testimonial-img" alt="">
+							<h3>{{ __('home.testimonials.items.2.name') }}</h3>
+							<h4>{{ __('home.testimonials.items.2.position') }}</h4>
+							<div class="stars">
+								<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+									class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+							</div>
+							<p>
+								<i class="bi bi-quote quote-icon-left"></i>
+								<span>{{ __('home.testimonials.items.2.quote') }}</span>
+								<i class="bi bi-quote quote-icon-right"></i>
+							</p>
+						</div>
+					</div><!-- End testimonial item -->
 
-                    <div class="swiper-slide">
-                        <div class="testimonial-item">
-                            <img src="{{ asset('assets/img/testimonials/testimonials-4.jpg') }}" class="testimonial-img" alt="">
-                            <h3>Matt Brandon</h3>
-                            <h4>Freelancer</h4>
-                            <div class="stars">
-                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                    class="bi bi-star-fill"></i>
-                            </div>
-                            <p>
-                                <i class="bi bi-quote quote-icon-left"></i>
-                                <span>Les tirages sur ADL sont palpitants! Je recommande à tous les amateurs de
-                                    jeux.</span>
-                                <i class="bi bi-quote quote-icon-right"></i>
-                            </p>
-                        </div>
-                    </div><!-- End testimonial item -->
+					<div class="swiper-slide">
+						<div class="testimonial-item">
+							<img src="{{ asset('assets/img/testimonials/testimonials-4.jpg') }}" class="testimonial-img" alt="">
+							<h3>{{ __('home.testimonials.items.3.name') }}</h3>
+							<h4>{{ __('home.testimonials.items.3.position') }}</h4>
+							<div class="stars">
+								<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+									class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+							</div>
+							<p>
+								<i class="bi bi-quote quote-icon-left"></i>
+								<span>{{ __('home.testimonials.items.3.quote') }}</span>
+								<i class="bi bi-quote quote-icon-right"></i>
+							</p>
+						</div>
+					</div><!-- End testimonial item -->
 
-                    <div class="swiper-slide">
-                        <div class="testimonial-item">
-                            <img src="{{ asset('assets/img/testimonials/testimonials-5.jpg') }}" class="testimonial-img" alt="">
-                            <h3>John Larson</h3>
-                            <h4>Entrepreneur</h4>
-                            <div class="stars">
-                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                    class="bi bi-star-fill"></i>
-                            </div>
-                            <p>
-                                <i class="bi bi-quote quote-icon-left"></i>
-                                <span>ADL est la meilleure plateforme de jeu en ligne que j'ai jamais utilisée. Des
-                                    gains
-                                    incroyables!</span>
-                                <i class="bi bi-quote quote-icon-right"></i>
-                            </p>
-                        </div>
-                    </div><!-- End testimonial item -->
+					<div class="swiper-slide">
+						<div class="testimonial-item">
+							<img src="{{ asset('assets/img/testimonials/testimonials-5.jpg') }}" class="testimonial-img" alt="">
+							<h3>{{ __('home.testimonials.items.4.name') }}</h3>
+							<h4>{{ __('home.testimonials.items.4.position') }}</h4>
+							<div class="stars">
+								<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+									class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+							</div>
+							<p>
+								<i class="bi bi-quote quote-icon-left"></i>
+								<span>{{ __('home.testimonials.items.4.quote') }}</span>
+								<i class="bi bi-quote quote-icon-right"></i>
+							</p>
+						</div>
+					</div><!-- End testimonial item -->
 
-                </div>
-                <div class="swiper-pagination"></div>
-            </div>
+				</div>
+				<div class="swiper-pagination"></div>
+			</div>
 
-        </div>
+		</div>
 
-    </section>
+	</section>
 
-    <!-- Faq Section -->
-    <section id="faq" class="faq section padding-vert">
+	<!-- Faq Section -->
+	<section id="faq" class="faq section padding-vert">
 
-        <div class="container">
+		<div class="container">
 
-            <div class="row gy-4">
+			<div class="row gy-4">
 
-                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="content px-xl-5">
-                        <h3><span><strong>Questions courantes </strong></span></h3>
-                    </div>
-                </div>
+				<div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+					<div class="content px-xl-5">
+						<h3><span><strong>{{ __('home.faq.title') }}</strong></span></h3>
+					</div>
+				</div>
 
-                <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+				<div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
 
-                    <div class="faq-container">
-                        <div class="faq-item faq-active">
-                            <h3><span class="num">1.</span> <span>Comment participer aux tirages ?</span>
-                            </h3>
-                            <div class="faq-content">
-                                <p>Pour participer, choisissez votre type de tirage, achetez des tickets et attendez le
-                                    tirage!</p>
-                            </div>
-                            <i class="faq-toggle bi bi-chevron-right"></i>
-                        </div><!-- End Faq item-->
+					<div class="faq-container">
+						<div class="faq-item faq-active">
+							<h3><span class="num">1.</span> <span>{{ __('home.faq.items.0.question') }}</span>
+							</h3>
+							<div class="faq-content">
+								<p>{{ __('home.faq.items.0.answer') }}</p>
+							</div>
+							<i class="faq-toggle bi bi-chevron-right"></i>
+						</div><!-- End Faq item-->
 
-                        <div class="faq-item">
-                            <h3><span class="num">2.</span> <span>Quels sont les types de tickets disponibles et
-                                    leur durée de validité ?</span></h3>
-                            <div class="faq-content">
-                                <p>Nous proposons trois types de tickets : 3 Jours (valide pour un tirage),
-                                    1 Semaine (valide pour deux tirages consécutifs) et
-                                    1 Mois (valide pour huit tirages consécutifs).</p>
-                            </div>
-                            <i class="faq-toggle bi bi-chevron-right"></i>
-                        </div><!-- End Faq item-->
+						<div class="faq-item">
+							<h3><span class="num">2.</span> <span>{{ __('home.faq.items.1.question') }}</span></h3>
+							<div class="faq-content">
+								<p>{{ __('home.faq.items.1.answer') }}</p>
+							</div>
+							<i class="faq-toggle bi bi-chevron-right"></i>
+						</div><!-- End Faq item-->
 
-                        <div class="faq-item">
-                            <h3><span class="num">3.</span> <span>Quand ont lieu les tirages?</span></h3>
-                            <div class="faq-content">
-                                <p>Les tirages se déroulent tous les lundis, mercredis et samedis à 19h00 GMT.</p>
-                            </div>
-                            <i class="faq-toggle bi bi-chevron-right"></i>
-                        </div><!-- End Faq item-->
+						<div class="faq-item">
+							<h3><span class="num">3.</span> <span>{{ __('home.faq.items.2.question') }}</span></h3>
+							<div class="faq-content">
+								<p>{{ __('home.faq.items.2.answer') }}</p>
+							</div>
+							<i class="faq-toggle bi bi-chevron-right"></i>
+						</div><!-- End Faq item-->
 
-                        <div class="faq-item">
-                            <h3><span class="num">4.</span> <span>Puis-je acheter des tickets pour plusieurs tirages
-                                    à l'avance ?</span>
-                            </h3>
-                            <div class="faq-content">
-                                <p>Oui, vous pouvez acheter des tickets pour plusieurs tirages à l'avance selon la durée
-                                    de validité du ticket choisi.
-                                </p>
-                            </div>
-                            <i class="faq-toggle bi bi-chevron-right"></i>
-                        </div><!-- End Faq item-->
+						<div class="faq-item">
+							<h3><span class="num">4.</span> <span>{{ __('home.faq.items.3.question') }}</span>
+							</h3>
+							<div class="faq-content">
+								<p>{{ __('home.faq.items.3.answer') }}</p>
+							</div>
+							<i class="faq-toggle bi bi-chevron-right"></i>
+						</div><!-- End Faq item-->
 
-                        <div class="faq-item">
-                            <h3><span class="num">5.</span> <span>Comment valider mon accès à la plateforme?</span>
-                            </h3>
-                            <div class="faq-content">
-                                <p>La validité des tickets varie en fonction du type choisi: 3 jours, 1 semaine ou 1
-                                    mois.
-                                </p>
-                            </div>
-                            <i class="faq-toggle bi bi-chevron-right"></i>
-                        </div><!-- End Faq item-->
+						<div class="faq-item">
+							<h3><span class="num">5.</span> <span>{{ __('home.faq.items.4.question') }}</span>
+							</h3>
+							<div class="faq-content">
+								<p>{{ __('home.faq.items.4.answer') }}</p>
+							</div>
+							<i class="faq-toggle bi bi-chevron-right"></i>
+						</div><!-- End Faq item-->
 
-                        <div class="faq-item">
-                            <h3><span class="num">6.</span> <span>Quelles sont les conditions pour recevoir un
-                                    ticket bonus ?</span></h3>
-                            <div class="faq-content">
-                                <p>ous recevez un ticket bonus si vous n'avez rien gagné au cours du mois précédent,
-                                    selon les conditions spécifiées pour chaque bonus mensuel.</p>
-                            </div>
-                            <i class="faq-toggle bi bi-chevron-right"></i>
-                        </div><!-- End Faq item-->
+						<div class="faq-item">
+							<h3><span class="num">6.</span> <span>{{ __('home.faq.items.5.question') }}</span></h3>
+							<div class="faq-content">
+								<p>{{ __('home.faq.items.5.answer') }}</p>
+							</div>
+							<i class="faq-toggle bi bi-chevron-right"></i>
+						</div><!-- End Faq item-->
 
-                        <div class="faq-item">
-                            <h3><span class="num">7.</span> <span>Comment puis-je vérifier si j'ai gagné ?</span>
-                            </h3>
-                            <div class="faq-content">
-                                <p>Vous pouvez consulter l'historique des tirages dans votre compte pour voir si vos
-                                    tickets ont été sélectionnés comme gagnants.
-                                    Les résultats sont disponibles pour les trois derniers tirages.</p>
-                            </div>
-                            <i class="faq-toggle bi bi-chevron-right"></i>
-                        </div><!-- End Faq item-->
+						<div class="faq-item">
+							<h3><span class="num">7.</span> <span>{{ __('home.faq.items.6.question') }}</span>
+							</h3>
+							<div class="faq-content">
+								<p>{{ __('home.faq.items.6.answer') }}</p>
+							</div>
+							<i class="faq-toggle bi bi-chevron-right"></i>
+						</div><!-- End Faq item-->
 
-                        <div class="faq-item">
-                            <h3><span class="num">8.</span> <span>Comment sont calculés les gains et les taxes
-                                    applicables ?</span></h3>
-                            <div class="faq-content">
-                                <p>Les gains sont calculés en fonction du type de ticket et du montant du prix.
-                                    Les taxes applicables dépendent du pays de résidence et sont déduites
-                                    automatiquement
-                                    lors du paiement des gains.
-                                </p>
-                            </div>
-                            <i class="faq-toggle bi bi-chevron-right"></i>
-                        </div><!-- End Faq item-->
+						<div class="faq-item">
+							<h3><span class="num">8.</span> <span>{{ __('home.faq.items.7.question') }}</span></h3>
+							<div class="faq-content">
+								<p>{{ __('home.faq.items.7.answer') }}</p>
+							</div>
+							<i class="faq-toggle bi bi-chevron-right"></i>
+						</div><!-- End Faq item-->
 
-                        <div class="faq-item">
-                            <h3><span class="num">9.</span> <span>Puis-je utiliser des codes promo pour acheter des
-                                    tickets à prix réduit ?</span></h3>
-                            <div class="faq-content">
-                                <p>Oui, les codes promo générés par l'administrateur peuvent être utilisés pour
-                                    bénéficier
-                                    de réductions sur l'achat de tickets.</p>
-                            </div>
-                            <i class="faq-toggle bi bi-chevron-right"></i>
-                        </div><!-- End Faq item-->
+						<div class="faq-item">
+							<h3><span class="num">9.</span> <span>{{ __('home.faq.items.8.question') }}</span></h3>
+							<div class="faq-content">
+								<p>{{ __('home.faq.items.8.answer') }}</p>
+							</div>
+							<i class="faq-toggle bi bi-chevron-right"></i>
+						</div><!-- End Faq item-->
 
-                        <div class="faq-item">
-                            <h3><span class="num">10.</span> <span>Comment puis-je retirer mes gains ?</span></h3>
-                            <div class="faq-content">
-                                <p>Vous pouvez retirer vos gains à partir de votre portefeuille électronique. Les fonds
-                                    sont transférés selon vos préférences de paiement.
-                                </p>
-                            </div>
-                            <i class="faq-toggle bi bi-chevron-right"></i>
-                        </div><!-- End Faq item-->
+						<div class="faq-item">
+							<h3><span class="num">10.</span> <span>{{ __('home.faq.items.9.question') }}</span></h3>
+							<div class="faq-content">
+								<p>{{ __('home.faq.items.9.answer') }}</p>
+							</div>
+							<i class="faq-toggle bi bi-chevron-right"></i>
+						</div><!-- End Faq item-->
 
-                    </div>
+					</div>
 
-                </div>
-            </div>
+				</div>
+			</div>
 
-        </div>
+		</div>
 
-    </section>
-    <!-- /Faq Section -->
+	</section>
+	<!-- /Faq Section -->
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact section padding-vert">
+	<!-- Contact Section -->
+	<section id="contact" class="contact section padding-vert">
 
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-            <h2>Contact</h2>
-            {{-- <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p> --}}
-        </div><!-- End Section Title -->
+		<!-- Section Title -->
+		<div class="container section-title" data-aos="fade-up">
+			<h2>{{ __('home.contact.title') }}</h2>
+			{{-- <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p> --}}
+		</div><!-- End Section Title -->
 
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
+		<div class="container" data-aos="fade-up" data-aos-delay="100">
 
-            <div class="row gx-lg-0 gy-4">
+			<div class="row gx-lg-0 gy-4">
 
-                <div class="col-lg-4">
-                    <div class="info-container d-flex flex-column align-items-center justify-content-center">
-                        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
-                            <i class="bi bi-geo-alt flex-shrink-0"></i>
-                            <div>
-                                <h3>Address</h3>
-                                <p>A108 Adam Street, New York, NY 535022</p>
-                            </div>
-                        </div><!-- End Info Item -->
+				<div class="col-lg-4">
+					<div class="info-container d-flex flex-column align-items-center justify-content-center">
+						<div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+							<i class="bi bi-geo-alt flex-shrink-0"></i>
+							<div>
+								<h3>{{ __('home.contact.address.title') }}</h3>
+								<p>{{ __('home.contact.address.content') }}</p>
+							</div>
+						</div><!-- End Info Item -->
 
-                        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
-                            <i class="bi bi-telephone flex-shrink-0"></i>
-                            <div>
-                                <h3>Call Us</h3>
-                                <p>+1 5589 55488 55</p>
-                            </div>
-                        </div><!-- End Info Item -->
+						<div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+							<i class="bi bi-telephone flex-shrink-0"></i>
+							<div>
+								<h3>{{ __('home.contact.call_us.title') }}</h3>
+								<p>{{ __('home.contact.call_us.content') }}</p>
+							</div>
+						</div><!-- End Info Item -->
 
-                        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-                            <i class="bi bi-envelope flex-shrink-0"></i>
-                            <div>
-                                <h3>Email Us</h3>
-                                <p>info@example.com</p>
-                            </div>
-                        </div><!-- End Info Item -->
+						<div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+							<i class="bi bi-envelope flex-shrink-0"></i>
+							<div>
+								<h3>{{ __('home.contact.email_us.title') }}</h3>
+								<p>{{ __('home.contact.email_us.content') }}</p>
+							</div>
+						</div><!-- End Info Item -->
 
-                        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
-                            <i class="bi bi-clock flex-shrink-0"></i>
-                            <div>
-                                <h3>Open Hours:</h3>
-                                <p>Mon-Sat: 11AM - 23PM</p>
-                            </div>
-                        </div><!-- End Info Item -->
+						<div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
+							<i class="bi bi-clock flex-shrink-0"></i>
+							<div>
+								<h3>{{ __('home.contact.open_hours.title') }}</h3>
+								<p>{{ __('home.contact.open_hours.content') }}</p>
+							</div>
+						</div><!-- End Info Item -->
 
-                    </div>
+					</div>
 
-                </div>
+				</div>
 
-                @if (session('success'))
-                    <div class="alert alert-success">
-                        {{ session('success') }}
-                    </div>
-                @endif
-                <div class="col-lg-8">
-                    <form action="{{ route('Contact.store', ['lang' => app()->getLocale()]) }}" method="post" class="php-email-form" data-aos="fade"
-                        data-aos-delay="100">
-                        @csrf
-                        <div class="row gy-4">
+				@if (session('success'))
+					<div class="alert alert-success">
+						{{ session('success') }}
+					</div>
+				@endif
+				<div class="col-lg-8">
+					<form action="{{ route('Contact.store', ['lang' => app()->getLocale()]) }}" method="post"
+						class="php-email-form" data-aos="fade" data-aos-delay="100">
+						@csrf
+						<div class="row gy-4">
 
-                            <div class="col-md-6">
-                                <input type="text" name="nom" class="form-control" placeholder="Your Name"
-                                    required="">
-                            </div>
+							<div class="col-md-6">
+								<input type="text" name="nom" class="form-control"
+									placeholder="{{ __('home.contact.form.name_placeholder') }}" required="">
+							</div>
 
-                            <div class="col-md-6 ">
-                                <input type="email" class="form-control" name="email" placeholder="Your Email"
-                                    required="">
-                            </div>
+							<div class="col-md-6 ">
+								<input type="email" class="form-control" name="email"
+									placeholder="{{ __('home.contact.form.email_placeholder') }}" required="">
+							</div>
 
-                            <div class="col-md-12">
-                                <input type="text" class="form-control" name="sujet" placeholder="Subject"
-                                    required="">
-                            </div>
+							<div class="col-md-12">
+								<input type="text" class="form-control" name="sujet"
+									placeholder="{{ __('home.contact.form.subject_placeholder') }}" required="">
+							</div>
 
-                            <div class="col-md-12">
-                                <textarea class="form-control" name="description" rows="8" placeholder="Message" required=""></textarea>
-                            </div>
+							<div class="col-md-12">
+								<textarea class="form-control" name="description" rows="8"
+								 placeholder="{{ __('home.contact.form.message_placeholder') }}" required=""></textarea>
+							</div>
 
-                            <div class="col-md-12 text-center">
-                                <div class="loading">Loading</div>
-                                <div class="error-message"></div>
-                                <div class="sent-message">Your message has been sent. Thank you!</div>
+							<div class="col-md-12 text-center">
+								<div class="loading">{{ __('home.contact.form.loading') }}</div>
+								<div class="error-message"></div>
+								<div class="sent-message">{{ __('home.contact.form.success_message') }}</div>
 
-                                <button type="submit">Send Message</button>
-                            </div>
+								<button type="submit">{{ __('home.contact.form.submit_button') }}</button>
+							</div>
 
-                        </div>
-                    </form>
-                </div><!-- End Contact Form -->
+						</div>
+					</form>
+				</div><!-- End Contact Form -->
 
-            </div>
+			</div>
 
-        </div>
+		</div>
 
-    </section><!-- /Contact Section -->
+	</section><!-- /Contact Section -->
 @endsection

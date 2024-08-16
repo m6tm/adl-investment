@@ -52,8 +52,20 @@ function selectLanguage() {
         language_icon.setAttribute('class', `fi fi-${selected_language_flag}`)
         console.log(url, current_language);
         url = url.replace(`${location.origin}/${current_language_flag}`, `${location.origin}/${selected_language}`)
-        console.log(url);
         location.href = url
     })
 }
 selectLanguage()
+
+function dataLinkCursor() {
+    const links = Array.from(document.querySelectorAll('.cursor-pointer[data-link]'))
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            const link_str = link.getAttribute('data-link')
+            if (typeof link_str === 'string') {
+                window.location.href = link_str
+            }
+        }, false)
+    })
+}
+dataLinkCursor()
