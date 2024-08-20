@@ -45,7 +45,7 @@
         <ul class="mb-6 flex flex-col gap-1.5">
           <!-- Menu Item Utilisateurs -->
           <li>
-            <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4" href="{{ route('user.list', ['lang' => app()->getLocale()]) }}">
+            <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4" href="{{ route('user.list') }}">
 			        <i data-lucide="users-round" class="w-5"></i>
               Utilisateurs
             </a>
@@ -53,7 +53,7 @@
           <!-- Menu Item Utilisateurs -->
           <!-- Menu Item Notifications -->
           <li>
-            <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4" href="{{ route('notifications', ['lang' => app()->getLocale()]) }}">
+            <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4" href="{{ route('notifications') }}">
 			        <i data-lucide="messages-square" class="w-5"></i>
               Notifications
             </a>

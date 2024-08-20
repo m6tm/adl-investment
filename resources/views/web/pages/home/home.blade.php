@@ -1,5 +1,5 @@
 <!-- resources/views/home/home.blade.php -->
-@extends('web.layout.app')
+@extends('layouts.website')
 
 <link rel="stylesheet" href="{{ asset('assets/css/pages/home.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/css/pages/card.css') }}">

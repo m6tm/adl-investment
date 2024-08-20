@@ -1,4 +1,4 @@
-@extends('web.layout.app')
+@extends('layouts.website')
 <link rel="stylesheet" href="{{ asset('assets/css/pages/404.css') }}">
 
 @section('content')
@@ -8,7 +8,7 @@
         <div class="container wow fadeInUp">
             <div class="row justify-content-center">
                 <div class="col-lg-12">
-                    <img src="{{ asset('assets/img/error-page-illus.png') }}" class="max-un" alt="Illustration">
+                    <img src="assets/img/error-page-illus.png" class="max-un" alt="Illustration">
                 </div>
             </div>
         </div>

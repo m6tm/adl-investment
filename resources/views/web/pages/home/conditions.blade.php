@@ -1,4 +1,4 @@
-@extends('web.layout.app')
+@extends('layouts.website')
 <link rel="stylesheet" href="{{ asset('assets/css/pages/home.css') }}">
 <script src="{{ asset('assets/js/app.js') }}"></script>
 

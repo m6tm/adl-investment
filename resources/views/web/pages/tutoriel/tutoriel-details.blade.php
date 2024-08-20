@@ -1,8 +1,10 @@
-@extends('web.layout.app')
+@extends('layouts.website')
 <link rel="stylesheet" href="{{ asset('assets/css/pages/home.css') }}">
+
+
 @section('content')
-<!-- Page Title -->
-<div class="page-title">
+  <!-- Page Title -->
+  <div class="page-title">
     <div class="heading">
       <div class="container">
         <div class="row d-flex justify-content-center text-center">

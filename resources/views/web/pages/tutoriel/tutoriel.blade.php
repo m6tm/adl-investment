@@ -1,5 +1,6 @@
-@extends('web.layout.app')
+@extends('layouts.website')
 <link rel="stylesheet" href="{{ asset('assets/css/pages/home.css') }}">
+
 
 @section('content')
 	<main id="tutoriel">

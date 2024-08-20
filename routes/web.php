@@ -1,15 +1,12 @@
 <?php
 
-use App\Enums\APP_LANGUAGE;
-use App\Http\Controllers\SigninController;
-use App\Http\Controllers\SignUpController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ContactController;
-use App\Http\Controllers\Dashboard\NotificationController;
-use App\Http\Controllers\Dashboard\UserController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\web\StaticPagesController;
-
+use App\Http\Controllers\auth\AuthenticatedSessionController;
+use App\Http\Controllers\auth\RegisteredUserController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,11 +19,29 @@ use App\Http\Controllers\web\StaticPagesController;
 |
 */
 
-/*route d'appel du fichier de configuration de l'application */
-
 // Appel des pages web
 
+/* Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+}); */
+
+/* Route::get('/', function () {
+    return view('welcome');
+})->name('home'); */
+
 Route::middleware(['language'])->group(function() {
+    Route::get('/', function () {
+        return view('welcome');
+    });
+    Route::get('{lang}', function () {
+        return view('welcome');
+    })->name('home');
+    
+    /* Route::get('', [HomeController::class, 'index']);
+    Route::get('{lang}', [HomeController::class, 'index'])->name('home'); */
+
     Route::get('{lang}/tutoriel', [StaticPagesController::class, 'tutoriel'])->name('tutoriel');
     Route::get('{lang}/tutoriel-details', [StaticPagesController::class, 'tutorielDetails'])->name('tutoriel-details');
     Route::get('{lang}/services-details', [StaticPagesController::class, 'servicesDetails'])->name('services-details');
@@ -39,19 +54,19 @@ Route::middleware(['language'])->group(function() {
     Route::get('{lang}/contact', [ContactController::class, 'create'])->name('contact.create');
     Route::post('contact', [ContactController::class, 'store'])->name('Contact.store');
     
-    Route::get('', [HomeController::class, 'index']);
-    Route::get('{lang}', [HomeController::class, 'index'])->name('home');
+    Route::get('{lang}/login', [AuthenticatedSessionController::class, 'create'])->name('login');
+    Route::get('{lang}/register', [RegisteredUserController::class, 'create'])->name('register');
     
-    Route::get('{lang}/signin', [SigninController::class, 'index'])->name('signin');
-    Route::get('{lang}/signup', [SignUpController::class, 'index'])->name('signup');
-    
-    Route::prefix('dashboard')->group(function() {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->middleware(['auth', 'verified']);
+
+    /* Route::prefix('dashboard')->group(function() {
         Route::get('{lang}/users', [UserController::class, 'index'])->name('user.list');
         Route::get('{lang}/users/create', [UserController::class, 'create'])->name('user.create');
         Route::get('{lang}/users/edit-{user_id}', [UserController::class, 'edit'])->name('user.edit')->whereAlpha('user_id');
         // Notifications
         Route::get('{lang}/notifications', [NotificationController::class, 'index'])->name('notifications');
-    });
+    }); */
 });
-// Route::middleware(['auth.dashboard'])->group(function () {
-// })->prefix('dashboard');
+require __DIR__.'/auth.php';

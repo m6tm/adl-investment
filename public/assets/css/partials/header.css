@@ -73,7 +73,7 @@
 .header .logo span {
     font-size: 32px;
     margin-left: 2px;
-    color: var(--danger-color);
+    color: var(--nav-hover-color);
 }
 
 .scrolled .header {
