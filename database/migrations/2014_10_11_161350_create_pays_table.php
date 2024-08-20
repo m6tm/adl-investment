@@ -11,14 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('contacts', function (Blueprint $table) {
+        Schema::create('pays', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
-            $table->string('nom');
-            $table->string('email')->unique();
-            $table->string('sujet');
-            $table->text('description');
-            $table->timestamps();
+            $table->string('libelle');
+            $table->string('libelle_court');
+            $table->string('code_iso');
+            $table->float('taxe')->default(0);
+            $table->dateTime('created_at')->useCurrent();
+            $table->dateTime('updated_at');
         });
     }
 
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('contacts');
+        Schema::dropIfExists('pays');
     }
 };

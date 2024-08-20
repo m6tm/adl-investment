@@ -1,6 +1,5 @@
 <?php
 
-use App\Enums\DOCUMENT_STATUS;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -12,14 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('documents', function (Blueprint $table) {
+        Schema::create('telephones', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
-            $table->foreignId('document_autorise_id');
-            $table->enum('statuts', DOCUMENT_STATUS::getValues())->default(DOCUMENT_STATUS::UNVERIFIED);
-            $table->string('path');
-            $table->timestamps();
-
+            $table->string('code');
+            $table->string('telephone');
+            $table->dateTime('created_at')->useCurrent();
+            $table->dateTime('updated_at');
         });
     }
 
@@ -28,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('documents');
+        Schema::dropIfExists('telephones');
     }
 };

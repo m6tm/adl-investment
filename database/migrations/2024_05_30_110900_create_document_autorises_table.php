@@ -1,6 +1,5 @@
 <?php
 
-use App\Enums\USER_TYPE;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -12,12 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('user_types', function (Blueprint $table) {
+        Schema::create('document_autorises', function (Blueprint $table) {
             $table->id();
-            $table->enum('libelle', USER_TYPE::getValues())->default(USER_TYPE::PLAYER);
+            $table->foreignId('pay_id');
+            $table->string('libelle');
+            $table->string('type');
             $table->dateTime('created_at')->useCurrent();
             $table->dateTime('updated_at');
-
         });
     }
 
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('user_types');
+        Schema::dropIfExists('document_autorises');
     }
 };

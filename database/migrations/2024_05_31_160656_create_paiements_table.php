@@ -1,5 +1,6 @@
 <?php
 
+use App\Enums\PAYMENT_STATUS;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,11 +14,11 @@ return new class extends Migration
     {
         Schema::create('paiements', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
+            $table->foreignId('payment_method_id');
             $table->float('montant');
-            $table->enum('statut',['echoue','succes']);
-            $table->timestamps();
-
+            $table->enum('statut',PAYMENT_STATUS::getValues())->default(PAYMENT_STATUS::PENDING);
+            $table->dateTime('created_at')->useCurrent();
+            $table->dateTime('updated_at');
         });
     }
 

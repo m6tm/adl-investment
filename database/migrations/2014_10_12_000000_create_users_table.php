@@ -1,5 +1,6 @@
 <?php
 
+use App\Enums\USER_VERIFICATION_STATUS;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,7 +14,9 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('pays_id')->nullable()->default(1);
+            $table->foreignId('user_type_id');
+            $table->foreignId('pay_id')->nullable();
+            $table->foreignId('referal_id')->nullable();
             $table->string('nom');
             $table->string('prenom');
             $table->string('email')->unique();
@@ -21,12 +24,12 @@ return new class extends Migration
             $table->string('password');
             $table->date('birt_day');
             $table->string('adresse');
-            $table->string('verification_status')->default('Encours')->default('Nonverifié');
-            $table->string('derniere_connexion');
+            $table->enum('verification_status', USER_VERIFICATION_STATUS::getValues())->default(USER_VERIFICATION_STATUS::UNVERIFIED);
+            $table->dateTime('derniere_connexion');
             $table->rememberToken();
-            $table->timestamps();
-
-            // $table->foreign('pays_id')->references('id')->on('pays');
+            $table->dateTime('created_at')->useCurrent();
+            $table->dateTime('updated_at');
+            $table->dateTime('deleted_at');
         });
     }
 
