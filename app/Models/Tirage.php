@@ -24,7 +24,7 @@ class Tirage extends Model
         return $this->hasMany(Gain::class);
     }
 
-    public function roues()
+    public function roue()
     {
         return $this->belongsTo(Roue::class);
     }

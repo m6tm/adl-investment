@@ -16,7 +16,7 @@ class Jackpot extends Model
         return $this->belongsTo(Roue::class);
     }
 
-    public function ticketsJackpot()
+    public function tickets_jackpot()
     {
         return $this->hasMany(TicketJackpot::class);
     }

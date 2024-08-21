@@ -5,19 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Coefficients extends Model
+class Coefficient extends Model
 {
     protected $fillable = [
         'valeur',
     ];
 
-    public function ticketsJackpot()
+    public function tickets_jackpot()
     {
         return $this->hasMany(TicketJackpot::class);
     }
 
-    public function ticketsDraw()
+    public function tickets_draw()
     {
-        return $this->hasMany(TicketDraw::class);
+        return $this->hasMany(TicketsDraw::class);
     }
 }

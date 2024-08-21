@@ -18,18 +18,22 @@ class Ticket extends Model
         return $this->belongsTo(User::class);
     }
 
+    function payment() {
+        return $this->belongsTo(Payment::class);
+    }
+
     public function tirage()
     {
         return $this->belongsTo(Tirage::class);
     }
 
-    public function ticket_prices()
+    public function ticket_price()
     {
-        return $this->belongsTo(Ticket_prices::class);
+        return $this->belongsTo(TicketPrice::class);
     }
 
-    public function ticket_categories()
+    public function ticket_category()
     {
-        return $this->belongsTo(Ticket_categories::class);
+        return $this->belongsTo(TicketCategory::class);
     }
 }

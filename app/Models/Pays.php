@@ -14,8 +14,13 @@ class Pays extends Model
         'taxe',
     ];
 
-    public function user()
+    public function users()
     {
         return $this->hasMany(User::class);
+    }
+
+    public function documents_autorises()
+    {
+        return $this->hasMany(PaysDocumentAutorise::class);
     }
 }

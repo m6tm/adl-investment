@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('prenom');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('referal_link')->unique();
             $table->date('birt_day');
             $table->enum('verification_status', USER_VERIFICATION_STATUS::getValues())->default(USER_VERIFICATION_STATUS::UNVERIFIED);
             $table->dateTime('derniere_connexion');

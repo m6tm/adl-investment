@@ -5,14 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class User_type extends Model
+class TicketPrice extends Model
 {
     protected $fillable = [
         'libelle',
+        'prix',
+        'device',
+        'is_promotion',
     ];
 
-    public function user()
+    public function tickets()
     {
-        return $this->belongsTo(User::class);
+        return $this->hasMany(Ticket::class);
     }
 }

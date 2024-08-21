@@ -18,4 +18,9 @@ class Document extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function document_autorise()
+    {
+        return $this->belongsTo(DocumentAutorise::class);
+    }
 }

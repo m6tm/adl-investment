@@ -39,7 +39,12 @@ class User extends Authenticatable
         'remember_token',
     ];
 
-    public function Documents()
+    public function adresse()
+    {
+        return $this->hasOne(Adresse::class);
+    }
+
+    public function documents()
     {
         return $this->hasMany(Document::class);
     }
@@ -59,14 +64,24 @@ class User extends Authenticatable
         return $this->hasMany(Gain::class);
     }
 
-    public function user_types()
-    {
-        return $this->hasOne(user_type::class);
-    }
-
     public function compte()
     {
         return $this->hasOne(Compte::class);
+    }
+
+    public function telephone()
+    {
+        return $this->hasMany(Telephone::class);
+    }
+
+    public function refere()
+    {
+        return $this->hasMany(Referal::class);
+    }
+
+    public function refere_to_me()
+    {
+        return $this->belongsTo(Referal::class);
     }
 
 
@@ -78,9 +93,4 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
-    public function getVerificationStatusAttribute()
-    {
-        return $this->verification_status;
-    }
 }

@@ -9,16 +9,16 @@ class Payment extends Model
 {
     protected $fillable = [
         'montant',
-        'statut',  // Ex: "reussir" , "echoué"
+        'statut',
     ];
 
-    public function ticket()
+    public function tickets()
     {
-        return $this->belongsTo(Ticket::class);
+        return $this->hasMany(Ticket::class);
     }
 
     public function paiement_method()
     {
-        return $this->hasMany(PaymentMethod::class);
+        return $this->belongsTo(PaymentMethod::class);
     }
 }
