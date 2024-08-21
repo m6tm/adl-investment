@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('winnings', function (Blueprint $table) {
             $table->id();
-            $table->string('montant_total_libelle');
+            $table->string('montant_total');
             $table->float('montant_total_numeric');
-            $table->timestamps();
+            $table->dateTime('created_at')->useCurrent();
+            $table->dateTime('updated_at');
         });
     }
 

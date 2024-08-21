@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Paiement extends Model
+class Payment extends Model
 {
     protected $fillable = [
         'montant',
@@ -19,6 +19,6 @@ class Paiement extends Model
 
     public function paiement_method()
     {
-        return $this->hasMany(Paiement_method::class);
+        return $this->hasMany(PaymentMethod::class);
     }
 }

@@ -16,8 +16,8 @@ return new class extends Migration
             $table->foreignId('coefficient_id');
             $table->foreignId('winning_id');
             $table->integer('nombre_ticket_a_tirer');
-            $table->datetime('date_mise_a_jour');
-            $table->timestamps();
+            $table->dateTime('created_at')->useCurrent();
+            $table->dateTime('updated_at');
 
         });
     }

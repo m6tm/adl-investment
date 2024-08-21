@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('roue_id');
             $table->float('montant');
-            $table->timestamps();
-
+            $table->dateTime('created_at')->useCurrent();
+            $table->dateTime('updated_at');
         });
     }
 

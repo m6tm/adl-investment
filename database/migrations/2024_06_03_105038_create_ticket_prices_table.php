@@ -17,7 +17,8 @@ return new class extends Migration
             $table->float('prix');
             $table->string('devise');
             $table->boolean('is_promotion');
-            $table->timestamps();
+            $table->dateTime('created_at')->useCurrent();
+            $table->dateTime('updated_at');
         });
     }
 

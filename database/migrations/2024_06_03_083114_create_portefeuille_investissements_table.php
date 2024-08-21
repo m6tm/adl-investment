@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('portefeuille__investissements', function (Blueprint $table) {
+        Schema::create('portefeuille_investissements', function (Blueprint $table) {
             $table->id();
             $table->string('balance_libelle');
             $table->float('balance_numeric');
-            $table->timestamps();
-
+            $table->dateTime('created_at')->useCurrent();
+            $table->dateTime('updated_at');
         });
     }
 
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('portefeuille__investissements');
+        Schema::dropIfExists('portefeuille_investissements');
     }
 };

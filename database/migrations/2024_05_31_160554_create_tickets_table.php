@@ -1,5 +1,8 @@
 <?php
 
+use App\Enums\TICKET_GAGNANT;
+use App\Enums\TICKET_STATUS;
+use App\Enums\TICKET_TYPE;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -18,10 +21,11 @@ return new class extends Migration
             $table->foreignId('ticket_price_id');
             $table->foreignId('ticket_categorie_id');
             $table->foreignId('paiement_id');
-            $table->enum('type',['bonus','mallus']);
-            $table->enum('statut',['utilise']);
-            $table->boolean('gagnant',['nom','oui']);
-            $table->timestamps();
+            $table->enum('type', TICKET_TYPE::getValues())->default(TICKET_TYPE::NORMAL);
+            $table->enum('statut', TICKET_STATUS::getValues())->default(TICKET_STATUS::ACTIF);
+            $table->enum('gagnant',TICKET_GAGNANT::getValues())->default(TICKET_GAGNANT::NON_DEFINI);
+            $table->dateTime('created_at')->useCurrent();
+            $table->dateTime('updated_at');
 
         });
     }

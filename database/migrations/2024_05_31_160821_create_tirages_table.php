@@ -1,5 +1,7 @@
 <?php
 
+use App\Enums\TICKET_TYPE;
+use App\Enums\TIRAGE_STATUS;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -16,8 +18,10 @@ return new class extends Migration
             $table->foreignId('roue_id');
             $table->date('date_tirage');
             $table->time('heure_tirage');
-            $table->enum('statut',['attente','encours','terminé']);
-            $table->timestamps();
+            $table->enum('statut', TIRAGE_STATUS::getValues())->default(TIRAGE_STATUS::ATTENTE);
+            $table->enum('type', TICKET_TYPE::getValues())->default(TICKET_TYPE::NORMAL);
+            $table->dateTime('created_at')->useCurrent();
+            $table->dateTime('updated_at');
 
         });
     }

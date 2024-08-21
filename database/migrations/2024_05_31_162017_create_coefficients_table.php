@@ -12,8 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('coefficients', function (Blueprint $table) {
+            $table->id();
             $table->integer('valeur');
-            $table->timestamps();
+            $table->dateTime('created_at')->useCurrent();
+            $table->dateTime('updated_at');
         });
     }
 

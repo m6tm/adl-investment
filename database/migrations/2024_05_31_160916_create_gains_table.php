@@ -15,9 +15,10 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id');
             $table->foreignId('tirage_id');
-            $table->float('montant');
+            $table->string('montant');
             $table->float('montant_numeric');
-            $table->timestamps();
+            $table->dateTime('created_at')->useCurrent();
+            $table->dateTime('updated_at');
 
         });
     }

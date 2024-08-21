@@ -15,9 +15,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('jackpot_id');
             $table->foreignId('coefficient_id');
-            $table->string('date_creation');
-            $table->string('date_mise_a_jour');
-            $table->timestamps();
+            $table->dateTime('created_at')->useCurrent();
+            $table->dateTime('updated_at');
 
         });
     }
