@@ -492,7 +492,7 @@
 							<i class="bi bi-geo-alt flex-shrink-0"></i>
 							<div>
 								<h3>{{ __('home.contact.address.title') }}</h3>
-								<p>{{ __('home.contact.address.content') }}</p>
+								<p>{{ env('ADL_ADDRESS') }}</p>
 							</div>
 						</div><!-- End Info Item -->
 
@@ -500,7 +500,7 @@
 							<i class="bi bi-telephone flex-shrink-0"></i>
 							<div>
 								<h3>{{ __('home.contact.call_us.title') }}</h3>
-								<p>{{ __('home.contact.call_us.content') }}</p>
+								<p>{{ env('ADMIN_PHONE_NUMBER') }}</p>
 							</div>
 						</div><!-- End Info Item -->
 
@@ -508,7 +508,7 @@
 							<i class="bi bi-envelope flex-shrink-0"></i>
 							<div>
 								<h3>{{ __('home.contact.email_us.title') }}</h3>
-								<p>{{ __('home.contact.email_us.content') }}</p>
+								<p>{{ env('ADMIN_MAIL_ADDRESS') }}</p>
 							</div>
 						</div><!-- End Info Item -->
 

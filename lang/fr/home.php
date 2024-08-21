@@ -178,15 +178,12 @@ return [
         'title' => 'Contact',
         'address' => [
             'title' => 'Adresse',
-            'content' => 'A108 Adam Street, New York, NY 535022',
         ],
         'call_us' => [
             'title' => 'Appelez-nous',
-            'content' => '+1 5589 55488 55',
         ],
         'email_us' => [
             'title' => 'Envoyez-nous un e-mail',
-            'content' => 'info@example.com',
         ],
         'open_hours' => [
             'title' => 'Heures d\'ouverture :',

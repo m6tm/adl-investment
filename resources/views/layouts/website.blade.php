@@ -3,11 +3,11 @@
 
 <head>
     @include('layouts.partials.head')
-    @cookieconsentscripts
+    {{-- @cookieconsentscripts --}}
 </head>
 
 <body class="index-page">
-    @cookieconsentview
+    {{-- @cookieconsentview --}}
     
     @include('layouts.partials.navbar')
     <main class="main">

@@ -179,15 +179,12 @@ return [
         'title' => 'Contact',
         'address' => [
             'title' => 'Address',
-            'content' => 'A108 Adam Street, New York, NY 535022',
         ],
         'call_us' => [
             'title' => 'Call Us',
-            'content' => '+1 5589 55488 55',
         ],
         'email_us' => [
             'title' => 'Email Us',
-            'content' => 'info@example.com',
         ],
         'open_hours' => [
             'title' => 'Open Hours:',

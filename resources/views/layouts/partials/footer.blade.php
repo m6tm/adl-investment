@@ -27,20 +27,14 @@
 		</div>
 
 		<div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
-			<h4>{{ __('partials/footer.contact_us') }}</h4>
-			<p>{{ __('partials/footer.neighborhood') }}</p>
-			<p>{{ __('partials/footer.city') }}</p>
-			<p>{{ __('partials/footer.country') }}</p>
-			<p class="mt-4"><strong>{{ __('partials/footer.phone') }}</strong> <span>+1 5589 55488 55</span></p>
-			<p><strong>{{ __('partials/footer.email') }}</strong> <span>adl.investment.55@gmail.com</span></p>
+			<p class="mt-4"><strong>{{ __('partials/footer.address') }}:</strong> <span>{{ env('ADL_ADDRESS') }}</span></p>
+			<p><strong>{{ __('partials/footer.phone') }}:</strong> <span>{{ env('ADMIN_PHONE_NUMBER') }}</span></p>
+			<p><strong>{{ __('partials/footer.email') }}:</strong> <span>{{ env('ADMIN_MAIL_ADDRESS') }}</span></p>
 		</div>
 
 	</div>
 </div>
 
 <div class="container copyright text-center mt-4">
-	<p>© <span>{{ __('partials/footer.copyright') }}</span> <strong class="px-1 sitename">ADL 2024</strong> <span>{{ __('partials/footer.all_rights_reserved') }}</span></p>
-	<div class="credits">
-		{{ __('partials/footer.designed_by') }} <a href="#">DevGroup</a>
-	</div>
+	<p>© <span>{{ __('partials/footer.copyright') }}</span> <strong class="px-1 sitename">ADL Investment 2024</strong> <span>{{ __('partials/footer.all_rights_reserved') }}</span></p>
 </div>
