@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ app()->getLocale() }}">
 
 <head>
     @include('layouts.partials.head')
@@ -9,9 +9,7 @@
 <body class="index-page">
     @cookieconsentview
     
-    <header id="header" class="header fixed-top">
-        @include('layouts.partials.navbar')
-    </header>
+    @include('layouts.partials.navbar')
     <main class="main">
         {{-- HERO SECTION    --}}
         @yield('content')

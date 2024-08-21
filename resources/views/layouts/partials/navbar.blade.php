@@ -7,10 +7,10 @@
 		<div class="container d-flex justify-content-center justify-content-md-between">
 			<div class="contact-info d-flex align-items-center">
 				<i class="bi bi-envelope d-flex align-items-center">
-					<a href="mailto:adl.investment.55@gmail.com">adl.investment.55@gmail.com</a>
+					<a href="mailto:{{ env('ADMIN_MAIL_ADDRESS') }}">{{ env('ADMIN_MAIL_ADDRESS') }}</a>
 				</i>
-				<a href="tel:+1 5589 55488 55">
-					<i class="bi bi-phone d-flex align-items-center ms-4"><span>+1 5589 55488 55</span></i>
+				<a href="tel:{{ env('ADMIN_PHONE_NUMBER') }}">
+					<i class="bi bi-phone d-flex align-items-center ms-4"><span>{{ env('ADMIN_PHONE_NUMBER') }}</span></i>
 				</a>
 			</div>
 			<div class="social-links d-none d-md-flex align-items-center">
