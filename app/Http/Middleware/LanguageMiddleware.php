@@ -19,6 +19,7 @@ class LanguageMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
+        if (request()->method() !== 'GET') return $next($request);
         // Récupérer la langue de l'utilisateur à partir de la requête
         $locale = app()->getLocale();
         if (!in_array($locale, APP_LANGUAGE::getValues())) $locale = APP_LANGUAGE::EN;

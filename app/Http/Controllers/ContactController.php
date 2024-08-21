@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Contact;
 
 class ContactController extends Controller
 {
@@ -16,14 +15,13 @@ class ContactController extends Controller
     {
         // Validation des données
         $request->validate([
-            'nom' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255',
+            'nom' => 'required|string',
+            'email' => 'required|email',
             'sujet' => 'required|string|max:255',
             'description' => 'required|string',
         ]);
 
-        // Création du contact
-        Contact::create($request->all());
+        dd(request()->input());
 
         // Redirection ou réponse appropriée
         return redirect()->back()->with('success', 'Votre message a été envoyé avec succès.');

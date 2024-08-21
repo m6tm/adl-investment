@@ -530,7 +530,7 @@
 					</div>
 				@endif
 				<div class="col-lg-8">
-					<form action="{{ route('Contact.store', ['lang' => app()->getLocale()]) }}" method="post"
+					<form action="{{ route('contact.store') }}" method="post"
 						class="php-email-form" data-aos="fade" data-aos-delay="100">
 						@csrf
 						<div class="row gy-4">

@@ -52,7 +52,7 @@ Route::middleware(['language'])->group(function() {
     Route::get('{lang}/conditions', [StaticPagesController::class, 'conditions'])->name('conditions');
     Route::get('{lang}/privacy', [StaticPagesController::class, 'privacy'])->name('privacy');
     Route::get('{lang}/contact', [ContactController::class, 'create'])->name('contact.create');
-    Route::post('contact', [ContactController::class, 'store'])->name('Contact.store');
+    Route::post('contact', [ContactController::class, 'store'])->name('contact.store');
     
     Route::get('{lang}/login', [AuthenticatedSessionController::class, 'create'])->name('login');
     Route::get('{lang}/register', [RegisteredUserController::class, 'create'])->name('register');
