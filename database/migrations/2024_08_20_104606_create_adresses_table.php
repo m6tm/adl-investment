@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('email')->unique();
             $table->string('ville');
-            $table->string('region');
+            $table->string('street');
             $table->dateTime('created_at')->useCurrent();
             $table->dateTime('updated_at');
         });
