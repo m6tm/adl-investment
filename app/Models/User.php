@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
+// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class User extends Authenticatable  implements MustVerifyEmail
+
+class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable, SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -18,15 +20,13 @@ class User extends Authenticatable  implements MustVerifyEmail
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
-        'first_name',
-        'birth_date',
-        'phone',
+        'nom',
+        'prenom',
         'email',
-        'pseudo',
-        'city',
-        'neighborhood',
         'password',
+        'birt-day',
+        'adresse',
+        'derniere_connexion',
     ];
 
     /**
@@ -39,6 +39,37 @@ class User extends Authenticatable  implements MustVerifyEmail
         'remember_token',
     ];
 
+    public function Documents()
+    {
+        return $this->hasMany(Document::class);
+    }
+
+    public function tickets()
+    {
+        return $this->hasMany(Ticket::class);
+    }
+
+    public function pays()
+    {
+        return $this->belongsTo(Pays::class);
+    }
+
+    public function gains()
+    {
+        return $this->hasMany(Gain::class);
+    }
+
+    public function user_types()
+    {
+        return $this->hasOne(user_type::class);
+    }
+
+    public function compte()
+    {
+        return $this->hasOne(Compte::class);
+    }
+
+
     /**
      * The attributes that should be cast.
      *
@@ -46,6 +77,10 @@ class User extends Authenticatable  implements MustVerifyEmail
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
-        'password' => 'hashed',
     ];
+
+    public function getVerificationStatusAttribute()
+    {
+        return $this->verification_status;
+    }
 }
