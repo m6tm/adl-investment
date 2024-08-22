@@ -11,9 +11,11 @@ import './templately/js/index'
 
 import axios from 'axios';
 import { notificationTabs } from './utilities/notification';
+import { createIcons, icons } from 'lucide'
 window.axios = axios;
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+createIcons({ icons })
 
 window.addEventListener('load', () => {
     const loader = document.querySelector('div[x-show="loaded"]')

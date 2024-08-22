@@ -34,7 +34,6 @@
             @yield('content')
         </div>
     </div>
-    <script src="https://unpkg.com/lucide@latest"></script>
     @vite(['resources/js/app.js'])
 </body>
 </html>
