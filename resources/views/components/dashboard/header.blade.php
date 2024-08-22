@@ -45,7 +45,7 @@
     <div class="hidden sm:block">
       <form action="https://formbold.com/s/unique_form_id" method="POST">
         <div class="relative">
-          <button class="absolute left-0 top-1/2 -translate-y-1/2">
+          <button class="absolute left-0 ms-2 top-1/2 -translate-y-1/2">
             <svg
               class="fill-body hover:fill-primary dark:fill-bodydark dark:hover:fill-primary"
               width="20"
@@ -72,7 +72,7 @@
           <input
             type="text"
             placeholder="Entrer une recherche ..."
-            class="w-full bg-transparent pl-9 pr-4 focus:outline-none xl:w-125"
+            class="w-full bg-transparent px-9 focus:outline-none xl:w-125 rounded-lg border-slate-300"
           />
         </div>
       </form>

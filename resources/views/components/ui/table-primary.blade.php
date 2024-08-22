@@ -37,7 +37,7 @@
 						</div>
 
 						<div class="col-span-1">
-							<a href="{{ route('user.edit', ['user_id' => 'JHgkjhKJHfkjhgJH']) }}" class="float-right text-primary">Edit</a>
+							<a href="{{ route('dashboard.user.edit', ['user_id' => 'JHgkjhKJHfkjhgJH']) }}" class="float-right text-primary">Edit</a>
 						</div>
 					</div>
 				@endforeach

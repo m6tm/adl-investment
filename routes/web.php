@@ -53,13 +53,13 @@ Route::get('register', [RegisteredUserController::class, 'create'])->name('regis
 Route::prefix('dashboard')->group(function() {
     Route::get('', function () {
         return view('dashboard');
-    })->middleware(['auth', 'verified']);
+    })->middleware(['auth', 'verified'])->name('dashboard');
 
-    Route::get('users', [UserController::class, 'index'])->name('user.list');
-    Route::get('users/create', [UserController::class, 'create'])->name('user.create');
-    Route::get('users/edit-{user_id}', [UserController::class, 'edit'])->name('user.edit')->whereAlpha('user_id');
+    Route::get('users', [UserController::class, 'index'])->name('dashboard.user.list');
+    Route::get('users/create', [UserController::class, 'create'])->name('dashboard.user.create');
+    Route::get('users/edit-{user_id}', [UserController::class, 'edit'])->name('dashboard.user.edit')->whereAlpha('user_id');
     // Notifications
-    Route::get('notifications', [NotificationController::class, 'index'])->name('notifications');
+    Route::get('notifications', [NotificationController::class, 'index'])->name('dashboard.notifications');
 });
 
 require __DIR__.'/auth.php';
