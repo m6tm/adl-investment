@@ -20,11 +20,11 @@
 				<a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
 			</div>
 			<div class="social-links d-none d-md-flex align-items-center">
-				<a href="{{ route('login', ['lang' => app()->getLocale()]) }}">
+				<a href="{{ route('login') }}">
 					<i class="bi bi-person-fill"></i>
 					<span>Sign In</span>
 				</a>
-				<a href="{{ route('register', ['lang' => app()->getLocale()]) }}">
+				<a href="{{ route('register') }}">
 					<i class="bi bi-pencil-square"></i>
 					<span>Sign Up</span>
 				</a>
@@ -35,19 +35,19 @@
 	<div class="branding d-flex align-items-cente">
 
 		<div class="container position-relative d-flex align-items-center justify-content-between">
-			<a href="{{ route('home', ['lang' => app()->getLocale()]) }}" class="logo d-flex align-items-center">
+			<a href="{{ route('home') }}" class="logo d-flex align-items-center">
 				<h1 class="sitename">ADL - </h1>
 				<span class="accent">Investment</span>
 			</a>
 
 			<nav id="navmenu" class="navmenu">
 				<ul>
-					<li><a href="{{ route('home', ['lang' => app()->getLocale()]) }}" class="active">{{ __('partials/header.home') }}<br></a></li>
-					<li><a href="{{ route('home', ['lang' => app()->getLocale()]) }}#contact">{{ __('partials/header.contact') }}</a></li>
-					<li><a href="{{ route('tutoriel', ['lang' => app()->getLocale()]) }}#tutoriel">{{ __('partials/header.tuto') }}</a></li>
-					<li><a href="{{ route('about', ['lang' => app()->getLocale()]) }}#aboutus">{{ __('partials/header.about') }}</a></li>
-					<li><a href="{{ route('conditions', ['lang' => app()->getLocale()]) }}">{{ __('partials/header.service') }}</a></li>
-					<li><a href="{{ route('privacy', ['lang' => app()->getLocale()]) }}">{{ __('partials/header.privacy_policy') }}</a></li>
+					<li><a href="{{ route('home') }}" class="active">{{ __('partials/header.home') }}<br></a></li>
+					<li><a href="{{ route('home') }}#contact">{{ __('partials/header.contact') }}</a></li>
+					<li><a href="{{ route('tutoriel') }}#tutoriel">{{ __('partials/header.tuto') }}</a></li>
+					<li><a href="{{ route('about') }}#aboutus">{{ __('partials/header.about') }}</a></li>
+					<li><a href="{{ route('conditions') }}">{{ __('partials/header.service') }}</a></li>
+					<li><a href="{{ route('privacy') }}">{{ __('partials/header.privacy_policy') }}</a></li>
 					<li>
 						<label for="lang-country">
 							<span class="fi fi-fr"></span>

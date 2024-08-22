@@ -6,6 +6,9 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\web\StaticPagesController;
 use App\Http\Controllers\auth\AuthenticatedSessionController;
 use App\Http\Controllers\auth\RegisteredUserController;
+use App\Http\Controllers\Dashboard\NotificationController;
+use App\Http\Controllers\Dashboard\UserController;
+use App\Http\Controllers\LanguageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,46 +30,36 @@ use Illuminate\Support\Facades\Route;
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 }); */
 
-/* Route::get('/', function () {
+Route::get('locale/{lang}', [LanguageController::class, 'setLocale'])->name('set.locale');
+Route::get('', function () {
     return view('welcome');
-})->name('home'); */
+})->name('home');
 
-Route::middleware(['language'])->group(function() {
-    Route::get('/', function () {
-        return view('welcome');
-    });
-    Route::get('{lang}', function () {
-        return view('welcome');
-    })->name('home');
-    
-    /* Route::get('', [HomeController::class, 'index']);
-    Route::get('{lang}', [HomeController::class, 'index'])->name('home'); */
+Route::get('tutoriel', [StaticPagesController::class, 'tutoriel'])->name('tutoriel');
+Route::get('tutoriel-details', [StaticPagesController::class, 'tutorielDetails'])->name('tutoriel-details');
+Route::get('services-details', [StaticPagesController::class, 'servicesDetails'])->name('services-details');
+Route::get('portfolio-details', [StaticPagesController::class, 'portfolioDetails'])->name('portfolio-details');
+Route::get('about', [StaticPagesController::class, 'about'])->name('about');
+Route::get('team', [StaticPagesController::class, 'team'])->name('team');
+Route::get('privacy', [StaticPagesController::class, 'privacy'])->name('privacy');
+Route::get('conditions', [StaticPagesController::class, 'conditions'])->name('conditions');
+Route::get('privacy', [StaticPagesController::class, 'privacy'])->name('privacy');
+Route::get('contact', [ContactController::class, 'create'])->name('contact.create');
+Route::post('contact', [ContactController::class, 'store'])->name('contact.store');
 
-    Route::get('{lang}/tutoriel', [StaticPagesController::class, 'tutoriel'])->name('tutoriel');
-    Route::get('{lang}/tutoriel-details', [StaticPagesController::class, 'tutorielDetails'])->name('tutoriel-details');
-    Route::get('{lang}/services-details', [StaticPagesController::class, 'servicesDetails'])->name('services-details');
-    Route::get('{lang}/portfolio-details', [StaticPagesController::class, 'portfolioDetails'])->name('portfolio-details');
-    Route::get('{lang}/about', [StaticPagesController::class, 'about'])->name('about');
-    Route::get('{lang}/team', [StaticPagesController::class, 'team'])->name('team');
-    Route::get('{lang}/privacy', [StaticPagesController::class, 'privacy'])->name('privacy');
-    Route::get('{lang}/conditions', [StaticPagesController::class, 'conditions'])->name('conditions');
-    Route::get('{lang}/privacy', [StaticPagesController::class, 'privacy'])->name('privacy');
-    Route::get('{lang}/contact', [ContactController::class, 'create'])->name('contact.create');
-    Route::post('contact', [ContactController::class, 'store'])->name('contact.store');
-    
-    Route::get('{lang}/login', [AuthenticatedSessionController::class, 'create'])->name('login');
-    Route::get('{lang}/register', [RegisteredUserController::class, 'create'])->name('register');
-    
-    Route::get('/dashboard', function () {
+Route::get('login', [AuthenticatedSessionController::class, 'create'])->name('login');
+Route::get('register', [RegisteredUserController::class, 'create'])->name('register');
+
+Route::prefix('dashboard')->group(function() {
+    Route::get('', function () {
         return view('dashboard');
     })->middleware(['auth', 'verified']);
 
-    /* Route::prefix('dashboard')->group(function() {
-        Route::get('{lang}/users', [UserController::class, 'index'])->name('user.list');
-        Route::get('{lang}/users/create', [UserController::class, 'create'])->name('user.create');
-        Route::get('{lang}/users/edit-{user_id}', [UserController::class, 'edit'])->name('user.edit')->whereAlpha('user_id');
-        // Notifications
-        Route::get('{lang}/notifications', [NotificationController::class, 'index'])->name('notifications');
-    }); */
+    Route::get('users', [UserController::class, 'index'])->name('user.list');
+    Route::get('users/create', [UserController::class, 'create'])->name('user.create');
+    Route::get('users/edit-{user_id}', [UserController::class, 'edit'])->name('user.edit')->whereAlpha('user_id');
+    // Notifications
+    Route::get('notifications', [NotificationController::class, 'index'])->name('notifications');
 });
+
 require __DIR__.'/auth.php';

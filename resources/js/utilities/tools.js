@@ -52,7 +52,7 @@ function selectLanguage() {
         language_icon.setAttribute('class', `fi fi-${selected_language_flag}`)
         console.log(url, current_language);
         url = url.replace(`${location.origin}/${current_language_flag}`, `${location.origin}/${selected_language}`)
-        location.href = url
+        location.href = `${location.origin}/locale/${selected_language}`
     })
 }
 selectLanguage()

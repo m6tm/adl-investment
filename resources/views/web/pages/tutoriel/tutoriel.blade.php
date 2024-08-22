@@ -18,7 +18,7 @@
 			<nav class="breadcrumbs">
 				<div class="container">
 					<ol>
-						<li><a href="{{ route('home', ['lang' => app()->getLocale()]) }}#services">{{ __('tutoriel.home') }}</a></li>
+						<li><a href="{{ route('home') }}#services">{{ __('tutoriel.home') }}</a></li>
 						<li class="current">{{ __('tutoriel.tutoriels') }}</li>
 					</ol>
 				</div>
@@ -43,10 +43,10 @@
 
 						<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
 							<div class="portfolio-content h-100">
-								<a href="{{ route('tutoriel-details', ['lang' => app()->getLocale()]) }}" class="glightbox"><img
+								<a href="{{ route('tutoriel-details') }}" class="glightbox"><img
 										src="{{ asset('assets/img/Roue_ADL.png') }}" class="img-fluid tuto-img mx-auto my-4" alt=""></a>
 								<div class="portfolio-info">
-									<h4><a href="{{ route('tutoriel-details', ['lang' => app()->getLocale()]) }}" title="More Details">Tutoriel
+									<h4><a href="{{ route('tutoriel-details') }}" title="More Details">Tutoriel
 											1</a></h4>
 									<p>Lorem ipsum, dolor sit amet consectetur</p>
 								</div>
@@ -55,10 +55,10 @@
 
 						<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
 							<div class="portfolio-content h-100">
-								<a href="{{ route('tutoriel-details', ['lang' => app()->getLocale()]) }}" class="glightbox"><img
+								<a href="{{ route('tutoriel-details') }}" class="glightbox"><img
 										src="{{ asset('assets/img/Roue_ADL.png') }}" class="img-fluid tuto-img mx-auto my-4" alt=""></a>
 								<div class="portfolio-info">
-									<h4><a href="{{ route('tutoriel-details', ['lang' => app()->getLocale()]) }}" title="More Details">Tutoriel
+									<h4><a href="{{ route('tutoriel-details') }}" title="More Details">Tutoriel
 											1</a></h4>
 									<p>Lorem ipsum, dolor sit amet consectetur</p>
 								</div>
@@ -67,10 +67,10 @@
 
 						<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
 							<div class="portfolio-content h-100">
-								<a href="{{ route('tutoriel-details', ['lang' => app()->getLocale()]) }}" class="glightbox"><img
+								<a href="{{ route('tutoriel-details') }}" class="glightbox"><img
 										src="{{ asset('assets/img/Roue_ADL.png') }}" class="img-fluid tuto-img mx-auto my-4" alt=""></a>
 								<div class="portfolio-info">
-									<h4><a href="{{ route('tutoriel-details', ['lang' => app()->getLocale()]) }}" title="More Details">Tutoriel
+									<h4><a href="{{ route('tutoriel-details') }}" title="More Details">Tutoriel
 											1</a></h4>
 									<p>Lorem ipsum, dolor sit amet consectetur</p>
 								</div>

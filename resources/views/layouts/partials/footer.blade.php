@@ -19,10 +19,10 @@
 			<h4>{{ __('partials/footer.useful_links') }}</h4>
 			<ul>
 				<li><a href="#">{{ __('partials/footer.home') }}</a></li>
-				<li><a href="{{ route('about', ['lang' => app()->getLocale()]) }}#aboutus">{{ __('partials/footer.about_us') }}</a></li>
-				<li><a href="{{ route('tutoriel', ['lang' => app()->getLocale()]) }}#tutoriel">{{ __('partials/footer.tutorial') }}</a></li>
-				<li><a href="{{ route('conditions', ['lang' => app()->getLocale()]) }}">{{ __('partials/footer.terms_of_service') }}</a></li>
-				<li><a href="{{ route('privacy', ['lang' => app()->getLocale()]) }}">{{ __('partials/footer.privacy_policy') }}</a></li>
+				<li><a href="{{ route('about') }}#aboutus">{{ __('partials/footer.about_us') }}</a></li>
+				<li><a href="{{ route('tutoriel') }}#tutoriel">{{ __('partials/footer.tutorial') }}</a></li>
+				<li><a href="{{ route('conditions') }}">{{ __('partials/footer.terms_of_service') }}</a></li>
+				<li><a href="{{ route('privacy') }}">{{ __('partials/footer.privacy_policy') }}</a></li>
 			</ul>
 		</div>
 

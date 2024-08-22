@@ -154,7 +154,7 @@
 			<div class="row gy-4">
 
 				<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="service-item position-relative cursor-pointer" data-link="{{ route('tutoriel', ['lang' => app()->getLocale()]) }}">
+                    <div class="service-item position-relative cursor-pointer" data-link="{{ route('tutoriel') }}">
                         <div class="icon">
                             <i class="bi bi-box-arrow-in-right"></i>
                         </div>
@@ -166,7 +166,7 @@
 				</div><!-- End Service Item -->
 
 				<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-item position-relative cursor-pointer" data-link="{{ route('tutoriel', ['lang' => app()->getLocale()]) }}">
+                    <div class="service-item position-relative cursor-pointer" data-link="{{ route('tutoriel') }}">
                         <div class="icon">
                             <i class="bi bi-currency-dollar"></i>
                         </div>
@@ -178,7 +178,7 @@
 				</div><!-- End Service Item -->
 
 				<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="service-item position-relative cursor-pointer" data-link="{{ route('tutoriel', ['lang' => app()->getLocale()]) }}">
+                    <div class="service-item position-relative cursor-pointer" data-link="{{ route('tutoriel') }}">
                         <div class="icon">
                             <i class="bi bi-ticket"></i>
                         </div>
@@ -190,7 +190,7 @@
 				</div><!-- End Service Item -->
 
 				<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-                    <div class="service-item position-relative cursor-pointer" data-link="{{ route('tutoriel', ['lang' => app()->getLocale()]) }}">
+                    <div class="service-item position-relative cursor-pointer" data-link="{{ route('tutoriel') }}">
                         <div class="icon">
                             <i class="bi bi-ui-radios"></i>
                         </div>
@@ -202,7 +202,7 @@
 				</div><!-- End Service Item -->
 
 				<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-                    <div class="service-item position-relative cursor-pointer" data-link="{{ route('tutoriel', ['lang' => app()->getLocale()]) }}">
+                    <div class="service-item position-relative cursor-pointer" data-link="{{ route('tutoriel') }}">
                         <div class="icon">
                             <i class="bi bi-gift"></i>
                         </div>
@@ -214,7 +214,7 @@
 				</div><!-- End Service Item -->
 
 				<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-                    <div class="service-item position-relative cursor-pointer" data-link="{{ route('tutoriel', ['lang' => app()->getLocale()]) }}">
+                    <div class="service-item position-relative cursor-pointer" data-link="{{ route('tutoriel') }}">
                         <div class="icon">
                             <i class="bi bi-chat"></i>
                         </div>
