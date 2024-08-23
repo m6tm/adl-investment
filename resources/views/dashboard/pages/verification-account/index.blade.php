@@ -18,9 +18,9 @@
 			<!-- ====== Account verification Start -->
 			<div class="flex flex-col gap-10 mt-10">
 				<div class="bg-white dark:bg-meta-4 dark:bg-none px-5 pt-6 pb-8 shadow-default dark:shadow-none rounded-[10px] p-5">
-					<form action="#" id="verification-account-form" autocomplete="off" novalidate="novalidate" class="grid grid-cols-3 gap-5">
+					<form action="#" id="verification-account-form" autocomplete="off" novalidate="novalidate" class="grid lg:grid-cols-3 gap-5">
 						{{-- Choisir une photo de profile Début --}}
-						<div class="flex flex-col space-y-5" id="verification-account-tabs">
+						<div class="lg:flex lg:flex-col lg:space-y-5 grid grid-cols-2 gap-4" id="verification-account-tabs">
 							<x-account-verification-stepper document="Informations utilisateur" />
 							<x-account-verification-stepper document="Selfie photo" />
 							<x-account-verification-stepper document="Carte national d'identité" />
@@ -29,7 +29,7 @@
 							<x-account-verification-stepper document="Permis de conduire" />
 						</div>
 						{{-- Choisir une photo de profile Fin --}}
-						<div class="col-span-2" id="account-verification-steps" data-current-step="1">
+						<div class="lg:col-span-2" id="account-verification-steps" data-current-step="1">
 							<div class="duration-300 ease-in-out" data-step="1">
 								<h2 class="text-black dark:text-white uppercase text-title-md mb-4">Informations utilisateur</h2>
 								<div class="mb-5.5 flex flex-col gap-5.5 sm:flex-row">

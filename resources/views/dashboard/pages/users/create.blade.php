@@ -18,7 +18,7 @@
 			<!-- ====== Profil Creation Start -->
 			<div class="flex flex-col gap-10 mt-10">
 				<div class="bg-white dark:bg-meta-4 dark:bg-none px-5 pt-6 pb-8 shadow-default dark:shadow-none rounded-[10px] p-5">
-					<div class="grid grid-cols-3 gap-5">
+					<div class="grid lg:grid-cols-3 grid-cols-1 gap-5">
 						{{-- Choisir une photo de profile Début --}}
 						<form action="#">
 							<div class="mb-4 flex items-center gap-3">
@@ -74,7 +74,7 @@
 							</div>
 						</form>
 						{{-- Choisir une photo de profile Fin --}}
-						<form action="#" class="col-span-2">
+						<form action="#" class="lg:col-span-2 col-span-1">
 							<h2 class="text-black dark:text-white uppercase text-title-md mb-4">Informations utilisateur</h2>
 							<div class="mb-5.5 flex flex-col gap-5.5 sm:flex-row">
 								<div class="w-full sm:w-1/2">
