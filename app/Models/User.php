@@ -58,7 +58,7 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function pays()
     {
-        return $this->belongsTo(Pays::class);
+        return $this->belongsTo(Country::class);
     }
 
     public function gains()

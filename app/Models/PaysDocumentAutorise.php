@@ -14,6 +14,6 @@ class PaysDocumentAutorise extends Model
     }
 
     function pays() {
-        return $this->belongsTo(Pays::class);
+        return $this->belongsTo(Country::class);
     }
 }
