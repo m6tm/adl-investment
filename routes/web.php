@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AccountVerificationController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
@@ -55,11 +56,14 @@ Route::prefix('dashboard')->group(function() {
         return view('dashboard');
     })->middleware(['auth', 'verified'])->name('dashboard');
 
+    // Users
     Route::get('users', [UserController::class, 'index'])->name('dashboard.user.list');
     Route::get('users/create', [UserController::class, 'create'])->name('dashboard.user.create');
     Route::get('users/edit-{user_id}', [UserController::class, 'edit'])->name('dashboard.user.edit')->whereAlpha('user_id');
     // Notifications
     Route::get('notifications', [NotificationController::class, 'index'])->name('dashboard.notifications');
+    // Account verification
+    Route::get('account-verification', [AccountVerificationController::class, 'index'])->name('dashboard.account-verification');
 });
 
 require __DIR__.'/auth.php';

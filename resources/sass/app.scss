@@ -50,6 +50,14 @@
     }
 }
 
+.side-bar-hidden {
+    @apply translate-x-[-18.125rem];
+}
+
+.verification-account-hidden {
+    @apply hidden;
+}
+
 /* Colours */
 $primary-colour: #363636;
 $body-background: #ffffff;

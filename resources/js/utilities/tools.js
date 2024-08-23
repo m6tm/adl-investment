@@ -38,6 +38,7 @@ function selectLanguage() {
      * @type {HTMLSelectElement | null}
      */
     const languauge_input = document.getElementById('lang-country')
+    if (!languauge_input) return
     const language_icon = languauge_input.parentElement.querySelector('span.fi')
     const current_language = languauge_input.selectedOptions[0].value
     const current_language_flag = languauge_input.selectedOptions[0].getAttribute('data-lang')
@@ -69,3 +70,74 @@ function dataLinkCursor() {
     })
 }
 dataLinkCursor()
+
+function sidebarToggler() {
+    const sidebar_toggler = document.getElementById('sidebar-toggler')
+    const sidebar_aside = document.getElementById('sidebar-aside')
+    if (!sidebar_toggler || !sidebar_aside) return
+    
+    sidebar_toggler.addEventListener('click', () => {
+        sidebar_aside.classList.toggle('side-bar-hidden')
+        sidebar_toggler.classList.toggle('rotate-180')
+    })
+}
+sidebarToggler()
+
+function accountVerificationSteps() {
+    const steps = document.getElementById('account-verification-steps')
+    const tabs = document.getElementById('verification-account-tabs')
+    if (!steps || !tabs) return
+    if (!steps.hasAttribute('data-current-step')) steps.setAttribute('data-current-step', 1)
+    const next_step = steps.querySelector('button#next')
+    const prev_step = steps.querySelector('button#prev')
+    const finish = steps.querySelector('button#finish')
+    const step_items = Array.from(steps.children).filter(child => child.hasAttribute('data-step'))
+    const tab_items = Array.from(tabs.children).filter(child => child.hasAttribute('data-tab-step'))
+    let step_count = Array.from(steps.children).filter(child => child.hasAttribute('data-step')).length
+    let current_step = parseInt(steps.getAttribute('data-current-step') ?? '1');
+
+    const steps_worker = (() => {
+        if (current_step > 1) {
+            prev_step.classList.remove('hidden')
+            finish.classList.add('hidden')
+        }
+        if  (current_step === step_count) {
+            next_step.classList.add('hidden')
+            finish.classList.remove('hidden')
+        }
+        if (current_step < step_count) {
+            next_step.classList.remove('hidden')
+            finish.classList.add('hidden')
+        }
+        if (current_step === 1) {
+            prev_step.classList.add('hidden')
+            finish.classList.add('hidden')
+        }
+
+        step_items.forEach((current_item, key) => current_step !== (key + 1) ? current_item.classList.add('verification-account-hidden') : current_item.classList.remove('verification-account-hidden'))
+        tab_items.forEach((current_item, key) => current_step !== (key + 1) ? current_item.classList.remove('bg-slate-100') : current_item.classList.add('bg-slate-100'))
+    });
+    steps_worker()
+
+    next_step.addEventListener('click', () => {
+        if (current_step < step_count) {
+            current_step += 1
+        }
+        steps_worker()
+    })
+    
+    prev_step.addEventListener('click', () => {
+        if (current_step > 1) {
+            current_step -= 1
+        }
+        steps_worker()
+    })
+
+    tab_items.forEach((current_item, key) => {
+        current_item.addEventListener('click', () => {
+            current_step = key + 1
+            steps_worker()
+        })
+    })
+}
+accountVerificationSteps()

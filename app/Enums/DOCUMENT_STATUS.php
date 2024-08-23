@@ -12,6 +12,6 @@ use BenSampo\Enum\Enum;
 final class DOCUMENT_STATUS extends Enum
 {
     const VERIFIED = 'vérifié';
-    const UNVERIFIED = 'non vérifié';
+    const REFUSED = 'rejeté';
     const PENDING = 'en cous';
 }
