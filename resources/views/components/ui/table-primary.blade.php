@@ -12,7 +12,7 @@
 			<!-- table header end -->
 
 			<!-- table body start -->
-			<div class="bg-white dark:bg-boxdark border-x-[1px] border-b-[1px] border-stone-200 rounded-bl-[5px] rounded-br-[5px]">
+			<div class="bg-white dark:bg-boxdark border-x-[1px] border-b-[1px] border-stone-200 dark:border-none rounded-bl-[5px] rounded-br-[5px]">
 				<!-- table row item -->
 				@foreach ($rows as $row)
 					<div class="grid grid-cols-12 border-t border-[#EEEEEE] px-5 py-4 dark:border-strokedark lg:px-7.5 2xl:px-11">

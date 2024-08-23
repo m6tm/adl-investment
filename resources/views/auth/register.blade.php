@@ -5,7 +5,7 @@
 		<div class="lg:w-1/3 rounded-md my-16 border border-stroke bg-white shadow-lg dark:border-strokedark dark:bg-boxdark">
             <div class="w-full border-stroke dark:border-strokedark xl:border-l-2 py-5">
                 <div class="w-full p-4 sm:p-12.5 xl:p-17.5">
-                    <span class="mb-1.5 block font-medium">
+                    <span class="mb-1.5 block font-medium dark:text-white">
                         <font style="vertical-align: inherit;">
                             <font style="vertical-align: inherit;">Commencez gratuitement</font>
                         </font>
@@ -57,7 +57,7 @@
                             <div class="relative">
                                 <input id="birth_date" type="date" name="birth_date" required
                                     placeholder="Entrer votre date de naissance"
-                                    class="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary">
+                                    class="w-full rounded-lg border border-stroke bg-transparent dark:text-gray py-4 pl-6 pr-10 outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary">
                             </div>
                         </div>
 

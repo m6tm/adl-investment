@@ -116,6 +116,7 @@ function accountVerificationSteps() {
 
         step_items.forEach((current_item, key) => current_step !== (key + 1) ? current_item.classList.add('verification-account-hidden') : current_item.classList.remove('verification-account-hidden'))
         tab_items.forEach((current_item, key) => current_step !== (key + 1) ? current_item.classList.remove('bg-slate-100') : current_item.classList.add('bg-slate-100'))
+        tab_items.forEach((current_item, key) => current_step !== (key + 1) ? current_item.classList.remove('dark:bg-slate-600') : current_item.classList.add('dark:bg-slate-600'))
     });
     steps_worker()
 

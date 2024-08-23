@@ -33,7 +33,7 @@
 				<div class="bg-white dark:bg-meta-4 dark:bg-none px-5 pt-6 pb-8 shadow-default dark:shadow-none rounded-[10px] p-5">
 					<div class="grid grid-cols-3 gap-5 h-[500px]" id="tabs-container">
                         <div class="p-3  grid grid-cols-1 gap-2 overflow-y-auto h-full">
-                            <div data-type="tab" class="h-[110px] hover:bg-slate-100 activate duration-300 p-3 rounded-lg cursor-pointer">
+                            <div data-type="tab" class="h-[110px] hover:bg-slate-500 activate duration-300 p-3 rounded-lg cursor-pointer">
                                 <div class="flex justify-between items-center">
 									<strong>Titre notification 1</strong>
 									<div class="flex space-x-2">
@@ -45,7 +45,7 @@
                                 <small class="text-slate-400 block text-right">Il y a 30min</small>
                             </div>
                             
-                            <div data-type="tab" class="h-[110px] hover:bg-slate-100 duration-300 p-3 rounded-lg cursor-pointer">
+                            <div data-type="tab" class="h-[110px] hover:bg-slate-500 duration-300 p-3 rounded-lg cursor-pointer">
                                 <div class="flex justify-between items-center">
 									<strong>Titre notification 2</strong>
 									<div class="flex space-x-2">
@@ -57,7 +57,7 @@
                                 <small class="text-slate-400 block text-right">Il y a 30min</small>
                             </div>
 
-                            <div data-type="tab" class="h-[110px] hover:bg-slate-100 duration-300 p-3 rounded-lg cursor-pointer">
+                            <div data-type="tab" class="h-[110px] hover:bg-slate-500 duration-300 p-3 rounded-lg cursor-pointer">
                                 <div class="flex justify-between items-center">
 									<strong>Titre notification 3</strong>
 									<div class="flex space-x-2">
@@ -69,7 +69,7 @@
                                 <small class="text-slate-400 block text-right">Il y a 30min</small>
                             </div>
 
-                            <div data-type="tab" class="h-[110px] hover:bg-slate-100 duration-300 p-3 rounded-lg cursor-pointer">
+                            <div data-type="tab" class="h-[110px] hover:bg-slate-500 duration-300 p-3 rounded-lg cursor-pointer">
                                 <div class="flex justify-between items-center">
 									<strong>Titre notification 4</strong>
 									<div class="flex space-x-2">
@@ -81,7 +81,7 @@
                                 <small class="text-slate-400 block text-right">Il y a 30min</small>
                             </div>
 
-                            <div data-type="tab" class="h-[110px] hover:bg-slate-100 duration-300 p-3 rounded-lg cursor-pointer">
+                            <div data-type="tab" class="h-[110px] hover:bg-slate-500 duration-300 p-3 rounded-lg cursor-pointer">
                                 <div class="flex justify-between items-center">
 									<strong>Titre notification 5</strong>
 									<div class="flex space-x-2">

@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('referal_id')->nullable();
             $table->string('nom');
             $table->string('prenom');
+            $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('referal_link')->unique();

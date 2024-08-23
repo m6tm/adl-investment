@@ -40,8 +40,8 @@
 												<i data-lucide="user" class="size-5"></i>
 											</span>
 											<input
-												class="w-full rounded border border-stroke bg-gray py-3 pl-11.5 pr-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-strokedark dark:bg-meta-4 dark:text-white dark:focus:border-primary"
-												type="text" name="nom" id="nom" placeholder="Devid Jhon" value="Maboa" required>
+												class="w-full rounded border border-stroke bg-gray py-3 pl-11.5 pr-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-slate-400 dark:bg-meta-4 dark:text-white dark:focus:border-primary"
+												type="text" name="nom" id="nom" placeholder="Devid Jhon" value="Tester" required>
 										</div>
 									</div>
 
@@ -52,7 +52,7 @@
 												<i data-lucide="user" class="size-5"></i>
 											</span>
 											<input
-												class="w-full rounded border border-stroke bg-gray py-3 pl-11.5 pr-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-strokedark dark:bg-meta-4 dark:text-white dark:focus:border-primary"
+												class="w-full rounded border border-stroke bg-gray py-3 pl-11.5 pr-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-slate-400 dark:bg-meta-4 dark:text-white dark:focus:border-primary"
 												type="text" name="prenom" id="Prenom" placeholder="Rene Mode" required>
 										</div>
 									</div>
@@ -65,7 +65,7 @@
 												<i data-lucide="mail" class="size-5"></i>
 											</span>
 											<input
-												class="w-full rounded border border-stroke bg-gray py-3 pl-11.5 pr-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-strokedark dark:bg-meta-4 dark:text-white dark:focus:border-primary"
+												class="w-full rounded border border-stroke bg-gray py-3 pl-11.5 pr-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-slate-400 dark:bg-meta-4 dark:text-white dark:focus:border-primary"
 												type="email" name="email" id="email" placeholder="exemple@email.com" required>
 										</div>
 									</div>
@@ -78,7 +78,7 @@
 												<i data-lucide="phone" class="size-5"></i>
 											</span>
 											<input
-												class="w-full rounded border border-stroke bg-gray py-3 pl-11.5 pr-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-strokedark dark:bg-meta-4 dark:text-white dark:focus:border-primary"
+												class="w-full rounded border border-stroke bg-gray py-3 pl-11.5 pr-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-slate-400 dark:bg-meta-4 dark:text-white dark:focus:border-primary"
 												type="tel" name="telephone" id="telephone" placeholder="+XXX XXXX XXXX" required>
 										</div>
 									</div>
@@ -88,7 +88,7 @@
 										<label class="mb-3 block text-sm font-medium text-black dark:text-white" for="street">Rue / Quartier</label>
 										<div class="relative">
 											<input
-												class="w-full rounded border border-stroke bg-gray py-3 px-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-strokedark dark:bg-meta-4 dark:text-white dark:focus:border-primary"
+												class="w-full rounded border border-stroke bg-gray py-3 px-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-slate-400 dark:bg-meta-4 dark:text-white dark:focus:border-primary"
 												type="street" name="street" id="street" placeholder="charly99" required>
 										</div>
 									</div>
@@ -98,7 +98,7 @@
 											naissance</label>
 										<div class="relative">
 											<input name="username"
-												class="form-datepicker w-full rounded border-[1.5px] border-stroke bg-gray px-5 py-3 font-normal outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+												class="form-datepicker w-full rounded border-[1.5px] border-stroke bg-gray px-5 py-3 font-normal outline-none transition focus:border-primary active:border-primary dark:border-slate-400 dark:bg-meta-4 dark:focus:border-primary"
 												placeholder="mm/dd/yyyy" data-class="flatpickr-right" required/>
 
 											<div class="pointer-events-none absolute inset-0 left-auto right-5 flex items-center">
@@ -116,14 +116,14 @@
 									<div class="w-full sm:w-1/2">
 										<label class="mb-3 block text-sm font-medium text-black dark:text-white" for="ville">Ville</label>
 										<input
-											class="w-full rounded border border-stroke bg-gray py-3 px-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-strokedark dark:bg-meta-4 dark:text-white dark:focus:border-primary"
+											class="w-full rounded border border-stroke bg-gray py-3 px-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-slate-400 dark:bg-meta-4 dark:text-white dark:focus:border-primary"
 											type="ville" name="ville" id="ville" placeholder="Montreal" required>
 									</div>
 
 									<div class="w-full sm:w-1/2">
 										<label class="mb-3 block text-sm font-medium text-black dark:text-white" for="pays">Pays</label>
 										<input
-											class="w-full rounded border border-stroke bg-gray py-3 px-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-strokedark dark:bg-meta-4 dark:text-white dark:focus:border-primary"
+											class="w-full rounded border border-stroke bg-gray py-3 px-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-slate-400 dark:bg-meta-4 dark:text-white dark:focus:border-primary"
 											type="pays" name="pays" id="pays" placeholder="Canada" required>
 									</div>
 								</div>

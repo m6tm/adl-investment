@@ -6,7 +6,7 @@
 				<li class="relative flex items-center space-x-2">
           			<span class="lg:block hidden">Vérifier votre compte</span>
 					<a
-						class="relative flex h-8.5 w-8.5 items-center justify-center rounded-full border-[0.5px] border-stroke bg-orange-100 hover:text-primary dark:border-strokedark dark:bg-meta-4 dark:text-white"
+						class="relative flex h-8.5 w-8.5 items-center justify-center rounded-full border-[0.5px] border-stroke bg-orange-100 dark:bg-orange-100 hover:text-primary dark:border-strokedark dark:text-white"
 						href="{{ route('dashboard.account-verification') }}" title="Verify your account">
 						<span class="absolute -top-0.5 right-0 z-1 h-2 w-2 rounded-full bg-meta-1">
 							<span class="absolute -z-1 inline-flex h-full w-full animate-ping rounded-full bg-meta-1 opacity-75"></span>

@@ -27,7 +27,7 @@
 								</div>
 								<div>
 									<span class="mb-1.5 font-medium text-black dark:text-white">Choisir une photo de profile <code
-											class="text-sm bg-rose-100">(optionnel)</code></span>
+											class="text-sm bg-rose-100 dark:bg-transparent dark:text-rose-300">(optionnel)</code></span>
 									<span class="flex gap-2.5">
 										<button class="text-sm font-medium text-rose-400 hover:text-rose-500">
 											Supprimer
@@ -40,7 +40,7 @@
 							</div>
 
 							<div id="FileUpload"
-								class="relative mb-5.5 block w-full cursor-pointer appearance-none rounded border border-dashed border-primary bg-gray px-4 py-4 dark:bg-meta-4 sm:py-7.5">
+								class="relative mb-5.5 block w-full cursor-pointer appearance-none rounded border border-dashed border-primary bg-gray px-4 py-4 dark:bg-transparent sm:py-7.5">
 								<input type="file" accept="image/*"
 									class="absolute inset-0 z-50 m-0 h-full w-full cursor-pointer p-0 opacity-0 outline-none">
 								<div class="flex flex-col items-center justify-center space-y-3">
@@ -84,7 +84,7 @@
 											<i data-lucide="user" class="size-5"></i>
 										</span>
 										<input
-											class="w-full rounded border border-stroke bg-gray py-3 pl-11.5 pr-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-strokedark dark:bg-meta-4 dark:text-white dark:focus:border-primary"
+											class="w-full rounded border border-stroke bg-gray py-3 pl-11.5 pr-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-slate-100 dark:bg-meta-4 dark:text-white dark:focus:border-primary"
 											type="text" name="nom" id="Nom" placeholder="Devid Jhon" required>
 									</div>
 								</div>
@@ -96,7 +96,7 @@
 											<i data-lucide="user" class="size-5"></i>
 										</span>
 										<input
-											class="w-full rounded border border-stroke bg-gray py-3 pl-11.5 pr-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-strokedark dark:bg-meta-4 dark:text-white dark:focus:border-primary"
+											class="w-full rounded border border-stroke bg-gray py-3 pl-11.5 pr-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-slate-100 dark:bg-meta-4 dark:text-white dark:focus:border-primary"
 											type="text" name="prenom" id="Prenom" placeholder="Rene Mode" required>
 									</div>
 								</div>
@@ -109,7 +109,7 @@
 											<i data-lucide="mail" class="size-5"></i>
 										</span>
 										<input
-											class="w-full rounded border border-stroke bg-gray py-3 pl-11.5 pr-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-strokedark dark:bg-meta-4 dark:text-white dark:focus:border-primary"
+											class="w-full rounded border border-stroke bg-gray py-3 pl-11.5 pr-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-slate-100 dark:bg-meta-4 dark:text-white dark:focus:border-primary"
 											type="email" name="email" id="email" placeholder="exemple@email.com" required>
 									</div>
 								</div>
@@ -122,7 +122,7 @@
 											<i data-lucide="phone" class="size-5"></i>
 										</span>
 										<input
-											class="w-full rounded border border-stroke bg-gray py-3 pl-11.5 pr-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-strokedark dark:bg-meta-4 dark:text-white dark:focus:border-primary"
+											class="w-full rounded border border-stroke bg-gray py-3 pl-11.5 pr-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-slate-100 dark:bg-meta-4 dark:text-white dark:focus:border-primary"
 											type="tel" name="telephone" id="telephone" placeholder="+XXX XXXX XXXX" required>
 									</div>
 								</div>
@@ -135,7 +135,7 @@
 											<i data-lucide="hash" class="size-5"></i>
 										</span>
 										<input
-											class="w-full rounded border border-stroke bg-gray py-3 pl-11.5 pr-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-strokedark dark:bg-meta-4 dark:text-white dark:focus:border-primary"
+											class="w-full rounded border border-stroke bg-gray py-3 pl-11.5 pr-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-slate-100 dark:bg-meta-4 dark:text-white dark:focus:border-primary"
 											type="pseudo" name="username" id="username" placeholder="charly99">
 									</div>
 								</div>
@@ -145,7 +145,7 @@
 										naissance</label>
 									<div class="relative">
 										<input
-											class="form-datepicker w-full rounded border-[1.5px] border-stroke bg-gray px-5 py-3 font-normal outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+											class="form-datepicker w-full rounded border-[1.5px] border-stroke bg-gray px-5 py-3 font-normal outline-none transition focus:border-primary active:border-primary dark:border-slate-100 dark:bg-meta-4 dark:focus:border-primary"
 											placeholder="mm/dd/yyyy" data-class="flatpickr-right" />
 
 										<div class="pointer-events-none absolute inset-0 left-auto right-5 flex items-center">
@@ -158,14 +158,14 @@
 								<div class="w-full sm:w-1/2">
 									<label class="mb-3 block text-sm font-medium text-black dark:text-white" for="ville">Ville</label>
 									<input
-										class="w-full rounded border border-stroke bg-gray py-3 px-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-strokedark dark:bg-meta-4 dark:text-white dark:focus:border-primary"
+										class="w-full rounded border border-stroke bg-gray py-3 px-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-slate-100 dark:bg-meta-4 dark:text-white dark:focus:border-primary"
 										type="ville" name="ville" id="ville" placeholder="Montreal">
 								</div>
 
 								<div class="w-full sm:w-1/2">
 									<label class="mb-3 block text-sm font-medium text-black dark:text-white" for="pays">Pays</label>
 									<input
-										class="w-full rounded border border-stroke bg-gray py-3 px-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-strokedark dark:bg-meta-4 dark:text-white dark:focus:border-primary"
+										class="w-full rounded border border-stroke bg-gray py-3 px-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-slate-100 dark:bg-meta-4 dark:text-white dark:focus:border-primary"
 										type="pays" name="pays" id="pays" placeholder="Canada">
 								</div>
 							</div>
