@@ -7,8 +7,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use App\Enums\USER_VERIFICATION_STATUS;
 
-class User extends Authenticatable  implements MustVerifyEmail
+class User extends Authenticatable implements MustVerifyEmail
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -20,13 +21,12 @@ class User extends Authenticatable  implements MustVerifyEmail
     protected $fillable = [
         'name',
         'first_name',
-        'birth_date',
-        'phone',
         'email',
+        'birth_date',
         'pseudo',
-        'city',
-        'neighborhood',
         'password',
+        'verification_status',
+        'country_id',
     ];
 
     /**
@@ -47,5 +47,19 @@ class User extends Authenticatable  implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
+        'verification_status' => USER_VERIFICATION_STATUS::class,
     ];
+
+    /**
+     * Get the address associated with the user.
+     */
+    public function address()
+    {
+        return $this->hasOne(Address::class);
+    }
+
+    public function country()
+    {
+        return $this->belongsTo(Country::class);
+    }
 }

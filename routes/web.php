@@ -7,6 +7,7 @@ use App\Http\Controllers\web\StaticPagesController;
 use App\Http\Controllers\auth\AuthenticatedSessionController;
 use App\Http\Controllers\auth\RegisteredUserController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Mail;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,11 +22,19 @@ use Illuminate\Support\Facades\Route;
 
 // Appel des pages web
 
-/* Route::middleware('auth')->group(function () {
+Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-}); */
+});
+
+Route::get('/test-email', function () {
+    Mail::raw('This is a test email', function ($message) {
+        $message->to('your_email@example.com') // Replace with your email
+                ->subject('Test Email');
+    });
+    return 'Test email sent!';
+});
 
 /* Route::get('/', function () {
     return view('welcome');
@@ -60,6 +69,10 @@ Route::middleware(['language'])->group(function() {
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->middleware(['auth', 'verified']);
+
+    Route::get('{lang}/dashboard', function () {
+        return view('dashboard');
+    })->middleware(['auth', 'verified'])->name('dashboard');
 
     /* Route::prefix('dashboard')->group(function() {
         Route::get('{lang}/users', [UserController::class, 'index'])->name('user.list');
