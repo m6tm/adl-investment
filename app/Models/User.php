@@ -8,9 +8,10 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use App\Enums\USER_VERIFICATION_STATUS;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 
-
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use HasApiTokens, HasFactory, Notifiable, SoftDeletes;
 
@@ -20,13 +21,14 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'nom',
-        'prenom',
+        'name',
+        'first_name',
         'email',
+        'birth_date',
+        'pseudo',
         'password',
-        'birt-day',
-        'adresse',
-        'derniere_connexion',
+        'verification_status',
+        'country_id',
     ];
 
     /**
@@ -92,5 +94,20 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'password' => 'hashed',
+        'verification_status' => USER_VERIFICATION_STATUS::class,
     ];
+
+    /**
+     * Get the address associated with the user.
+     */
+    public function address()
+    {
+        return $this->hasOne(Address::class);
+    }
+
+    public function country()
+    {
+        return $this->belongsTo(Country::class);
+    }
 }

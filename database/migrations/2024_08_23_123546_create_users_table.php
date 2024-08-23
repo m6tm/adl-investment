@@ -1,9 +1,9 @@
 <?php
 
-use App\Enums\USER_VERIFICATION_STATUS;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Enums\USER_VERIFICATION_STATUS;
 
 return new class extends Migration
 {
@@ -14,10 +14,11 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('pay_id')->nullable();
-            $table->foreignId('referal_id')->nullable();
-            $table->string('nom');
-            $table->string('prenom');
+            $table->foreignId('country_id')->constrained()->onDelete('cascade');
+            $table->string('pseudo')->unique();
+            $table->string('name');
+            $table->string('first_name');
+            $table->date('birth_date');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

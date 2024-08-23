@@ -3,7 +3,6 @@
 use App\Http\Controllers\AccountVerificationController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ContactController;
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\web\StaticPagesController;
 use App\Http\Controllers\auth\AuthenticatedSessionController;
 use App\Http\Controllers\auth\RegisteredUserController;
@@ -11,6 +10,7 @@ use App\Http\Controllers\Dashboard\NotificationController;
 use App\Http\Controllers\Dashboard\UserController;
 use App\Http\Controllers\LanguageController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Mail;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,11 +25,19 @@ use Illuminate\Support\Facades\Route;
 
 // Appel des pages web
 
-/* Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-}); */
+Route::middleware('auth')->group(function () {
+    Route::get('profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+Route::get('test-email', function () {
+    Mail::raw('This is a test email', function ($message) {
+        $message->to('your_email@example.com') // Replace with your email
+                ->subject('Test Email');
+    });
+    return 'Test email sent!';
+});
 
 Route::get('locale/{lang}', [LanguageController::class, 'setLocale'])->name('set.locale');
 Route::get('', function () {
@@ -55,7 +63,6 @@ Route::prefix('dashboard')->group(function() {
     Route::get('', function () {
         return view('dashboard');
     })->middleware(['auth', 'verified'])->name('dashboard');
-
     // Users
     Route::get('users', [UserController::class, 'index'])->name('dashboard.user.list');
     Route::get('users/create', [UserController::class, 'create'])->name('dashboard.user.create');

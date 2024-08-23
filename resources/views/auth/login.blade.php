@@ -107,7 +107,7 @@
 							<div class="mb-5">
 								<font style="vertical-align: inherit;">
 									<font style="vertical-align: inherit;">
-                                        <input type="submit" value="Se connecter"
+                                        <input type="submit" value="Se connecter" style="color:white"
 											class="w-full cursor-pointer rounded-lg border border-primary bg-primary p-4 font-medium text-black transition hover:bg-opacity-90">
 									</font>
 								</font>
