@@ -41,7 +41,7 @@
 											</span>
 											<input
 												class="w-full rounded border border-stroke bg-gray py-3 pl-11.5 pr-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-slate-400 dark:bg-meta-4 dark:text-white dark:focus:border-primary"
-												type="text" name="nom" id="nom" placeholder="Devid Jhon" value="Tester" required>
+												type="text" name="nom" id="Nom" placeholder="Devid Jhon" required>
 										</div>
 									</div>
 
@@ -89,7 +89,7 @@
 										<div class="relative">
 											<input
 												class="w-full rounded border border-stroke bg-gray py-3 px-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-slate-400 dark:bg-meta-4 dark:text-white dark:focus:border-primary"
-												type="street" name="street" id="street" placeholder="charly99" required>
+												type="text" name="street" id="street" placeholder="charly99" required>
 										</div>
 									</div>
 
@@ -99,7 +99,7 @@
 										<div class="relative">
 											<input name="username"
 												class="form-datepicker w-full rounded border-[1.5px] border-stroke bg-gray px-5 py-3 font-normal outline-none transition focus:border-primary active:border-primary dark:border-slate-400 dark:bg-meta-4 dark:focus:border-primary"
-												placeholder="mm/dd/yyyy" data-class="flatpickr-right" required/>
+												placeholder="mm/dd/yyyy" type="date" data-class="flatpickr-right" required/>
 
 											<div class="pointer-events-none absolute inset-0 left-auto right-5 flex items-center">
 												<svg width="18" height="18" viewBox="0 0 18 18" fill="none"
@@ -117,14 +117,14 @@
 										<label class="mb-3 block text-sm font-medium text-black dark:text-white" for="ville">Ville</label>
 										<input
 											class="w-full rounded border border-stroke bg-gray py-3 px-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-slate-400 dark:bg-meta-4 dark:text-white dark:focus:border-primary"
-											type="ville" name="ville" id="ville" placeholder="Montreal" required>
+											type="text" name="ville" id="ville" placeholder="Montreal" required>
 									</div>
 
 									<div class="w-full sm:w-1/2">
 										<label class="mb-3 block text-sm font-medium text-black dark:text-white" for="pays">Pays</label>
 										<input
 											class="w-full rounded border border-stroke bg-gray py-3 px-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-slate-400 dark:bg-meta-4 dark:text-white dark:focus:border-primary"
-											type="pays" name="pays" id="pays" placeholder="Canada" required>
+											type="text" name="pays" value="{{ auth()->user()->pays->name }}" data-code="{{ auth()->user()->pays->code }}" id="pays" readonly disabled>
 									</div>
 								</div>
 							</div>
@@ -422,12 +422,18 @@
 									id="next">
 									Suivant
 								</button>
-								<button class="rounded bg-primary px-6 py-2 font-medium text-gray hover:bg-opacity-90" type="button"
+								<button class="rounded bg-primary px-6 py-2 font-medium text-gray hover:bg-opacity-90"
+									type="submit"
+									id="sub">
+									Soumettre
+								</button>
+								<button class="rounded bg-primary px-6 py-2 font-medium text-gray hover:bg-opacity-90"
 									id="finish"
 									type="submit">
 									Soumettre
 								</button>
 							</div>
+							<ul id="error-validation-list" class="list-disc mt-5 text-rose-300"></ul>
 						</div>
 					</form>
 				</div>

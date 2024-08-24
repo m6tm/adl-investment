@@ -1,0 +1,58 @@
+[
+    {
+        "key": "first_name.too.short",
+        "dict": {
+            "en": "First name is too short",
+            "fr": "Le prénom est trop court"
+        }
+    },
+    {
+        "key": "first_name.too.long",
+        "dict": {
+            "en": "First name is too long",
+            "fr": "Le prénom est trop long"
+        }
+    },
+    {
+        "key": "first_name.required",
+        "dict": {
+            "en": "First name is required",
+            "fr": "Le prénom est obligatoire"
+        }
+    },
+    {
+        "key": "last_name.too.short",
+        "dict": {
+            "en": "Last name is too short",
+            "fr": "Le nom de famille est trop court"
+        }
+    },
+    {
+        "key": "last_name.too.long",
+        "dict": {
+            "en": "Last name is too long",
+            "fr": "Le nom de famille est trop long"
+        }
+    },
+    {
+        "key": "last_name.required",
+        "dict": {
+            "en": "Last name is required",
+            "fr": "Le nom de famille est obligatoire"
+        }
+    },
+    {
+        "key": "email.required",
+        "dict": {
+            "en": "Email is required",
+            "fr": "L'adresse e-mail est obligatoire"
+        }
+    },
+    {
+        "key": "email.invalid",
+        "dict": {
+            "en": "Invalid email address",
+            "fr": "Adresse e-mail invalide"
+        }
+    }
+]
