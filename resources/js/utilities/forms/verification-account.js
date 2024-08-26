@@ -81,6 +81,18 @@ validate.addField('#Nom', [
             errorMessage: 'birth_day.invalid'
         },
     ])
+    .addField('#ville', [
+        {
+            rule: 'required',
+            errorMessage: 'town.required',
+        },
+    ])
+    .addField('#pays', [
+        {
+            rule: 'required',
+            errorMessage: 'country.required',
+        },
+    ])
 
 
 const run_validation = async () => {

@@ -82,5 +82,19 @@
             "en": "Invalid date of birth. Must be between 19 and 100 years old and in format DD/MM/YYYY",
             "fr": "Date de naissance invalide. Doit être entre 19 et 100 ans et au format JJ/MM/AAAA"
         }
+    },
+    {
+        "key": "town.required",
+        "dict": {
+            "en": "Town is required",
+            "fr": "La ville est obligatoire"
+        }
+    },
+    {
+        "key": "country.required",
+        "dict": {
+            "en": "Country is required",
+            "fr": "Le pays est obligatoire"
+        }
     }
 ]
