@@ -56,10 +56,31 @@
         }
     },
     {
-        "key": "phone.required",
+        "key": "phone.invalid",
         "dict": {
             "en": "Invalid phone number",
             "fr": "Le numéro de téléphone est invalide"
+        }
+    },
+    {
+        "key": "street.required",
+        "dict": {
+            "en": "Street / neighborhood is required",
+            "fr": "La rue / quartier est obligatoire"
+        }
+    },
+    {
+        "key": "birth_day.required",
+        "dict": {
+            "en": "Date of birth is required",
+            "fr": "La date de naissance est obligatoire"
+        }
+    },
+    {
+        "key": "birth_day.invalid",
+        "dict": {
+            "en": "Invalid date of birth. Must be between 19 and 100 years old and in format DD/MM/YYYY",
+            "fr": "Date de naissance invalide. Doit être entre 19 et 100 ans et au format JJ/MM/AAAA"
         }
     }
 ]

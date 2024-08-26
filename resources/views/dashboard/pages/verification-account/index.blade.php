@@ -99,7 +99,7 @@
 										<div class="relative">
 											<input name="username"
 												class="form-datepicker w-full rounded border-[1.5px] border-stroke bg-gray px-5 py-3 font-normal outline-none transition focus:border-primary active:border-primary dark:border-slate-400 dark:bg-meta-4 dark:focus:border-primary"
-												placeholder="mm/dd/yyyy" type="date" data-class="flatpickr-right" required/>
+												placeholder="mm/dd/yyyy" type="date" id="birth_day" data-class="flatpickr-right" required/>
 
 											<div class="pointer-events-none absolute inset-0 left-auto right-5 flex items-center">
 												<svg width="18" height="18" viewBox="0 0 18 18" fill="none"
