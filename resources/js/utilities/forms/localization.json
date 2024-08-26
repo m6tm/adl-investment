@@ -54,5 +54,12 @@
             "en": "Invalid email address",
             "fr": "Adresse e-mail invalide"
         }
+    },
+    {
+        "key": "phone.required",
+        "dict": {
+            "en": "Invalid phone number",
+            "fr": "Le numéro de téléphone est invalide"
+        }
     }
 ]

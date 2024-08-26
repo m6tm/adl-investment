@@ -65,17 +65,16 @@ const run_validation = async () => {
        if (phone.length === 0) phone = '000'
        const phoneNumber = parsePhoneNumber(phone, country_code)
        
-       if (phoneNumber.isValid()) {
+       if (!phoneNumber.isValid()) {
+        form.querySelector('#telephone').value = ""
         validate.addField('#telephone', [
             {
                 rule: 'required',
                 errorMessage: 'phone.required',
             },
-            {
-                rule: 'phone',
-                errorMessage: 'phone.invalid',
-            },
         ])
+       } else {
+        validate.removeField('#telephone')
        }
 
        await validate.validate(true)
