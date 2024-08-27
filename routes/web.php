@@ -9,6 +9,7 @@ use App\Http\Controllers\auth\RegisteredUserController;
 use App\Http\Controllers\Dashboard\NotificationController;
 use App\Http\Controllers\Dashboard\UserController;
 use App\Http\Controllers\LanguageController;
+use App\Http\Controllers\PermissionController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Mail;
 
@@ -25,11 +26,11 @@ use Illuminate\Support\Facades\Mail;
 
 // Appel des pages web
 
-Route::middleware('auth')->group(function () {
-    Route::get('profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
+// Route::middleware('auth')->group(function () {
+//     Route::get('profile', [ProfileController::class, 'edit'])->name('profile.edit');
+//     Route::patch('profile', [ProfileController::class, 'update'])->name('profile.update');
+//     Route::delete('profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+// });
 
 Route::get('test-email', function () {
     Mail::raw('This is a test email', function ($message) {
@@ -67,10 +68,14 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function() {
     Route::get('users', [UserController::class, 'index'])->name('dashboard.user.list');
     Route::get('users/create', [UserController::class, 'create'])->name('dashboard.user.create');
     Route::get('users/edit-{user_id}', [UserController::class, 'edit'])->name('dashboard.user.edit')->whereAlpha('user_id');
+    // Profiles
+    Route::get('profil', [ProfileController::class, 'edit'])->name('dashboard.profile.edit');
     // Notifications
     Route::get('notifications', [NotificationController::class, 'index'])->name('dashboard.notifications');
     // Account verification
     Route::get('account-verification', [AccountVerificationController::class, 'index'])->name('dashboard.account-verification');
+    // Permissions
+    Route::get('permissions', [PermissionController::class, 'index'])->name('dashboard.permissions');
 });
 
 require __DIR__.'/auth.php';

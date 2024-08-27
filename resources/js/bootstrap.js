@@ -1,6 +1,6 @@
 // Importation de la bibliothèque bootstrap
 import 'bootstrap'
-import './templately/js/index'
+import './templately/js'
 
 
 /**
