@@ -97,7 +97,7 @@
 										<label class="mb-3 block text-sm font-medium text-black dark:text-white" for="username">Date de
 											naissance</label>
 										<div class="relative">
-											<input name="username"
+											<input name="birth_date"
 												class="form-datepicker w-full rounded border-[1.5px] border-stroke bg-gray px-5 py-3 font-normal outline-none transition focus:border-primary active:border-primary dark:border-slate-400 dark:bg-meta-4 dark:focus:border-primary"
 												placeholder="Aug 13, 2024" type="text" value="{{ auth()->user()->birth_date ? \Carbon\Carbon::parse(auth()->user()->birth_date)->format('M d, Y') : '' }}" id="birth_day" data-class="flatpickr-right" required/>
 

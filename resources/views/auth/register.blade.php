@@ -18,7 +18,7 @@
                         </font>
                     </h2>
 
-                    <form method="POST" action="{{ route('register') }}" class="grid grid-cols-1 gap-3">
+                    <form method="POST" action="{{ route('register') }}" class="grid grid-cols-1 gap-3 text-white">
                         @csrf
                                         
                         <div class="mb-4">
@@ -55,9 +55,13 @@
                                 </font>
                             </label>
                             <div class="relative">
-                                <input id="birth_date" type="date" name="birth_date" required
-                                    placeholder="Entrer votre date de naissance"
-                                    class="w-full rounded-lg border border-stroke bg-transparent dark:text-gray py-4 pl-6 pr-10 outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary">
+                                <input name="birth_date"
+                                    class="w-full rounded-lg border border-stroke bg-transparent dark:text-gray py-4 pl-6 pr-10 outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+                                    placeholder="Aug 13, 2024" type="text" id="birth_date" data-class="flatpickr-right" required/>
+
+                                <div class="pointer-events-none absolute inset-0 left-auto right-5 top-4">
+                                    <span data-lucide="calendar-days" class="text-slate-300"></span>
+                                </div>
                             </div>
                         </div>
 
