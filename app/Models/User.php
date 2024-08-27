@@ -41,9 +41,12 @@ class User extends Authenticatable implements MustVerifyEmail
         'remember_token',
     ];
 
-    public function adresse()
+    /**
+     * Get the address associated with the user.
+     */
+    public function address()
     {
-        return $this->hasOne(Adresse::class);
+        return $this->hasOne(Addresse::class);
     }
 
     public function documents()
@@ -71,7 +74,7 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasOne(Compte::class);
     }
 
-    public function telephone()
+    public function phone()
     {
         return $this->hasMany(Telephone::class);
     }
@@ -97,17 +100,4 @@ class User extends Authenticatable implements MustVerifyEmail
         'password' => 'hashed',
         'verification_status' => USER_VERIFICATION_STATUS::class,
     ];
-
-    /**
-     * Get the address associated with the user.
-     */
-    public function address()
-    {
-        return $this->hasOne(Address::class);
-    }
-
-    public function country()
-    {
-        return $this->belongsTo(Country::class);
-    }
 }
