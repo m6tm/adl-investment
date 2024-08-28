@@ -1,0 +1,41 @@
+[
+    {
+        "name": "create.user",
+        "description": "Permet de créer un nouveau compte utilisateur dans le système"
+    },
+    {
+        "name": "edit.user",
+        "description": "Autorise la modification des informations d'un compte utilisateur existant"
+    },
+    {
+        "name": "delete.user",
+        "description": "Permet la suppression d'un compte utilisateur du système"
+    },
+    {
+        "name": "create.role",
+        "description": "Autorise la création d'un nouveau rôle dans le système de gestion des accès"
+    },
+    {
+        "name": "edit.role",
+        "description": "Permet la modification des paramètres et des permissions associés à un rôle existant"
+    },
+    {
+        "name": "delete.role",
+        "description": "Autorise la suppression d'un rôle du système de gestion des accès"
+    },
+    {
+        "name": "create.permission",
+        "description": "Permet de créer une nouvelle permission dans le système"
+    },
+    {
+        "name": "edit.permission",
+        "description": "Autorise la modification des détails d'une permission existante"
+    },
+    {
+        "name": "delete.permission",
+        "description": "Permet la suppression d'une permission du système"
+    },
+    {
+        "name": "analytics.view",
+        "description": "Donne accès à la visualisation des données analytiques et des rapports du système"
+    }]

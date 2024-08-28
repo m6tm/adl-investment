@@ -7,15 +7,17 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Collection;
 use Illuminate\View\Component;
+use Spatie\Permission\Models\Role;
 
 class PermissionToRoleTable extends Component
 {
+    public Collection $roles;
     /**
      * Create a new component instance.
      */
-    public function __construct(public Collection $users)
+    public function __construct()
     {
-        $this->users = User::all();
+        $this->roles = Role::all();
     }
 
     /**

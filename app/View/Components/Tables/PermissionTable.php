@@ -15,7 +15,7 @@ class PermissionTable extends Component
      */
     public function __construct(public Collection $permissions)
     {
-        $this->permissions = Country::all();
+        // 
     }
 
     /**

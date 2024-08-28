@@ -1,7 +1,7 @@
 @extends('dashboard.layout.base')
 
 @php
-	$title = 'Permissions';
+	$title = 'Create Permission';
 @endphp
 @section('title')
 	{{ $title }}
@@ -12,16 +12,12 @@
 	<main>
 		<div class="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">
 			<!-- Breadcrumb Start -->
-			<x--breadcrumb :breadcrumbs="[['title' => $title]]" />
+			<x--breadcrumb :breadcrumbs="[['title' => 'Permissions', 'route' => route('dashboard.permissions')], ['title' => $title]]" />
 			<!-- Breadcrumb End -->
 
 			<div class="flex flex-col gap-5 md:gap-7 2xl:gap-10">
 				<!-- ====== Data Table One Start -->
-				<div class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
-					<div class="mx-7.5 mt-7.5">
-						<a href="{{ route('dashboard.permissions.create') }}" class="btn btn-primary btn-sm">Create permission</a>
-					</div>
-					<x-tables.permission-table :permissions="$permissions" />
+				<div class="rounded-sm border p-7 border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
 				</div>
 				<!-- ====== Data Table One End -->
 			</div>

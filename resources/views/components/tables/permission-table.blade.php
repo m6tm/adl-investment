@@ -103,10 +103,10 @@
 				$key = 1;
 			@endphp
 			@foreach ($permissions as $permission)
-				<tr class="h-[20px]">
+				<tr class="h-[20px] odd:bg-white bg-slate-100 duration-300 hover:bg-slate-100 odd:dark:bg-slate-900 even:bg-slate-50 even:dark:bg-slate-800">
 					<td class="py-1 w-8">#{{ $key }}</td>
 					<td>{{ $permission->name }}</td>
-					<td>{{ $permission->code }}</td>
+					<td>{{ $permission->description }}</td>
 					<td class="text-center space-x-3 w-30">
 						<button class="text-primary tooltip"
 							onclick="document.getElementById('permission_to_user_modal_{{ $key }}').showModal()"

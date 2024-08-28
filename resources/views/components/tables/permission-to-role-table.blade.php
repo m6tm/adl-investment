@@ -70,11 +70,11 @@
         @php
             $key = 1;
         @endphp
-        @foreach ($users as $user)
+        @foreach ($roles as $role)
             <tr class="h-[20px] odd:bg-white bg-slate-100 duration-300 hover:bg-slate-100 odd:dark:bg-slate-900 even:bg-slate-50 even:dark:bg-slate-800">
                 <td class="bg-transparent border-l-0 py-1 w-8">#{{ $key }}</td>
-                <td class="bg-transparent">{{ $user->first_name }}</td>
-                <td class="bg-transparent">{{ $user->email }}</td>
+                <td class="bg-transparent">{{ $role->name }}</td>
+                <td class="bg-transparent">{{ $role->description }}</td>
                 <td class="bg-transparent border-r-0 text-center space-x-3 w-30">
                     <input id="default-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-slate-100 border-gray-300 cursor-pointer rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-slate-700 dark:border-gray-600">
                 </td>

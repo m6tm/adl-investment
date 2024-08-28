@@ -76,6 +76,7 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function() {
     Route::get('account-verification', [AccountVerificationController::class, 'index'])->name('dashboard.account-verification');
     // Permissions
     Route::get('permissions', [PermissionController::class, 'index'])->name('dashboard.permissions');
+    Route::get('permissions/create', [PermissionController::class, 'create'])->name('dashboard.permissions.create');
 });
 
 require __DIR__.'/auth.php';
