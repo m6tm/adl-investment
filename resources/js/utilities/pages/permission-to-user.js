@@ -1,10 +1,9 @@
 import { DataTable } from "simple-datatables";
 
 document.addEventListener("DOMContentLoaded", function () {
-  const permissionTable = document.querySelector("#permissionTable");
-
-  if (permissionTable) {
-    const dataTable = new DataTable("#permissionTable", {
+  const permissionToUsers = document.querySelectorAll("#permissionToUser");
+  permissionToUsers.forEach((permissionToUser) => {
+    const dataTable = new DataTable(permissionToUser, {
       perPageSelect: [5, 10, 15, ["All", -1]],
       columns: [
         {
@@ -31,8 +30,8 @@ document.addEventListener("DOMContentLoaded", function () {
           childNodes: tHead.childNodes[0].childNodes.map((_th, index) => {
             let name = ''
             let className = "datatable-input input input-bordered placeholder:text-slate-400 min-w-[70%] font-light data-custom"
-            if (index == 1) name = 'permission'
-            if (index == 2) name = 'description'
+            if (index == 1) name = 'user name'
+            if (index == 2) name = 'email'
             if (index == 3) return {
               nodeName: "TH",
               childNodes: []
@@ -63,5 +62,5 @@ document.addEventListener("DOMContentLoaded", function () {
         return table;
       },
     });
-  }
+  });
 });
