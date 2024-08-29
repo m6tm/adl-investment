@@ -8,6 +8,7 @@ use App\Http\Controllers\auth\AuthenticatedSessionController;
 use App\Http\Controllers\auth\RegisteredUserController;
 use App\Http\Controllers\Dashboard\NotificationController;
 use App\Http\Controllers\Dashboard\UserController;
+use App\Http\Controllers\Dashboard\TicketController;
 use App\Http\Controllers\LanguageController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Mail;
@@ -71,6 +72,10 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function() {
     Route::get('notifications', [NotificationController::class, 'index'])->name('dashboard.notifications');
     // Account verification
     Route::get('account-verification', [AccountVerificationController::class, 'index'])->name('dashboard.account-verification');
+    // Tickets
+    Route::get('tickets', [TicketController::class, 'index'])->name('dashboard.tickets');
+    Route::get('tickets/create', [TicketController::class, 'create'])->name('dashboard.tickets.create');
+    Route::get('tickets/pay', [TicketController::class, 'pay'])->name('dashboard.tickets.pay');
 });
 
 require __DIR__.'/auth.php';
