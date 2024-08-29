@@ -4,9 +4,9 @@
 @foreach ($permissions as $permission)
 	<dialog id="permission_to_user_modal_{{ $key }}" class="modal">
 		<div class="modal-box w-11/12 max-w-5xl">
-			<div class="modal-action">
+			<div class="modal-action flex-col">
+				<x-tables.permission-to-user-table :permission="$permission" />
 				<form method="dialog" class="w-full">
-					<x-tables.permission-to-user-table />
 					<div class="w-full flex justify-end mt-5">
 						<button class="btn btn-error btn-sm text-white">Fermer</button>
 					</div>
@@ -16,11 +16,28 @@
 	</dialog>
 	<dialog id="permission_to_role_modal_{{ $key }}" class="modal">
 		<div class="modal-box w-11/12 max-w-5xl">
-			<div class="modal-action">
+			<div class="modal-action flex-col">
+				<x-tables.permission-to-role-table :permission="$permission" />
 				<form method="dialog" class="w-full">
-					<x-tables.permission-to-role-table />
 					<div class="w-full flex justify-end mt-5">
 						<button class="btn btn-error btn-sm text-white">Fermer</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</dialog>
+	<dialog id="edit_permission_modal_{{ $key }}" class="modal">
+		<div class="modal-box w-11/12 max-w-5xl">
+			<div class="modal-action flex-col">
+				<x-forms.edit-permission :permission="$permission" />
+				<form method="dialog" class="w-full">
+					<div class="w-full flex justify-end mt-5">
+						<button
+							type="button"
+							onclick="document.getElementById('edit_permission_modal_{{ $key }}').close()"
+							class="inline-flex items-center justify-center rounded-md bg-danger mt-4 px-5 py-2 text-center font-medium text-white hover:bg-opacity-90 lg:px-8 xl:px-10">
+							Annuler
+						</button>
 					</div>
 				</form>
 			</div>
@@ -107,16 +124,21 @@
 					<td class="py-1 w-8">#{{ $key }}</td>
 					<td>{{ $permission->name }}</td>
 					<td>{{ $permission->description }}</td>
-					<td class="text-center space-x-3 w-30">
+					<td class="flex justify-around space-x-3 w-35">
 						<button class="text-primary tooltip"
 							onclick="document.getElementById('permission_to_user_modal_{{ $key }}').showModal()"
 							data-tip="Associer à un utilisateur">
 							<span class="size-5" data-lucide="user-round-pen"></span>
 						</button>
-						<button class="text-primary tooltip tooltip-left"
+						<button class="text-primary tooltip"
                             onclick="document.getElementById('permission_to_role_modal_{{ $key }}').showModal()"
                             data-tip="Associer à un rôle">
 							<span class="size-5" data-lucide="key-square"></span>
+						</button>
+						<button class="text-primary tooltip tooltip-left"
+                            onclick="document.getElementById('edit_permission_modal_{{ $key }}').showModal()"
+                            data-tip="Modifier la permission">
+							<span class="size-5" data-lucide="pencil"></span>
 						</button>
 					</td>
 				</tr>

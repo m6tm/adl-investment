@@ -96,5 +96,33 @@
             "en": "Country is required",
             "fr": "Le pays est obligatoire"
         }
+    },
+    {
+        "key": "permission.code.required",
+        "dict": {
+            "en": "Permission code is required",
+            "fr": "Le code de permission est requis"
+        }
+    },
+    {
+        "key": "permission.code.invalid",
+        "dict": {
+            "en": "Invalid permission code. Please use only lowercase letters and dots (for example, 'admin.user.create').",
+            "fr": "Code de permission invalide. Veuillez utiliser uniquement des lettres en minuscule et des points (par exemple, 'admin.utilisateur.creer')."
+        }
+    },
+    {
+        "key": "permission.description.required",
+        "dict": {
+            "en": "Permission description is required",
+            "fr": "La description de la permission est requise"
+        }
+    },
+    {
+        "key": "permission.description.too_short",
+        "dict": {
+            "en": "Permission description is too short. 5 characters minimum",
+            "fr": "La description de la permission est trop courte. 5 caractères minimum"
+        }
     }
 ]

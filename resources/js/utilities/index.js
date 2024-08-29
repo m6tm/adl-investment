@@ -1,3 +1,5 @@
+import './jquery'
+import './jquery.repeater.min'
 import './notification'
 import './tools'
 import './forms'

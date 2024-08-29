@@ -1,24 +1,20 @@
 <?php
 
-namespace App\View\Components\Tables;
+namespace App\View\Components\Forms;
 
-use App\Models\User;
 use Closure;
 use Illuminate\Contracts\View\View;
-use Illuminate\Support\Collection;
 use Illuminate\View\Component;
 use Spatie\Permission\Models\Permission;
-use Spatie\Permission\Models\Role;
 
-class PermissionToRoleTable extends Component
+class EditPermission extends Component
 {
-    public Collection $roles;
     /**
      * Create a new component instance.
      */
     public function __construct(public Permission $permission)
     {
-        $this->roles = Role::all();
+        //
     }
 
     /**
@@ -26,6 +22,6 @@ class PermissionToRoleTable extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.tables.permission-to-role-table');
+        return view('components.forms.edit-permission');
     }
 }

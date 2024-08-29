@@ -7,13 +7,15 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Collection;
 use Illuminate\View\Component;
+use Spatie\Permission\Models\Permission;
 
 class PermissionToUserTable extends Component
 {
+    public Collection $users;
     /**
      * Create a new component instance.
      */
-    public function __construct(public Collection $users)
+    public function __construct(public Permission $permission)
     {
         $this->users = User::all();
     }
