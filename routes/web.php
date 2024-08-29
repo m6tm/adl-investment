@@ -10,6 +10,7 @@ use App\Http\Controllers\Dashboard\NotificationController;
 use App\Http\Controllers\Dashboard\UserController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\PermissionController;
+use App\Http\Controllers\RoleController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Mail;
 
@@ -81,6 +82,9 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function() {
     Route::post('permissions/edit/{permisison_id}', [PermissionController::class, 'createUpdate'])->name('dashboard.permissions.create.update')->whereNumber('permisison_id');
     Route::post('permissions/assign-to-user/{permisison_id}', [PermissionController::class, 'permissionToUser'])->name('dashboard.permissions.to.user')->whereNumber('permisison_id');
     Route::post('permissions/assign-to-role/{permisison_id}', [PermissionController::class, 'permissionToRole'])->name('dashboard.permissions.to.role')->whereNumber('permisison_id');
+    // Roles
+    Route::get('roles', [RoleController::class, 'index'])->name('dashboard.roles');
+    Route::post('roles/assign-to-user/{role_id}', [RoleController::class, 'roleToUser'])->name('dashboard.roles.to.user')->whereNumber('role_id');
 });
 
 require __DIR__.'/auth.php';

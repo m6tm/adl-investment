@@ -12,7 +12,7 @@
 	<main>
 		<div class="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">
 			<!-- Breadcrumb Start -->
-			<x--breadcrumb :breadcrumbs="[['title' => 'Permissions', 'route' => route('dashboard.permissions')], ['title' => $title]]" />
+			<x-breadcrumb :breadcrumbs="[['title' => 'Permissions', 'route' => route('dashboard.permissions')], ['title' => $title]]" />
 			<!-- Breadcrumb End -->
 
 			<div class="flex flex-col gap-5 md:gap-7 2xl:gap-10">
