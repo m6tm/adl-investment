@@ -11,7 +11,7 @@ use BenSampo\Enum\Enum;
  */
 final class USER_ROLE_DESCRIPTION extends Enum
 {
-    const SUPER_ADMIN = 'Super Administrator';
-    const ADMIN = 'Administrator';
-    const PLAYER = 'Player';
+    const SUPER_ADMIN = 'dashboard/backend.roles.super-admin';
+    const ADMIN = 'dashboard/backend.roles.admin';
+    const PLAYER = 'dashboard/backend.roles.player';
 }

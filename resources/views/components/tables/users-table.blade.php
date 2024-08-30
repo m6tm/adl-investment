@@ -23,7 +23,7 @@
 				</th>
 				<th>
 					<div class="flex items-center gap-1.5">
-						<p class="text-[16px]">Nom</p>
+						<p class="text-[16px]">{{ __('users.name') }}</p>
 						<div class="inline-flex flex-col space-y-[2px]">
 							<span class="inline-block">
 								<svg class="fill-current" width="10" height="5" viewBox="0 0 10 5" fill="none"
@@ -42,7 +42,7 @@
 				</th>
 				<th>
 					<div class="flex items-center gap-1.5">
-						<p class="text-[16px]">Prénom</p>
+						<p class="text-[16px]">{{ __('users.lastname') }}</p>
 						<div class="inline-flex flex-col space-y-[2px]">
 							<span class="inline-block">
 								<svg class="fill-current" width="10" height="5" viewBox="0 0 10 5" fill="none"
@@ -61,7 +61,7 @@
 				</th>
 				<th>
 					<div class="flex items-center gap-1.5">
-						<p class="text-[16px]">Email</p>
+						<p class="text-[16px]">{{ __('users.email') }}</p>
 						<div class="inline-flex flex-col space-y-[2px]">
 							<span class="inline-block">
 								<svg class="fill-current" width="10" height="5" viewBox="0 0 10 5" fill="none"
@@ -80,7 +80,7 @@
 				</th>
 				<th>
 					<div class="flex items-center gap-1.5">
-						<p class="text-[16px]">Role</p>
+						<p class="text-[16px]">{{ __('users.role') }}</p>
 						<div class="inline-flex flex-col space-y-[2px]">
 							<span class="inline-block">
 								<svg class="fill-current" width="10" height="5" viewBox="0 0 10 5" fill="none"
@@ -99,7 +99,7 @@
 				</th>
 				<th>
 					<div class="flex items-center gap-1.5">
-						<p class="text-[16px]">Créé le</p>
+						<p class="text-[16px]">{{ __('users.created_at') }}</p>
 						<div class="inline-flex flex-col space-y-[2px]">
 							<span class="inline-block">
 								<svg class="fill-current" width="10" height="5" viewBox="0 0 10 5" fill="none"
@@ -118,7 +118,7 @@
 				</th>
 				<th>
 					<div class="flex items-center gap-1.5">
-						<p class="text-[16px]">Actions</p>
+						<p class="text-[16px]">{{ __('users.action') }}</p>
 					</div>
 				</th>
 			</tr>
@@ -137,7 +137,7 @@
 					<td>{{ $user->created_at->format('M d, Y') }}</td>
 					<td class="flex justify-center space-x-3">
                         @if (auth()->user()->can('edit.user'))
-                            <a href="{{ route('dashboard.user.edit', ['user_id' => $user->id]) }}" class="float-right text-primary">Edit</a>
+                            <a href="{{ route('dashboard.user.edit', ['user_id' => $user->id]) }}" class="float-right text-primary">{{ __('users.edit') }}</a>
                         @endif
 					</td>
 				</tr>

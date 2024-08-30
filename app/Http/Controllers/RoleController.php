@@ -12,16 +12,16 @@ use Spatie\Permission\Models\Role;
 class RoleController extends Controller
 {
     function index() {
-        if (!AuthHelper::can('roles')) return redirect()->back()->withErrors('You are not authorized to perform this action');
+        if (!AuthHelper::can('roles')) return redirect()->back()->withErrors(__('dashboard/backend.not-access'));
         $roles = Role::all();
         return view('dashboard.pages.roles.index', compact('roles'));
     }
 
     function roleToUser(int $role_id, RoleToUserRequest $request) {
-        if (!AuthHelper::can('role.to.user')) redirect()->back()->withErrors('You are not authorized to perform this action');
+        if (!AuthHelper::can('role.to.user')) redirect()->back()->withErrors(__('dashboard/backend.not-access'));
         $role = Role::find($role_id);
         if (!$role) {
-            return redirect()->back()->with('error', 'Role not found');
+            return redirect()->back()->with('error', __('dashboard/backend.role-not-found'));
         }
 
         $userIds = request('users') ?? [];
@@ -44,6 +44,6 @@ class RoleController extends Controller
             });
         });
 
-        return redirect()->back()->with('success', 'Roles updated successfully');
+        return redirect()->back()->with('success', __('dashboard/backend.role-to-user'));
     }
 }

@@ -22,11 +22,11 @@
 			<div class="social-links d-none d-md-flex align-items-center">
 				<a href="{{ route('login') }}">
 					<i class="bi bi-person-fill"></i>
-					<span>Sign In</span>
+					<span>{{ __('home.registration') }}</span>
 				</a>
 				<a href="{{ route('register') }}">
 					<i class="bi bi-pencil-square"></i>
-					<span>Sign Up</span>
+					<span>{{ __('home.login') }}</span>
 				</a>
 			</div>
 		</div>

@@ -8,7 +8,7 @@
                 <x-tables.role-to-user :role="$role" />
 				<form method="dialog" class="w-full">
 					<div class="w-full flex justify-end mt-5">
-						<button class="btn btn-error btn-sm text-white">Fermer</button>
+						<button class="btn btn-error btn-sm text-white">{{ __('roles.roles.close') }}</button>
 					</div>
 				</form>
 			</div>
@@ -43,7 +43,7 @@
 				</th>
 				<th>
 					<div class="flex items-center gap-1.5">
-						<p class="text-[16px]">Permission code</p>
+						<p class="text-[16px]">{{ __('roles.roles.permission_code') }}</p>
 						<div class="inline-flex flex-col space-y-[2px]">
 							<span class="inline-block">
 								<svg class="fill-current" width="10" height="5" viewBox="0 0 10 5" fill="none"
@@ -62,7 +62,7 @@
 				</th>
 				<th>
 					<div class="flex items-center gap-1.5">
-						<p class="text-[16px]">Description</p>
+						<p class="text-[16px]">{{ __('roles.roles.description') }}</p>
 						<div class="inline-flex flex-col space-y-[2px]">
 							<span class="inline-block">
 								<svg class="fill-current" width="10" height="5" viewBox="0 0 10 5" fill="none"
@@ -81,7 +81,7 @@
 				</th>
 				<th>
 					<div class="flex items-center gap-1.5">
-						<p class="text-[16px]">Actions</p>
+						<p class="text-[16px]">{{ __('roles.roles.actions') }}</p>
 					</div>
 				</th>
 			</tr>
@@ -98,7 +98,7 @@
 					<td class="flex justify-center space-x-3">
 						<button class="text-primary tooltip"
 							onclick="document.getElementById('role_to_user_modal_{{ $key }}').showModal()"
-							data-tip="Associer à un utilisateur">
+							data-tip="{{ __('roles.roles.associate_user') }}">
 							<span class="size-5" data-lucide="user-round-pen"></span>
 						</button>
 					</td>

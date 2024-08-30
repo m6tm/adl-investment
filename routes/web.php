@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\AccountVerificationController;
-use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\web\StaticPagesController;
 use App\Http\Controllers\auth\AuthenticatedSessionController;
@@ -10,6 +9,7 @@ use App\Http\Controllers\Dashboard\NotificationController;
 use App\Http\Controllers\Dashboard\UserController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\PermissionController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SettingController;
 use Illuminate\Support\Facades\Route;
@@ -85,4 +85,4 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function() {
     Route::get('settings', [SettingController::class, 'index'])->name('dashboard.settings');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

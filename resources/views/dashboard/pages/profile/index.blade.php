@@ -1,20 +1,19 @@
 @php
-	$title = 'Mon profile';
-    $breadcrumbs = [
-        ['title' => $title],
-    ];
+	$title = __('profile.title');
+	$breadcrumbs = [['title' => $title]];
 @endphp
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css"/>
 <x-dashboard.layout :title="$title" :breadcrumbs="$breadcrumbs">
-    <div class="flex flex-col gap-5 md:gap-7 2xl:gap-10">
-        <div class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark rounded-[10px] p-5">
+	<div class="flex flex-col gap-5 md:gap-7 2xl:gap-10">
+		<div class="border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark rounded-[10px] pb-5">
 			<x-error-message-alert class="mb-4 mx-4" />
 			<div class="relative z-20 h-35 md:h-65">
-				<img src="{{ asset('assets/img/cover-01.png') }}" alt="profile cover"
-					class="h-full w-full rounded-tl-sm rounded-tr-sm object-cover object-center" />
-				<div class="absolute bottom-1 right-1 z-10 xsm:bottom-4 xsm:right-4">
+				<img src="{{ asset('assets/img/cover-01.png') }}" class="rounded-tl-[10px] rounded-tr-[10px] h-full w-full"
+					alt="profile cover" class="h-full w-full rounded-tl-sm rounded-tr-sm object-cover object-center" />
+				<div class="absolute bottom-1 right-1 z-10 xsm:bottom-4 gap-3 xsm:right-4 flex items-center">
 					<label for="cover"
-						class="flex cursor-pointer items-center justify-center gap-2 rounded bg-primary px-2 py-1 text-sm font-medium text-white hover:bg-opacity-80 xsm:px-4">
+						class="flex cursor-pointer items-center justify-center h-9 gap-2 rounded bg-primary px-2 py-1 text-sm font-medium text-white hover:bg-opacity-80 xsm:px-4">
 						<input type="file" name="cover" id="cover" class="sr-only" />
 						<span>
 							<svg class="fill-current" width="14" height="14" viewBox="0 0 14 14" fill="none"
@@ -27,8 +26,19 @@
 									fill="white" />
 							</svg>
 						</span>
-						<span>Edit</span>
+						<span>{{ __('profile.edit') }}</span>
 					</label>
+					<div class="dropdown dropdown-end me-4">
+						<div tabindex="0" role="button" class="p-3">
+							<span class="fi fi-{{ app()->getLocale() == 'en' ? 'us' : 'fr' }}"></span>
+						</div>
+						<ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+							<li>
+								<a href="{{ route('set.locale', 'fr') }}"><span class="fi fi-fr"></span> Français</a>
+								<a href="{{ route('set.locale', 'en') }}"><span class="fi fi-us"></span> English</a>
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<div class="px-4 pb-6 text-center lg:pb-8 xl:pb-11.5">
@@ -55,22 +65,24 @@
 					<h3 class="mb-1.5 text-2xl font-medium text-black dark:text-white">
 						Danish Heilium
 					</h3>
-					<p class="font-medium">Player</p>
-					<div
-						class="mx-auto mb-5.5 mt-4.5 grid max-w-94 grid-cols-3 rounded-md border border-stroke py-2.5 shadow-1 dark:border-strokedark dark:bg-[#37404F]">
+					<p class="font-medium">{{ __('dashboard/backend.roles.player') }}</p>
+					<div class="flex">
 						<div
-							class="flex flex-col items-center justify-center gap-1 border-r border-stroke px-4 dark:border-strokedark xsm:flex-row">
-							<span class="font-semibold text-black dark:text-white">15</span>
-							<span class="text-sm">Gagné</span>
-						</div>
-						<div
-							class="flex flex-col items-center justify-center gap-1 border-r border-stroke px-4 dark:border-strokedark xsm:flex-row">
-							<span class="font-semibold text-black dark:text-white">$129K</span>
-							<span class="text-sm">Wallet</span>
-						</div>
-						<div class="flex flex-col items-center justify-center gap-1 px-4 xsm:flex-row">
-							<span class="font-semibold text-black dark:text-white">$2K</span>
-							<span class="text-sm">Investment</span>
+							class="mx-auto mb-5.5 mt-4.5 grid grid-cols-3 rounded-md border border-stroke py-2.5 shadow-1 dark:border-strokedark dark:bg-[#37404F]">
+							<div
+								class="flex flex-col items-start justify-center gap-1 px-4 dark:border-strokedark xsm:flex-row">
+								<span class="font-semibold text-black dark:text-white">15</span>
+								<span class="text-sm">{{ __('profile.winned') }}</span>
+							</div>
+							<div
+								class="flex flex-col items-center justify-center gap-1 px-4 dark:border-strokedark xsm:flex-row">
+								<span class="font-semibold text-black dark:text-white">$129K</span>
+								<span class="text-sm">{{ __('profile.wallet') }}</span>
+							</div>
+							<div class="flex flex-col items-center justify-center gap-1 px-4 dark:border-strokedark xsm:flex-row">
+								<span class="font-semibold text-black dark:text-white">$2K</span>
+								<span class="text-sm">{{ __('profile.investment') }}</span>
+							</div>
 						</div>
 					</div>
 
@@ -78,6 +90,6 @@
 					</div>
 				</div>
 			</div>
-        </div>
-    </div>
+		</div>
+	</div>
 </x-dashboard.layout>

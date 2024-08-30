@@ -199,4 +199,6 @@ return [
             'submit_button' => 'Envoyer le message',
         ],
     ],
+    "registration" => "Inscription",
+    "login" => "Connexion",
 ];

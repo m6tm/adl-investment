@@ -1,12 +1,12 @@
 @php
-	$title = 'Notifications';
+	$title = __('notification.notification');
     $breadcrumbs = [
         ['title' => $title],
     ];
 @endphp
 
 <x-dashboard.layout :title="$title" :breadcrumbs="$breadcrumbs">
-	<div class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark rounded-[10px] p-5">
+	<div class="border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark rounded-[10px] p-5">
 		<x-error-message-alert class="mb-4" />
 		<div class="grid lg:grid-cols-3 gap-5 h-[500px]" id="tabs-container">
 			<div class="p-3  grid grid-cols-1 gap-2 overflow-y-auto h-full">

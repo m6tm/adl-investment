@@ -7,7 +7,7 @@
 
 <x-dashboard.layout :title="$title" :breadcrumbs="$breadcrumbs">
     <div class="flex flex-col gap-5 md:gap-7 2xl:gap-10">
-        <div class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark rounded-[10px] p-5">
+        <div class="border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark rounded-[10px] p-5">
 			<x-error-message-alert class="mb-4" />
 			<form action="#" id="verification-account-form" autocomplete="off" novalidate="novalidate" class="grid lg:grid-cols-3 gap-5">
 				{{-- Choisir une photo de profile Début --}}

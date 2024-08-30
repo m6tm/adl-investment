@@ -1,4 +1,3 @@
-
 <form action="{{ route('dashboard.roles.to.user', $role->id) }}" method="post">
     @csrf
     <table class="table w-full table-auto" id="permissionToUser">
@@ -25,7 +24,7 @@
                 </th>
                 <th>
                     <div class="flex items-center gap-1.5">
-                        <p class="text-[16px]">User name</p>
+                        <p class="text-[16px]">{{ __('roles.role-to-user.user_name') }}</p>
                         <div class="inline-flex flex-col space-y-[2px]">
                             <span class="inline-block">
                                 <svg class="fill-current" width="10" height="5" viewBox="0 0 10 5" fill="none"
@@ -44,7 +43,7 @@
                 </th>
                 <th>
                     <div class="flex items-center gap-1.5">
-                        <p class="text-[16px]">Email</p>
+                        <p class="text-[16px]">{{ __('roles.role-to-user.email') }}</p>
                         <div class="inline-flex flex-col space-y-[2px]">
                             <span class="inline-block">
                                 <svg class="fill-current" width="10" height="5" viewBox="0 0 10 5" fill="none"
@@ -63,7 +62,7 @@
                 </th>
                 <th>
                     <div class="flex items-center gap-1.5">
-                        <p class="text-[16px]">Actions</p>
+                        <p class="text-[16px]">{{ __('roles.role-to-user.actions') }}</p>
                     </div>
                 </th>
             </tr>
@@ -90,6 +89,6 @@
     <button
         type="submit"
         class="inline-flex items-center justify-center rounded-md bg-primary mt-4 px-5 py-2 text-center font-medium text-white hover:bg-opacity-90 lg:px-8 xl:px-10">
-        Appliquer les changements
+        {{ __('roles.role-to-user.apply_changes') }}
     </button>
 </form>

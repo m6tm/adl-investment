@@ -8,7 +8,7 @@
 				<x-tables.permission-to-user-table :permission="$permission" />
 				<form method="dialog" class="w-full">
 					<div class="w-full flex justify-end mt-5">
-						<button class="btn btn-error btn-sm text-white">Fermer</button>
+						<button class="btn btn-error btn-sm text-white">{{ __('permissions.permissions_list.close') }}</button>
 					</div>
 				</form>
 			</div>
@@ -20,7 +20,7 @@
 				<x-tables.permission-to-role-table :permission="$permission" />
 				<form method="dialog" class="w-full">
 					<div class="w-full flex justify-end mt-5">
-						<button class="btn btn-error btn-sm text-white">Fermer</button>
+						<button class="btn btn-error btn-sm text-white">{{ __('permissions.permissions_list.close') }}</button>
 					</div>
 				</form>
 			</div>
@@ -55,7 +55,7 @@
 				</th>
 				<th>
 					<div class="flex items-center gap-1.5">
-						<p class="text-[16px]">Permission code</p>
+						<p class="text-[16px]">{{ __('permissions.permissions_list.permission_code') }}</p>
 						<div class="inline-flex flex-col space-y-[2px]">
 							<span class="inline-block">
 								<svg class="fill-current" width="10" height="5" viewBox="0 0 10 5" fill="none"
@@ -74,7 +74,7 @@
 				</th>
 				<th>
 					<div class="flex items-center gap-1.5">
-						<p class="text-[16px]">Description</p>
+						<p class="text-[16px]">{{ __('permissions.permissions_list.description') }}</p>
 						<div class="inline-flex flex-col space-y-[2px]">
 							<span class="inline-block">
 								<svg class="fill-current" width="10" height="5" viewBox="0 0 10 5" fill="none"
@@ -93,7 +93,7 @@
 				</th>
 				<th>
 					<div class="flex items-center gap-1.5">
-						<p class="text-[16px]">Actions</p>
+						<p class="text-[16px]">{{ __('permissions.permissions_list.actions') }}</p>
 					</div>
 				</th>
 			</tr>
@@ -110,12 +110,12 @@
 					<td class="flex justify-around space-x-3 w-35">
 						<button class="text-primary tooltip"
 							onclick="document.getElementById('permission_to_user_modal_{{ $key }}').showModal()"
-							data-tip="Associer à un utilisateur">
+							data-tip="{{ __('permissions.permissions_list.associate_user') }}">
 							<span class="size-5" data-lucide="user-round-pen"></span>
 						</button>
 						<button class="text-primary tooltip"
                             onclick="document.getElementById('permission_to_role_modal_{{ $key }}').showModal()"
-                            data-tip="Associer à un rôle">
+                            data-tip="{{ __('permissions.permissions_list.associate_role') }}">
 							<span class="size-5" data-lucide="key-square"></span>
 						</button>
 					</td>
