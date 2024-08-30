@@ -18,6 +18,7 @@
 			<!-- ====== Profil Creation Start -->
 			<div class="flex flex-col gap-10 mt-10">
 				<div class="bg-white dark:bg-meta-4 dark:bg-none px-5 pt-6 pb-8 shadow-default dark:shadow-none rounded-[10px] p-5">
+					<x-error-message-alert class="mb-4" />
 					<div class="grid lg:grid-cols-3 grid-cols-1 gap-5">
 						{{-- Choisir une photo de profile Début --}}
 						<form action="#">

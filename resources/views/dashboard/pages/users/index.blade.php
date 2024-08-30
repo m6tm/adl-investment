@@ -18,17 +18,14 @@
 			<!-- ====== Table Section Start -->
 			<div class="flex flex-col gap-10 mt-10">
 				<div class="bg-white dark:bg-meta-4 dark:bg-none px-5 pt-6 pb-8 shadow-default dark:shadow-none rounded-[10px] p-5">
-					<a href="{{ route('dashboard.user.create') }}" class="px-4 py-2 mb-5 inline-block rounded-md bg-primary text-white">
-						Créer un utilisateur
-					</a>
+					<x-error-message-alert class="mb-4" />
+					@if (auth()->user()->can('create.user'))
+						<a href="{{ route('dashboard.user.create') }}" class="px-4 py-2 mb-5 inline-block rounded-md bg-primary text-white">
+							Créer un utilisateur
+						</a>
+					@endif
 					<!-- ====== Table Four Start -->
-					<x-ui.table-primary :headers="['Name', 'Title', 'Email', 'Role']" :rows="[
-						['Musharof Chowdhury', 'Multidisciplinary Web Entrepreneur', 'musharof@example.com', 'Owner'],
-						['John Doe', 'Software Developer', 'john.doe@example.com', 'Admin'],
-						['Jane Smith', 'UX Designer', 'jane.smith@example.com', 'User'],
-						['Mike Johnson', 'Project Manager', 'mike.johnson@example.com', 'Manager'],
-						['Emily Brown', 'Data Analyst', 'emily.brown@example.com', 'User']
-					]" />
+					<x-tables.users-table :users="$users" />
 					<!-- ====== Table Four End -->
 				</div>
 			</div>

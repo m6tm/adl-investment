@@ -18,6 +18,7 @@
 			<!-- ====== Profile Creation Start -->
 			<div class="flex flex-col gap-10 mt-10">
 				<div class="bg-white dark:bg-meta-4 dark:bg-none px-5 pt-6 pb-8 shadow-default dark:shadow-none rounded-[10px] p-5">
+					<x-error-message-alert class="mb-4" />
 					<div class="grid lg:grid-cols-3 gap-5 h-[500px]" id="tabs-container">
                         <div class="p-3  grid grid-cols-1 gap-2 overflow-y-auto h-full">
                             <div data-type="tab" class="h-[110px] hover:bg-slate-500 activate duration-300 p-3 rounded-lg cursor-pointer">

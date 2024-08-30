@@ -18,6 +18,7 @@
 			<div class="flex flex-col gap-5 md:gap-7 2xl:gap-10">
 				<!-- ====== Data Table One Start -->
 				<div class="rounded-sm border p-7 border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+					<x-error-message-alert class="mb-4" />
 					<h3 class="text-title-md font-medium">Formulaire de création de permissions</h3>
 					<x-error-message-alert />
 

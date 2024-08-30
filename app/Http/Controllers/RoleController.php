@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\AuthHelper;
 use App\Http\Requests\RoleToUserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -11,11 +12,13 @@ use Spatie\Permission\Models\Role;
 class RoleController extends Controller
 {
     function index() {
+        if (!AuthHelper::can('roles')) return redirect()->back()->withErrors('You are not authorized to perform this action');
         $roles = Role::all();
         return view('dashboard.pages.roles.index', compact('roles'));
     }
 
     function roleToUser(int $role_id, RoleToUserRequest $request) {
+        if (!AuthHelper::can('role.to.user')) redirect()->back()->withErrors('You are not authorized to perform this action');
         $role = Role::find($role_id);
         if (!$role) {
             return redirect()->back()->with('error', 'Role not found');

@@ -62,9 +62,7 @@ Route::get('login', [AuthenticatedSessionController::class, 'create'])->name('lo
 Route::get('register', [RegisteredUserController::class, 'create'])->name('register');
 
 Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function() {
-    Route::get('', function () {
-        return view('dashboard.pages.users.index');
-    })->name('dashboard');
+    Route::get('', [UserController::class, 'index'])->name('dashboard');
     // Users
     Route::get('users', [UserController::class, 'index'])->name('dashboard.user.list');
     Route::get('users/create', [UserController::class, 'create'])->name('dashboard.user.create');

@@ -1,5 +1,9 @@
 [
     {
+        "name": "show.user",
+        "description": "Permet d'afficher la liste des utilisateurs du système"
+    },
+    {
         "name": "create.user",
         "description": "Permet de créer un nouveau compte utilisateur dans le système"
     },
@@ -12,6 +16,10 @@
         "description": "Permet la suppression d'un compte utilisateur du système"
     },
     {
+        "name": "show.role",
+        "description": "Permet d'afficher la liste des rôles disponibles dans le système"
+    },
+    {
         "name": "create.role",
         "description": "Autorise la création d'un nouveau rôle dans le système de gestion des accès"
     },
@@ -22,6 +30,10 @@
     {
         "name": "delete.role",
         "description": "Autorise la suppression d'un rôle du système de gestion des accès"
+    },
+    {
+        "name": "show.permission",
+        "description": "Permet d'afficher la liste des permissions disponibles dans le système"
     },
     {
         "name": "create.permission",
@@ -38,4 +50,29 @@
     {
         "name": "analytics.view",
         "description": "Donne accès à la visualisation des données analytiques et des rapports du système"
-    }]
+    },
+    {
+        "name": "permission.to.user",
+        "description": "Permet d'attribuer des permissions spécifiques à un utilisateur"
+    },
+    {
+        "name": "permissions",
+        "description": "Permet d'afficher les permissions"
+    },
+    {
+        "name": "roles",
+        "description": "Permet d'afficher les roles"
+    },
+    {
+        "name": "permission.to.role",
+        "description": "Autorise l'attribution de permissions à un profil utilisateur"
+    },
+    {
+        "name": "role.to.user",
+        "description": "Permet d'associer un profil spécifique à un utilisateur"
+    },
+    {
+        "name": "verification.accounts.requests",
+        "description": "Autorise la gestion des demandes de vérification des comptes utilisateurs"
+    }
+]

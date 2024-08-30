@@ -18,6 +18,7 @@
 				<!-- ====== Profile Section Start -->
 				<div
 					class="overflow-hidden rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+					<x-error-message-alert class="mb-4 mx-4" />
 					<div class="relative z-20 h-35 md:h-65">
 						<img src="{{ asset('assets/img/cover-01.png') }}" alt="profile cover"
 							class="h-full w-full rounded-tl-sm rounded-tr-sm object-cover object-center" />

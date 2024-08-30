@@ -28,16 +28,18 @@
 				<h3 class="mb-4 ml-4 text-sm font-medium text-bodydark2">MENU</h3>
 
 				<ul class="mb-6 flex flex-col gap-1.5">
-					<!-- Menu Item Utilisateurs -->
-					<li>
-						<a
-							class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
-							href="{{ route('dashboard.user.list') }}">
-							<i data-lucide="users-round" class="w-5"></i>
-							Utilisateurs
-						</a>
-					</li>
-					<!-- Menu Item Utilisateurs -->
+					@if (auth()->user()->can('show.user'))
+						<!-- Menu Item Utilisateurs -->
+						<li>
+							<a
+								class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
+								href="{{ route('dashboard.user.list') }}">
+								<i data-lucide="users-round" class="w-5"></i>
+								Utilisateurs
+							</a>
+						</li>
+						<!-- Menu Item Utilisateurs -->
+					@endif
 					<!-- Menu Item Notifications -->
 					<li>
 						<a
@@ -48,26 +50,30 @@
 						</a>
 					</li>
 					<!-- Menu Item Notifications -->
-					<!-- Menu Item Permissions -->
-					<li>
-						<a
-							class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
-							href="{{ route('dashboard.permissions') }}">
-							<i data-lucide="handshake" class="w-5"></i>
-							Permissions
-						</a>
-					</li>
-					<!-- Menu Item Permissions -->
-					<!-- Menu Item Roles -->
-					<li>
-						<a
-							class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
-							href="{{ route('dashboard.roles') }}">
-							<i data-lucide="key-square" class="w-5"></i>
-							Roles
-						</a>
-					</li>
-					<!-- Menu Item Roles -->
+					@if (auth()->user()->can('permissions'))
+						<!-- Menu Item Permissions -->
+						<li>
+							<a
+								class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
+								href="{{ route('dashboard.permissions') }}">
+								<i data-lucide="handshake" class="w-5"></i>
+								Permissions
+							</a>
+						</li>
+						<!-- Menu Item Permissions -->
+					@endif
+					@if (auth()->user()->can('roles'))
+						<!-- Menu Item Roles -->
+						<li>
+							<a
+								class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
+								href="{{ route('dashboard.roles') }}">
+								<i data-lucide="key-square" class="w-5"></i>
+								Roles
+							</a>
+						</li>
+						<!-- Menu Item Roles -->
+					@endif
 				</ul>
 			</div>
 		</nav>

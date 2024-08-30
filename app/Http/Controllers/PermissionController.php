@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\AuthHelper;
 use App\Http\Requests\CreatePermissionRequest;
 use App\Http\Requests\PermissionToProfilRequest;
 use App\Http\Requests\PermissionToUserRequest;
@@ -14,6 +15,7 @@ use Spatie\Permission\Models\Role;
 class PermissionController extends Controller
 {
     function index() {
+        if (!AuthHelper::can('permissions')) return redirect()->back()->withErrors('You are not authorized to perform this action');
         $permissions = Permission::all();
         return view('dashboard.pages.permissions.index', compact('permissions'));
     }
@@ -23,6 +25,7 @@ class PermissionController extends Controller
     }
 
     function createStore(CreatePermissionRequest $request) {
+        if (!AuthHelper::can('create.permission')) return redirect()->back()->withErrors('You are not authorized to perform this action');
         foreach (request('permissions') as $permission) {
             Permission::create([
                 'name' => $permission['code'],
@@ -34,6 +37,7 @@ class PermissionController extends Controller
     }
 
     function createUpdate(int $permisison_id, UpdatePermissionRequest $request) {
+        if (!AuthHelper::can('edit.permission')) return redirect()->back()->withErrors('You are not authorized to perform this action');
         /**
          * @var Permission $permission
          */
@@ -48,6 +52,7 @@ class PermissionController extends Controller
     }
 
     function permissionToUser(int $permission_id, PermissionToUserRequest $request) {
+        if (!AuthHelper::can('permission.to.user')) return redirect()->back()->withErrors('You are not authorized to perform this action');
         $permission = Permission::find($permission_id);
         if (!$permission) {
             return redirect()->back()->with('error', 'Permission not found');
@@ -77,6 +82,7 @@ class PermissionController extends Controller
     }
 
     function permissionToRole(int $permission_id, PermissionToProfilRequest $request) {
+        if (!AuthHelper::can('permission.to.role')) return redirect()->back()->withErrors('You are not authorized to perform this action');
         $permission = Permission::find($permission_id);
         if (!$permission) {
             return redirect()->back()->with('error', 'Permission not found');
