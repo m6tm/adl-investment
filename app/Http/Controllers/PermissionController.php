@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Helpers\AuthHelper;
-use App\Http\Requests\CreatePermissionRequest;
 use App\Http\Requests\PermissionToProfilRequest;
 use App\Http\Requests\PermissionToUserRequest;
 use App\Http\Requests\UpdatePermissionRequest;
@@ -18,37 +17,6 @@ class PermissionController extends Controller
         if (!AuthHelper::can('permissions')) return redirect()->back()->withErrors('You are not authorized to perform this action');
         $permissions = Permission::all();
         return view('dashboard.pages.permissions.index', compact('permissions'));
-    }
-
-    function create() {
-        return view('dashboard.pages.permissions.create');
-    }
-
-    function createStore(CreatePermissionRequest $request) {
-        if (!AuthHelper::can('create.permission')) return redirect()->back()->withErrors('You are not authorized to perform this action');
-        foreach (request('permissions') as $permission) {
-            Permission::create([
-                'name' => $permission['code'],
-                'description' => $permission['description'],
-            ]);
-        }
-
-        return redirect()->route('dashboard.permissions')->with('success', 'Permissions created successfully');
-    }
-
-    function createUpdate(int $permisison_id, UpdatePermissionRequest $request) {
-        if (!AuthHelper::can('edit.permission')) return redirect()->back()->withErrors('You are not authorized to perform this action');
-        /**
-         * @var Permission $permission
-         */
-        $permission = Permission::find($permisison_id);
-        if ($permission) {
-            $permission->update([
-                'name' => request('code'),
-                'description' => request('description'),
-            ]);
-        }
-        return redirect()->back()->with('success', 'Permission updated successfully');
     }
 
     function permissionToUser(int $permission_id, PermissionToUserRequest $request) {

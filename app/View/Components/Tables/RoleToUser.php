@@ -16,7 +16,7 @@ class RoleToUser extends Component
      */
     public function __construct(public Role $role)
     {
-        $this->users = User::all();
+        $this->users = User::where('id', '!=', auth()->id())->get();
     }
 
     /**

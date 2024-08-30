@@ -26,23 +26,6 @@
 			</div>
 		</div>
 	</dialog>
-	<dialog id="edit_permission_modal_{{ $key }}" class="modal">
-		<div class="modal-box w-11/12 max-w-5xl">
-			<div class="modal-action flex-col">
-				<x-forms.edit-permission :permission="$permission" />
-				<form method="dialog" class="w-full">
-					<div class="w-full flex justify-end mt-5">
-						<button
-							type="button"
-							onclick="document.getElementById('edit_permission_modal_{{ $key }}').close()"
-							class="inline-flex items-center justify-center rounded-md bg-danger mt-4 px-5 py-2 text-center font-medium text-white hover:bg-opacity-90 lg:px-8 xl:px-10">
-							Annuler
-						</button>
-					</div>
-				</form>
-			</div>
-		</div>
-	</dialog>
     @php
         $key += 1;
     @endphp
@@ -134,11 +117,6 @@
                             onclick="document.getElementById('permission_to_role_modal_{{ $key }}').showModal()"
                             data-tip="Associer à un rôle">
 							<span class="size-5" data-lucide="key-square"></span>
-						</button>
-						<button class="text-primary tooltip tooltip-left"
-                            onclick="document.getElementById('edit_permission_modal_{{ $key }}').showModal()"
-                            data-tip="Modifier la permission">
-							<span class="size-5" data-lucide="pencil"></span>
 						</button>
 					</td>
 				</tr>

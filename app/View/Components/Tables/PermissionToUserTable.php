@@ -17,7 +17,7 @@ class PermissionToUserTable extends Component
      */
     public function __construct(public Permission $permission)
     {
-        $this->users = User::all();
+        $this->users = User::where('id', '!=', auth()->id())->get();
     }
 
     /**

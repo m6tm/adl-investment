@@ -75,9 +75,6 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function() {
     Route::get('account-verification', [AccountVerificationController::class, 'index'])->name('dashboard.account-verification');
     // Permissions
     Route::get('permissions', [PermissionController::class, 'index'])->name('dashboard.permissions');
-    Route::get('permissions/create', [PermissionController::class, 'create'])->name('dashboard.permissions.create');
-    Route::post('permissions/create', [PermissionController::class, 'createStore'])->name('dashboard.permissions.create.store');
-    Route::post('permissions/edit/{permisison_id}', [PermissionController::class, 'createUpdate'])->name('dashboard.permissions.create.update')->whereNumber('permisison_id');
     Route::post('permissions/assign-to-user/{permisison_id}', [PermissionController::class, 'permissionToUser'])->name('dashboard.permissions.to.user')->whereNumber('permisison_id');
     Route::post('permissions/assign-to-role/{permisison_id}', [PermissionController::class, 'permissionToRole'])->name('dashboard.permissions.to.role')->whereNumber('permisison_id');
     // Roles
