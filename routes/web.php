@@ -11,6 +11,7 @@ use App\Http\Controllers\Dashboard\UserController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\SettingController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Mail;
 
@@ -66,7 +67,7 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function() {
     // Users
     Route::get('users', [UserController::class, 'index'])->name('dashboard.user.list');
     Route::get('users/create', [UserController::class, 'create'])->name('dashboard.user.create');
-    Route::get('users/edit-{user_id}', [UserController::class, 'edit'])->name('dashboard.user.edit')->whereAlpha('user_id');
+    Route::get('users/edit/{user_id}', [UserController::class, 'edit'])->name('dashboard.user.edit')->whereNumber('user_id');
     // Profiles
     Route::get('profil', [ProfileController::class, 'edit'])->name('dashboard.profile.edit');
     // Notifications
@@ -80,6 +81,8 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function() {
     // Roles
     Route::get('roles', [RoleController::class, 'index'])->name('dashboard.roles');
     Route::post('roles/assign-to-user/{role_id}', [RoleController::class, 'roleToUser'])->name('dashboard.roles.to.user')->whereNumber('role_id');
+    // Settings
+    Route::get('settings', [SettingController::class, 'index'])->name('dashboard.settings');
 });
 
 require __DIR__.'/auth.php';

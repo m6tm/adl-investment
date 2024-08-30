@@ -37,8 +37,8 @@ class UserController extends Controller
      * @return \Illuminate\View\View
      */
     function edit(string $user_id) {
-        $user = User::find($user_id);
         if (!AuthHelper::can('edit.user')) return redirect()->back()->withErrors('You are not authorized to perform this action');
-        return view('dashboard.pages.users.edit');
+        $user = User::find($user_id);
+        return view('dashboard.pages.users.edit', compact('user'));
     }
 }
