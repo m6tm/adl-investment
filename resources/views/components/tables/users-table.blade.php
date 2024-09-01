@@ -133,7 +133,7 @@
 					<td>{{ $user->name }}</td>
 					<td>{{ $user->first_name }}</td>
 					<td class="lowercase">{{ $user->email }}</td>
-					<td class="capitalize">{{ implode(', ', $user->roles->map(fn($role) => $role->name)->toArray()) }}</td>
+					<td class="capitalize">{{ implode(', ', $user->roles->map(fn($role) => __($role->name))->toArray()) }}</td>
 					<td>{{ $user->created_at->format('M d, Y') }}</td>
 					<td class="flex justify-center space-x-3">
                         @if (auth()->user()->can('edit.user'))

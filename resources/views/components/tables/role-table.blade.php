@@ -93,8 +93,8 @@
 			@foreach ($roles as $role)
 				<tr class="h-[20px] odd:bg-white bg-slate-100 duration-300 hover:bg-slate-100 odd:dark:bg-slate-900 even:bg-slate-50 even:dark:bg-slate-800">
 					<td class="py-1 w-8">#{{ $key }}</td>
-					<td>{{ $role->name }}</td>
-					<td>{{ $role->description }}</td>
+					<td>{{ __($role->name) }}</td>
+					<td>{{ __($role->description) }}</td>
 					<td class="flex justify-center space-x-3">
 						<button class="text-primary tooltip"
 							onclick="document.getElementById('role_to_user_modal_{{ $key }}').showModal()"

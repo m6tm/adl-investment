@@ -74,6 +74,7 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function() {
     Route::get('notifications', [NotificationController::class, 'index'])->name('dashboard.notifications');
     // Account verification
     Route::get('account-verification', [AccountVerificationController::class, 'index'])->name('dashboard.account-verification');
+    Route::get('account-verifications', [AccountVerificationController::class, 'adminVerifications'])->name('dashboard.admin.account-verification');
     // Permissions
     Route::get('permissions', [PermissionController::class, 'index'])->name('dashboard.permissions');
     Route::post('permissions/assign-to-user/{permisison_id}', [PermissionController::class, 'permissionToUser'])->name('dashboard.permissions.to.user')->whereNumber('permisison_id');

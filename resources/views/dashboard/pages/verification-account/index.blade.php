@@ -1,5 +1,5 @@
 @php
-	$title = 'Vérification de compte';
+	$title = __('verification-account.title');
     $breadcrumbs = [
         ['title' => $title],
     ];

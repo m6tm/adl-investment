@@ -62,6 +62,18 @@
 						</li>
 						<!-- Menu Item Permissions -->
 					@endif
+					@if (auth()->user()->can('verification.accounts.requests'))
+						<!-- Menu Item Permissions -->
+						<li>
+							<a
+								class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
+								href="{{ route('dashboard.admin.account-verification') }}">
+								<i data-lucide="user-check" class="w-5"></i>
+								{{ __('sidebar.profile_verification') }}
+							</a>
+						</li>
+						<!-- Menu Item Permissions -->
+					@endif
 					@if (auth()->user()->can('roles'))
 						<!-- Menu Item Roles -->
 						<li>

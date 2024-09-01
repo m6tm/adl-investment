@@ -13,4 +13,8 @@ class AccountVerificationController extends Controller
         $pays = Country::all();
         return view('dashboard.pages.verification-account.index', compact('DOCUMENT_STATUS', 'pays'));
     }
+
+    function adminVerifications() {
+        return view('dashboard.pages.verification-account.admin-verifications');
+    }
 }

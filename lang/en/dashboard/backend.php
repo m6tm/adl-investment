@@ -9,10 +9,5 @@ return [
     "permission-to-role" => "Permission assigned to profile successfully",
     "role-to-user" => "Role assigned to user successfully",
     "role-not-found" => "Role not found",
-    "roles" => [
-        "admin" => "Administrator",
-        "super-admin" => "Super Administrator",
-        "player" => "Player",
-    ],
     "dashboard" => "Dashboard",
 ];

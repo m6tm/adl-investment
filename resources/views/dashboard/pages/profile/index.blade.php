@@ -65,7 +65,7 @@
 					<h3 class="mb-1.5 text-2xl font-medium text-black dark:text-white">
 						Danish Heilium
 					</h3>
-					<p class="font-medium">{{ __('dashboard/backend.roles.player') }}</p>
+					<p class="font-medium">{{ __('enum.USER_TYPE.PLAYER') }}</p>
 					<div class="flex">
 						<div
 							class="mx-auto mb-5.5 mt-4.5 grid grid-cols-3 rounded-md border border-stroke py-2.5 shadow-1 dark:border-strokedark dark:bg-[#37404F]">
