@@ -84,6 +84,8 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function() {
     Route::post('roles/assign-to-user/{role_id}', [RoleController::class, 'roleToUser'])->name('dashboard.roles.to.user')->whereNumber('role_id');
     // Settings
     Route::get('settings', [SettingController::class, 'index'])->name('dashboard.settings');
+    Route::post('settings/add-country', [SettingController::class, 'addCountry'])->name('dashboard.settings.add-country');
+    Route::get('settings/rm-country/{country_id}', [SettingController::class, 'removeCountry'])->name('dashboard.settings.remove-country')->whereNumber('country_id');
 });
 
 require __DIR__ . '/auth.php';

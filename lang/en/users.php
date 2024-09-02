@@ -5,6 +5,7 @@ return [
     "create-btn" => "Create User",
     "name" => "Name",
     "lastname" => "Last Name",
+    "status" => "Account status",
     "email" => "Email",
     "role" => "Role",
     "created_at" => "Created At",
