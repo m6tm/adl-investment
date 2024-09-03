@@ -4,9 +4,13 @@ import parsePhoneNumber from 'libphonenumber-js'
 import moment from 'moment'
 import JustValidatePluginDate from 'just-validate-plugin-date';
 
-const validator = () => {
+const profil_validator = () => {
     const validate = new JustValidate('#profil-account-form', undefined, localization);
     let locale = document.querySelector('html').getAttribute('lang') ?? 'en'
+    /**
+     * @type {HTMLFormElement}
+     */
+    const form = validate.form
     const today = moment(moment.now())
     
     validate.addField('#Nom', [
@@ -54,7 +58,7 @@ const validator = () => {
         .addField('#username', [
             {
                 rule: 'required',
-                errorMessage: '',
+                errorMessage: 'username.required',
             },
         ])
         .addField('#street', [
@@ -85,6 +89,22 @@ const validator = () => {
                 rule: 'required',
                 errorMessage: 'country.required',
             },
+        ])
+        .addField('#new_password', [
+            {
+                rule: 'required',
+                errorMessage: 'password.required',
+            }
+        ])
+        .addField('#new_password_confirmation', [
+            {
+                rule: 'required',
+                plugin: JustValidatePluginDate(() => ({
+                    required: true,
+                    isEqual: form.querySelector('#new_password').value,
+                })),
+                errorMessage: 'password_confirmation.equal_to_password',
+            }
         ])
     
     
@@ -138,5 +158,5 @@ const validator = () => {
 
 const form_validation_element = document.querySelector('#profil-account-form')
 if (form_validation_element) {
-    validator()
+    profil_validator()
 }
