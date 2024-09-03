@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Country;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Facades\Storage;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Country>
@@ -24,10 +25,12 @@ class CountryFactory extends Factory
      */
     public function definition(): array
     {
-        return [
-            'name' => $this->faker->unique()->country(),
-            'dial_code' => $this->faker->unique()->countryCode(),
-            'code' => $this->faker->unique()->countryISOAlpha3(),
-        ];
+        $data_countries = Storage::disk('data')->get('CountryCodes.json');
+        $data_countries = json_decode($data_countries, true);
+        $countries = Country::all()->map(fn(Country $country) => $country->dial_code)->toArray();
+        $data_countries = array_filter($data_countries, fn($country) => !in_array($country['dial_code'], $countries));
+        $selected_country = $data_countries[array_rand($data_countries)];
+
+        return $selected_country;
     }
 }

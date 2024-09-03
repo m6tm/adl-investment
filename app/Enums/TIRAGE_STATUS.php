@@ -11,7 +11,7 @@ use BenSampo\Enum\Enum;
  */
 final class TIRAGE_STATUS extends Enum
 {
-    const ENCOURS = 'encours';
-    const TERMINE = 'terminé';
-    const ATTENTE = 'attente';
+    const ENCOURS = 'enum.TIRAGE_STATUS.ENCOURS';
+    const TERMINE = 'enum.TIRAGE_STATUS.TERMINE';
+    const ATTENTE = 'enum.TIRAGE_STATUS.ATTENTE';
 }

@@ -1,36 +1,22 @@
-@extends('dashboard.layout.base')
-
 @php
-	$title = 'Liste des utilisateurs';
+	$title = __('users.title');
+    $breadcrumbs = [
+        ['title' => $title],
+    ];
 @endphp
-@section('title')
-	{{ $title }}
-@endsection
 
-@section('content')
-	<!-- ===== Main Content Start ===== -->
-	<main>
-		<div class="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">
-			<!-- Breadcrumb Start -->
-			<x--breadcrumb :breadcrumbs="[['title' => $title]]" />
-			<!-- Breadcrumb End -->
-
-			<!-- ====== Table Section Start -->
-			<div class="flex flex-col gap-10 mt-10">
-				<div class="bg-white dark:bg-meta-4 dark:bg-none px-5 pt-6 pb-8 shadow-default dark:shadow-none rounded-[10px] p-5">
-					<x-error-message-alert class="mb-4" />
-					@if (auth()->user()->can('create.user'))
-						<a href="{{ route('dashboard.user.create') }}" class="px-4 py-2 mb-5 inline-block rounded-md bg-primary text-white">
-							Créer un utilisateur
-						</a>
-					@endif
-					<!-- ====== Table Four Start -->
-					<x-tables.users-table :users="$users" />
-					<!-- ====== Table Four End -->
-				</div>
-			</div>
-			<!-- ====== Table Section End -->
-		</div>
-	</main>
-	<!-- ===== Main Content End ===== -->
-@endsection
+<x-dashboard.layout :title="$title" :breadcrumbs="$breadcrumbs">
+    <div class="flex flex-col gap-5 md:gap-7 2xl:gap-10">
+        <div class="border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark rounded-[10px] p-5">
+			<x-error-message-alert class="mb-4" />
+			@if (auth()->user()->can('create.user'))
+				<a href="{{ route('dashboard.user.create') }}" class="px-4 py-2 mb-5 inline-block rounded-md bg-primary text-white">
+					{{ __('users.create-btn') }}
+				</a>
+			@endif
+			<!-- ====== Table Four Start -->
+			<x-tables.users-table :users="$users" />
+			<!-- ====== Table Four End -->
+        </div>
+    </div>
+</x-dashboard.layout>

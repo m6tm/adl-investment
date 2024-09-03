@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\AccountVerificationController;
-use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\web\StaticPagesController;
 use App\Http\Controllers\auth\AuthenticatedSessionController;
@@ -11,7 +10,9 @@ use App\Http\Controllers\Dashboard\UserController;
 use App\Http\Controllers\Dashboard\TicketController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\PermissionController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\SettingController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Mail;
 
@@ -67,7 +68,7 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function() {
     // Users
     Route::get('users', [UserController::class, 'index'])->name('dashboard.user.list');
     Route::get('users/create', [UserController::class, 'create'])->name('dashboard.user.create');
-    Route::get('users/edit-{user_id}', [UserController::class, 'edit'])->name('dashboard.user.edit')->whereAlpha('user_id');
+    Route::get('users/edit/{user_id}', [UserController::class, 'edit'])->name('dashboard.user.edit')->whereNumber('user_id');
     // Profiles
     Route::get('profil', [ProfileController::class, 'edit'])->name('dashboard.profile.edit');
     // Notifications
@@ -78,6 +79,7 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function() {
     Route::get('tickets', [TicketController::class, 'index'])->name('dashboard.tickets');
     Route::get('tickets/create', [TicketController::class, 'create'])->name('dashboard.tickets.create');
     Route::get('tickets/pay', [TicketController::class, 'pay'])->name('dashboard.tickets.pay');
+    Route::get('account-verifications', [AccountVerificationController::class, 'adminVerifications'])->name('dashboard.admin.account-verification');
     // Permissions
     Route::get('permissions', [PermissionController::class, 'index'])->name('dashboard.permissions');
     Route::post('permissions/assign-to-user/{permisison_id}', [PermissionController::class, 'permissionToUser'])->name('dashboard.permissions.to.user')->whereNumber('permisison_id');
@@ -85,6 +87,13 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function() {
     // Roles
     Route::get('roles', [RoleController::class, 'index'])->name('dashboard.roles');
     Route::post('roles/assign-to-user/{role_id}', [RoleController::class, 'roleToUser'])->name('dashboard.roles.to.user')->whereNumber('role_id');
+    // Settings
+    Route::get('settings', [SettingController::class, 'index'])->name('dashboard.settings');
+    // Settings Countries autorised to use the app
+    Route::post('settings/add-country', [SettingController::class, 'addCountry'])->name('dashboard.settings.add-country');
+    Route::get('settings/rm-country/{country_id}', [SettingController::class, 'removeCountry'])->name('dashboard.settings.remove-country')->whereNumber('country_id');
+    // Settings Countries Assigned a document type
+    Route::post('settings/document-assigment', [SettingController::class, 'assignDocument'])->name('dashboard.settings.document-assigment');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

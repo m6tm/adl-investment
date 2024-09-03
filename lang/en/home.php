@@ -200,4 +200,6 @@ return [
             'submit_button' => 'Send Message',
         ],
     ],
+    "registration" => "Registration",
+    "login" => "Login",
 ];

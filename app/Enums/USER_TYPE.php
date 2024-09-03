@@ -11,7 +11,7 @@ use BenSampo\Enum\Enum;
  */
 final class USER_TYPE extends Enum
 {
-    const ADMIN = 'admin';
-    const SUPER_ADMIN = 'super admin';
-    const PLAYER = 'player';
+    const ADMIN = 'enum.USER_TYPE.ADMIN';
+    const SUPER_ADMIN = 'enum.USER_TYPE.SUPER_ADMIN';
+    const PLAYER = 'enum.USER_TYPE.PLAYER';
 }

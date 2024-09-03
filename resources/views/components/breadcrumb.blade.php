@@ -9,7 +9,7 @@
     <nav>
         <ol class="flex items-center gap-2">
             <li>
-                <a class="font-medium" href="{{ route('dashboard') }}">Dashboard /</a>
+                <a class="font-medium" href="{{ route('dashboard') }}">{{ __('dashboard/backend.dashboard') }} /</a>
                 @foreach ($breadcrumbs as $breadcrumb)
                     @if ($breadcrumb != end($breadcrumbs))
                         <a class="font-medium" href="{{ $breadcrumb['route'] }}">{{ $breadcrumb['title'] }} /</a>

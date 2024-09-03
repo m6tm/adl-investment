@@ -44,6 +44,14 @@ return [
             'throw' => false,
         ],
 
+        'data' => [
+            'driver' => 'local',
+            'root' => storage_path('data'),
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
+
         'auth' => [
             'driver' => 'local',
             'root' => storage_path('auth'),

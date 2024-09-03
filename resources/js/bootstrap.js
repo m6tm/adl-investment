@@ -19,7 +19,11 @@ createIcons({ icons })
 
 window.addEventListener('load', () => {
     const loader = document.querySelector('div[x-show="loaded"]')
-    if (loader) loader.classList.add('invisible');
+    const wrapper = document.querySelector('body > #wrapper')
+    if (loader) {
+        loader.classList.add('invisible')
+        wrapper.classList.replace('hidden', 'flex')
+    }
     notificationTabs();
 }, false)
 

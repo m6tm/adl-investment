@@ -28,6 +28,14 @@
         "description": "Donne accès à la visualisation des données analytiques et des rapports du système"
     },
     {
+        "name": "assign.document.to.country",
+        "description": "Permet d'assigner des documents à un pays spécifique pour la vérification des comptes"
+    },
+    {
+        "name": "toggle.countries",
+        "description": "Permet d'activer ou de désactiver des pays dans le système"
+    },
+    {
         "name": "permission.to.user",
         "description": "Permet d'attribuer des permissions spécifiques à un utilisateur"
     },

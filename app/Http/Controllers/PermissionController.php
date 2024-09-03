@@ -14,16 +14,16 @@ use Spatie\Permission\Models\Role;
 class PermissionController extends Controller
 {
     function index() {
-        if (!AuthHelper::can('permissions')) return redirect()->back()->withErrors('You are not authorized to perform this action');
+        if (!AuthHelper::can('permissions')) return redirect()->back()->withErrors(__('dashboard/backend.not-access'));
         $permissions = Permission::all();
         return view('dashboard.pages.permissions.index', compact('permissions'));
     }
 
     function permissionToUser(int $permission_id, PermissionToUserRequest $request) {
-        if (!AuthHelper::can('permission.to.user')) return redirect()->back()->withErrors('You are not authorized to perform this action');
+        if (!AuthHelper::can('permission.to.user')) return redirect()->back()->withErrors(__('dashboard/backend.not-access'));
         $permission = Permission::find($permission_id);
         if (!$permission) {
-            return redirect()->back()->with('error', 'Permission not found');
+            return redirect()->back()->with('error', __('dashboard/backend.permission-not-found'));
         }
 
         $userIds = request('users') ?? [];
@@ -46,14 +46,14 @@ class PermissionController extends Controller
             });
         });
 
-        return redirect()->back()->with('success', 'Permissions updated successfully');
+        return redirect()->back()->with('success', __('dashboard/backend.permission-updated'));
     }
 
     function permissionToRole(int $permission_id, PermissionToProfilRequest $request) {
-        if (!AuthHelper::can('permission.to.role')) return redirect()->back()->withErrors('You are not authorized to perform this action');
+        if (!AuthHelper::can('permission.to.role')) return redirect()->back()->withErrors(__('dashboard/backend.not-access'));
         $permission = Permission::find($permission_id);
         if (!$permission) {
-            return redirect()->back()->with('error', 'Permission not found');
+            return redirect()->back()->with('error', __('dashboard/backend.permission-not-found'));
         }
 
         $roleIds = request('roles') ?? [];
@@ -76,6 +76,6 @@ class PermissionController extends Controller
             });
         });
 
-        return redirect()->back()->with('success', 'Permissions updated successfully');
+        return redirect()->back()->with('success', __('dashboard/backend.permission-to-role'));
     }
 }

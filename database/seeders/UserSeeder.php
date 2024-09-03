@@ -22,7 +22,7 @@ class UserSeeder extends Seeder
             ->hasAddress()
             ->hasPhones()
             ->create([
-                'email' => 'maboadaniel.55@gmail.com',
+                'email' => 'super-admin@gmail.com',
             ]);
 
         $user->assignRole(USER_ROLE::SUPER_ADMIN);

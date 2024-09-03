@@ -23,7 +23,7 @@
     </div>
     <!-- ===== Preloader End ===== -->
     <!-- ===== Page Wrapper Start ===== -->
-    <div class="flex h-screen overflow-hidden">
+    <div class="hidden h-screen overflow-hidden" id="wrapper">
         <!-- ===== Sidebar Start ===== -->
         <x-dashboard.sidebar />
         <!-- ===== Content Area Start ===== -->

@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('document_autorises', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('pay_id');
             $table->string('libelle');
             $table->string('type');
             $table->dateTime('created_at')->useCurrent();

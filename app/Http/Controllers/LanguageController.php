@@ -11,6 +11,6 @@ class LanguageController extends Controller
     function setLocale(string $lang) {
         Session::put('locale', $lang);
         App::setLocale($lang);
-        return redirect()->route('home');
+        return redirect()->back();
     }
 }

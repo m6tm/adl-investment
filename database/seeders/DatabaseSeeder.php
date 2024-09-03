@@ -24,6 +24,8 @@ class DatabaseSeeder extends Seeder
             RoleSeeder::class,
             CountrySeeder::class,
             UserSeeder::class,
+            DocumentAutoriseSeeder::class,
+            CountryDocumentAutorizedSeeder::class,
         ]);
     }
 }

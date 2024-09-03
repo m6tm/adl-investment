@@ -3,5 +3,7 @@
     "create.user",
     "edit.user",
     "delete.user",
-    "show.role"
+    "show.role",
+    "toggle.countries",
+    "assign.document.to.country"
 ]
