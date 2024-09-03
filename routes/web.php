@@ -8,6 +8,7 @@ use App\Http\Controllers\auth\AuthenticatedSessionController;
 use App\Http\Controllers\auth\RegisteredUserController;
 use App\Http\Controllers\Dashboard\NotificationController;
 use App\Http\Controllers\Dashboard\UserController;
+use App\Http\Controllers\Dashboard\TicketController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\RoleController;
@@ -73,6 +74,10 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function() {
     Route::get('notifications', [NotificationController::class, 'index'])->name('dashboard.notifications');
     // Account verification
     Route::get('account-verification', [AccountVerificationController::class, 'index'])->name('dashboard.account-verification');
+    // Tickets
+    Route::get('tickets', [TicketController::class, 'index'])->name('dashboard.tickets');
+    Route::get('tickets/create', [TicketController::class, 'create'])->name('dashboard.tickets.create');
+    Route::get('tickets/pay', [TicketController::class, 'pay'])->name('dashboard.tickets.pay');
     // Permissions
     Route::get('permissions', [PermissionController::class, 'index'])->name('dashboard.permissions');
     Route::post('permissions/assign-to-user/{permisison_id}', [PermissionController::class, 'permissionToUser'])->name('dashboard.permissions.to.user')->whereNumber('permisison_id');
