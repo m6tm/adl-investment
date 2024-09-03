@@ -1,0 +1,15 @@
+[
+    "show.user",
+    "create.user",
+    "edit.user",
+    "delete.user",
+    "show.role",
+    "show.permission",
+    "analytics.view",
+    "permissions",
+    "roles",
+    "permission.to.user",
+    "permission.to.role",
+    "role.to.user",
+    "verification.accounts.requests"
+]

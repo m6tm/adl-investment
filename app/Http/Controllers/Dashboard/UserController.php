@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers\Dashboard;
 
+use App\Enums\USER_ROLE;
+use App\Helpers\AuthHelper;
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -13,7 +16,9 @@ class UserController extends Controller
      * @return \Illuminate\View\View
      */
     function index() {
-        return view('dashboard.pages.users.index');
+        if (!AuthHelper::can('show.user')) return redirect()->back()->withErrors('You are not authorized to perform this action');
+        $users = User::where('id', '!=', auth()->user()->id)->get();
+        return view('dashboard.pages.users.index', compact('users'));
     }
 
     /**
@@ -22,6 +27,7 @@ class UserController extends Controller
      * @return \Illuminate\View\View
      */
     function create() {
+        if (!AuthHelper::can('create.user')) return redirect()->back()->withErrors('You are not authorized to perform this action');
         return view('dashboard.pages.users.create');
     }
 
@@ -31,6 +37,8 @@ class UserController extends Controller
      * @return \Illuminate\View\View
      */
     function edit(string $user_id) {
+        $user = User::find($user_id);
+        if (!AuthHelper::can('edit.user')) return redirect()->back()->withErrors('You are not authorized to perform this action');
         return view('dashboard.pages.users.edit');
     }
 }

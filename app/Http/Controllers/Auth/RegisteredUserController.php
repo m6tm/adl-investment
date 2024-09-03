@@ -4,18 +4,18 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
-use App\Models\Address;
 use App\Models\Country;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Validation\Rules;
 use Illuminate\View\View;
 use Illuminate\Validation\Rules\Password;
 use App\Enums\USER_VERIFICATION_STATUS;
+use App\Http\Requests\RegistrationRequest;
+use App\Models\Addresse;
+use App\Models\Telephone;
 
 class RegisteredUserController extends Controller
 {
@@ -34,49 +34,35 @@ class RegisteredUserController extends Controller
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function store(Request $request): RedirectResponse
+    public function store(RegistrationRequest $request): RedirectResponse
     {
-        $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'first_name' => ['required', 'string', 'max:255'],
-            'birth_date' => ['required', 'date'],
-            'phone' => ['required', 'string', 'max:255', 'unique:'.Address::class],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
-            'pseudo' => ['required', 'string', 'max:255', 'unique:'.User::class],
-            'city' => ['string', 'max:255'],
-            'neighborhood' => ['string', 'max:255'],
-            'country_id' => ['required', 'exists:countries,id'],
-            'password' => [
-                'required', 
-                'confirmed', 
-                Password::min(8)
-                    ->mixedCase()
-                    ->numbers()
-                    ->symbols()
-            ],
-        ]);
-
+        $country = Country::where('dial_code', request()->country)->first();
         $user = User::create([
-            'name' => $request->name,
-            'first_name' => $request->first_name,
-            'email' => $request->email,
-            'birth_date' => $request->birth_date,
-            'pseudo' => $request->pseudo,
-            'password' => Hash::make($request->password),
+            'name' => request()->name,
+            'first_name' => request()->first_name,
+            'email' => request()->email,
+            'birth_date' => request()->birth_date,
+            'pseudo' => request()->pseudo,
+            'password' => Hash::make(request()->password),
             'verification_status' => USER_VERIFICATION_STATUS::PENDING,
-            'country_id' => $request->country_id,
+            'country_id' => $country->id,
         ]);
 
-        $address = Address::create([
-            'phone' => $request->phone,
-            'city' => $request->city,
-            'neighborhood' => $request->neighborhood,
+        $telephone = Telephone::create([
+            'telephone' => request()->phone,
+            'code' => $country->dial_code,
+            'user_id' => $user->id,
+        ]);
+
+        $address = Addresse::create([
+            'city' => request()->city,
+            'street' => request()->neighborhood,
             'user_id' => $user->id,
         ]);
 
         event(new Registered($user));
 
-        Auth::login($user);
+        Auth::login($user, true);
 
         return redirect(RouteServiceProvider::HOME);
     }

@@ -1,0 +1,7 @@
+[
+    "show.user",
+    "create.user",
+    "edit.user",
+    "delete.user",
+    "show.role"
+]

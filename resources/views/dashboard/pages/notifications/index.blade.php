@@ -12,25 +12,13 @@
 	<main>
 		<div class="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">
 			<!-- Breadcrumb Start -->
-			<div class="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-				<h2 class="text-title-md2 font-bold text-black dark:text-white">
-					{{ $title }}
-				</h2>
-
-				<nav>
-					<ol class="flex items-center gap-2">
-						<li>
-							<a class="font-medium" href="index.html">Dashboard /</a>
-						</li>
-						<li class="font-medium text-primary">{{ $title }}</li>
-					</ol>
-				</nav>
-			</div>
+			<x--breadcrumb :breadcrumbs="[['title' => $title]]" />
 			<!-- Breadcrumb End -->
 
 			<!-- ====== Profile Creation Start -->
 			<div class="flex flex-col gap-10 mt-10">
 				<div class="bg-white dark:bg-meta-4 dark:bg-none px-5 pt-6 pb-8 shadow-default dark:shadow-none rounded-[10px] p-5">
+					<x-error-message-alert class="mb-4" />
 					<div class="grid lg:grid-cols-3 gap-5 h-[500px]" id="tabs-container">
                         <div class="p-3  grid grid-cols-1 gap-2 overflow-y-auto h-full">
                             <div data-type="tab" class="h-[110px] hover:bg-slate-500 activate duration-300 p-3 rounded-lg cursor-pointer">

@@ -1,3 +1,7 @@
+import './jquery'
+import './jquery.repeater.min'
 import './notification'
 import './tools'
 import './forms'
+import './pages'
+import './tables'

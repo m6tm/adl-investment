@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('addresses', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->string('phone')->unique();
+            $table->foreignId('user_id');
             $table->string('city');
-            $table->string('neighborhood');
-            $table->timestamps();
+            $table->string('street');
+            $table->dateTime('created_at')->useCurrent();
+            $table->dateTime('updated_at');
         });
     }
 

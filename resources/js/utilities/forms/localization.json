@@ -1,0 +1,128 @@
+[
+    {
+        "key": "first_name.too.short",
+        "dict": {
+            "en": "First name is too short",
+            "fr": "Le prénom est trop court"
+        }
+    },
+    {
+        "key": "first_name.too.long",
+        "dict": {
+            "en": "First name is too long",
+            "fr": "Le prénom est trop long"
+        }
+    },
+    {
+        "key": "first_name.required",
+        "dict": {
+            "en": "First name is required",
+            "fr": "Le prénom est obligatoire"
+        }
+    },
+    {
+        "key": "last_name.too.short",
+        "dict": {
+            "en": "Last name is too short",
+            "fr": "Le nom de famille est trop court"
+        }
+    },
+    {
+        "key": "last_name.too.long",
+        "dict": {
+            "en": "Last name is too long",
+            "fr": "Le nom de famille est trop long"
+        }
+    },
+    {
+        "key": "last_name.required",
+        "dict": {
+            "en": "Last name is required",
+            "fr": "Le nom de famille est obligatoire"
+        }
+    },
+    {
+        "key": "email.required",
+        "dict": {
+            "en": "Email is required",
+            "fr": "L'adresse e-mail est obligatoire"
+        }
+    },
+    {
+        "key": "email.invalid",
+        "dict": {
+            "en": "Invalid email address",
+            "fr": "Adresse e-mail invalide"
+        }
+    },
+    {
+        "key": "phone.invalid",
+        "dict": {
+            "en": "Invalid phone number",
+            "fr": "Le numéro de téléphone est invalide"
+        }
+    },
+    {
+        "key": "street.required",
+        "dict": {
+            "en": "Street / neighborhood is required",
+            "fr": "La rue / quartier est obligatoire"
+        }
+    },
+    {
+        "key": "birth_day.required",
+        "dict": {
+            "en": "Date of birth is required",
+            "fr": "La date de naissance est obligatoire"
+        }
+    },
+    {
+        "key": "birth_day.invalid",
+        "dict": {
+            "en": "Invalid date of birth. Must be between 19 and 100 years old and in format DD/MM/YYYY",
+            "fr": "Date de naissance invalide. Doit être entre 19 et 100 ans et au format JJ/MM/AAAA"
+        }
+    },
+    {
+        "key": "town.required",
+        "dict": {
+            "en": "Town is required",
+            "fr": "La ville est obligatoire"
+        }
+    },
+    {
+        "key": "country.required",
+        "dict": {
+            "en": "Country is required",
+            "fr": "Le pays est obligatoire"
+        }
+    },
+    {
+        "key": "permission.code.required",
+        "dict": {
+            "en": "Permission code is required",
+            "fr": "Le code de permission est requis"
+        }
+    },
+    {
+        "key": "permission.code.invalid",
+        "dict": {
+            "en": "Invalid permission code. Please use only lowercase letters and dots (for example, 'admin.user.create').",
+            "fr": "Code de permission invalide. Veuillez utiliser uniquement des lettres en minuscule et des points (par exemple, 'admin.utilisateur.creer')."
+        }
+    },
+    {
+        "key": "permission.description.required",
+        "dict": {
+            "en": "Permission description is required",
+            "fr": "La description de la permission est requise"
+        }
+    },
+    {
+        "key": "permission.description.too_short",
+        "dict": {
+            "en": "Permission description is too short. 5 characters minimum",
+            "fr": "La description de la permission est trop courte. 5 caractères minimum"
+        }
+    }
+]

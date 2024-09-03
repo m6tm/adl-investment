@@ -250,7 +250,7 @@
 					class="absolute right-0 mt-4 flex w-62.5 flex-col rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
 					<ul class="flex flex-col gap-5 border-b border-stroke px-6 py-7.5 dark:border-strokedark">
 						<li>
-							<a href="profile.html"
+							<a href="{{ route('dashboard.profile.edit') }}"
 								class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base">
 								<svg class="fill-current" width="22" height="22" viewBox="0 0 22 22" fill="none"
 									xmlns="http://www.w3.org/2000/svg">
@@ -292,7 +292,8 @@
 							</a>
 						</li>
 					</ul>
-					<button
+					<a
+						href="{{ route('logout') }}"
 						class="flex items-center gap-3.5 px-6 py-4 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base">
 						<svg class="fill-current" width="22" height="22" viewBox="0 0 22 22" fill="none"
 							xmlns="http://www.w3.org/2000/svg">
@@ -304,7 +305,7 @@
 								fill="" />
 						</svg>
 						Log Out
-					</button>
+					</a>
 				</div>
 				<!-- Dropdown End -->
 			</div>

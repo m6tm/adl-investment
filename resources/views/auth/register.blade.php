@@ -110,11 +110,11 @@
                             <div class="relative">
                                 <!-- <input id="country" type="text" name="country" placeholder="Votre pays"
                                     class="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"> -->
-                                <select id="country" name="country_id" 
+                                <select id="country" name="country" 
                                     class="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary">
                                     <option value="" disabled selected>Select your country</option>
                                     @foreach ($countries as $country)
-                                        <option value="{{ $country->id }}">{{ $country->name }}</option>
+                                        <option value="{{ $country->dial_code }}">({{ $country->dial_code }}) {{ $country->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
