@@ -86,8 +86,124 @@
 						</div>
 					</div>
 
-					<div class="mt-6.5">
-					</div>
+				</div>
+			</div>
+			<div class="mt-6.5 px-4 grid grid-cols-1 gap-6 md:grid-cols-3">
+				<div class="col-span-3">
+					<h3 class="text-title-md">Informations personnelles</h3>
+				</div>
+				<div class="col-span-2">
+					<form action="" action="#" id="profil-account-form" autocomplete="off" novalidate="novalidate">
+						<div class="grid grid-cols-2 gap-4">
+							<div class="">
+								<label class="mb-3 block text-sm font-medium text-black dark:text-white" for="Nom">{{ __('users.create.last_name') }}</label>
+								<div class="relative">
+									<span class="absolute left-4.5 top-3.5">
+										<i data-lucide="user" class="size-5"></i>
+									</span>
+									<input
+										class="w-full rounded border border-stroke bg-gray py-3 pl-11.5 pr-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-slate-100 dark:bg-meta-4 dark:text-white dark:focus:border-primary"
+										type="text" name="nom" id="Nom" value="{{ auth()->user()->name }}" placeholder="Devid Jhon" required>
+								</div>
+							</div>
+
+							<div class="">
+								<label class="mb-3 block text-sm font-medium text-black dark:text-white" for="Prenom">{{ __('users.create.first_name') }}</label>
+								<div class="relative">
+									<span class="absolute left-4.5 top-3.5">
+										<i data-lucide="user" class="size-5"></i>
+									</span>
+									<input
+										class="w-full rounded border border-stroke bg-gray py-3 pl-11.5 pr-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-slate-100 dark:bg-meta-4 dark:text-white dark:focus:border-primary"
+										type="text" name="prenom" id="Prenom" value="{{ auth()->user()->first_name }}" placeholder="Rene Mode" required>
+								</div>
+							</div>
+
+							<div class="">
+								<label class="mb-3 block text-sm font-medium text-black dark:text-white" for="email">{{ __('users.create.email') }}</label>
+								<div class="relative">
+									<span class="absolute left-4.5 top-3.5">
+										<i data-lucide="mail" class="size-5"></i>
+									</span>
+									<input
+										class="w-full rounded border border-stroke bg-gray py-3 pl-11.5 pr-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-slate-100 dark:bg-meta-4 dark:text-white dark:focus:border-primary"
+										type="email" name="email" id="email" value="{{ auth()->user()->email }}" placeholder="exemple@email.com" required>
+								</div>
+							</div>
+
+							<div class="">
+								<label class="mb-3 block text-sm font-medium text-black dark:text-white" for="telephone">{{ __('users.create.phone_number') }}</label>
+								<div class="relative">
+									<span class="absolute left-4.5 top-3.5">
+										<i data-lucide="phone" class="size-5"></i>
+									</span>
+									<input
+										class="w-full rounded border border-stroke bg-gray py-3 pl-11.5 pr-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-slate-100 dark:bg-meta-4 dark:text-white dark:focus:border-primary"
+										type="tel" name="telephone" id="telephone" value="{{ auth()->user()->phones->first()?->telephone }}" placeholder="+XXX XXXX XXXX" required>
+								</div>
+							</div>
+
+							<div class="">
+								<label class="mb-3 block text-sm font-medium text-black dark:text-white" for="username">{{ __('users.create.username') }}</label>
+								<div class="relative">
+									<span class="absolute left-4.5 top-4">
+										<i data-lucide="hash" class="size-5"></i>
+									</span>
+									<input
+										class="w-full rounded border border-stroke bg-gray py-3 pl-11.5 pr-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-slate-100 dark:bg-meta-4 dark:text-white dark:focus:border-primary"
+										type="pseudo" name="username" id="username" value="{{ auth()->user()->pseudo }}" placeholder="charly99">
+								</div>
+							</div>
+
+							<div class="">
+								<label class="mb-3 block text-sm font-medium text-black dark:text-white" for="username">{{ __('users.create.birth_date') }}</label>
+								<div class="relative">
+									<input
+										class="form-datepicker w-full rounded border-[1.5px] border-stroke bg-gray px-5 py-3 font-normal outline-none transition focus:border-primary active:border-primary dark:border-slate-100 dark:bg-meta-4 dark:focus:border-primary"
+										placeholder="mm/dd/yyyy" name="birth_day" id="birth_day" value="{{ auth()->user()->birth_date ? \Carbon\Carbon::parse(auth()->user()->birth_date)->format('M d, Y') : '' }}" data-class="flatpickr-right" />
+		
+									<div class="pointer-events-none absolute inset-0 left-auto right-5 flex items-center">
+										<i data-lucide="calendar-days" class="size-5"></i>
+									</div>
+								</div>
+							</div>
+
+							<div class="">
+								<label class="mb-3 block text-sm font-medium text-black dark:text-white" for="ville">{{ __('users.create.city') }}</label>
+								<input
+									class="w-full rounded border border-stroke bg-gray py-3 px-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-slate-100 dark:bg-meta-4 dark:text-white dark:focus:border-primary"
+									type="ville" name="ville" id="ville" value="{{ auth()->user()->address->city }}" placeholder="Montreal">
+							</div>
+
+							<div class="">
+								<label class="mb-3 block text-sm font-medium text-black dark:text-white" for="pays">{{ __('users.create.country') }}</label>
+								<input
+									class="w-full rounded border border-stroke bg-gray py-3 px-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-slate-100 dark:bg-meta-4 dark:text-white dark:focus:border-primary"
+									type="pays" name="pays" id="pays" value="{{ auth()->user()->pays->name }}" data-code="{{ auth()->user()->pays->code }}" placeholder="Canada">
+							</div>
+
+							<div class="">
+								<label class="mb-3 block text-sm font-medium text-black dark:text-white" for="pays">Current password</label>
+								<input
+									class="w-full rounded border border-stroke bg-gray py-3 px-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-slate-100 dark:bg-meta-4 dark:text-white dark:focus:border-primary"
+									type="password" name="current_password" autocomplete="off" id="current_password" placeholder="Current password">
+							</div>
+
+							<div class="">
+								<label class="mb-3 block text-sm font-medium text-black dark:text-white" for="pays">New password</label>
+								<input
+									class="w-full rounded border border-stroke bg-gray py-3 px-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-slate-100 dark:bg-meta-4 dark:text-white dark:focus:border-primary"
+									type="password" name="new_password" id="new_password" placeholder="New password">
+							</div>
+
+							<div class="col-span-2 flex gap-3">
+								<button class="flex justify-center rounded bg-primary px-6 py-2 font-medium text-gray hover:bg-opacity-90"
+									type="submit">
+									{{ __('users.create.save') }}
+								</button>
+							</div>
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>
