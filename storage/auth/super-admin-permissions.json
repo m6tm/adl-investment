@@ -11,5 +11,7 @@
     "permission.to.user",
     "permission.to.role",
     "role.to.user",
-    "verification.accounts.requests"
+    "verification.accounts.requests",
+    "toggle.countries",
+    "assign.document.to.country"
 ]

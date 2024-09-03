@@ -1,5 +1,6 @@
 <?php
 
+use App\Enums\DOCUMENT_TYPE;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -11,12 +12,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pays_document_autorises', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('country_id');
-            $table->foreignId('document_autorise_id');
-            $table->dateTime('created_at')->useCurrent();
-            $table->dateTime('updated_at');
+        Schema::table('document_autorises', function (Blueprint $table) {
+            $table->enum('type', DOCUMENT_TYPE::getValues())->unique()->change();
         });
     }
 
@@ -25,6 +22,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('pays_document_autorises');
+        Schema::table('document_autorises', function (Blueprint $table) {
+            //
+        });
     }
 };

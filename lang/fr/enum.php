@@ -50,4 +50,10 @@ return [
         "ADMIN" => "Administrateur",
         "PLAYER" => "Joueur",
     ],
+    "DOCUMENT_TYPE" => [
+        "CNI" => "Carte national d'identité",
+        "PASSPORT" => "Passport",
+        "PERMIS_CONDUIRE" => "Permis de conduire",
+        "PREUVE_RESIDENCE" => "Preuve de résidence",
+    ],
 ];

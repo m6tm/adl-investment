@@ -38,11 +38,11 @@ class AuthHelper {
         return $user->can($permission);
     }
 
-    public static function hasRole(string $role) {
+    public static function hasRole(...$roles) {
         /**
          * @var User $user
          */
-        $user = User::find(auth()->user());
-        return $user->hasRole($role);
+        $user = User::find(auth()->user()->id);
+        return $user->hasAllRoles($roles);
     }
 }

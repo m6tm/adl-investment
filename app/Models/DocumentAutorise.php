@@ -9,6 +9,12 @@ class DocumentAutorise extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'country_id',
+        'libelle',
+        'type',
+    ];
+
     function pays() {
         return $this->hasMany(PaysDocumentAutorise::class);
     }

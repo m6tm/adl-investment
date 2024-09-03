@@ -84,8 +84,11 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function() {
     Route::post('roles/assign-to-user/{role_id}', [RoleController::class, 'roleToUser'])->name('dashboard.roles.to.user')->whereNumber('role_id');
     // Settings
     Route::get('settings', [SettingController::class, 'index'])->name('dashboard.settings');
+    // Settings Countries autorised to use the app
     Route::post('settings/add-country', [SettingController::class, 'addCountry'])->name('dashboard.settings.add-country');
     Route::get('settings/rm-country/{country_id}', [SettingController::class, 'removeCountry'])->name('dashboard.settings.remove-country')->whereNumber('country_id');
+    // Settings Countries Assigned a document type
+    Route::post('settings/document-assigment', [SettingController::class, 'assignDocument'])->name('dashboard.settings.document-assigment');
 });
 
 require __DIR__ . '/auth.php';

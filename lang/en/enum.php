@@ -50,4 +50,10 @@ return [
         "SUPER_ADMIN" => "Super administrator",
         "PLAYER" => "Player",
     ],
+    "DOCUMENT_TYPE" => [
+        "CNI" => "National Identity Card",
+        "PASSPORT" => "Passport",
+        "PERMIS_CONDUIRE" => "Driver's License",
+        "PREUVE_RESIDENCE" => "Proof of Residence",
+    ],
 ];
