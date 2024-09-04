@@ -90,22 +90,6 @@ const profil_validator = () => {
                 errorMessage: 'country.required',
             },
         ])
-        .addField('#new_password', [
-            {
-                rule: 'required',
-                errorMessage: 'password.required',
-            }
-        ])
-        .addField('#new_password_confirmation', [
-            {
-                rule: 'required',
-                plugin: JustValidatePluginDate(() => ({
-                    required: true,
-                    isEqual: form.querySelector('#new_password').value,
-                })),
-                errorMessage: 'password_confirmation.equal_to_password',
-            }
-        ])
     
     
     const run_validation = async () => {
@@ -114,9 +98,9 @@ const profil_validator = () => {
          * @type {HTMLFormElement}
         */
         const form = validate.form
-        const error_list = document.querySelector('#error-validation-list')
         const country = form.querySelector('#pays')
         const country_code = country.getAttribute('data-code')
+        let has_telephone_field = false
         const listener = async (e) => {
             e.preventDefault()
     
@@ -126,6 +110,7 @@ const profil_validator = () => {
             if (phoneNumber) phoneNumber = parsePhoneNumber(phoneNumber.formatNational(), country_code)
             
             if (!phoneNumber.isValid()) {
+                has_telephone_field = true
                 form.querySelector('#telephone').value = ""
                 validate.addField('#telephone', [
                     {
@@ -133,22 +118,14 @@ const profil_validator = () => {
                         errorMessage: 'phone.invalid',
                     },
                 ])
-            } else {
-                validate.removeField('#telephone')
-            }
-    
-            await validate.validate(true)
-            Array.from(error_list.children).forEach(li => li.remove())
-            if (validate.isValid) {
-                error_list.innerHTML = ''
+                await validate.validate(true)
                 return
+            } else {
+                if (has_telephone_field) validate.removeField('#telephone')
+                has_telephone_field = false
             }
-            const errors = Object.values(validate.errorLabels).map(label => label.textContent)
-            errors.forEach(error => {
-                const li = document.createElement('li')
-                li.textContent = error
-                error_list.appendChild(li)
-            })
+
+            if (validate.isValid) form.submit()
         }
         form.addEventListener('submit', listener, false)
     }

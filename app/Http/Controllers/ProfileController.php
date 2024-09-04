@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileUpdateRequest;
+use App\Models\Telephone;
+use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\View\View;
 
 class ProfileController extends Controller
@@ -24,15 +26,28 @@ class ProfileController extends Controller
      */
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
-        $request->user()->fill($request->validated());
+        if (request('current_password') && !Hash::check(request('current_password'), auth()->user()->password))
+            return redirect()->back()->with('error', __('users.password_not_same'));
+        
+        $telephone = Telephone::where('telephone', request('telephone'))->first();
+        if ($telephone && $telephone->user_id !== auth()->id())
+            return redirect()->back()->with('error', __('users.number_used'));
 
-        if ($request->user()->isDirty('email')) {
-            $request->user()->email_verified_at = null;
-        }
+        /**
+         * @var User $user
+         */
+        $user = auth()->user();
+        $user->name = request('nom');
+        $user->first_name = request('prenom');
+        if (request('current_password')) $user->password = Hash::make(request('new_password'));
+        $user->update();
 
-        $request->user()->save();
-
-        return Redirect::route('profile.edit')->with('status', __('dashboard/backend.profile-updated'));
+        $telephone = Telephone::find($user->phones()->first()->id);
+        $telephone->code = $user->pays->code;
+        $telephone->telephone = request('telephone');
+        $telephone->update();
+        
+        return redirect()->back()->with('success', __('settings.message_success'));
     }
 
     /**

@@ -91,10 +91,10 @@
         }
     },
     {
-        "key": "password_confirmation.equal_to_password",
+        "key": "password_confirmation.required",
         "dict": {
-            "en": "Password confirmation must match the password",
-            "fr": "La confirmation du mot de passe doit correspondre au mot de passe"
+            "en": "Password confirmation is required",
+            "fr": "La confirmation du mot de passe est obligatoire"
         }
     },
     {

@@ -26,6 +26,10 @@ return [
         'user_information' => 'Informations utilisateur',
         'last_name' => 'Nom',
         'first_name' => 'Prénom',
+        'town' => 'Rue / Quartier',
+        'current_password' => 'Mot de passe actuel',
+        'new_password' => 'Nouveau mot de passe',
+        'new_password_confirmation' => 'Confirmer le mot de passe',
         'email' => 'Adresse Mail',
         'phone_number' => 'Numéro de téléphone',
         'username' => 'Nom utilisateur',
@@ -55,4 +59,6 @@ return [
         'city' => 'Ville',
         'country' => 'Pays',
     ],
+    "password_not_same" => "Le mot de passe actuel que vous avez founi est incorrect.",
+    "number_used" => "Ce numéro est déjà utilisé",
 ];

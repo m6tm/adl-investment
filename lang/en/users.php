@@ -26,6 +26,10 @@ return [
         'user_information' => 'User Information',
         'last_name' => 'Last Name',
         'first_name' => 'First Name',
+        'town' => 'Street / Neighborhood',
+        'current_password' => 'Current Password',
+        'new_password' => 'New Password',
+        'new_password_confirmation' => 'Confirm Password',
         'email' => 'Email Address',
         'phone_number' => 'Phone Number',
         'username' => 'Username',
@@ -55,4 +59,6 @@ return [
         'city' => 'City',
         'country' => 'Country',
     ],
+    "password_not_same" => "The current password you provided is incorrect.",
+    "number_used" => "This number is already in use",
 ];

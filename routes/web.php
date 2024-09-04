@@ -70,6 +70,7 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function() {
     Route::get('users/edit/{user_id}', [UserController::class, 'edit'])->name('dashboard.user.edit')->whereNumber('user_id');
     // Profiles
     Route::get('profil', [ProfileController::class, 'edit'])->name('dashboard.profile.edit');
+    Route::get('profil/update', [ProfileController::class, 'update'])->name('dashboard.profile.update');
     // Notifications
     Route::get('notifications', [NotificationController::class, 'index'])->name('dashboard.notifications');
     // Account verification
