@@ -75,7 +75,9 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function() {
     // Tickets
     Route::get('tickets', [TicketController::class, 'index'])->name('dashboard.tickets');
     Route::get('tickets/create', [TicketController::class, 'create'])->name('dashboard.tickets.create');
-    Route::get('tickets/pay', [TicketController::class, 'pay'])->name('dashboard.tickets.pay');
+    Route::get('tickets/pay1', [TicketController::class, 'pay1'])->name('dashboard.tickets.pay1');
+    Route::get('tickets/pay2', [TicketController::class, 'pay2'])->name('dashboard.tickets.pay2');
+    Route::get('tickets/pay3', [TicketController::class, 'pay3'])->name('dashboard.tickets.pay3');
 });
 
 require __DIR__.'/auth.php';
