@@ -17,8 +17,8 @@
 
 			<!-- Section Start -->
 			<div class="flex flex-col gap-10 mt-10">
-				<div class="bg-white dark:bg-meta-4 dark:bg-none px-5 pt-6 pb-8 shadow-default dark:shadow-none rounded-[10px] p-5">
-                    <div class="flex flex-col space-y-4 md:px-60">
+				<div class="bg-white dark:bg-meta-4 dark:bg-none px-5 pt-6 pb-8 shadow-default dark:shadow-none rounded-[10px] p-5 h-[500px] place-content-center">
+                    <div class="flex flex-col space-y-12 md:px-60">
                         <a href="{{ route('dashboard.tickets.create') }}" 
                             class="inline-flex items-center justify-center gap-2.5 rounded-md border border-primary px-10 py-4 text-center font-medium text-primary hover:bg-opacity-90 lg:px-8 xl:px-10"
                         >

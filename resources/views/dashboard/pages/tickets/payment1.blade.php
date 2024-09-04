@@ -40,13 +40,13 @@
                     <!-- STEP 1 -->
                     <div class="flex justify-around mt-20">
                         <a
-                            href="#"
+                            href="{{ route('dashboard.tickets.pay2') }}"
                             class="inline-flex items-center justify-center rounded-md border border-black px-10 py-10 text-center font-medium text-black hover:bg-opacity-90 lg:px-8 xl:px-10"
                         >
                             OM
                         </a>
                         <a
-                            href="#"
+                            href="{{ route('dashboard.tickets.pay2') }}"
                             class="inline-flex items-center justify-center rounded-md border border-black px-10 py-10 text-center font-medium text-black hover:bg-opacity-90 lg:px-8 xl:px-10"
                         >
                             MoMo
@@ -54,7 +54,7 @@
                     </div>
 
                     <!-- STEP 2 -->
-                    <div class="grid grid-rows-4 place-content-center mt-20">
+                    <!-- <div class="grid grid-rows-4 place-content-center mt-20">
                         <div class="mb-5.5">
                             <div class="w-96">
                                 <label class="mb-3 block text-sm font-medium text-black dark:text-white" for="name">Nom</label>
@@ -108,10 +108,10 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                     <!-- STEP 3 -->
-                    <div class="grid justify-items-center mt-20">
+                    <!-- <div class="grid justify-items-center mt-20">
                         <div class="rounded-full ">
                             <img src="{{ asset('assets/img/team/team-3.jpg') }}" class="rounded-full h-48 h-48" alt="User">
                         </div>
@@ -126,18 +126,18 @@
                                 Succès
                             </p>
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="flex justify-between mt-20">
                         <a href="{{ route('dashboard.tickets.create') }}" class="px-4 py-2 inline-block rounded-md bg-primary text-white">
                             Modifier
                         </a>
-                        <a href="{{ route('dashboard.tickets.pay') }}" class="px-4 py-2 ml-5 inline-block rounded-md bg-primary text-white">
+                        <a href="{{ route('dashboard.tickets.pay2') }}" class="px-4 py-2 ml-5 inline-block rounded-md bg-primary text-white">
                             Next
                         </a>
-                        <a href="{{ route('dashboard.tickets') }}" class="px-4 py-2 ml-5 inline-block rounded-md bg-primary text-white">
+                        <!-- <a href="{{ route('dashboard.tickets') }}" class="px-4 py-2 ml-5 inline-block rounded-md bg-primary text-white">
                             Terminer
-                        </a>
+                        </a> -->
                     </div>
                 </div>
 

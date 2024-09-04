@@ -20,47 +20,59 @@
 				<div class="bg-white dark:bg-meta-4 dark:bg-none px-5 pt-6 pb-8 shadow-default dark:shadow-none rounded-[10px] p-5">
                     <div class="flex flex-col space-y-4">
                         <div class="flex justify-between items-center">
-                            <p class="text-xl font-bold text-black dark:text-white">
+                            <p class="text-lg text-black dark:text-white">
                                 Ticket $1
                             </p>
-                            <a href="#" 
-                                class="inline-flex items-center justify-center gap-2.5 rounded-md border border-primary px-10 py-2 text-center font-medium text-primary hover:bg-opacity-90 lg:px-8 xl:px-10"
-                            >
-                                x 1
-                            </a>
+                            <div class="relative w-2/12">
+                                <span class="absolute left-4.5 top-3.5">
+                                    <i data-lucide="x" class="size-5"></i>
+                                </span>
+                                <input
+                                    class="w-full rounded border border-stroke bg-gray py-3 pl-11.5 pr-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-slate-100 dark:bg-meta-4 dark:text-white dark:focus:border-primary"
+                                    type="number" name="ticket_number" id="ticket_number" placeholder="5" required>
+                            </div>
                         </div>
                         
                         <div class="flex justify-between items-center">
-                            <p class="text-xl font-bold text-black dark:text-white">
+                            <p class="text-lg text-black dark:text-white">
                                 Ticket $2
                             </p>
-                            <a href="#" 
-                                class="inline-flex items-center justify-center gap-2.5 rounded-md border border-primary px-10 py-2 text-center font-medium text-primary hover:bg-opacity-90 lg:px-8 xl:px-10"
-                            >
-                                x 1
-                            </a>
+                            <div class="relative w-2/12">
+                                <span class="absolute left-4.5 top-3.5">
+                                    <i data-lucide="x" class="size-5"></i>
+                                </span>
+                                <input
+                                    class="w-full rounded border border-stroke bg-gray py-3 pl-11.5 pr-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-slate-100 dark:bg-meta-4 dark:text-white dark:focus:border-primary"
+                                    type="number" name="ticket_number" id="ticket_number" placeholder="5" required>
+                            </div>
                         </div>
                         
                         <div class="flex justify-between items-center">
-                            <p class="text-xl font-bold text-black dark:text-white">
+                            <p class="text-lg text-black dark:text-white">
                                 Ticket $5
                             </p>
-                            <a href="#" 
-                                class="inline-flex items-center justify-center gap-2.5 rounded-md border border-primary px-10 py-2 text-center font-medium text-primary hover:bg-opacity-90 lg:px-8 xl:px-10"
-                            >
-                                x 1
-                            </a>
+                            <div class="relative w-2/12">
+                                <span class="absolute left-4.5 top-3.5">
+                                    <i data-lucide="x" class="size-5"></i>
+                                </span>
+                                <input
+                                    class="w-full rounded border border-stroke bg-gray py-3 pl-11.5 pr-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-slate-100 dark:bg-meta-4 dark:text-white dark:focus:border-primary"
+                                    type="number" name="ticket_number" id="ticket_number" placeholder="5" required>
+                            </div>
                         </div>
 
                         <div class="flex justify-between items-center">
-                            <p class="text-xl font-bold text-black dark:text-white">
+                            <p class="text-lg text-black dark:text-white">
                                 Ticket $10
                             </p>
-                            <a href="#" 
-                                class="inline-flex items-center justify-center gap-2.5 rounded-md border border-primary px-10 py-2 text-center font-medium text-primary hover:bg-opacity-90 lg:px-8 xl:px-10"
-                            >
-                                x 1
-                            </a>
+                            <div class="relative w-2/12">
+                                <span class="absolute left-4.5 top-3.5">
+                                    <i data-lucide="x" class="size-5"></i>
+                                </span>
+                                <input
+                                    class="w-full rounded border border-stroke bg-gray py-3 pl-11.5 pr-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-slate-100 dark:bg-meta-4 dark:text-white dark:focus:border-primary"
+                                    type="number" name="ticket_number" id="ticket_number" placeholder="5" required>
+                            </div>
                         </div>
                     </div>
                         
@@ -151,10 +163,10 @@
                     <!-- Table End -->
 
                     <div class="mt-10 flex justify-center sm:justify-start">
-                        <a href="{{ route('dashboard.tickets.pay') }}" class="px-4 py-2 inline-block rounded-md bg-primary text-white">
+                        <a href="{{ route('dashboard.tickets.pay1') }}" class="px-4 py-2 inline-block rounded-md bg-primary text-white">
                             Paiement Mobile
                         </a>
-                        <a href="{{ route('dashboard.tickets.pay') }}" class="px-4 py-2 ml-5 inline-block rounded-md bg-primary text-white">
+                        <a href="{{ route('dashboard.tickets.pay1') }}" class="px-4 py-2 ml-5 inline-block rounded-md bg-primary text-white">
                             Paiement par Carte
                         </a>
                     </div>
