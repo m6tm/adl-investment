@@ -1,4 +1,4 @@
-
+import './toastify'
 
 let textOrientations = document.querySelectorAll("[data-orientation][data-orientation-text]")
 

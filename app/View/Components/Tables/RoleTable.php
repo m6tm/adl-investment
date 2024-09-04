@@ -1,17 +1,18 @@
 <?php
 
-namespace App\View\Components\Ui;
+namespace App\View\Components\Tables;
 
 use Closure;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Collection;
 use Illuminate\View\Component;
 
-class TablePrimary extends Component
+class RoleTable extends Component
 {
     /**
      * Create a new component instance.
      */
-    public function __construct(public array $headers, public array $rows)
+    public function __construct(public Collection $roles)
     {
         //
     }
@@ -21,6 +22,6 @@ class TablePrimary extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.ui.table-primary');
+        return view('components.tables.role-table');
     }
 }

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id');
             $table->string('code');
-            $table->string('telephone');
+            $table->string('telephone')->unique();
             $table->dateTime('created_at')->useCurrent();
             $table->dateTime('updated_at');
         });

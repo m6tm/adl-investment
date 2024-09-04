@@ -10,10 +10,11 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use App\Enums\USER_VERIFICATION_STATUS;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
-    use HasApiTokens, HasFactory, Notifiable, SoftDeletes;
+    use HasApiTokens, HasFactory, Notifiable, SoftDeletes, HasRoles;
 
     /**
      * The attributes that are mass assignable.
@@ -41,9 +42,12 @@ class User extends Authenticatable implements MustVerifyEmail
         'remember_token',
     ];
 
-    public function adresse()
+    /**
+     * Get the address associated with the user.
+     */
+    public function address()
     {
-        return $this->hasOne(Adresse::class);
+        return $this->hasOne(Addresse::class);
     }
 
     public function documents()
@@ -58,7 +62,7 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function pays()
     {
-        return $this->belongsTo(Country::class);
+        return $this->belongsTo(Country::class, 'country_id');
     }
 
     public function gains()
@@ -71,7 +75,7 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasOne(Compte::class);
     }
 
-    public function telephone()
+    public function phones()
     {
         return $this->hasMany(Telephone::class);
     }
@@ -97,17 +101,4 @@ class User extends Authenticatable implements MustVerifyEmail
         'password' => 'hashed',
         'verification_status' => USER_VERIFICATION_STATUS::class,
     ];
-
-    /**
-     * Get the address associated with the user.
-     */
-    public function address()
-    {
-        return $this->hasOne(Address::class);
-    }
-
-    public function country()
-    {
-        return $this->belongsTo(Country::class);
-    }
 }
