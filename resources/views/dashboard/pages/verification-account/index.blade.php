@@ -9,18 +9,25 @@
     <div class="flex flex-col gap-5 md:gap-7 2xl:gap-10">
         <div class="border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark rounded-[10px] p-5">
 			<x-error-message-alert class="mb-4" />
-			<form action="#" id="verification-account-form" autocomplete="off" novalidate="novalidate" class="grid lg:grid-cols-3 gap-5">
+			<form action="{{ route('dashboard.account-verification-post') }}" enctype="multipart/form-data" method="POST" id="verification-account-form" autocomplete="off" novalidate="novalidate" class="grid lg:grid-cols-3 gap-5">
+				@csrf
 				{{-- Choisir une photo de profile Début --}}
 				<div class="lg:flex lg:flex-col lg:space-y-5 grid grid-cols-2 gap-4" id="verification-account-tabs">
 					<x-account-verification-stepper document="Informations utilisateur" />
-					<x-account-verification-stepper document="Selfie photo" />
-					<x-account-verification-stepper document="Carte national d'identité" />
-					<x-account-verification-stepper document="Preuve de résidence" />
-					<x-account-verification-stepper document="Passport" />
-					<x-account-verification-stepper document="Permis de conduire" />
+					@php
+						$country = auth()->user()->pays;
+						$documents_autorises = $country->documents_autorises;
+					@endphp
+					@foreach ($documents_autorises as $documents_autorise)
+						@php
+							$current_document_autorise = $documents_autorise->documents_autorise;
+						@endphp
+						<x-account-verification-stepper document="{!! __($current_document_autorise->type) !!}" />
+					@endforeach
 				</div>
 				{{-- Choisir une photo de profile Fin --}}
 				<div class="lg:col-span-2" id="account-verification-steps" data-current-step="1">
+					{{-- Informations utilisateur --}}
 					<div class="duration-300 ease-in-out" data-step="1">
 						<h2 class="text-black dark:text-white uppercase text-title-md mb-4">Informations utilisateur</h2>
 						<div class="mb-5.5 flex flex-col gap-5.5 sm:flex-row">
@@ -80,7 +87,7 @@
 								<div class="relative">
 									<input
 										class="w-full rounded border border-stroke bg-gray py-3 px-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-slate-400 dark:bg-meta-4 dark:text-white dark:focus:border-primary"
-										type="text" name="street" id="street" value="{{ auth()->user()->address->street }}" placeholder="charly99" required>
+										type="text" name="street" id="street" value="{{ auth()->user()->address?->street }}" placeholder="charly99" required>
 								</div>
 							</div>
 
@@ -103,7 +110,7 @@
 								<label class="mb-3 block text-sm font-medium text-black dark:text-white" for="ville">Ville</label>
 								<input
 									class="w-full rounded border border-stroke bg-gray py-3 px-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-slate-400 dark:bg-meta-4 dark:text-white dark:focus:border-primary"
-									type="text" name="ville" id="ville" placeholder="Montreal" value="{{ auth()->user()->address->city }}" required>
+									type="text" name="ville" id="ville" placeholder="Montreal" value="{{ auth()->user()->address?->city }}" required>
 							</div>
 
 							<div class="w-full sm:w-1/2">
@@ -114,289 +121,292 @@
 							</div>
 						</div>
 					</div>
-					<div class="duration-300 ease-in-out verification-account-hidden" data-step="2">
-						<h2 class="text-black dark:text-white uppercase text-title-md mb-4">Selfie photo</h2>
-						<div class="mb-5.5 grid lg:grid-cols-2 grid-cols-1 gap-5.5">
-							<div>
-								<ul class="list-disc">
-									<li class="text-green-500">L'image doit être claire et parfaitement lisible</li>
-									<li class="text-green-500">Si vous portez des lunettes, veuillez les retirer</li>
-									<li class="text-green-500">Placer vous droit face à la caméra</li>
-									<li class="text-green-500">Placer votre visage droit</li>
-								</ul>
-							</div>
-							<div>
-								{{-- Selfie photo Début --}}
-								<div id="FileUpload"
-									class="relative mb-5.5 block w-full cursor-pointer appearance-none rounded border border-dashed border-primary bg-gray px-4 py-4 dark:bg-meta-4 sm:py-7.5">
-									<input type="file" class="absolute inset-0 z-50 m-0 h-full w-full cursor-pointer p-0 opacity-0 outline-none" accept="image/*" required>
-									<div class="flex flex-col items-center justify-center space-y-3">
-										<span
-											class="flex h-10 w-10 items-center justify-center rounded-full border border-stroke bg-white dark:border-strokedark dark:bg-boxdark">
-											<i data-lucide="upload" class="text-primary size-5"></i>
-										</span>
-										<p class="text-sm font-medium">
-											<span class="text-primary">Cliquer pour téléverser</span>
-											ou faites un glisser - deposer
-										</p>
-										<p class="mt-1.5 text-sm font-medium">
-											SVG, PNG, JPG or GIF
-										</p>
-										<p class="text-sm font-medium">
-											(max, 800 X 800px)
-										</p>
+					@foreach ($documents_autorises as $key => $documents_autorise)
+						@php
+							$current_document_autorise = $documents_autorise->documents_autorise;
+						@endphp
+						@switch($current_document_autorise->type)
+							@case($DOCUMENT_TYPE::SELFIE)
+								<div class="duration-300 ease-in-out verification-account-hidden" data-step="{{ $key + 2 }}">
+									<h2 class="text-black dark:text-white uppercase text-title-md mb-4">Selfie photo</h2>
+									<div class="mb-5.5 grid lg:grid-cols-2 grid-cols-1 gap-5.5">
+										<div>
+											<ul class="list-disc">
+												<li class="text-green-500">L'image doit être claire et parfaitement lisible</li>
+												<li class="text-green-500">Si vous portez des lunettes, veuillez les retirer</li>
+												<li class="text-green-500">Placer vous droit face à la caméra</li>
+												<li class="text-green-500">Placer votre visage droit</li>
+											</ul>
+										</div>
+										<div>
+											{{-- Selfie photo Début --}}
+											<div id="FileUpload"
+												class="relative mb-5.5 block w-full cursor-pointer appearance-none rounded border border-dashed border-primary bg-gray px-4 py-4 dark:bg-meta-4 sm:py-7.5">
+												<input type="file" id="selfie_input" accept=".jpg,.jpeg,.png" name="selfie_photo" class="absolute inset-0 z-50 m-0 h-full w-full cursor-pointer p-0 opacity-0 outline-none" accept="image/*" required>
+												<div class="flex flex-col items-center justify-center space-y-3">
+													<span
+														class="flex h-10 w-10 items-center justify-center rounded-full border border-stroke bg-white dark:border-strokedark dark:bg-boxdark">
+														<i data-lucide="upload" class="text-primary size-5"></i>
+													</span>
+													<p class="text-sm font-medium">
+														<span class="text-primary">Cliquer pour téléverser</span>
+														ou faites un glisser - deposer
+													</p>
+													<p class="mt-1.5 text-sm font-medium">
+														JPG, JPEG or PNG
+													</p>
+												</div>
+											</div>
+											{{-- Selfie photo Fin --}}
+										</div>
 									</div>
 								</div>
-								{{-- Selfie photo Fin --}}
-							</div>
-						</div>
-					</div>
-					<div class="duration-300 ease-in-out verification-account-hidden" data-step="3">
-						<h2 class="text-black dark:text-white uppercase text-title-md mb-4">Carte national d'identité</h2>
-						<div class="mb-5.5 grid lg:grid-cols-2 grid-cols-1 gap-5.5">
-							<div>
-								<ul class="list-disc">
-									<li class="text-green-500">L'image doit être claire et parfaitement lisible</li>
-									<li class="text-green-500">La carte d'identité doit être en cours de validité</li>
-									<li class="text-green-500">Tous les coins de la carte doivent être visibles</li>
-									<li class="text-green-500">Aucune information ne doit être masquée ou floutée</li>
-									<li class="text-green-500">La photo doit être prise sur un fond uni et bien éclairé</li>
-									<li class="text-green-500">Évitez les reflets ou les ombres sur la carte</li>
-									<li class="text-green-500">La carte doit occuper la majeure partie de l'image</li>
-								</ul>
-							</div>
-							<div>
-								<h2 class="text-black dark:text-white uppercase mb-4">Recto</h2>
-								{{-- Document Début --}}
-								<div id="FileUpload"
-									class="relative mb-5.5 block w-full cursor-pointer appearance-none rounded border border-dashed border-primary bg-gray px-4 py-4 dark:bg-meta-4 sm:py-7.5">
-									<input type="file" accept="image/*"
-										required
-										class="absolute inset-0 z-50 m-0 h-full w-full cursor-pointer p-0 opacity-0 outline-none" required>
-									<div class="flex flex-col items-center justify-center space-y-3">
-										<span
-											class="flex h-10 w-10 items-center justify-center rounded-full border border-stroke bg-white dark:border-strokedark dark:bg-boxdark">
-											<i data-lucide="upload" class="text-primary size-5"></i>
-										</span>
-										<p class="text-sm font-medium">
-											<span class="text-primary">Cliquer pour téléverser</span>
-											ou faites un glisser - deposer
-										</p>
-										<p class="mt-1.5 text-sm font-medium">
-											SVG, PNG, JPG or GIF
-										</p>
-										<p class="text-sm font-medium">
-											(max, 800 X 800px)
-										</p>
+								@break
+
+							@case($DOCUMENT_TYPE::CNI)
+								<div class="duration-300 ease-in-out verification-account-hidden" data-step="{{ $key + 2 }}">
+									<h2 class="text-black dark:text-white uppercase text-title-md mb-4">Carte national d'identité</h2>
+									<div class="mb-5.5 grid lg:grid-cols-2 grid-cols-1 gap-5.5">
+										<div>
+											<ul class="list-disc">
+												<li class="text-green-500">L'image doit être claire et parfaitement lisible</li>
+												<li class="text-green-500">La carte d'identité doit être en cours de validité</li>
+												<li class="text-green-500">Tous les coins de la carte doivent être visibles</li>
+												<li class="text-green-500">Aucune information ne doit être masquée ou floutée</li>
+												<li class="text-green-500">La photo doit être prise sur un fond uni et bien éclairé</li>
+												<li class="text-green-500">Évitez les reflets ou les ombres sur la carte</li>
+												<li class="text-green-500">La carte doit occuper la majeure partie de l'image</li>
+											</ul>
+										</div>
+										<div>
+											<h2 class="text-black dark:text-white uppercase mb-4">Recto</h2>
+											{{-- Document Début --}}
+											<div id="FileUpload"
+												class="relative mb-5.5 block w-full cursor-pointer appearance-none rounded border border-dashed border-primary bg-gray px-4 py-4 dark:bg-meta-4 sm:py-7.5">
+												<input type="file" accept=".jpg,.jpeg,.png,.pdf"
+													required name="cni_recto_photo" id="cni_recto_photo"
+													class="absolute inset-0 z-50 m-0 h-full w-full cursor-pointer p-0 opacity-0 outline-none">
+												<div class="flex flex-col items-center justify-center space-y-3">
+													<span
+														class="flex h-10 w-10 items-center justify-center rounded-full border border-stroke bg-white dark:border-strokedark dark:bg-boxdark">
+														<i data-lucide="upload" class="text-primary size-5"></i>
+													</span>
+													<p class="text-sm font-medium">
+														<span class="text-primary">Cliquer pour téléverser</span>
+														ou faites un glisser - deposer
+													</p>
+													<p class="mt-1.5 text-sm font-medium">
+														JPG, JPEG, PNG or PDF
+													</p>
+												</div>
+											</div>
+											{{-- Document Fin --}}
+											<h2 class="text-black dark:text-white uppercase mb-4">Verso</h2>
+											{{-- Document Début --}}
+											<div id="FileUpload"
+												class="relative mb-5.5 block w-full cursor-pointer appearance-none rounded border border-dashed border-primary bg-gray px-4 py-4 dark:bg-meta-4 sm:py-7.5">
+												<input type="file" accept=".jpg,.jpeg,.png,.pdf" name="cni_verso_photo" id="cni_verso_photo"
+													class="absolute inset-0 z-50 m-0 h-full w-full cursor-pointer p-0 opacity-0 outline-none" required>
+												<div class="flex flex-col items-center justify-center space-y-3">
+													<span
+														class="flex h-10 w-10 items-center justify-center rounded-full border border-stroke bg-white dark:border-strokedark dark:bg-boxdark">
+														<i data-lucide="upload" class="text-primary size-5"></i>
+													</span>
+													<p class="text-sm font-medium">
+														<span class="text-primary">Cliquer pour téléverser</span>
+														ou faites un glisser - deposer
+													</p>
+													<p class="mt-1.5 text-sm font-medium">
+														JPG, JPEG, PNG or PDF
+													</p>
+												</div>
+											</div>
+											{{-- Document Fin --}}
+										</div>
 									</div>
 								</div>
-								{{-- Document Fin --}}
-								<h2 class="text-black dark:text-white uppercase mb-4">Verso</h2>
-								{{-- Document Début --}}
-								<div id="FileUpload"
-									class="relative mb-5.5 block w-full cursor-pointer appearance-none rounded border border-dashed border-primary bg-gray px-4 py-4 dark:bg-meta-4 sm:py-7.5">
-									<input type="file" accept="image/*"
-										class="absolute inset-0 z-50 m-0 h-full w-full cursor-pointer p-0 opacity-0 outline-none" required>
-									<div class="flex flex-col items-center justify-center space-y-3">
-										<span
-											class="flex h-10 w-10 items-center justify-center rounded-full border border-stroke bg-white dark:border-strokedark dark:bg-boxdark">
-											<i data-lucide="upload" class="text-primary size-5"></i>
-										</span>
-										<p class="text-sm font-medium">
-											<span class="text-primary">Cliquer pour téléverser</span>
-											ou faites un glisser - deposer
-										</p>
-										<p class="mt-1.5 text-sm font-medium">
-											SVG, PNG, JPG or GIF
-										</p>
-										<p class="text-sm font-medium">
-											(max, 800 X 800px)
-										</p>
+								@break
+
+							@case($DOCUMENT_TYPE::PASSPORT)
+								<div class="duration-300 ease-in-out verification-account-hidden" data-step="{{ $key + 2 }}">
+									<h2 class="text-black dark:text-white uppercase text-title-md mb-4">Passport</h2>
+									<div class="mb-5.5 grid lg:grid-cols-2 grid-cols-1 gap-5.5">
+										<div>
+											<ul class="list-disc">
+												<li class="text-green-500">Le passeport doit être en cours de validité</li>
+												<li class="text-green-500">La photo du passeport doit être récente (moins de 3mois)</li>
+												<li class="text-green-500">Les informations personnelles doivent être clairement lisibles</li>
+												<li class="text-green-500">Le numéro de passeport doit être visible et non altéré</li>
+												<li class="text-green-500">La signature du titulaire doit être présente</li>
+												<li class="text-green-500">Le passeport ne doit pas présenter de signes de falsification</li>
+												<li class="text-green-500">Les tampons et visas doivent être clairement visibles</li>
+												<li class="text-green-500">Le passeport doit être émis par une autorité reconnue</li>
+											</ul>
+										</div>
+										<div>
+											<h2 class="text-black dark:text-white uppercase mb-4">Recto</h2>
+											{{-- Document Début --}}
+											<div id="FileUpload"
+												class="relative mb-5.5 block w-full cursor-pointer appearance-none rounded border border-dashed border-primary bg-gray px-4 py-4 dark:bg-meta-4 sm:py-7.5">
+												<input type="file" accept=".jpg,.jpeg,.png,.pdf" required name="passport_recto_photo" id="passport_recto_photo"
+													class="absolute inset-0 z-50 m-0 h-full w-full cursor-pointer p-0 opacity-0 outline-none">
+												<div class="flex flex-col items-center justify-center space-y-3">
+													<span
+														class="flex h-10 w-10 items-center justify-center rounded-full border border-stroke bg-white dark:border-strokedark dark:bg-boxdark">
+														<i data-lucide="upload" class="text-primary size-5"></i>
+													</span>
+													<p class="text-sm font-medium">
+														<span class="text-primary">Cliquer pour téléverser</span>
+														ou faites un glisser - deposer
+													</p>
+													<p class="mt-1.5 text-sm font-medium">
+														JPG, JPEG, PNG or PDF
+													</p>
+												</div>
+											</div>
+											{{-- Document Fin --}}
+											<h2 class="text-black dark:text-white uppercase mb-4">Verso</h2>
+											{{-- Document Début --}}
+											<div id="FileUpload"
+												class="relative mb-5.5 block w-full cursor-pointer appearance-none rounded border border-dashed border-primary bg-gray px-4 py-4 dark:bg-meta-4 sm:py-7.5">
+												<input type="file" accept=".jpg,.jpeg,.png,.pdf" required name="passport_verso_photo" id="passport_verso_photo"
+													class="absolute inset-0 z-50 m-0 h-full w-full cursor-pointer p-0 opacity-0 outline-none">
+												<div class="flex flex-col items-center justify-center space-y-3">
+													<span
+														class="flex h-10 w-10 items-center justify-center rounded-full border border-stroke bg-white dark:border-strokedark dark:bg-boxdark">
+														<i data-lucide="upload" class="text-primary size-5"></i>
+													</span>
+													<p class="text-sm font-medium">
+														<span class="text-primary">Cliquer pour téléverser</span>
+														ou faites un glisser - deposer
+													</p>
+													<p class="mt-1.5 text-sm font-medium">
+														SVG, PNG, JPG or GIF
+													</p>
+													<p class="text-sm font-medium">
+														(max, 800 X 800px)
+													</p>
+												</div>
+											</div>
+											{{-- Document Fin --}}
+										</div>
 									</div>
 								</div>
-								{{-- Document Fin --}}
-							</div>
-						</div>
-					</div>
-					<div class="duration-300 ease-in-out verification-account-hidden" data-step="4">
-						<h2 class="text-black dark:text-white uppercase text-title-md mb-4">Preuve de résidence</h2>
-						<div class="mb-5.5 grid lg:grid-cols-2 grid-cols-1 gap-5.5">
-							<div>
-								<ul class="list-disc">
-									<li class="text-green-500">Le document doit être récent (moins de 3 mois)</li>
-									<li class="text-green-500">L'adresse complète doit être clairement visible</li>
-									<li class="text-green-500">Le nom et prénom doivent correspondre à ceux de votre compte</li>
-									<li class="text-green-500">Le document doit être émis par une autorité reconnue</li>
-									<li class="text-green-500">L'image doit être claire, nette et parfaitement lisible</li>
-									<li class="text-green-500">Le document doit être photographié ou scanné dans son intégralité et soumis au format image</li>
-									<li class="text-green-500">Aucune information ne doit être masquée, floutée ou modifiée</li>
-									<li class="text-green-500">La photo doit être prise sur un fond uni et bien éclairé</li>
-									<li class="text-green-500">Évitez les reflets ou les ombres sur le document</li>
-									<li class="text-green-500">Le document doit occuper la majeure partie de l'image</li>
-								</ul>
-							</div>
-							<div>
-								{{-- Document Début --}}
-								<div id="FileUpload"
-									class="relative mb-5.5 block w-full cursor-pointer appearance-none rounded border border-dashed border-primary bg-gray px-4 py-4 dark:bg-meta-4 sm:py-7.5">
-									<input type="file" accept="image/*" required multiple max="2"
-										class="absolute inset-0 z-50 m-0 h-full w-full cursor-pointer p-0 opacity-0 outline-none">
-									<div class="flex flex-col items-center justify-center space-y-3">
-										<span
-											class="flex h-10 w-10 items-center justify-center rounded-full border border-stroke bg-white dark:border-strokedark dark:bg-boxdark">
-											<i data-lucide="upload" class="text-primary size-5"></i>
-										</span>
-										<p class="text-sm font-medium">
-											<span class="text-primary">Cliquer pour téléverser</span>
-											ou faites un glisser - deposer
-										</p>
-										<p class="mt-1.5 text-sm font-medium">
-											SVG, PNG, JPG or GIF
-										</p>
-										<p class="text-sm font-medium">
-											(max, 800 X 800px)
-										</p>
+								@break
+
+							@case($DOCUMENT_TYPE::PERMIS_CONDUIRE)
+								<div class="duration-300 ease-in-out verification-account-hidden" data-step="{{ $key + 2 }}">
+									<h2 class="text-black dark:text-white uppercase text-title-md mb-4">Permis de conduire</h2>
+									<div class="mb-5.5 grid lg:grid-cols-2 grid-cols-1 gap-5.5">
+										<div>
+											<ul class="list-disc">
+												<li class="text-green-500">Le permis de conduire doit être en cours de validité</li>
+												<li class="text-green-500">La photo sur le permis doit être récente et ressemblante</li>
+												<li class="text-green-500">Les informations personnelles doivent être clairement lisibles</li>
+												<li class="text-green-500">Le numéro du permis doit être visible et non altéré</li>
+												<li class="text-green-500">La signature du titulaire doit être présente</li>
+												<li class="text-green-500">Le permis ne doit pas présenter de signes de falsification</li>
+												<li class="text-green-500">La catégorie de véhicules autorisée doit être clairement indiquée</li>
+												<li class="text-green-500">Le permis doit être émis par une autorité compétente reconnue</li>
+												<li class="text-green-500">Les dates de délivrance et d'expiration doivent être lisibles</li>
+											</ul>
+										</div>
+										<div>
+											<h2 class="text-black dark:text-white uppercase mb-4">Recto</h2>
+											{{-- Document Début --}}
+											<div id="FileUpload"
+												class="relative mb-5.5 block w-full cursor-pointer appearance-none rounded border border-dashed border-primary bg-gray px-4 py-4 dark:bg-meta-4 sm:py-7.5">
+												<input type="file" accept=".jpg,.jpeg,.png,.pdf" required name="permis_cond_recto_photo" id="permis_cond_recto_photo"
+													class="absolute inset-0 z-50 m-0 h-full w-full cursor-pointer p-0 opacity-0 outline-none">
+												<div class="flex flex-col items-center justify-center space-y-3">
+													<span
+														class="flex h-10 w-10 items-center justify-center rounded-full border border-stroke bg-white dark:border-strokedark dark:bg-boxdark">
+														<i data-lucide="upload" class="text-primary size-5"></i>
+													</span>
+													<p class="text-sm font-medium">
+														<span class="text-primary">Cliquer pour téléverser</span>
+														ou faites un glisser - deposer
+													</p>
+													<p class="mt-1.5 text-sm font-medium">
+														JPG, JPEG, PNG or PDF
+													</p>
+												</div>
+											</div>
+											{{-- Document Fin --}}
+											<h2 class="text-black dark:text-white uppercase mb-4">Verso</h2>
+											{{-- Document Début --}}
+											<div id="FileUpload"
+												class="relative mb-5.5 block w-full cursor-pointer appearance-none rounded border border-dashed border-primary bg-gray px-4 py-4 dark:bg-meta-4 sm:py-7.5">
+												<input type="file" accept=".jpg,.jpeg,.png,.pdf" required name="permis_cond_verso_photo" id="permis_cond_verso_photo"
+													class="absolute inset-0 z-50 m-0 h-full w-full cursor-pointer p-0 opacity-0 outline-none">
+												<div class="flex flex-col items-center justify-center space-y-3">
+													<span
+														class="flex h-10 w-10 items-center justify-center rounded-full border border-stroke bg-white dark:border-strokedark dark:bg-boxdark">
+														<i data-lucide="upload" class="text-primary size-5"></i>
+													</span>
+													<p class="text-sm font-medium">
+														<span class="text-primary">Cliquer pour téléverser</span>
+														ou faites un glisser - deposer
+													</p>
+													<p class="mt-1.5 text-sm font-medium">
+														JPG, JPEG, PNG or PDF
+													</p>
+												</div>
+											</div>
+											{{-- Document Fin --}}
+										</div>
 									</div>
 								</div>
-								{{-- Document Fin --}}
-							</div>
-						</div>
-					</div>
-					<div class="duration-300 ease-in-out verification-account-hidden" data-step="5">
-						<h2 class="text-black dark:text-white uppercase text-title-md mb-4">Passport</h2>
-						<div class="mb-5.5 grid lg:grid-cols-2 grid-cols-1 gap-5.5">
-							<div>
-								<ul class="list-disc">
-									<li class="text-green-500">Le passeport doit être en cours de validité</li>
-									<li class="text-green-500">La photo du passeport doit être récente (moins de 3mois)</li>
-									<li class="text-green-500">Les informations personnelles doivent être clairement lisibles</li>
-									<li class="text-green-500">Le numéro de passeport doit être visible et non altéré</li>
-									<li class="text-green-500">La signature du titulaire doit être présente</li>
-									<li class="text-green-500">Le passeport ne doit pas présenter de signes de falsification</li>
-									<li class="text-green-500">Les tampons et visas doivent être clairement visibles</li>
-									<li class="text-green-500">Le passeport doit être émis par une autorité reconnue</li>
-								</ul>
-							</div>
-							<div>
-								<h2 class="text-black dark:text-white uppercase mb-4">Recto</h2>
-								{{-- Document Début --}}
-								<div id="FileUpload"
-									class="relative mb-5.5 block w-full cursor-pointer appearance-none rounded border border-dashed border-primary bg-gray px-4 py-4 dark:bg-meta-4 sm:py-7.5">
-									<input type="file" accept="image/*" required
-										class="absolute inset-0 z-50 m-0 h-full w-full cursor-pointer p-0 opacity-0 outline-none">
-									<div class="flex flex-col items-center justify-center space-y-3">
-										<span
-											class="flex h-10 w-10 items-center justify-center rounded-full border border-stroke bg-white dark:border-strokedark dark:bg-boxdark">
-											<i data-lucide="upload" class="text-primary size-5"></i>
-										</span>
-										<p class="text-sm font-medium">
-											<span class="text-primary">Cliquer pour téléverser</span>
-											ou faites un glisser - deposer
-										</p>
-										<p class="mt-1.5 text-sm font-medium">
-											SVG, PNG, JPG or GIF
-										</p>
-										<p class="text-sm font-medium">
-											(max, 800 X 800px)
-										</p>
+								@break
+
+							@case($DOCUMENT_TYPE::PREUVE_RESIDENCE)
+								<div class="duration-300 ease-in-out verification-account-hidden" data-step="{{ $key + 2 }}">
+									<h2 class="text-black dark:text-white uppercase text-title-md mb-4">Preuve de résidence</h2>
+									<div class="mb-5.5 grid lg:grid-cols-2 grid-cols-1 gap-5.5">
+										<div>
+											<ul class="list-disc">
+												<li class="text-green-500">Le document doit être récent (moins de 3 mois)</li>
+												<li class="text-green-500">L'adresse complète doit être clairement visible</li>
+												<li class="text-green-500">Le nom et prénom doivent correspondre à ceux de votre compte</li>
+												<li class="text-green-500">Le document doit être émis par une autorité reconnue</li>
+												<li class="text-green-500">L'image doit être claire, nette et parfaitement lisible</li>
+												<li class="text-green-500">Le document doit être photographié ou scanné dans son intégralité et soumis au format image</li>
+												<li class="text-green-500">Aucune information ne doit être masquée, floutée ou modifiée</li>
+												<li class="text-green-500">La photo doit être prise sur un fond uni et bien éclairé</li>
+												<li class="text-green-500">Évitez les reflets ou les ombres sur le document</li>
+												<li class="text-green-500">Le document doit occuper la majeure partie de l'image</li>
+											</ul>
+										</div>
+										<div>
+											{{-- Document Début --}}
+											<div id="FileUpload"
+												class="relative mb-5.5 block w-full cursor-pointer appearance-none rounded border border-dashed border-primary bg-gray px-4 py-4 dark:bg-meta-4 sm:py-7.5">
+												<input type="file" accept=".jpg,.jpeg,.png,.pdf" required multiple max="2" name="preuve_residence" id="preuve_residence"
+													class="absolute inset-0 z-50 m-0 h-full w-full cursor-pointer p-0 opacity-0 outline-none">
+												<div class="flex flex-col items-center justify-center space-y-3">
+													<span
+														class="flex h-10 w-10 items-center justify-center rounded-full border border-stroke bg-white dark:border-strokedark dark:bg-boxdark">
+														<i data-lucide="upload" class="text-primary size-5"></i>
+													</span>
+													<p class="text-sm font-medium">
+														<span class="text-primary">Cliquer pour téléverser</span>
+														ou faites un glisser - deposer
+													</p>
+													<p class="mt-1.5 text-sm font-medium">
+														JPG, JPEG, PNG or PDF
+													</p>
+												</div>
+											</div>
+											{{-- Document Fin --}}
+										</div>
 									</div>
 								</div>
-								{{-- Document Fin --}}
-								<h2 class="text-black dark:text-white uppercase mb-4">Verso</h2>
-								{{-- Document Début --}}
-								<div id="FileUpload"
-									class="relative mb-5.5 block w-full cursor-pointer appearance-none rounded border border-dashed border-primary bg-gray px-4 py-4 dark:bg-meta-4 sm:py-7.5">
-									<input type="file" accept="image/*" required
-										class="absolute inset-0 z-50 m-0 h-full w-full cursor-pointer p-0 opacity-0 outline-none">
-									<div class="flex flex-col items-center justify-center space-y-3">
-										<span
-											class="flex h-10 w-10 items-center justify-center rounded-full border border-stroke bg-white dark:border-strokedark dark:bg-boxdark">
-											<i data-lucide="upload" class="text-primary size-5"></i>
-										</span>
-										<p class="text-sm font-medium">
-											<span class="text-primary">Cliquer pour téléverser</span>
-											ou faites un glisser - deposer
-										</p>
-										<p class="mt-1.5 text-sm font-medium">
-											SVG, PNG, JPG or GIF
-										</p>
-										<p class="text-sm font-medium">
-											(max, 800 X 800px)
-										</p>
-									</div>
-								</div>
-								{{-- Document Fin --}}
-							</div>
-						</div>
-					</div>
-					<div class="duration-300 ease-in-out verification-account-hidden" data-step="6">
-						<h2 class="text-black dark:text-white uppercase text-title-md mb-4">Permis de conduire</h2>
-						<div class="mb-5.5 grid lg:grid-cols-2 grid-cols-1 gap-5.5">
-							<div>
-								<ul class="list-disc">
-									<li class="text-green-500">Le permis de conduire doit être en cours de validité</li>
-									<li class="text-green-500">La photo sur le permis doit être récente et ressemblante</li>
-									<li class="text-green-500">Les informations personnelles doivent être clairement lisibles</li>
-									<li class="text-green-500">Le numéro du permis doit être visible et non altéré</li>
-									<li class="text-green-500">La signature du titulaire doit être présente</li>
-									<li class="text-green-500">Le permis ne doit pas présenter de signes de falsification</li>
-									<li class="text-green-500">La catégorie de véhicules autorisée doit être clairement indiquée</li>
-									<li class="text-green-500">Le permis doit être émis par une autorité compétente reconnue</li>
-									<li class="text-green-500">Les dates de délivrance et d'expiration doivent être lisibles</li>
-								</ul>
-							</div>
-							<div>
-								<h2 class="text-black dark:text-white uppercase mb-4">Recto</h2>
-								{{-- Document Début --}}
-								<div id="FileUpload"
-									class="relative mb-5.5 block w-full cursor-pointer appearance-none rounded border border-dashed border-primary bg-gray px-4 py-4 dark:bg-meta-4 sm:py-7.5">
-									<input type="file" accept="image/*" required
-										class="absolute inset-0 z-50 m-0 h-full w-full cursor-pointer p-0 opacity-0 outline-none">
-									<div class="flex flex-col items-center justify-center space-y-3">
-										<span
-											class="flex h-10 w-10 items-center justify-center rounded-full border border-stroke bg-white dark:border-strokedark dark:bg-boxdark">
-											<i data-lucide="upload" class="text-primary size-5"></i>
-										</span>
-										<p class="text-sm font-medium">
-											<span class="text-primary">Cliquer pour téléverser</span>
-											ou faites un glisser - deposer
-										</p>
-										<p class="mt-1.5 text-sm font-medium">
-											SVG, PNG, JPG or GIF
-										</p>
-										<p class="text-sm font-medium">
-											(max, 800 X 800px)
-										</p>
-									</div>
-								</div>
-								{{-- Document Fin --}}
-								<h2 class="text-black dark:text-white uppercase mb-4">Verso</h2>
-								{{-- Document Début --}}
-								<div id="FileUpload"
-									class="relative mb-5.5 block w-full cursor-pointer appearance-none rounded border border-dashed border-primary bg-gray px-4 py-4 dark:bg-meta-4 sm:py-7.5">
-									<input type="file" accept="image/*" required
-										class="absolute inset-0 z-50 m-0 h-full w-full cursor-pointer p-0 opacity-0 outline-none">
-									<div class="flex flex-col items-center justify-center space-y-3">
-										<span
-											class="flex h-10 w-10 items-center justify-center rounded-full border border-stroke bg-white dark:border-strokedark dark:bg-boxdark">
-											<i data-lucide="upload" class="text-primary size-5"></i>
-										</span>
-										<p class="text-sm font-medium">
-											<span class="text-primary">Cliquer pour téléverser</span>
-											ou faites un glisser - deposer
-										</p>
-										<p class="mt-1.5 text-sm font-medium">
-											SVG, PNG, JPG or GIF
-										</p>
-										<p class="text-sm font-medium">
-											(max, 800 X 800px)
-										</p>
-									</div>
-								</div>
-								{{-- Document Fin --}}
-							</div>
-						</div>
-					</div>
+								@break
+						
+							@default
+								
+						@endswitch
+					@endforeach
 
 					<div class="flex justify-between gap-4.5">
 						<button

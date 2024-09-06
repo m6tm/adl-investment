@@ -7,6 +7,7 @@ return [
     "lastname" => "Last Name",
     "status" => "Account status",
     "email" => "Email",
+    "verification_status" => "Verification status",
     "role" => "Role",
     "created_at" => "Created At",
     "action" => "Action",

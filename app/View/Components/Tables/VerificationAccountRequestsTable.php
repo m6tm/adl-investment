@@ -18,7 +18,8 @@ class VerificationAccountRequestsTable extends Component
      */
     public function __construct()
     {
-        $this->users = User::where('verification_status', '!=', USER_VERIFICATION_STATUS::VERIFIED)
+        // Les utilisateurs qui ont des documents soumis et qui ne sont pas vérifiés
+        $this->users = User::where('verification_status', USER_VERIFICATION_STATUS::PENDING)
             ->get()
             ->filter(fn(User $user) => $user->documents->count() > 0);
     }

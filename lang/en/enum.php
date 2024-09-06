@@ -35,15 +35,15 @@ return [
         "TERMINE" => "finished",
         "ATTENTE" => "waiting",
     ],
-    "USER_TYPE" => [
-        "ADMIN" => "Administrator",
-        "SUPER_ADMIN" => "Super administrator",
-        "PLAYER" => "Player",
-    ],
     "USER_VERIFICATION_STATUS" => [
         "VERIFIED" => "verified",
         "PENDING" => "pending",
         "UNVERIFIED" => "unverified",
+    ],
+    "USER_ROLE" => [
+        "ADMIN" => "Administrator",
+        "SUPER_ADMIN" => "Super administrator",
+        "PLAYER" => "Player",
     ],
     "USER_ROLE_DESCRIPTION" => [
         "ADMIN" => "Administrator",
@@ -51,6 +51,7 @@ return [
         "PLAYER" => "Player",
     ],
     "DOCUMENT_TYPE" => [
+        "SELFIE" => "Selfie photo",
         "CNI" => "National Identity Card",
         "PASSPORT" => "Passport",
         "PERMIS_CONDUIRE" => "Driver's License",

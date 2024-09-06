@@ -65,7 +65,7 @@
 					<h3 class="mb-1.5 text-2xl font-medium text-black dark:text-white">
 						Danish Heilium
 					</h3>
-					<p class="font-medium">{{ __('enum.USER_TYPE.PLAYER') }}</p>
+					<p class="font-medium">{{ __('enum.USER_ROLE.PLAYER') }}</p>
 					<div class="flex">
 						<div
 							class="mx-auto mb-5.5 mt-4.5 grid grid-cols-3 rounded-md border border-stroke py-2.5 shadow-1 dark:border-strokedark dark:bg-[#37404F]">
@@ -152,7 +152,7 @@
 									</span>
 									<input
 										class="w-full rounded border border-stroke bg-neutral-200 py-3 pl-11.5 pr-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-slate-100 dark:bg-meta-4 dark:text-white dark:focus:border-primary"
-										type="street" readonly disabled id="street" value="{{ auth()->user()->address->street }}" placeholder="{{ __('users.create.town') }}" required>
+										type="street" readonly disabled id="street" value="{{ auth()->user()->address?->street }}" placeholder="{{ __('users.create.town') }}" required>
 								</div>
 							</div>
 
@@ -185,7 +185,7 @@
 								<label class="mb-3 block text-sm font-medium text-black dark:text-white" for="ville">{{ __('users.create.city') }}</label>
 								<input
 									class="w-full rounded border border-stroke bg-neutral-200 py-3 px-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-slate-100 dark:bg-meta-4 dark:text-white dark:focus:border-primary"
-									type="ville" readonly disabled id="ville" value="{{ auth()->user()->address->city }}" placeholder="Montreal">
+									type="ville" readonly disabled id="ville" value="{{ auth()->user()->address?->city }}" placeholder="Montreal">
 							</div>
 
 							<div class="mb-3">

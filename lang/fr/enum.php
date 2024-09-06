@@ -35,15 +35,15 @@ return [
         "TERMINE" => "terminé",
         "ATTENTE" => "attente",
     ],
-    "USER_TYPE" => [
-        "ADMIN" => "Administrateur",
-        "SUPER_ADMIN" => "Super administrateur",
-        "PLAYER" => "Joueur",
-    ],
     "USER_VERIFICATION_STATUS" => [
         "VERIFIED" => "vérifié",
         "PENDING" => "en cours",
         "UNVERIFIED" => "non vérifié",
+    ],
+    "USER_ROLE" => [
+        "SUPER_ADMIN" => "Super Administrateur",
+        "ADMIN" => "Administrateur",
+        "PLAYER" => "Joueur",
     ],
     "USER_ROLE_DESCRIPTION" => [
         "SUPER_ADMIN" => "Super Administrateur",
@@ -51,6 +51,7 @@ return [
         "PLAYER" => "Joueur",
     ],
     "DOCUMENT_TYPE" => [
+        "SELFIE" => "Photo selfie",
         "CNI" => "Carte national d'identité",
         "PASSPORT" => "Passport",
         "PERMIS_CONDUIRE" => "Permis de conduire",

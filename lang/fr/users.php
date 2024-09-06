@@ -7,6 +7,7 @@ return [
     "lastname" => "Prénom",
     "status" => "Statut du compte",
     "email" => "Email",
+    "verification_status" => "Statut de vérification",
     "role" => "Rôle",
     "created_at" => "Créé le",
     "action" => "Action",

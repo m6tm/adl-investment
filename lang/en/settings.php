@@ -14,4 +14,7 @@ return [
         "assign" => "Associate documents",
         "country" => "Country",
     ],
+    "verification_account" => [
+        "player-success" => "Your verification request has been successfully sent. Please wait for our team's response.",
+    ]
 ];

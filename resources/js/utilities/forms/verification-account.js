@@ -4,7 +4,7 @@ import parsePhoneNumber from 'libphonenumber-js'
 import moment from 'moment'
 import JustValidatePluginDate from 'just-validate-plugin-date';
 
-const validator = () => {
+const validator = async () => {
     const validate = new JustValidate('#verification-account-form', undefined, localization);
     let locale = document.querySelector('html').getAttribute('lang') ?? 'en'
     const today = moment(moment.now())
@@ -81,52 +81,49 @@ const validator = () => {
             },
         ])
     
-    
-    const run_validation = async () => {
-        await validate.validate(true)
-        /**
-         * @type {HTMLFormElement}
-        */
-        const form = validate.form
+    await validate.validate(true)
+    /**
+     * @type {HTMLFormElement}
+    */
+    const form = validate.form
+    const listener = async (e) => {
+        e.preventDefault()
         const error_list = document.querySelector('#error-validation-list')
         const country = form.querySelector('#pays')
         const country_code = country.getAttribute('data-code')
-        const listener = async (e) => {
-            e.preventDefault()
-    
-            let phone = form.querySelector('#telephone').value.trim();
-            if (phone.length === 0) phone = '000'
-            let phoneNumber = parsePhoneNumber(phone, country_code)
-            if (phoneNumber) phoneNumber = parsePhoneNumber(phoneNumber.formatNational(), country_code)
-            
-            if (!phoneNumber.isValid()) {
-                form.querySelector('#telephone').value = ""
-                validate.addField('#telephone', [
-                    {
-                        rule: 'required',
-                        errorMessage: 'phone.invalid',
-                    },
-                ])
-            } else {
-                validate.removeField('#telephone')
-            }
-    
-            await validate.validate(true)
-            Array.from(error_list.children).forEach(li => li.remove())
-            if (validate.isValid) {
-                error_list.innerHTML = ''
-                return
-            }
-            const errors = Object.values(validate.errorLabels).map(label => label.textContent)
-            errors.forEach(error => {
-                const li = document.createElement('li')
-                li.textContent = error
-                error_list.appendChild(li)
-            })
+
+        let phone = form.querySelector('#telephone').value.trim();
+        if (phone.length === 0) phone = '000'
+        let phoneNumber = parsePhoneNumber(phone, country_code)
+        if (phoneNumber) phoneNumber = parsePhoneNumber(phoneNumber.formatNational(), country_code)
+        
+        if (!phoneNumber.isValid()) {
+            form.querySelector('#telephone').value = ""
+            validate.addField('#telephone', [
+                {
+                    rule: 'required',
+                    errorMessage: 'phone.invalid',
+                },
+            ])
+        } else {
+            validate.removeField('#telephone')
         }
-        form.addEventListener('submit', listener, false)
+
+        await validate.validate(true)
+        Array.from(error_list.children).forEach(li => li.remove())
+        if (validate.isValid) {
+            error_list.innerHTML = ''
+            form.submit()
+            return
+        }
+        const errors = ["Invalid form data"]
+        errors.forEach(error => {
+            const li = document.createElement('li')
+            li.textContent = error
+            error_list.appendChild(li)
+        })
     }
-    run_validation()
+    form.addEventListener('submit', listener, false)
     validate.setCurrentLocale(locale)
 }
 

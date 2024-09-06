@@ -76,11 +76,12 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function() {
     Route::get('notifications', [NotificationController::class, 'index'])->name('dashboard.notifications');
     // Account verification
     Route::get('account-verification', [AccountVerificationController::class, 'index'])->name('dashboard.account-verification');
+    Route::post('account-verification', [AccountVerificationController::class, 'verificationAccount'])->name('dashboard.account-verification-post');
+    Route::get('account-verifications', [AccountVerificationController::class, 'adminVerifications'])->name('dashboard.admin.account-verification');
     // Tickets
     Route::get('tickets', [TicketController::class, 'index'])->name('dashboard.tickets');
     Route::get('tickets/create', [TicketController::class, 'create'])->name('dashboard.tickets.create');
     Route::get('tickets/pay', [TicketController::class, 'pay'])->name('dashboard.tickets.pay');
-    Route::get('account-verifications', [AccountVerificationController::class, 'adminVerifications'])->name('dashboard.admin.account-verification');
     Route::get('tickets/pay1', [TicketController::class, 'pay1'])->name('dashboard.tickets.pay1');
     Route::get('tickets/pay2', [TicketController::class, 'pay2'])->name('dashboard.tickets.pay2');
     Route::get('tickets/pay3', [TicketController::class, 'pay3'])->name('dashboard.tickets.pay3');

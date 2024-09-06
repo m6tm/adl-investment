@@ -16,7 +16,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id');
             $table->foreignId('document_autorise_id');
-            $table->enum('statuts', DOCUMENT_STATUS::getValues())->default(DOCUMENT_STATUS::REFUSED);
+            $table->enum('statuts', DOCUMENT_STATUS::getValues())->default(DOCUMENT_STATUS::PENDING);
             $table->string('path');
             $table->timestamps();
 

@@ -14,4 +14,7 @@ return [
         "assign" => "Associer les documents",
         "country" => "Pays",
     ],
+    "verification_account" => [
+        "player-success" => "Votre demande de vérification a été envoyée avec succès. Veuillez attendre la réponse de notre équipe.",
+    ]
 ];
