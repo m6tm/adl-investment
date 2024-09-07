@@ -137,7 +137,7 @@
 					<td>{{ $user->created_at->format('M d, Y') }}</td>
 					<td class="flex justify-center space-x-3">
                         @if (auth()->user()->can('edit.user'))
-                            <a href="{{ route('dashboard.user.edit', ['user_id' => $user->id]) }}" class="float-right text-primary">{{ __('users.edit') }}</a>
+                            <a href="{{ route('dashboard.admin.account-verification.check', ['player_id' => $user->id]) }}" class="float-right text-primary">{{ __('users.check') }}</a>
                         @endif
 					</td>
 				</tr>

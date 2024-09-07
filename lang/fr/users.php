@@ -12,6 +12,7 @@ return [
     "created_at" => "Créé le",
     "action" => "Action",
     "edit" => "Modifier",
+    "check" => "Vérifier",
     "create" => [
         'create_user' => 'Créer un utilisateur',
         'user_list' => 'Liste des utilisateurs',

@@ -2,22 +2,9 @@
 	<div class="flex flex-grow items-center justify-end px-4 py-4 shadow-2 md:px-6 2xl:px-11">
 		<div class="flex items-center gap-3 2xsm:gap-7">
 			<ul class="flex items-center gap-2 2xsm:gap-4">
-                @role(App\Enums\USER_ROLE::PLAYER)
-                    <!-- Verification Account Menu Area -->
-                    <li class="relative flex items-center space-x-2">
-                        <span class="lg:block hidden">{{ __('header.verify_account') }}</span>
-                        <a
-                            class="relative flex h-8.5 w-8.5 items-center justify-center rounded-full border-[0.5px] border-stroke bg-orange-100 dark:bg-orange-100 hover:text-primary dark:border-strokedark dark:text-white"
-                            href="{{ route('dashboard.account-verification') }}" title="Verify your account">
-                            <span class="absolute -top-0.5 right-0 z-1 h-2 w-2 rounded-full bg-meta-1">
-                                <span class="absolute -z-1 inline-flex h-full w-full animate-ping rounded-full bg-meta-1 opacity-75"></span>
-                            </span>
-
-                            <span data-lucide="shield-alert" class="text-slate-500 scale-[.90]"></span>
-                        </a>
-                    </li>
-                    <!-- Verification Account Menu Area -->
-                @endrole
+				<!-- Verification Account Menu Area -->
+				<x-dashboard.header.verification-account-status />
+				<!-- Verification Account Menu Area -->
 
 				<!-- Notification Menu Area -->
 				<x-dashboard.header.notification />
@@ -32,8 +19,8 @@
 			<div class="relative" x-data="{ dropdownOpen: false }" @click.outside="dropdownOpen = false">
 				<a class="flex items-center gap-4" href="#" @click.prevent="dropdownOpen = ! dropdownOpen">
 					<span class="hidden text-right lg:block">
-						<span class="block text-sm font-medium text-black dark:text-white">Thomas Anree</span>
-						<span class="block text-xs font-medium">UX Designer</span>
+						<span class="block text-sm font-medium text-black dark:text-white capitalize">{{ auth()->user()->pseudo }}</span>
+						<span class="block text-xs font-medium">{{ __(auth()->user()->getRoleNames()[0]) }}</span>
 					</span>
 
 					<span class="h-12 w-12 rounded-full">

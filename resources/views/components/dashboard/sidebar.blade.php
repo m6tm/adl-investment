@@ -55,7 +55,7 @@
 						<a
 							class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
 							href="{{ route('dashboard.tickets') }}">
-							<i data-lucide="messages-square" class="w-5"></i>
+							<i data-lucide="ticket" class="w-5"></i>
 							Tickets
 						</a>
 					</li>

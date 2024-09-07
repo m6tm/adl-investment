@@ -4,6 +4,7 @@ namespace App\Http\Requests;
 
 use App\Enums\DOCUMENT_TYPE;
 use App\Enums\USER_ROLE;
+use App\Enums\USER_VERIFICATION_STATUS;
 use App\Helpers\AuthHelper;
 use App\Models\Country;
 use App\Models\DocumentAutorise;
@@ -18,7 +19,7 @@ class VerificationAccountPlayerRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return AuthHelper::hasRole(USER_ROLE::PLAYER);
+        return AuthHelper::hasRole(USER_ROLE::PLAYER) && auth()->user()->verification_status !== USER_VERIFICATION_STATUS::VERIFIED;
     }
 
     /**

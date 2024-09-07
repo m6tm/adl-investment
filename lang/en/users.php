@@ -12,6 +12,7 @@ return [
     "created_at" => "Created At",
     "action" => "Action",
     "edit" => "Edit",
+    "check" => "Check",
     "create" => [
         'create_user' => 'Create User',
         'user_list' => 'User List',
