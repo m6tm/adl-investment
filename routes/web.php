@@ -9,6 +9,7 @@ use App\Http\Controllers\auth\RegisteredUserController;
 use App\Http\Controllers\Dashboard\NotificationController;
 use App\Http\Controllers\Dashboard\UserController;
 use App\Http\Controllers\Dashboard\TicketController;
+use App\Http\Controllers\Dashboard\TicketPriceController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\RoleController;
@@ -74,8 +75,11 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function() {
     Route::get('notifications', [NotificationController::class, 'index'])->name('dashboard.notifications');
     // Account verification
     Route::get('account-verification', [AccountVerificationController::class, 'index'])->name('dashboard.account-verification');
+    // Tickets Price
+    Route::get('ticket-prices', [TicketPriceController::class, 'index'])->name('dashboard.ticket-prices');
+    Route::get('ticket-prices/edit', [TicketPriceController::class, 'edit'])->name('dashboard.ticket-prices.edit');
     // Tickets
-    Route::get('tickets', [TicketController::class, 'index'])->name('dashboard.tickets');
+    Route::get('tickets/buy', [TicketController::class, 'buy'])->name('dashboard.tickets.buy');
     Route::get('tickets/create', [TicketController::class, 'create'])->name('dashboard.tickets.create');
     Route::get('tickets/pay1', [TicketController::class, 'pay1'])->name('dashboard.tickets.pay1');
     Route::get('tickets/pay2', [TicketController::class, 'pay2'])->name('dashboard.tickets.pay2');

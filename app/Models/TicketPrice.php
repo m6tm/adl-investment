@@ -12,10 +12,16 @@ class TicketPrice extends Model
         'prix',
         'device',
         'is_promotion',
+        'country_id',
     ];
 
     public function tickets()
     {
         return $this->hasMany(Ticket::class);
+    }
+
+    public function country()
+    {
+        return $this->belongsTo(Country::class, 'country_id');
     }
 }
