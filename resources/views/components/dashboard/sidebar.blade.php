@@ -60,16 +60,33 @@
 						</a>
 					</li>
 					<!-- Menu Item Tickets -->
-					<!-- Menu List Tickets -->
-					<li>
-						<a
-							class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
-							href="{{ route('dashboard.ticket-prices') }}">
-							<i data-lucide="list-tree" class="w-5"></i>
-							Tickets
-						</a>
-					</li>
-					<!-- Menu List Tickets -->
+					
+					@if (auth()->user()->can('permissions'))
+						<!-- Menu List Tickets -->
+						<li>
+							<a
+								class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
+								href="{{ route('dashboard.ticket-prices') }}">
+								<i data-lucide="list-tree" class="w-5"></i>
+								Tickets
+							</a>
+						</li>
+						<!-- Menu List Tickets -->
+					@endif
+
+					@if (auth()->user()->can('permissions'))
+						<!-- Menu Draw History -->
+						<li>
+							<a
+								class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
+								href="{{ route('dashboard.histories') }}">
+								<i data-lucide="gallery-vertical-end" class="w-5"></i>
+								Historique
+							</a>
+						</li>
+						<!-- Menu Draw History -->
+					@endif
+					
 					@if (auth()->user()->can('permissions'))
 						<!-- Menu Item Permissions -->
 						<li>

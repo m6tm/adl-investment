@@ -10,6 +10,7 @@ use App\Http\Controllers\Dashboard\NotificationController;
 use App\Http\Controllers\Dashboard\UserController;
 use App\Http\Controllers\Dashboard\TicketController;
 use App\Http\Controllers\Dashboard\TicketPriceController;
+use App\Http\Controllers\Dashboard\HistoryController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\RoleController;
@@ -84,6 +85,9 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function() {
     Route::get('tickets/pay1', [TicketController::class, 'pay1'])->name('dashboard.tickets.pay1');
     Route::get('tickets/pay2', [TicketController::class, 'pay2'])->name('dashboard.tickets.pay2');
     Route::get('tickets/pay3', [TicketController::class, 'pay3'])->name('dashboard.tickets.pay3');
+    // Draw History
+    Route::get('histories', [HistoryController::class, 'index'])->name('dashboard.histories');
+    Route::get('histories/show', [HistoryController::class, 'show'])->name('dashboard.histories.show');
     // Permissions
     Route::get('permissions', [PermissionController::class, 'index'])->name('dashboard.permissions');
     Route::post('permissions/assign-to-user/{permisison_id}', [PermissionController::class, 'permissionToUser'])->name('dashboard.permissions.to.user')->whereNumber('permisison_id');
