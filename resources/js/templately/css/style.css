@@ -313,7 +313,8 @@ span.flatpickr-weekday,
 .data-table-one .datatable-search input {
   @apply h-[46px] w-full rounded border border-stroke bg-transparent px-5 outline-none focus:border-primary dark:border-strokedark dark:bg-meta-4 dark:focus:border-primary;
 }
-.data-table-common .datatable-selector {
+.data-table-common .datatable-selector,
+.datatable-selector {
   @apply relative z-20 inline-flex bg-transparent p-0 font-medium text-body outline-none dark:text-bodydark w-15 px-3 rounded-md cursor-pointer;
 }
 .data-table-common .datatable-top {
@@ -347,7 +348,7 @@ span.flatpickr-weekday,
 .data-table-common .datatable-table > thead > tr:last-child > th {
   @apply !border-b border-stroke pb-6 dark:border-strokedark;
 }
-.data-table-common .datatable-table > thead > tr:last-child > th input {
+.data-table-common .datatable-table > thead > tr:last-child > th input:not(.data-custom) {
   @apply h-[34px] w-full rounded border border-stroke bg-transparent px-3 text-sm outline-none focus:border-primary dark:border-strokedark dark:bg-meta-4 dark:focus:border-primary;
 }
 .data-table-common .datatable-table > tbody > tr {
@@ -386,7 +387,8 @@ span.flatpickr-weekday,
 .data-table .datatable-bottom {
   @apply flex flex-col gap-4 px-8 py-7 after:hidden sm:flex-row sm:items-center sm:justify-between sm:gap-0 sm:space-x-4;
 }
-.data-table .datatable-search input {
+.data-table .datatable-search input,
+.datatable-input:not(.data-custom) {
   @apply h-11.5 w-full rounded border border-stroke bg-whiter px-5 outline-none focus:border-primary dark:border-strokedark dark:bg-meta-4 dark:focus:border-primary;
 }
 .data-table-two .datatable-search input {

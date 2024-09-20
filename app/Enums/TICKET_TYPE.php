@@ -10,6 +10,6 @@ use BenSampo\Enum\Enum;
  */
 final class TICKET_TYPE extends Enum
 {
-    const BONUS = 'bonus';
-    const NORMAL = 'normal';
+    const BONUS = 'enum.TICKET_TYPE.BONUS';
+    const NORMAL = 'enum.TICKET_TYPE.NORMAL';
 }

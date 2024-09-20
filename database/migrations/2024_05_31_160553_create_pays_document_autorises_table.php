@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('pays_document_autorises', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('pay_id');
+            $table->foreignId('country_id');
             $table->foreignId('document_autorise_id');
             $table->dateTime('created_at')->useCurrent();
             $table->dateTime('updated_at');

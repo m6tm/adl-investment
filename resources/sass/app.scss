@@ -1,7 +1,8 @@
 // @tailwind base;
 // @tailwind components;
 // @tailwind utilities;
-
+@import url('./partials/toatifyer.scss');
+@import url('./partials/winning.scss');
 
 /* Colours */
 $primary-colour: #363636;
@@ -156,4 +157,3 @@ tbody td {
     background-color: #03478b;
     color: #363636;
 }
-

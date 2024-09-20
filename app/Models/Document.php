@@ -8,10 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Document extends Model
 {
     protected $fillable = [
-        'type',
-        'adresse',
-        'statut',
-        'fiche_document',
+        'user_id',
+        'document_autorise_id',
+        'statuts',
+        'path',
     ];
 
     public function user()

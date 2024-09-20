@@ -1,0 +1,25 @@
+
+.toastify-success {
+    @apply text-white;
+    --tw-bg-opacity: 1;
+    background: rgb(74 222 128 / var(--tw-bg-opacity)) /* #4ade80 */ !important;
+}
+
+.toastify-error {
+    @apply text-white;
+    --tw-bg-opacity: 1;
+    background: rgb(251 113 133 / var(--tw-bg-opacity)) /* #fb7185 */ !important;
+}
+
+.toastify-info {
+    @apply text-white;
+    --tw-bg-opacity: 1;
+    background: rgb(96 165 250 / var(--tw-bg-opacity)) /* #60a5fa */ !important;
+}
+
+.toastify-warning {
+    @apply text-slate-800;
+    --tw-bg-opacity: 1;
+    color: rgb(30 41 59 / var(--tw-text-opacity)) /* #1e293b */ !important;
+    background: rgb(250 204 21 / var(--tw-bg-opacity)) /* #facc15 */ !important;
+}

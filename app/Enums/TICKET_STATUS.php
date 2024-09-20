@@ -11,7 +11,7 @@ use BenSampo\Enum\Enum;
  */
 final class TICKET_STATUS extends Enum
 {
-    const ACTIF = 'actif';
-    const EXPIRE = 'expiré';
-    const UTILISE = 'utilisé';
+    const ACTIF = 'enum.TICKET_STATUS.ACTIF';
+    const EXPIRE = 'enum.TICKET_STATUS.EXPIRE';
+    const UTILISE = 'enum.TICKET_STATUS.UTILISE';
 }

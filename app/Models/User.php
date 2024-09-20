@@ -10,10 +10,11 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use App\Enums\USER_VERIFICATION_STATUS;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
-    use HasApiTokens, HasFactory, Notifiable, SoftDeletes;
+    use HasApiTokens, HasFactory, Notifiable, SoftDeletes, HasRoles;
 
     /**
      * The attributes that are mass assignable.
@@ -74,7 +75,7 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasOne(Compte::class);
     }
 
-    public function phone()
+    public function phones()
     {
         return $this->hasMany(Telephone::class);
     }

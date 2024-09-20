@@ -16,7 +16,9 @@ return new class extends Migration
             $table->string('name')->unique();
             $table->string('dial_code')->nullable()->unique();
             $table->string('code')->unique();
-            $table->timestamps();
+            $table->dateTime('created_at')->useCurrent();
+            $table->dateTime('updated_at')->useCurrent();
+            $table->dateTime('deleted_at')->nullable();
         });
     }
 
