@@ -3,17 +3,24 @@
 	@csrf
 	{{-- Choisir une photo de profile Début --}}
 	<div class="lg:flex lg:flex-col lg:space-y-5 grid grid-cols-2 gap-4" id="verification-account-tabs">
-		<x-account-verification-stepper document="Informations utilisateur" />
+		<x-account-verification-stepper document="Informations utilisateur" :status="$DOCUMENT_STATUS::PENDING" />
 		@php
-			$country = auth()->user()->pays;
+			$user = auth()->user();
+			$country = $user->pays;
 			$documents_autorises = $country->documents_autorises;
 		@endphp
-		@foreach ($documents_autorises as $documents_autorise)
-			@php
-				$current_document_autorise = $documents_autorise->documents_autorise;
-			@endphp
-			<x-account-verification-stepper document="{!! __($current_document_autorise->type) !!}" />
-		@endforeach
+		@if ($user->documents->count() == 0)
+			@foreach ($documents_autorises as $documents_autorise)
+				@php
+					$current_document_autorise = $documents_autorise->documents_autorise;
+				@endphp
+				<x-account-verification-stepper document="{!! __($current_document_autorise->type) !!}" />
+			@endforeach
+		@else
+			@foreach ($user->documents as $document)
+				<x-account-verification-stepper document="{!! __($document->document_autorise->type) !!}" :status="$document->statuts" />
+			@endforeach
+		@endif
 	</div>
 	{{-- Choisir une photo de profile Fin --}}
 	<div class="lg:col-span-2" id="account-verification-steps" data-current-step="1">

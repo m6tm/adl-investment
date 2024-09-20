@@ -2,6 +2,7 @@
 
 namespace App\View\Components\Account;
 
+use App\Enums\DOCUMENT_STATUS;
 use App\Enums\DOCUMENT_TYPE;
 use Closure;
 use Illuminate\Contracts\View\View;
@@ -23,6 +24,7 @@ class VerificationPlayerSide extends Component
     public function render(): View|Closure|string
     {
         $DOCUMENT_TYPE = DOCUMENT_TYPE::class;
-        return view('components.account.verification-player-side', compact('DOCUMENT_TYPE'));
+        $DOCUMENT_STATUS = DOCUMENT_STATUS::class;
+        return view('components.account.verification-player-side', compact('DOCUMENT_TYPE', 'DOCUMENT_STATUS'));
     }
 }

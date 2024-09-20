@@ -3,6 +3,7 @@
 return [
     "title" => "Account Verification",
     "title-admin" => "Account Verification Requests",
+    "admin-verif-response" => "Your changes have been successfully saved",
     "steps" => [
         'pending' => 'Verification in progress',
         'verified' => 'Successfully verified',

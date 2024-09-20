@@ -79,6 +79,7 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function() {
     Route::post('account-verification', [AccountVerificationController::class, 'verificationAccount'])->name('dashboard.account-verification-post');
     Route::get('account-verifications', [AccountVerificationController::class, 'adminVerifications'])->name('dashboard.admin.account-verification');
     Route::get('account-verifications/{player_id}', [AccountVerificationController::class, 'adminVerificationsCheck'])->name('dashboard.admin.account-verification.check')->whereNumber('player_id');
+    Route::post('account-verifications/{player_id}', [AccountVerificationController::class, 'adminVerificationsCheckPost'])->name('dashboard.admin.account-verification.check.post')->whereNumber('player_id');
     // Tickets
     Route::get('tickets', [TicketController::class, 'index'])->name('dashboard.tickets');
     Route::get('tickets/create', [TicketController::class, 'create'])->name('dashboard.tickets.create');

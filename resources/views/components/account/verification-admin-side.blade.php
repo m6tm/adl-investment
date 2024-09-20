@@ -1,4 +1,4 @@
-<form action="{{ route('dashboard.account-verification-post') }}" enctype="multipart/form-data" method="POST"
+<form action="{{ route('dashboard.admin.account-verification.check.post', $user->id) }}" enctype="multipart/form-data" method="POST"
 	id="verification-account-form" autocomplete="off" novalidate="novalidate" class="grid lg:grid-cols-3 gap-5">
 	@csrf
 	{{-- Choisir une photo de profile Début --}}
@@ -116,6 +116,7 @@
 		@foreach ($user->documents as $key => $document)
 			@php
 				$current_document_autorise = $document->document_autorise;
+				$files = json_decode($document->path, true);
 			@endphp
 			@switch($current_document_autorise->type)
 				@case($DOCUMENT_TYPE::SELFIE)
@@ -132,24 +133,12 @@
 							</div>
 							<div>
 								{{-- Selfie photo Début --}}
-								<div id="FileUpload"
-									class="relative mb-5.5 block w-full cursor-pointer appearance-none rounded border border-dashed border-primary bg-gray px-4 py-4 dark:bg-meta-4 sm:py-7.5">
-									<input type="file" id="selfie_input" accept=".jpg,.jpeg,.png" name="selfie_photo"
-										class="absolute inset-0 z-50 m-0 h-full w-full cursor-pointer p-0 opacity-0 outline-none" accept="image/*"
-										required>
-									<div class="flex flex-col items-center justify-center space-y-3">
-										<span
-											class="flex h-10 w-10 items-center justify-center rounded-full border border-stroke bg-white dark:border-strokedark dark:bg-boxdark">
-											<i data-lucide="upload" class="text-primary size-5"></i>
-										</span>
-										<p class="text-sm font-medium">
-											<span class="text-primary">Cliquer pour téléverser</span>
-											ou faites un glisser - deposer
-										</p>
-										<p class="mt-1.5 text-sm font-medium">
-											JPG, JPEG or PNG
-										</p>
+								<div class="">
+									<div class="flex items-center mb-4">
+										<input id="selfie" type="checkbox" name="selfie" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+										<label for="selfie" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Document valide</label>
 									</div>
+									<img src="{{ asset($files[0]) }}" alt="selfie" class="mb-5.5 w-full">
 								</div>
 								{{-- Selfie photo Fin --}}
 							</div>
@@ -175,44 +164,22 @@
 							<div>
 								<h2 class="text-black dark:text-white uppercase mb-4">Recto</h2>
 								{{-- Document Début --}}
-								<div id="FileUpload"
-									class="relative mb-5.5 block w-full cursor-pointer appearance-none rounded border border-dashed border-primary bg-gray px-4 py-4 dark:bg-meta-4 sm:py-7.5">
-									<input type="file" accept=".jpg,.jpeg,.png,.pdf" required name="cni_recto_photo" id="cni_recto_photo"
-										class="absolute inset-0 z-50 m-0 h-full w-full cursor-pointer p-0 opacity-0 outline-none">
-									<div class="flex flex-col items-center justify-center space-y-3">
-										<span
-											class="flex h-10 w-10 items-center justify-center rounded-full border border-stroke bg-white dark:border-strokedark dark:bg-boxdark">
-											<i data-lucide="upload" class="text-primary size-5"></i>
-										</span>
-										<p class="text-sm font-medium">
-											<span class="text-primary">Cliquer pour téléverser</span>
-											ou faites un glisser - deposer
-										</p>
-										<p class="mt-1.5 text-sm font-medium">
-											JPG, JPEG, PNG or PDF
-										</p>
+								<div class="">
+									<div class="flex items-center mb-4">
+										<input id="cni-recto" type="checkbox" name="cni[recto]" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+										<label for="cni-recto" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Document valide</label>
 									</div>
+									<img src="{{ asset($files[0]) }}" alt="CNI Recto" class="mb-5.5 w-full">
 								</div>
 								{{-- Document Fin --}}
 								<h2 class="text-black dark:text-white uppercase mb-4">Verso</h2>
 								{{-- Document Début --}}
-								<div id="FileUpload"
-									class="relative mb-5.5 block w-full cursor-pointer appearance-none rounded border border-dashed border-primary bg-gray px-4 py-4 dark:bg-meta-4 sm:py-7.5">
-									<input type="file" accept=".jpg,.jpeg,.png,.pdf" name="cni_verso_photo" id="cni_verso_photo"
-										class="absolute inset-0 z-50 m-0 h-full w-full cursor-pointer p-0 opacity-0 outline-none" required>
-									<div class="flex flex-col items-center justify-center space-y-3">
-										<span
-											class="flex h-10 w-10 items-center justify-center rounded-full border border-stroke bg-white dark:border-strokedark dark:bg-boxdark">
-											<i data-lucide="upload" class="text-primary size-5"></i>
-										</span>
-										<p class="text-sm font-medium">
-											<span class="text-primary">Cliquer pour téléverser</span>
-											ou faites un glisser - deposer
-										</p>
-										<p class="mt-1.5 text-sm font-medium">
-											JPG, JPEG, PNG or PDF
-										</p>
+								<div class="">
+									<div class="flex items-center mb-4">
+										<input id="cni-verso" type="checkbox" name="cni[verso]" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+										<label for="cni-verso" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Document valide</label>
 									</div>
+									<img src="{{ asset($files[1]) }}" alt="CNI Recto" class="mb-5.5 w-full">
 								</div>
 								{{-- Document Fin --}}
 							</div>
@@ -239,49 +206,30 @@
 							<div>
 								<h2 class="text-black dark:text-white uppercase mb-4">Recto</h2>
 								{{-- Document Début --}}
-								<div id="FileUpload"
-									class="relative mb-5.5 block w-full cursor-pointer appearance-none rounded border border-dashed border-primary bg-gray px-4 py-4 dark:bg-meta-4 sm:py-7.5">
-									<input type="file" accept=".jpg,.jpeg,.png,.pdf" required name="passport_recto_photo"
-										id="passport_recto_photo"
-										class="absolute inset-0 z-50 m-0 h-full w-full cursor-pointer p-0 opacity-0 outline-none">
-									<div class="flex flex-col items-center justify-center space-y-3">
-										<span
-											class="flex h-10 w-10 items-center justify-center rounded-full border border-stroke bg-white dark:border-strokedark dark:bg-boxdark">
-											<i data-lucide="upload" class="text-primary size-5"></i>
-										</span>
-										<p class="text-sm font-medium">
-											<span class="text-primary">Cliquer pour téléverser</span>
-											ou faites un glisser - deposer
-										</p>
-										<p class="mt-1.5 text-sm font-medium">
-											JPG, JPEG, PNG or PDF
-										</p>
+								<div class="">
+									<div class="flex items-center mb-4">
+										<input id="passport-recto" type="checkbox" name="passport[recto]" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+										<label for="passport-recto" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Document valide</label>
 									</div>
+									@if (str_ends_with($files[0], '.pdf'))
+										<iframe src="{{ asset($files[0]) }}" class="mb-5.5 w-full h-[450px]"></iframe>
+									@else
+										<img src="{{ asset($files[0]) }}" alt="passport recto" class="mb-5.5 w-full">
+									@endif
 								</div>
 								{{-- Document Fin --}}
 								<h2 class="text-black dark:text-white uppercase mb-4">Verso</h2>
 								{{-- Document Début --}}
-								<div id="FileUpload"
-									class="relative mb-5.5 block w-full cursor-pointer appearance-none rounded border border-dashed border-primary bg-gray px-4 py-4 dark:bg-meta-4 sm:py-7.5">
-									<input type="file" accept=".jpg,.jpeg,.png,.pdf" required name="passport_verso_photo"
-										id="passport_verso_photo"
-										class="absolute inset-0 z-50 m-0 h-full w-full cursor-pointer p-0 opacity-0 outline-none">
-									<div class="flex flex-col items-center justify-center space-y-3">
-										<span
-											class="flex h-10 w-10 items-center justify-center rounded-full border border-stroke bg-white dark:border-strokedark dark:bg-boxdark">
-											<i data-lucide="upload" class="text-primary size-5"></i>
-										</span>
-										<p class="text-sm font-medium">
-											<span class="text-primary">Cliquer pour téléverser</span>
-											ou faites un glisser - deposer
-										</p>
-										<p class="mt-1.5 text-sm font-medium">
-											SVG, PNG, JPG or GIF
-										</p>
-										<p class="text-sm font-medium">
-											(max, 800 X 800px)
-										</p>
+								<div class="">
+									<div class="flex items-center mb-4">
+										<input id="passport-verso" type="checkbox" name="passport[verso]" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+										<label for="passport-verso" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Document valide</label>
 									</div>
+									@if (str_ends_with($files[1], '.pdf'))
+										<iframe src="{{ asset($files[1]) }}" class="mb-5.5 w-full h-[450px]"></iframe>
+									@else
+										<img src="{{ asset($files[1]) }}" alt="passport recto" class="mb-5.5 w-full">
+									@endif
 								</div>
 								{{-- Document Fin --}}
 							</div>
@@ -309,46 +257,30 @@
 							<div>
 								<h2 class="text-black dark:text-white uppercase mb-4">Recto</h2>
 								{{-- Document Début --}}
-								<div id="FileUpload"
-									class="relative mb-5.5 block w-full cursor-pointer appearance-none rounded border border-dashed border-primary bg-gray px-4 py-4 dark:bg-meta-4 sm:py-7.5">
-									<input type="file" accept=".jpg,.jpeg,.png,.pdf" required name="permis_cond_recto_photo"
-										id="permis_cond_recto_photo"
-										class="absolute inset-0 z-50 m-0 h-full w-full cursor-pointer p-0 opacity-0 outline-none">
-									<div class="flex flex-col items-center justify-center space-y-3">
-										<span
-											class="flex h-10 w-10 items-center justify-center rounded-full border border-stroke bg-white dark:border-strokedark dark:bg-boxdark">
-											<i data-lucide="upload" class="text-primary size-5"></i>
-										</span>
-										<p class="text-sm font-medium">
-											<span class="text-primary">Cliquer pour téléverser</span>
-											ou faites un glisser - deposer
-										</p>
-										<p class="mt-1.5 text-sm font-medium">
-											JPG, JPEG, PNG or PDF
-										</p>
+								<div class="">
+									<div class="flex items-center mb-4">
+										<input id="permis-recto" type="checkbox" name="permis[recto]" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+										<label for="permis-recto" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Document valide</label>
 									</div>
+									@if (str_ends_with($files[0], '.pdf'))
+										<iframe src="{{ asset($files[0]) }}" class="mb-5.5 w-full h-[450px]"></iframe>
+									@else
+										<img src="{{ asset($files[0]) }}" alt="permis recto" class="mb-5.5 w-full">
+									@endif
 								</div>
 								{{-- Document Fin --}}
 								<h2 class="text-black dark:text-white uppercase mb-4">Verso</h2>
 								{{-- Document Début --}}
-								<div id="FileUpload"
-									class="relative mb-5.5 block w-full cursor-pointer appearance-none rounded border border-dashed border-primary bg-gray px-4 py-4 dark:bg-meta-4 sm:py-7.5">
-									<input type="file" accept=".jpg,.jpeg,.png,.pdf" required name="permis_cond_verso_photo"
-										id="permis_cond_verso_photo"
-										class="absolute inset-0 z-50 m-0 h-full w-full cursor-pointer p-0 opacity-0 outline-none">
-									<div class="flex flex-col items-center justify-center space-y-3">
-										<span
-											class="flex h-10 w-10 items-center justify-center rounded-full border border-stroke bg-white dark:border-strokedark dark:bg-boxdark">
-											<i data-lucide="upload" class="text-primary size-5"></i>
-										</span>
-										<p class="text-sm font-medium">
-											<span class="text-primary">Cliquer pour téléverser</span>
-											ou faites un glisser - deposer
-										</p>
-										<p class="mt-1.5 text-sm font-medium">
-											JPG, JPEG, PNG or PDF
-										</p>
+								<div class="">
+									<div class="flex items-center mb-4">
+										<input id="permis-verso" type="checkbox" name="permis[verso]" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+										<label for="permis-verso" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Document valide</label>
 									</div>
+									@if (str_ends_with($files[1], '.pdf'))
+										<iframe src="{{ asset($files[1]) }}" class="mb-5.5 w-full h-[450px]"></iframe>
+									@else
+										<img src="{{ asset($files[1]) }}" alt="permis verso" class="mb-5.5 w-full">
+									@endif
 								</div>
 								{{-- Document Fin --}}
 							</div>
@@ -377,25 +309,19 @@
 							</div>
 							<div>
 								{{-- Document Début --}}
-								<div id="FileUpload"
-									class="relative mb-5.5 block w-full cursor-pointer appearance-none rounded border border-dashed border-primary bg-gray px-4 py-4 dark:bg-meta-4 sm:py-7.5">
-									<input type="file" accept=".jpg,.jpeg,.png,.pdf" required multiple max="2" name="preuve_residence"
-										id="preuve_residence"
-										class="absolute inset-0 z-50 m-0 h-full w-full cursor-pointer p-0 opacity-0 outline-none">
-									<div class="flex flex-col items-center justify-center space-y-3">
-										<span
-											class="flex h-10 w-10 items-center justify-center rounded-full border border-stroke bg-white dark:border-strokedark dark:bg-boxdark">
-											<i data-lucide="upload" class="text-primary size-5"></i>
-										</span>
-										<p class="text-sm font-medium">
-											<span class="text-primary">Cliquer pour téléverser</span>
-											ou faites un glisser - deposer
-										</p>
-										<p class="mt-1.5 text-sm font-medium">
-											JPG, JPEG, PNG or PDF
-										</p>
+								@foreach ($files as $file)
+									<div class="">
+										<div class="flex items-center mb-4">
+											<input id="residence" type="checkbox" name="residence[]" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+											<label for="residence" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Document valide</label>
+										</div>
+										@if (str_ends_with($file, '.pdf'))
+											<iframe src="{{ asset($file) }}" class="mb-5.5 w-full h-[450px]"></iframe>
+										@else
+											<img src="{{ asset($file) }}" alt="residence" class="mb-5.5 w-full">
+										@endif
 									</div>
-								</div>
+								@endforeach
 								{{-- Document Fin --}}
 							</div>
 						</div>
