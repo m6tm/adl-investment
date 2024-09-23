@@ -172,7 +172,9 @@
 						}
 					@endphp
 					<td class="lowercase">
-						<div class="badge {{ $status_color }} badge-outline">{{ __((string) $user->verification_status) }}</div>
+						@if ($user->hasRole($USER_ROLE::PLAYER))
+							<div class="badge {{ $status_color }} badge-outline">{{ __((string) $user->verification_status) }}</div>
+						@endif
 					</td>
 					<td class="capitalize">{{ implode(', ', $user->roles->map(fn($role) => __($role->name))->toArray()) }}</td>
 					<td>{{ $user->created_at->format('M d, Y') }}</td>

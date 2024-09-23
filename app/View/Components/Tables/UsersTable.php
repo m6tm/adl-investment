@@ -36,6 +36,7 @@ class UsersTable extends Component
     public function render(): View|Closure|string
     {
         $USER_VERIFICATION_STATUS = USER_VERIFICATION_STATUS::class;
-        return view('components.tables.users-table', compact('USER_VERIFICATION_STATUS'));
+        $USER_ROLE = USER_ROLE::class;
+        return view('components.tables.users-table', compact('USER_VERIFICATION_STATUS', 'USER_ROLE'));
     }
 }

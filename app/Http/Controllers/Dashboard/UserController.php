@@ -6,7 +6,6 @@ use App\Enums\USER_ROLE;
 use App\Helpers\AuthHelper;
 use App\Http\Controllers\Controller;
 use App\Models\User;
-use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
@@ -18,6 +17,7 @@ class UserController extends Controller
     function index() {
         if (!AuthHelper::can('show.user')) return redirect()->back()->withErrors(__('dashboard/backend.not-access'));
         $users = User::where('id', '!=', auth()->user()->id)->get();
+        if (AuthHelper::hasRole(USER_ROLE::ADMIN)) $users = $users->filter(fn(User $user) => $user->hasRole(USER_ROLE::PLAYER));
         return view('dashboard.pages.users.index', compact('users'));
     }
 
