@@ -36,7 +36,7 @@
 					class="flex gap-4.5 border-t border-stroke px-4.5 py-3 hover:bg-gray-2 dark:border-strokedark dark:hover:bg-meta-4"
 					href="messages.html">
 					<div class="h-12.5 w-12.5 rounded-full">
-						<img src="./images/user/user-02.png" alt="User" />
+						<img src="{{ asset('assets/img/team/team-2.jpg') }}" class="rounded-full" alt="User" />
 					</div>
 
 					<div>
@@ -53,7 +53,7 @@
 					class="flex gap-4.5 border-t border-stroke px-4.5 py-3 hover:bg-gray-2 dark:border-strokedark dark:hover:bg-meta-4"
 					href="messages.html">
 					<div class="h-12.5 w-12.5 rounded-full">
-						<img src="./images/user/user-01.png" alt="User" />
+						<img src="{{ asset('assets/img/team/team-2.jpg') }}" class="rounded-full" alt="User" />
 					</div>
 
 					<div>
@@ -70,7 +70,7 @@
 					class="flex gap-4.5 border-t border-stroke px-4.5 py-3 hover:bg-gray-2 dark:border-strokedark dark:hover:bg-meta-4"
 					href="messages.html">
 					<div class="h-12.5 w-12.5 rounded-full">
-						<img src="./images/user/user-03.png" alt="User" />
+						<img src="{{ asset('assets/img/team/team-2.jpg') }}" class="rounded-full" alt="User" />
 					</div>
 
 					<div>
@@ -87,7 +87,7 @@
 					class="flex gap-4.5 border-t border-stroke px-4.5 py-3 hover:bg-gray-2 dark:border-strokedark dark:hover:bg-meta-4"
 					href="messages.html">
 					<div class="h-12.5 w-12.5 rounded-full">
-						<img src="./images/user/user-04.png" alt="User" />
+						<img src="{{ asset('assets/img/team/team-2.jpg') }}" class="rounded-full" alt="User" />
 					</div>
 
 					<div>
@@ -104,7 +104,7 @@
 					class="flex gap-4.5 border-t border-stroke px-4.5 py-3 hover:bg-gray-2 dark:border-strokedark dark:hover:bg-meta-4"
 					href="messages.html">
 					<div class="h-12.5 w-12.5 rounded-full">
-						<img src="./images/user/user-02.png" alt="User" />
+						<img src="{{ asset('assets/img/team/team-2.jpg') }}" class="rounded-full" alt="User" />
 					</div>
 
 					<div>

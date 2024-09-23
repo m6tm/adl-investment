@@ -1,5 +1,6 @@
 // Importation de la bibliothèque bootstrap
-import 'bootstrap'
+// import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/js/bootstrap.min.js'
 import './templately/js'
 
 

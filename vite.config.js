@@ -13,4 +13,14 @@ export default defineConfig({
             refresh: true,
         }),
     ],
+    vite: {
+        define: {
+            global: {},
+        }
+    },
+    resolve: {
+        alias: {
+            'simple-peer': 'simple-peer/simplepeer.min.js',
+        },
+    }
 });

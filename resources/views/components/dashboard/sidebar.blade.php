@@ -50,6 +50,16 @@
 						</a>
 					</li>
 					<!-- Menu Item Notifications -->
+					<!-- Menu Item Messages -->
+					<li>
+						<a
+							class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
+							href="{{ route('dashboard.messages') }}">
+							<i data-lucide="message-square-more" class="w-5"></i>
+							{{ __('messages.title') }}
+						</a>
+					</li>
+					<!-- Menu Item Messages -->
 					<!-- Menu Item Tickets -->
 					<li>
 						<a

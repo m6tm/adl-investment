@@ -9,6 +9,7 @@ use App\Http\Controllers\Dashboard\NotificationController;
 use App\Http\Controllers\Dashboard\UserController;
 use App\Http\Controllers\Dashboard\TicketController;
 use App\Http\Controllers\LanguageController;
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoleController;
@@ -65,21 +66,26 @@ Route::get('register', [RegisteredUserController::class, 'create'])->name('regis
 
 Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function() {
     Route::get('', [UserController::class, 'index'])->name('dashboard');
+
     // Users
     Route::get('users', [UserController::class, 'index'])->name('dashboard.user.list');
     Route::get('users/create', [UserController::class, 'create'])->name('dashboard.user.create');
     Route::get('users/edit/{user_id}', [UserController::class, 'edit'])->name('dashboard.user.edit')->whereNumber('user_id');
+
     // Profiles
     Route::get('profil', [ProfileController::class, 'edit'])->name('dashboard.profile.edit');
     Route::get('profil/update', [ProfileController::class, 'update'])->name('dashboard.profile.update');
+
     // Notifications
     Route::get('notifications', [NotificationController::class, 'index'])->name('dashboard.notifications');
+
     // Account verification
     Route::get('account-verification', [AccountVerificationController::class, 'index'])->name('dashboard.account-verification');
     Route::post('account-verification', [AccountVerificationController::class, 'verificationAccount'])->name('dashboard.account-verification-post');
     Route::get('account-verifications', [AccountVerificationController::class, 'adminVerifications'])->name('dashboard.admin.account-verification');
     Route::get('account-verifications/{player_id}', [AccountVerificationController::class, 'adminVerificationsCheck'])->name('dashboard.admin.account-verification.check')->whereNumber('player_id');
     Route::post('account-verifications/{player_id}', [AccountVerificationController::class, 'adminVerificationsCheckPost'])->name('dashboard.admin.account-verification.check.post')->whereNumber('player_id');
+
     // Tickets
     Route::get('tickets', [TicketController::class, 'index'])->name('dashboard.tickets');
     Route::get('tickets/create', [TicketController::class, 'create'])->name('dashboard.tickets.create');
@@ -87,18 +93,26 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function() {
     Route::get('tickets/pay1', [TicketController::class, 'pay1'])->name('dashboard.tickets.pay1');
     Route::get('tickets/pay2', [TicketController::class, 'pay2'])->name('dashboard.tickets.pay2');
     Route::get('tickets/pay3', [TicketController::class, 'pay3'])->name('dashboard.tickets.pay3');
+
+    // Messages
+    Route::get('messages', [MessageController::class, 'index'])->name('dashboard.messages');
+
     // Permissions
     Route::get('permissions', [PermissionController::class, 'index'])->name('dashboard.permissions');
     Route::post('permissions/assign-to-user/{permisison_id}', [PermissionController::class, 'permissionToUser'])->name('dashboard.permissions.to.user')->whereNumber('permisison_id');
     Route::post('permissions/assign-to-role/{permisison_id}', [PermissionController::class, 'permissionToRole'])->name('dashboard.permissions.to.role')->whereNumber('permisison_id');
+
     // Roles
     Route::get('roles', [RoleController::class, 'index'])->name('dashboard.roles');
     Route::post('roles/assign-to-user/{role_id}', [RoleController::class, 'roleToUser'])->name('dashboard.roles.to.user')->whereNumber('role_id');
+
     // Settings
     Route::get('settings', [SettingController::class, 'index'])->name('dashboard.settings');
+
     // Settings Countries autorised to use the app
     Route::post('settings/add-country', [SettingController::class, 'addCountry'])->name('dashboard.settings.add-country');
     Route::get('settings/rm-country/{country_id}', [SettingController::class, 'removeCountry'])->name('dashboard.settings.remove-country')->whereNumber('country_id');
+
     // Settings Countries Assigned a document type
     Route::post('settings/document-assigment', [SettingController::class, 'assignDocument'])->name('dashboard.settings.document-assigment');
 });
