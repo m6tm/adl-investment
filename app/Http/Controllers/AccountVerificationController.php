@@ -50,15 +50,19 @@ class AccountVerificationController extends Controller
              */
             $documents_autorise = $documents_autorise;
             /**
-             * @var DocumentAutorise $documents_autorise
+             * @var DocumentAutorise $current_document_autorise
              */
             $current_document_autorise = $documents_autorise->documents_autorise;
             $document = new Document;
             if ($user->documents->filter(fn(Document $doc) => $doc->document_autorise->type == $current_document_autorise->type)->count() > 0) {
-                $document = $user->documents->filter(fn(Document $doc) => $doc->document_autorise->type == $current_document_autorise->type);
-                dd($document);
+                /**
+                 * @var Document $document
+                 */
+                $document = $user->documents->filter(function(Document $doc) use ($current_document_autorise) {
+                    if ($doc->document_autorise->type == $current_document_autorise->type) return $doc;
+                })->first();
+                if ($document->statuts !== DOCUMENT_STATUS::REFUSED) continue;
             }
-            continue;
             $document->user_id = auth()->id();
             $document->document_autorise_id = $current_document_autorise->id;
             $path = 'uploads/verification_account';
@@ -178,7 +182,7 @@ class AccountVerificationController extends Controller
              */
             $documents_autorise = $documents_autorise;
             /**
-             * @var DocumentAutorise $documents_autorise
+             * @var DocumentAutorise $current_document_autorise
              */
             $current_document_autorise = $documents_autorise->documents_autorise;
             
@@ -291,9 +295,14 @@ class AccountVerificationController extends Controller
             }
         }
         
+        $all_document_in_progress = $user->documents->filter(fn(Document $doc) => $doc->statuts == DOCUMENT_STATUS::PENDING)->count() == $user->documents->count();
+        if ($all_document_in_progress) $user->documents->filter(function(Document $doc) {
+            $doc->statuts = DOCUMENT_STATUS::VERIFIED;
+            $doc->update();
+        });
         $all_document_verified = $user->documents->filter(fn(Document $doc) => $doc->statuts == DOCUMENT_STATUS::VERIFIED)->count() == $user->documents->count();
         if ($all_document_verified) {
-            $user->statuts = USER_VERIFICATION_STATUS::VERIFIED;
+            $user->verification_status = USER_VERIFICATION_STATUS::VERIFIED;
             $user->update();
         }
 

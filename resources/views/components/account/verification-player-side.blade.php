@@ -3,7 +3,7 @@
 	@csrf
 	{{-- Choisir une photo de profile Début --}}
 	<div class="lg:flex lg:flex-col lg:space-y-5 grid grid-cols-2 gap-4" id="verification-account-tabs">
-		<x-account-verification-stepper document="Informations utilisateur" :status="$DOCUMENT_STATUS::PENDING" />
+		<x-account-verification-stepper document="Informations utilisateur" :status="$DOCUMENT_STATUS::PENDING" customid="perso" />
 		@php
 			$user = auth()->user();
 			$country = $user->pays;
@@ -17,8 +17,12 @@
 				<x-account-verification-stepper document="{!! __($current_document_autorise->type) !!}" />
 			@endforeach
 		@else
-			@foreach ($user->documents as $document)
-				<x-account-verification-stepper document="{!! __($document->document_autorise->type) !!}" :status="$document->statuts" />
+			@foreach ($documents_autorises as $key => $pays_document_autorise)
+				@php
+					$current_document_autorise = $pays_document_autorise->documents_autorise;
+					$document = $current_document_autorise->documents->where('user_id', $user->id)->first();
+				@endphp
+				<x-account-verification-stepper document="{!! __($current_document_autorise->type) !!}" :status="$document->statuts" />
 			@endforeach
 		@endif
 	</div>
@@ -130,6 +134,7 @@
 		@foreach ($documents_autorises as $key => $documents_autorise)
 			@php
 				$current_document_autorise = $documents_autorise->documents_autorise;
+				$document = $user->documents->filter(fn($document) => $document->document_autorise->type == $current_document_autorise->type)->first();
 			@endphp
 			@switch($current_document_autorise->type)
 				@case($DOCUMENT_TYPE::SELFIE)
@@ -146,25 +151,29 @@
 							</div>
 							<div>
 								{{-- Selfie photo Début --}}
-								<div id="FileUpload"
-									class="relative mb-5.5 block w-full cursor-pointer appearance-none rounded border border-dashed border-primary bg-gray px-4 py-4 dark:bg-meta-4 sm:py-7.5">
-									<input type="file" id="selfie_input" accept=".jpg,.jpeg,.png" name="selfie_photo"
-										class="absolute inset-0 z-50 m-0 h-full w-full cursor-pointer p-0 opacity-0 outline-none" accept="image/*"
-										required>
-									<div class="flex flex-col items-center justify-center space-y-3">
-										<span
-											class="flex h-10 w-10 items-center justify-center rounded-full border border-stroke bg-white dark:border-strokedark dark:bg-boxdark">
-											<i data-lucide="upload" class="text-primary size-5"></i>
-										</span>
-										<p class="text-sm font-medium">
-											<span class="text-primary">Cliquer pour téléverser</span>
-											ou faites un glisser - deposer
-										</p>
-										<p class="mt-1.5 text-sm font-medium">
-											JPG, JPEG or PNG
-										</p>
+								@if ($document && $document->statuts === $DOCUMENT_STATUS::PENDING)
+									<input type="hidden" required value="on" name="selfie_photo_hidden">
+								@else
+									<div id="FileUpload"
+										class="relative mb-5.5 block w-full cursor-pointer appearance-none rounded border border-dashed border-primary bg-gray px-4 py-4 dark:bg-meta-4 sm:py-7.5">
+										<input type="file" id="selfie_input" accept=".jpg,.jpeg,.png" name="selfie_photo"
+											class="absolute inset-0 z-50 m-0 h-full w-full cursor-pointer p-0 opacity-0 outline-none" accept="image/*"
+											required>
+										<div class="flex flex-col items-center justify-center space-y-3">
+											<span
+												class="flex h-10 w-10 items-center justify-center rounded-full border border-stroke bg-white dark:border-strokedark dark:bg-boxdark">
+												<i data-lucide="upload" class="text-primary size-5"></i>
+											</span>
+											<p class="text-sm font-medium">
+												<span class="text-primary">Cliquer pour téléverser</span>
+												ou faites un glisser - deposer
+											</p>
+											<p class="mt-1.5 text-sm font-medium">
+												JPG, JPEG or PNG
+											</p>
+										</div>
 									</div>
-								</div>
+								@endif
 								{{-- Selfie photo Fin --}}
 							</div>
 						</div>
@@ -172,6 +181,9 @@
 				@break
 
 				@case($DOCUMENT_TYPE::CNI)
+					@php
+						dd($current_document_autorise->type);
+					@endphp
 					<div class="duration-300 ease-in-out verification-account-hidden" data-step="{{ $key + 2 }}">
 						<h2 class="text-black dark:text-white uppercase text-title-md mb-4">Carte national d'identité</h2>
 						<div class="mb-5.5 grid lg:grid-cols-2 grid-cols-1 gap-5.5">
@@ -186,50 +198,55 @@
 									<li class="text-green-500">La carte doit occuper la majeure partie de l'image</li>
 								</ul>
 							</div>
-							<div>
-								<h2 class="text-black dark:text-white uppercase mb-4">Recto</h2>
-								{{-- Document Début --}}
-								<div id="FileUpload"
-									class="relative mb-5.5 block w-full cursor-pointer appearance-none rounded border border-dashed border-primary bg-gray px-4 py-4 dark:bg-meta-4 sm:py-7.5">
-									<input type="file" accept=".jpg,.jpeg,.png,.pdf" required name="cni_recto_photo" id="cni_recto_photo"
-										class="absolute inset-0 z-50 m-0 h-full w-full cursor-pointer p-0 opacity-0 outline-none">
-									<div class="flex flex-col items-center justify-center space-y-3">
-										<span
-											class="flex h-10 w-10 items-center justify-center rounded-full border border-stroke bg-white dark:border-strokedark dark:bg-boxdark">
-											<i data-lucide="upload" class="text-primary size-5"></i>
-										</span>
-										<p class="text-sm font-medium">
-											<span class="text-primary">Cliquer pour téléverser</span>
-											ou faites un glisser - deposer
-										</p>
-										<p class="mt-1.5 text-sm font-medium">
-											JPG, JPEG, PNG or PDF
-										</p>
+							@if ($document && $document->statuts === $DOCUMENT_STATUS::PENDING)
+								<input type="hidden" required value="on" name="cni_recto_photo_hidden">
+								<input type="hidden" required value="on" name="cni_verso_photo_hidden">
+							@else
+								<div>
+									<h2 class="text-black dark:text-white uppercase mb-4">Recto</h2>
+									{{-- Document Début --}}
+									<div id="FileUpload"
+										class="relative mb-5.5 block w-full cursor-pointer appearance-none rounded border border-dashed border-primary bg-gray px-4 py-4 dark:bg-meta-4 sm:py-7.5">
+										<input type="file" accept=".jpg,.jpeg,.png,.pdf" required name="cni_recto_photo" id="cni_recto_photo"
+											class="absolute inset-0 z-50 m-0 h-full w-full cursor-pointer p-0 opacity-0 outline-none">
+										<div class="flex flex-col items-center justify-center space-y-3">
+											<span
+												class="flex h-10 w-10 items-center justify-center rounded-full border border-stroke bg-white dark:border-strokedark dark:bg-boxdark">
+												<i data-lucide="upload" class="text-primary size-5"></i>
+											</span>
+											<p class="text-sm font-medium">
+												<span class="text-primary">Cliquer pour téléverser</span>
+												ou faites un glisser - deposer
+											</p>
+											<p class="mt-1.5 text-sm font-medium">
+												JPG, JPEG, PNG or PDF
+											</p>
+										</div>
 									</div>
-								</div>
-								{{-- Document Fin --}}
-								<h2 class="text-black dark:text-white uppercase mb-4">Verso</h2>
-								{{-- Document Début --}}
-								<div id="FileUpload"
-									class="relative mb-5.5 block w-full cursor-pointer appearance-none rounded border border-dashed border-primary bg-gray px-4 py-4 dark:bg-meta-4 sm:py-7.5">
-									<input type="file" accept=".jpg,.jpeg,.png,.pdf" name="cni_verso_photo" id="cni_verso_photo"
-										class="absolute inset-0 z-50 m-0 h-full w-full cursor-pointer p-0 opacity-0 outline-none" required>
-									<div class="flex flex-col items-center justify-center space-y-3">
-										<span
-											class="flex h-10 w-10 items-center justify-center rounded-full border border-stroke bg-white dark:border-strokedark dark:bg-boxdark">
-											<i data-lucide="upload" class="text-primary size-5"></i>
-										</span>
-										<p class="text-sm font-medium">
-											<span class="text-primary">Cliquer pour téléverser</span>
-											ou faites un glisser - deposer
-										</p>
-										<p class="mt-1.5 text-sm font-medium">
-											JPG, JPEG, PNG or PDF
-										</p>
+									{{-- Document Fin --}}
+									<h2 class="text-black dark:text-white uppercase mb-4">Verso</h2>
+									{{-- Document Début --}}
+									<div id="FileUpload"
+										class="relative mb-5.5 block w-full cursor-pointer appearance-none rounded border border-dashed border-primary bg-gray px-4 py-4 dark:bg-meta-4 sm:py-7.5">
+										<input type="file" accept=".jpg,.jpeg,.png,.pdf" name="cni_verso_photo" id="cni_verso_photo"
+											class="absolute inset-0 z-50 m-0 h-full w-full cursor-pointer p-0 opacity-0 outline-none" required>
+										<div class="flex flex-col items-center justify-center space-y-3">
+											<span
+												class="flex h-10 w-10 items-center justify-center rounded-full border border-stroke bg-white dark:border-strokedark dark:bg-boxdark">
+												<i data-lucide="upload" class="text-primary size-5"></i>
+											</span>
+											<p class="text-sm font-medium">
+												<span class="text-primary">Cliquer pour téléverser</span>
+												ou faites un glisser - deposer
+											</p>
+											<p class="mt-1.5 text-sm font-medium">
+												JPG, JPEG, PNG or PDF
+											</p>
+										</div>
 									</div>
+									{{-- Document Fin --}}
 								</div>
-								{{-- Document Fin --}}
-							</div>
+							@endif
 						</div>
 					</div>
 				@break
@@ -250,55 +267,60 @@
 									<li class="text-green-500">Le passeport doit être émis par une autorité reconnue</li>
 								</ul>
 							</div>
-							<div>
-								<h2 class="text-black dark:text-white uppercase mb-4">Recto</h2>
-								{{-- Document Début --}}
-								<div id="FileUpload"
-									class="relative mb-5.5 block w-full cursor-pointer appearance-none rounded border border-dashed border-primary bg-gray px-4 py-4 dark:bg-meta-4 sm:py-7.5">
-									<input type="file" accept=".jpg,.jpeg,.png,.pdf" required name="passport_recto_photo"
-										id="passport_recto_photo"
-										class="absolute inset-0 z-50 m-0 h-full w-full cursor-pointer p-0 opacity-0 outline-none">
-									<div class="flex flex-col items-center justify-center space-y-3">
-										<span
-											class="flex h-10 w-10 items-center justify-center rounded-full border border-stroke bg-white dark:border-strokedark dark:bg-boxdark">
-											<i data-lucide="upload" class="text-primary size-5"></i>
-										</span>
-										<p class="text-sm font-medium">
-											<span class="text-primary">Cliquer pour téléverser</span>
-											ou faites un glisser - deposer
-										</p>
-										<p class="mt-1.5 text-sm font-medium">
-											JPG, JPEG, PNG or PDF
-										</p>
+							@if ($document && $document->statuts === $DOCUMENT_STATUS::PENDING)
+								<input type="hidden" required value="on" name="passport_recto_photo_hidden">
+								<input type="hidden" required value="on" name="passport_verso_photo_hidden">
+							@else
+								<div>
+									<h2 class="text-black dark:text-white uppercase mb-4">Recto</h2>
+									{{-- Document Début --}}
+									<div id="FileUpload"
+										class="relative mb-5.5 block w-full cursor-pointer appearance-none rounded border border-dashed border-primary bg-gray px-4 py-4 dark:bg-meta-4 sm:py-7.5">
+										<input type="file" accept=".jpg,.jpeg,.png,.pdf" required name="passport_recto_photo"
+											id="passport_recto_photo"
+											class="absolute inset-0 z-50 m-0 h-full w-full cursor-pointer p-0 opacity-0 outline-none">
+										<div class="flex flex-col items-center justify-center space-y-3">
+											<span
+												class="flex h-10 w-10 items-center justify-center rounded-full border border-stroke bg-white dark:border-strokedark dark:bg-boxdark">
+												<i data-lucide="upload" class="text-primary size-5"></i>
+											</span>
+											<p class="text-sm font-medium">
+												<span class="text-primary">Cliquer pour téléverser</span>
+												ou faites un glisser - deposer
+											</p>
+											<p class="mt-1.5 text-sm font-medium">
+												SVG, PNG, JPG or PDF
+											</p>
+										</div>
 									</div>
-								</div>
-								{{-- Document Fin --}}
-								<h2 class="text-black dark:text-white uppercase mb-4">Verso</h2>
-								{{-- Document Début --}}
-								<div id="FileUpload"
-									class="relative mb-5.5 block w-full cursor-pointer appearance-none rounded border border-dashed border-primary bg-gray px-4 py-4 dark:bg-meta-4 sm:py-7.5">
-									<input type="file" accept=".jpg,.jpeg,.png,.pdf" required name="passport_verso_photo"
-										id="passport_verso_photo"
-										class="absolute inset-0 z-50 m-0 h-full w-full cursor-pointer p-0 opacity-0 outline-none">
-									<div class="flex flex-col items-center justify-center space-y-3">
-										<span
-											class="flex h-10 w-10 items-center justify-center rounded-full border border-stroke bg-white dark:border-strokedark dark:bg-boxdark">
-											<i data-lucide="upload" class="text-primary size-5"></i>
-										</span>
-										<p class="text-sm font-medium">
-											<span class="text-primary">Cliquer pour téléverser</span>
-											ou faites un glisser - deposer
-										</p>
-										<p class="mt-1.5 text-sm font-medium">
-											SVG, PNG, JPG or GIF
-										</p>
-										<p class="text-sm font-medium">
-											(max, 800 X 800px)
-										</p>
+									{{-- Document Fin --}}
+									<h2 class="text-black dark:text-white uppercase mb-4">Verso</h2>
+									{{-- Document Début --}}
+									<div id="FileUpload"
+										class="relative mb-5.5 block w-full cursor-pointer appearance-none rounded border border-dashed border-primary bg-gray px-4 py-4 dark:bg-meta-4 sm:py-7.5">
+										<input type="file" accept=".jpg,.jpeg,.png,.pdf" required name="passport_verso_photo"
+											id="passport_verso_photo"
+											class="absolute inset-0 z-50 m-0 h-full w-full cursor-pointer p-0 opacity-0 outline-none">
+										<div class="flex flex-col items-center justify-center space-y-3">
+											<span
+												class="flex h-10 w-10 items-center justify-center rounded-full border border-stroke bg-white dark:border-strokedark dark:bg-boxdark">
+												<i data-lucide="upload" class="text-primary size-5"></i>
+											</span>
+											<p class="text-sm font-medium">
+												<span class="text-primary">Cliquer pour téléverser</span>
+												ou faites un glisser - deposer
+											</p>
+											<p class="mt-1.5 text-sm font-medium">
+												SVG, PNG, JPG or PDF
+											</p>
+											<p class="text-sm font-medium">
+												(max, 800 X 800px)
+											</p>
+										</div>
 									</div>
+									{{-- Document Fin --}}
 								</div>
-								{{-- Document Fin --}}
-							</div>
+							@endif
 						</div>
 					</div>
 				@break
@@ -320,52 +342,57 @@
 									<li class="text-green-500">Les dates de délivrance et d'expiration doivent être lisibles</li>
 								</ul>
 							</div>
-							<div>
-								<h2 class="text-black dark:text-white uppercase mb-4">Recto</h2>
-								{{-- Document Début --}}
-								<div id="FileUpload"
-									class="relative mb-5.5 block w-full cursor-pointer appearance-none rounded border border-dashed border-primary bg-gray px-4 py-4 dark:bg-meta-4 sm:py-7.5">
-									<input type="file" accept=".jpg,.jpeg,.png,.pdf" required name="permis_cond_recto_photo"
-										id="permis_cond_recto_photo"
-										class="absolute inset-0 z-50 m-0 h-full w-full cursor-pointer p-0 opacity-0 outline-none">
-									<div class="flex flex-col items-center justify-center space-y-3">
-										<span
-											class="flex h-10 w-10 items-center justify-center rounded-full border border-stroke bg-white dark:border-strokedark dark:bg-boxdark">
-											<i data-lucide="upload" class="text-primary size-5"></i>
-										</span>
-										<p class="text-sm font-medium">
-											<span class="text-primary">Cliquer pour téléverser</span>
-											ou faites un glisser - deposer
-										</p>
-										<p class="mt-1.5 text-sm font-medium">
-											JPG, JPEG, PNG or PDF
-										</p>
+							@if ($document && $document->statuts === $DOCUMENT_STATUS::PENDING)
+								<input type="hidden" required value="on" name="permis_cond_recto_photo_hidden">
+								<input type="hidden" required value="on" name="permis_cond_verso_photo_hidden">
+							@else
+								<div>
+									<h2 class="text-black dark:text-white uppercase mb-4">Recto</h2>
+									{{-- Document Début --}}
+									<div id="FileUpload"
+										class="relative mb-5.5 block w-full cursor-pointer appearance-none rounded border border-dashed border-primary bg-gray px-4 py-4 dark:bg-meta-4 sm:py-7.5">
+										<input type="file" accept=".jpg,.jpeg,.png,.pdf" required name="permis_cond_recto_photo"
+											id="permis_cond_recto_photo"
+											class="absolute inset-0 z-50 m-0 h-full w-full cursor-pointer p-0 opacity-0 outline-none">
+										<div class="flex flex-col items-center justify-center space-y-3">
+											<span
+												class="flex h-10 w-10 items-center justify-center rounded-full border border-stroke bg-white dark:border-strokedark dark:bg-boxdark">
+												<i data-lucide="upload" class="text-primary size-5"></i>
+											</span>
+											<p class="text-sm font-medium">
+												<span class="text-primary">Cliquer pour téléverser</span>
+												ou faites un glisser - deposer
+											</p>
+											<p class="mt-1.5 text-sm font-medium">
+												JPG, JPEG, PNG or PDF
+											</p>
+										</div>
 									</div>
-								</div>
-								{{-- Document Fin --}}
-								<h2 class="text-black dark:text-white uppercase mb-4">Verso</h2>
-								{{-- Document Début --}}
-								<div id="FileUpload"
-									class="relative mb-5.5 block w-full cursor-pointer appearance-none rounded border border-dashed border-primary bg-gray px-4 py-4 dark:bg-meta-4 sm:py-7.5">
-									<input type="file" accept=".jpg,.jpeg,.png,.pdf" required name="permis_cond_verso_photo"
-										id="permis_cond_verso_photo"
-										class="absolute inset-0 z-50 m-0 h-full w-full cursor-pointer p-0 opacity-0 outline-none">
-									<div class="flex flex-col items-center justify-center space-y-3">
-										<span
-											class="flex h-10 w-10 items-center justify-center rounded-full border border-stroke bg-white dark:border-strokedark dark:bg-boxdark">
-											<i data-lucide="upload" class="text-primary size-5"></i>
-										</span>
-										<p class="text-sm font-medium">
-											<span class="text-primary">Cliquer pour téléverser</span>
-											ou faites un glisser - deposer
-										</p>
-										<p class="mt-1.5 text-sm font-medium">
-											JPG, JPEG, PNG or PDF
-										</p>
+									{{-- Document Fin --}}
+									<h2 class="text-black dark:text-white uppercase mb-4">Verso</h2>
+									{{-- Document Début --}}
+									<div id="FileUpload"
+										class="relative mb-5.5 block w-full cursor-pointer appearance-none rounded border border-dashed border-primary bg-gray px-4 py-4 dark:bg-meta-4 sm:py-7.5">
+										<input type="file" accept=".jpg,.jpeg,.png,.pdf" required name="permis_cond_verso_photo"
+											id="permis_cond_verso_photo"
+											class="absolute inset-0 z-50 m-0 h-full w-full cursor-pointer p-0 opacity-0 outline-none">
+										<div class="flex flex-col items-center justify-center space-y-3">
+											<span
+												class="flex h-10 w-10 items-center justify-center rounded-full border border-stroke bg-white dark:border-strokedark dark:bg-boxdark">
+												<i data-lucide="upload" class="text-primary size-5"></i>
+											</span>
+											<p class="text-sm font-medium">
+												<span class="text-primary">Cliquer pour téléverser</span>
+												ou faites un glisser - deposer
+											</p>
+											<p class="mt-1.5 text-sm font-medium">
+												JPG, JPEG, PNG or PDF
+											</p>
+										</div>
 									</div>
+									{{-- Document Fin --}}
 								</div>
-								{{-- Document Fin --}}
-							</div>
+							@endif
 						</div>
 					</div>
 				@break
@@ -389,29 +416,33 @@
 									<li class="text-green-500">Le document doit occuper la majeure partie de l'image</li>
 								</ul>
 							</div>
-							<div>
-								{{-- Document Début --}}
-								<div id="FileUpload"
-									class="relative mb-5.5 block w-full cursor-pointer appearance-none rounded border border-dashed border-primary bg-gray px-4 py-4 dark:bg-meta-4 sm:py-7.5">
-									<input type="file" accept=".jpg,.jpeg,.png,.pdf" required multiple max="2" name="preuve_residence"
-										id="preuve_residence"
-										class="absolute inset-0 z-50 m-0 h-full w-full cursor-pointer p-0 opacity-0 outline-none">
-									<div class="flex flex-col items-center justify-center space-y-3">
-										<span
-											class="flex h-10 w-10 items-center justify-center rounded-full border border-stroke bg-white dark:border-strokedark dark:bg-boxdark">
-											<i data-lucide="upload" class="text-primary size-5"></i>
-										</span>
-										<p class="text-sm font-medium">
-											<span class="text-primary">Cliquer pour téléverser</span>
-											ou faites un glisser - deposer
-										</p>
-										<p class="mt-1.5 text-sm font-medium">
-											JPG, JPEG, PNG or PDF
-										</p>
+							@if ($document && $document->statuts === $DOCUMENT_STATUS::PENDING)
+								<input type="hidden" required value="on" name="preuve_residence_hidden">
+							@else
+								<div>
+									{{-- Document Début --}}
+									<div id="FileUpload"
+										class="relative mb-5.5 block w-full cursor-pointer appearance-none rounded border border-dashed border-primary bg-gray px-4 py-4 dark:bg-meta-4 sm:py-7.5">
+										<input type="file" accept=".jpg,.jpeg,.png,.pdf" required multiple max="2" name="preuve_residence"
+											id="preuve_residence"
+											class="absolute inset-0 z-50 m-0 h-full w-full cursor-pointer p-0 opacity-0 outline-none">
+										<div class="flex flex-col items-center justify-center space-y-3">
+											<span
+												class="flex h-10 w-10 items-center justify-center rounded-full border border-stroke bg-white dark:border-strokedark dark:bg-boxdark">
+												<i data-lucide="upload" class="text-primary size-5"></i>
+											</span>
+											<p class="text-sm font-medium">
+												<span class="text-primary">Cliquer pour téléverser</span>
+												ou faites un glisser - deposer
+											</p>
+											<p class="mt-1.5 text-sm font-medium">
+												JPG, JPEG, PNG or PDF
+											</p>
+										</div>
 									</div>
+									{{-- Document Fin --}}
 								</div>
-								{{-- Document Fin --}}
-							</div>
+							@endif
 						</div>
 					</div>
 				@break

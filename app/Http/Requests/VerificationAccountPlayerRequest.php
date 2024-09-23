@@ -53,7 +53,7 @@ class VerificationAccountPlayerRequest extends FormRequest
                     $rules = [
                         ...$rules,
                         'selfie_photo' => [
-                            'required',
+                            'required_without:selfie_photo_hidden',
                             'mimes:jpg,jpeg,png',
                             'max:1024'
                         ],
@@ -64,28 +64,28 @@ class VerificationAccountPlayerRequest extends FormRequest
                     $rules = [
                         ...$rules,
                         'cni_recto_photo' => [
-                            'required',
+                            'required_without:cni_recto_photo_hidden',
                             'mimes:jpg,jpeg,png,pdf',
                             'max:1024'
                         ],
                         'cni_verso_photo' => [
-                            'required',
+                            'required_without:cni_verso_photo_hidden',
                             'mimes:jpg,jpeg,png,pdf',
                             'max:1024'
                         ],
                     ];
                     break;
-    
+                    
                 case DOCUMENT_TYPE::PASSPORT:
                     $rules = [
                         ...$rules,
                         'passport_recto_photo' => [
-                            'required',
+                            'required_without:passport_recto_photo_hidden',
                             'mimes:jpg,jpeg,png,pdf',
                             'max:1024'
                         ],
                         'passport_verso_photo' => [
-                            'required',
+                            'required_without:passport_verso_photo_hidden',
                             'mimes:jpg,jpeg,png,pdf',
                             'max:1024'
                         ],
@@ -96,12 +96,12 @@ class VerificationAccountPlayerRequest extends FormRequest
                         $rules = [
                             ...$rules,
                             'permis_cond_recto_photo' => [
-                                'required',
+                                'required_without:permis_cond_recto_photo_hidden',
                                 'mimes:jpg,jpeg,png,pdf',
                                 'max:1024'
                             ],
                             'permis_cond_verso_photo' => [
-                                'required',
+                                'required_without:permis_cond_verso_photo_hidden',
                                 'mimes:jpg,jpeg,png,pdf',
                                 'max:1024'
                             ],
@@ -111,7 +111,7 @@ class VerificationAccountPlayerRequest extends FormRequest
                     case DOCUMENT_TYPE::PREUVE_RESIDENCE:
                             $rules = [
                                 ...$rules,
-                                'preuve_residence' => 'required|array|max:2',
+                                'preuve_residence' => 'required_without:preuve_residence_hidden|array|max:2',
                                 'preuve_residence.*' => [
                                     'mimes:jpg,jpeg,png,pdf',
                                     'max:1024'
