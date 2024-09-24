@@ -3,13 +3,14 @@
     $breadcrumbs = [['title' => __('users.update.user_list'), 'route' => route('dashboard.user.list')], ['title' => $title]];
 @endphp
 
-<x-dashboard.layout :title="$title" :breadcrumbs="$breadcrumbs">
+<x-dashboard.layout :title="$title" :breadcrumb="$breadcrumbs">
     <div class="flex flex-col gap-5 md:gap-7 2xl:gap-10">
         <div class="border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark rounded-[10px] p-5">
 			<x-error-message-alert class="mb-4" />
 			<div class="grid lg:grid-cols-3 grid-cols-1 gap-5">
 				{{-- Choisir une photo de profile Début --}}
 				<form action="#">
+					@csrf
 					<div class="mb-4 flex items-center gap-3">
 						<div class="h-14 w-14 rounded-full">
 							<img src="{{ asset('assets/img/team/team-3.jpg') }}" class="rounded-full" alt="User">

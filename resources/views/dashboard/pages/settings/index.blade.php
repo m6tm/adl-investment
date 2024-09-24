@@ -5,7 +5,7 @@
     ];
 @endphp
 
-<x-dashboard.layout :title="$title" :breadcrumbs="$breadcrumbs">
+<x-dashboard.layout :title="$title" :breadcrumb="$breadcrumbs">
     <div class="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-2 md:gap-7 2xl:gap-10">
         <div class="col-span-3">
 			<x-error-message-alert class="mx-5 mb-4" />

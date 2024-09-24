@@ -4,7 +4,7 @@
 @endphp
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css"/>
-<x-dashboard.layout :title="$title" :breadcrumbs="$breadcrumbs">
+<x-dashboard.layout :title="$title" :breadcrumb="$breadcrumbs">
 	<div class="flex flex-col gap-5 md:gap-7 2xl:gap-10">
 		<div class="border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark rounded-[10px] pb-5">
 			<x-error-message-alert class="mb-4 mx-4" />

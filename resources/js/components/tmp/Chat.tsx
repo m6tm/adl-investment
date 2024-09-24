@@ -25,7 +25,7 @@ const VideoCall = React.lazy(() => import('./messages/call/VideoCall'))
 const chat = document.getElementById('chat-message'),
     token = chat?.hasAttribute('data-tk') ? chat.getAttribute('data-tk') : null,
     cp = chat?.hasAttribute('data-cp') ? chat.getAttribute('data-cp') : null;
-console.log(chat, token);
+// console.log(chat, token);
 
 
 declare global {
