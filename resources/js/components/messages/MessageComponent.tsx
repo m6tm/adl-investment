@@ -7,16 +7,19 @@ import MessageBoxItemComponent from './box/MessageBoxItemComponent';
 import { type Socket } from 'socket.io-client'
 import { socketConnection } from '../../tools/socketio';
 import AppContext from './utils/context';
+import { EventEmitter } from 'events';
 
 
 
-class MessageComponent extends Component {
-    state: Readonly<{ socket: Socket | null, discussions: Array<any> }>;
+export default class MessageComponent extends Component {
+    socket: Socket | null = null;
+    event: EventEmitter = new EventEmitter();
+    state: Readonly<{ connected: boolean, discussions: Array<any> }>;
 
     constructor(props: any) {
         super(props);
         this.state  = {
-            socket: null,
+            connected: false,
             discussions: []
         }
     }
@@ -24,7 +27,12 @@ class MessageComponent extends Component {
     componentDidMount = async () => {
         socketConnection()
             .then((socket: Socket) => {
-                this.setState({ ...this.state, ...{ socket } })
+                this.socket = socket
+                this.setState({ ...this.state, ...{ connected: true } })
+
+                socket.on('disconnect', () => {
+                    this.setState({ ...this.state, ...{ connected: false } })
+                })
             })
             .catch((err) => {
                 console.error('socket connection error', err)
@@ -32,9 +40,15 @@ class MessageComponent extends Component {
     }
 
     render() {
-        if (this.state.socket) {
+        if (this.socket) {
+            const context = {
+                socket: this.socket,
+                discussions: this.state.discussions,
+                event: this.event
+            }
+
             return (
-                <AppContext.Provider value={{ socket: this.state.socket, discussions: this.state.discussions }}>
+                <AppContext.Provider value={context}>
                     <MessageListComponent />
                     <MessageBoxForgroundComponent />
                     <MessageBoxItemComponent />
@@ -58,6 +72,7 @@ function App() {
     )
 }
 
-const messageElement = document.getElementById('message-component');
-
-if (messageElement) createRoot(messageElement).render(<App />);
+(() => {
+    const messageElement = document.getElementById('message-component');
+    if (!messageElement) return;
+})();
