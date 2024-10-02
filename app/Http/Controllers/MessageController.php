@@ -12,13 +12,18 @@ class MessageController extends Controller
          * @var User $user
          */
         $user = auth()->user();
-        $user->load(
-            'discussions',
-            'discussions.discussion',
-            'discussions.discussion.owners',
-            'discussions.discussion.messages',
-        );
-        dd($user);
-        return view('dashboard.pages.messages.index');
+        // $user->load(
+        //     'discussions',
+        //     'discussions.discussion',
+        //     'discussions.discussion.owners',
+        //     'discussions.discussion.messages',
+        //     'discussions.discussion.messages.users',
+        //     'discussions.discussion.messages.users.user',
+        // );
+        $discussions = $user->discussions->map(function ($discussion) {
+            return $discussion->discussion->token;
+        })->toArray();
+
+        return view('dashboard.pages.messages.index', compact('user', 'discussions'));
     }
 }
