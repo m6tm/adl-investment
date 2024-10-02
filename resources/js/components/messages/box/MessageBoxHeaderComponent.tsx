@@ -9,8 +9,9 @@ export default class MessageBoxHeaderComponent extends Component {
                 {/* Chat Box Start */}
                 <div className="sticky flex items-center justify-between border-b border-stroke px-6 py-4.5 dark:border-strokedark">
                     <div className="flex items-center">
-                        <div className="mr-4.5 h-13 w-full max-w-13 overflow-hidden rounded-full">
+                        <div className="relative mr-4.5 h-13 w-full max-w-13 rounded-full">
                             <img src={`${ORIGIN}/assets/images/user/user-01.png`} alt="avatar" className="h-full w-full object-cover object-center" />
+                            <span className="absolute bottom-0 right-0 block h-3 w-3 rounded-full border-2 border-gray-2 bg-success"></span>
                         </div>
                         <div>
                             <h5 className="font-medium text-black dark:text-white">

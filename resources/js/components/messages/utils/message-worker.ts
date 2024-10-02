@@ -3,7 +3,7 @@ import { type Socket } from 'socket.io-client'
 
 
 
-export default class MessageWorker {
+export default class MessageManager {
 
     private firstConnection = true;
 
@@ -34,6 +34,10 @@ export default class MessageWorker {
 
     get event() {
         return this.messageComponent.event
+    }
+
+    get state() {
+        return this.messageComponent.state
     }
 
     createConnection() {

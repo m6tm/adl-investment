@@ -9,7 +9,7 @@ import { socketConnection } from '../../tools/socketio';
 import AppContext from './utils/context';
 import { EventEmitter } from 'events';
 import { MessageComponentProps } from '../../types/messages';
-import MessageWorker from './utils/message-worker';
+import MessageManager from './utils/message-worker';
 
 
 
@@ -18,7 +18,7 @@ export default class MessageComponent extends Component {
     event: EventEmitter = new EventEmitter();
     state: Readonly<{ connected: boolean, discussions: Array<any> }>;
     props: Readonly<MessageComponentProps>;
-    service: MessageWorker
+    service: MessageManager
     private readyMounted = false;
 
     constructor(props: any) {
@@ -27,7 +27,7 @@ export default class MessageComponent extends Component {
             connected: false,
             discussions: []
         }
-        this.service = new MessageWorker(this)
+        this.service = new MessageManager(this)
     }
 
     componentDidMount = async () => {
@@ -43,9 +43,7 @@ export default class MessageComponent extends Component {
     render() {
         if (this.socket) {
             const context = {
-                socket: this.socket,
-                discussions: this.state.discussions,
-                event: this.event
+                messageManager: this.service
             }
 
             return (

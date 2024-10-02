@@ -1,17 +1,12 @@
 import { createContext } from "react";
-import { type Socket } from 'socket.io-client'
-import { type EventEmitter, EventEmitter as Emitter } from 'events';
+import { EventEmitter as Emitter } from 'events';
+import { AppContextType } from "../../../types/messages";
+import type MessageManager from "./message-worker";
 
 
 
-const AppContext: React.Context<{
-    socket: Socket;
-    discussions: Array<any>;
-    event: EventEmitter;
-}> = createContext({
-    socket: null as any,
-    discussions: [] as any,
-    event: new Emitter()
+const AppContext: AppContextType = createContext({
+    messageManager: null as any as MessageManager
 })
 
 export default AppContext
