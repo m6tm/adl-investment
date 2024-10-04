@@ -10,14 +10,15 @@ import AppContext from './utils/context';
 import { EventEmitter } from 'events';
 import { MessageComponentProps } from '../../types/messages';
 import MessageManager from './utils/message-worker';
+import { MessageComponentState } from '../../types/MessageComponentState';
 
 
 
 export default class MessageComponent extends Component {
     socket: Socket | null = null;
     event: EventEmitter = new EventEmitter();
-    state: Readonly<{ connected: boolean, discussions: Array<any> }>;
-    props: Readonly<MessageComponentProps>;
+    state: Readonly<MessageComponentState>;
+    declare props: Readonly<MessageComponentProps>;
     service: MessageManager
     private readyMounted = false;
 
@@ -25,7 +26,9 @@ export default class MessageComponent extends Component {
         super(props);
         this.state  = {
             connected: false,
-            discussions: []
+            discussions: [],
+            user: undefined,
+            activeDiscussion: undefined,
         }
         this.service = new MessageManager(this)
     }
@@ -41,7 +44,7 @@ export default class MessageComponent extends Component {
     }
 
     render() {
-        if (this.socket) {
+        if (this.socket && this.state.user) {
             const context = {
                 messageManager: this.service
             }
@@ -49,8 +52,9 @@ export default class MessageComponent extends Component {
             return (
                 <AppContext.Provider value={context}>
                     <MessageListComponent />
-                    <MessageBoxForgroundComponent />
-                    <MessageBoxItemComponent />
+                    {
+                        this.state.activeDiscussion ? <MessageBoxItemComponent /> : <MessageBoxForgroundComponent />
+                    }
                 </AppContext.Provider>
             );
         } else {
@@ -77,5 +81,5 @@ function App(props: MessageComponentProps) {
     const discussions: Array<string> = JSON.parse(messageElement.getAttribute('data-discussions') ?? '[]');
     const user = parseInt(messageElement.getAttribute('data-usr') ?? '0');
     if (user === 0) return;
-    createRoot(messageElement).render(<App {...{ discussions, user }} />);
+    createRoot(messageElement).render(<App {...{ discussions, user_id: user }} />);
 })();
