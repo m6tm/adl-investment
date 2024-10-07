@@ -19,4 +19,4 @@
 
   {{-- STYLE CSS FILES  --}}
   <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
-  @vite(['resources/sass/partials/winning.scss'])
+  @vite(['resources/sass/partials/winning.scss', 'resources/sass/app.scss'])

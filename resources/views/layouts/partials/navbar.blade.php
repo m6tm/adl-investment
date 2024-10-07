@@ -49,13 +49,17 @@
 					<li><a href="{{ route('conditions') }}">{{ __('partials/header.service') }}</a></li>
 					<li><a href="{{ route('privacy') }}">{{ __('partials/header.privacy_policy') }}</a></li>
 					<li>
-						<label for="lang-country">
-							<span class="fi fi-fr"></span>
-						</label>
-						<select name="lang" id="lang-country" class="ms-2 bg-transparent text-white outline-none">
-							<option value="fr" data-lang="fr" {{ app()->getLocale() == 'fr' ? 'selected' : '' }}>Français</option>
-							<option value="us" data-lang="en" {{ app()->getLocale() == 'en' ? 'selected' : '' }}>English</option>
-						</select>
+						<div class="dropdown dropdown-end me-4">
+							<div tabindex="0" role="button" class="p-3">
+								<span class="fi fi-{{ app()->getLocale() == 'en' ? 'us' : 'fr' }}"></span>
+							</div>
+							<ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+								<li>
+									<a href="{{ route('set.locale', 'fr') }}"><span class="fi fi-fr"></span> Français</a>
+									<a href="{{ route('set.locale', 'en') }}"><span class="fi fi-us"></span> English</a>
+								</li>
+							</ul>
+						</div>
 					</li>
 					<i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
 				</ul>
