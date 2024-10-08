@@ -103,29 +103,29 @@ return [
         'title' => 'Temoignages',
         'items' => [
             [
-                'name' => 'Saul Goodman',
-                'position' => 'Ceo & Founder',
-                'quote' => 'ADL a changé ma vie! Les tirages sont incroyables et les gains sont réels.',
+                'name' => 'Thomas Dubois',
+                'position' => 'Joueur régulier',
+                'quote' => 'ADL a complètement transformé mes soirées ! Les tirages sont palpitants et les gains sont vraiment impressionnants. C\'est fou ce qu\'on peut gagner avec ADL !',
             ],
             [
-                'name' => 'Sara Wilsson',
-                'position' => 'Designer',
-                'quote' => 'Je ne peux plus m\'arrêter de jouer sur ADL. C\'est addictif et tellement amusant!',
+                'name' => 'Yuki Tanaka',
+                'position' => 'Nouvelle joueuse',
+                'quote' => 'Je suis accro à ADL depuis mon inscription ! L\'excitation des tirages est incomparable, et j\'ai déjà gagné dès ma première semaine. C\'est tellement facile de commencer !',
             ],
             [
-                'name' => 'Jena Karlis',
-                'position' => 'Store Owner',
-                'quote' => 'ADL m\'a permis de gagner de l\'argent tout en m\'amusant. Une expérience unique!',
+                'name' => 'Emily Johnson',
+                'position' => 'Joueur régulière',
+                'quote' => 'Grâce à ADL, j\'ai réalisé mon rêve ! J\'ai remporté le jackpot mensuel et ça a changé ma vie. Si je peux le faire, vous le pouvez aussi !',
             ],
             [
-                'name' => 'Matt Brandon',
-                'position' => 'Freelancer',
-                'quote' => 'Les tirages sur ADL sont palpitants! Je recommande à tous les amateurs de jeux.',
+                'name' => 'Emma Leroy',
+                'position' => 'Joueur occasionnelle',
+                'quote' => 'Les tirages sur ADL sont un vrai moment de plaisir dans ma semaine. J\'ai déjà gagné plusieurs fois et c\'est toujours une belle surprise. Je recommande vivement !',
             ],
             [
-                'name' => 'John Larson',
-                'position' => 'Entrepreneur',
-                'quote' => 'ADL est la meilleure plateforme de jeu en ligne que j\'ai jamais utilisée. Des gains incroyables!',
+                'name' => 'Antoine Dupont',
+                'position' => 'Joueur VIP',
+                'quote' => 'ADL est de loin la meilleure plateforme de jeu que j\'ai essayée. Les bonus sont généreux, les tirages sont équitables, et les gains sont réels. Rejoignez-nous, vous ne le regretterez pas !',
             ],
         ],
     ],
@@ -142,7 +142,7 @@ return [
             ],
             [
                 'question' => 'Quand ont lieu les tirages?',
-                'answer' => 'Les tirages se déroulent tous les lundis, mercredis et samedis à 19h00 GMT.',
+                'answer' => 'Les tirages se déroulent tous les mercredi et samedi à 19h00 GMT. Et les tirages bonus ont lieu tout les premiers lundi du mois à 19h00 GMT.',
             ],
             [
                 'question' => 'Puis-je acheter des tickets pour plusieurs tirages à l\'avance ?',

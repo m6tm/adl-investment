@@ -8,7 +8,7 @@
 		<h2>{{ __('home.game_table.title') }}</h2>
 	</div>
 
-	<div class="w-full container mx-auto relative py-8">
+	<div class="w-full container mx-auto overflow-x-auto relative py-8">
 
 		<div class="w-full h-auto">
 			<table class="w-full table-ticket table-responsive">

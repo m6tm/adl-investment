@@ -25,6 +25,17 @@ export default {
             colors: {
                 current: "currentColor",
                 transparent: "transparent",
+                "danger-2": {
+                    100: "#eecfcf",
+                    200: "#de9f9f",
+                    300: "#cd7070",
+                    400: "#bd4040",
+                    500: "#ac1010",
+                    600: "#8a0d0d",
+                    700: "#670a0a",
+                    800: "#450606",
+                    900: "#220303"
+                },
                 white: "#FFFFFF",
                 black: "#1C2434",
                 red: "#FB5454",

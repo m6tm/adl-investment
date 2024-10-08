@@ -14,8 +14,12 @@ use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SettingController;
+use App\Models\Country;
+use GuzzleHttp\Client;
+use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Storage;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,9 +50,33 @@ Route::get('test-email', function () {
 
 Route::get('locale/{lang}', [LanguageController::class, 'setLocale'])->name('set.locale');
 Route::get('', function () {
+    $guzzle = new Client();
+    $data = null;
+    try {
+        $response = $guzzle->get('https://api.myip.com');
+        $data = json_decode($response->getBody(), true);
+    } catch (GuzzleException $error) {
+    }
+    $defaultCurrencySymbol = '';
+    $currencyCode = null;
+    $currencySymbol = null;
+
+    if ($data) {
+        // $country = Country::where('code', $data['cc'])->first();
+        $country = Country::where('code', 'na')->first();
+        if ($country) $currencyCode = $country->code;
+    }
+
+    if ($data && !empty($currencyCode)) {
+        $country = array_filter(json_decode(Storage::disk('data')->get('Currencies.json'), true),
+            fn($currency) => str_starts_with(strtolower($currency['code']), strtolower($currencyCode)));
+        if (count($country) > 0) {
+            $currencySymbol = array_values($country)[0]['symbol'];
+        }
+    }
+    dd($data, $currencySymbol);
     return view('welcome');
 })->name('home');
-
 Route::get('tutoriel', [StaticPagesController::class, 'tutoriel'])->name('tutoriel');
 Route::get('tutoriel-details', [StaticPagesController::class, 'tutorielDetails'])->name('tutoriel-details');
 Route::get('services-details', [StaticPagesController::class, 'servicesDetails'])->name('services-details');
