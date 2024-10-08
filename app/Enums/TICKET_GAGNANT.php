@@ -11,7 +11,7 @@ use BenSampo\Enum\Enum;
  */
 final class TICKET_GAGNANT extends Enum
 {
-    const GAGNANT = 'gagnant';
-    const PERDANT = 'perdant';
-    const NON_DEFINI = 'non défini';
+    const GAGNANT = 'enum.TICKET_GAGNANT.GAGNANT';
+    const PERDANT = 'enum.TICKET_GAGNANT.PERDANT';
+    const NON_DEFINI = 'enum.TICKET_GAGNANT.NON_DEFINI';
 }

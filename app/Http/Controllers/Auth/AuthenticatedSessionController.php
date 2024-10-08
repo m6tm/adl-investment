@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Enums\USER_ROLE;
+use App\Helpers\AuthHelper;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Providers\RouteServiceProvider;
@@ -26,9 +28,10 @@ class AuthenticatedSessionController extends Controller
     public function store(LoginRequest $request): RedirectResponse
     {
         $request->authenticate();
-
+        $is_player = AuthHelper::hasRole(USER_ROLE::PLAYER);
         $request->session()->regenerate();
 
+        if ($is_player) return redirect()->route('dashboard.profile.edit');
         return redirect()->intended(RouteServiceProvider::HOME);
     }
 

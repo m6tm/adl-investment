@@ -11,7 +11,7 @@ use BenSampo\Enum\Enum;
  */
 final class PAYMENT_METHOD_TYPE extends Enum
 {
-    const CARD = 'Payment Card';
-    const MOMO = 'MTN MoMo';
-    const OM = 'Orange Money';
+    const CARD = 'enum.PAYMENT_METHOD_TYPE.CARD';
+    const MOMO = 'enum.PAYMENT_METHOD_TYPE.MOMO';
+    const OM = 'enum.PAYMENT_METHOD_TYPE.OM';
 }

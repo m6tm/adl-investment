@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
             let name = ''
             let className = "datatable-input input input-bordered placeholder:text-slate-400 min-w-[70%] font-light data-custom"
             let placeholder = `Type something ...`
-            if (index == 5 || index == 6) return {
+            if (index == 6 || index == 7) return {
                 nodeName: "TH",
                 childNodes: []
             }

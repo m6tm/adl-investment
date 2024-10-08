@@ -35,7 +35,7 @@
 								class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
 								href="{{ route('dashboard.user.list') }}">
 								<i data-lucide="users-round" class="w-5"></i>
-								Utilisateurs
+								{{ __('sidebar.users') }}
 							</a>
 						</li>
 						<!-- Menu Item Utilisateurs -->
@@ -46,10 +46,20 @@
 							class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
 							href="{{ route('dashboard.notifications') }}">
 							<i data-lucide="messages-square" class="w-5"></i>
-							Notifications
+							{{ __('sidebar.notifications') }}
 						</a>
 					</li>
 					<!-- Menu Item Notifications -->
+					<!-- Menu Item Messages -->
+					<li>
+						<a
+							class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
+							href="{{ route('dashboard.messages') }}">
+							<i data-lucide="message-square-more" class="w-5"></i>
+							{{ __('messages.title') }}
+						</a>
+					</li>
+					<!-- Menu Item Messages -->
 					<!-- Menu Item Tickets -->
 					<li>
 						<a
@@ -94,7 +104,19 @@
 								class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
 								href="{{ route('dashboard.permissions') }}">
 								<i data-lucide="handshake" class="w-5"></i>
-								Permissions
+								{{ __('sidebar.permissions') }}
+							</a>
+						</li>
+						<!-- Menu Item Permissions -->
+					@endif
+					@if (auth()->user()->can('verification.accounts.requests'))
+						<!-- Menu Item Permissions -->
+						<li>
+							<a
+								class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
+								href="{{ route('dashboard.admin.account-verification') }}">
+								<i data-lucide="user-check" class="w-5"></i>
+								{{ __('sidebar.profile_verification') }}
 							</a>
 						</li>
 						<!-- Menu Item Permissions -->
@@ -106,7 +128,19 @@
 								class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
 								href="{{ route('dashboard.roles') }}">
 								<i data-lucide="key-square" class="w-5"></i>
-								Roles
+								{{ __('sidebar.roles') }}
+							</a>
+						</li>
+						<!-- Menu Item Roles -->
+					@endif
+					@if (auth()->user()->can('roles'))
+						<!-- Menu Item Roles -->
+						<li>
+							<a
+								class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
+								href="{{ route('dashboard.settings') }}">
+								<i data-lucide="settings" class="w-5"></i>
+								{{ __('sidebar.settings') }}
 							</a>
 						</li>
 						<!-- Menu Item Roles -->

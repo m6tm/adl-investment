@@ -77,6 +77,27 @@
         }
     },
     {
+        "key": "username.required",
+        "dict": {
+            "en": "Username is required",
+            "fr": "Le nom d'utilisateur est obligatoire"
+        }
+    },
+    {
+        "key": "password.required",
+        "dict": {
+            "en": "Password is required",
+            "fr": "Le mot de passe est obligatoire"
+        }
+    },
+    {
+        "key": "password_confirmation.required",
+        "dict": {
+            "en": "Password confirmation is required",
+            "fr": "La confirmation du mot de passe est obligatoire"
+        }
+    },
+    {
         "key": "birth_day.invalid",
         "dict": {
             "en": "Invalid date of birth. Must be between 19 and 100 years old and in format DD/MM/YYYY",

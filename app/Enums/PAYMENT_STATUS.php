@@ -11,7 +11,7 @@ use BenSampo\Enum\Enum;
  */
 final class PAYMENT_STATUS extends Enum
 {
-    const SUCCESS = 'réussi';
-    const FAILED = 'echoué';
-    const PENDING = 'en cours';
+    const SUCCESS = 'enum.PAYMENT_STATUS.SUCCESS';
+    const FAILED = 'enum.PAYMENT_STATUS.FAILED';
+    const PENDING = 'enum.PAYMENT_STATUS.PENDING';
 }

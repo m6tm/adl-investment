@@ -8,7 +8,7 @@
 		<h2>{{ __('home.ticket_price.title') }}</h2>
 	</div>
 
-	<div class="w-full container mx-auto relative py-8">
+	<div class="w-full container mx-auto overflow-x-auto relative py-8">
 
 		<div class="w-full h-auto">
 			<table class="w-full table-ticket">
@@ -58,7 +58,7 @@
 							<div class="w-full flex space-x-1 items-center">
 
 								<p class="text-[40px] font-normal text-[#f10a0a]"><sup
-										class="text-[18px] font-normal text-black">{{ __('home.ticket_price.ticket') }}</sup> 1$</p>
+										class="text-[18px] font-normal text-black">{{ __('home.ticket_price.ticket') }}</sup> $1</p>
 							</div>
 						</td>
 						<td class=" w-64  p-2 h-16 ">
@@ -87,7 +87,7 @@
 						<td class="w-64  bg-[#F5F5F5] p-4 h-16">
 							<div class="w-full flex space-x-1 items-center">
 								<p class="text-[40px] font-normal text-[#f10a0a]"><sup
-										class="text-[18px] font-normal text-black">{{ __('home.ticket_price.ticket') }}</sup> 2$</p>
+										class="text-[18px] font-normal text-black">{{ __('home.ticket_price.ticket') }}</sup> $2</p>
 							</div>
 						</td>
 						<td class=" w-64  p-2 h-16 ">
@@ -117,7 +117,7 @@
 							<div class="w-full flex space-x-1 items-center">
 
 								<p class="text-[40px] font-normal text-[#f10a0a]"><sup
-										class="text-[18px] font-normal text-black">{{ __('home.ticket_price.ticket') }}</sup> 5$</p>
+										class="text-[18px] font-normal text-black">{{ __('home.ticket_price.ticket') }}</sup> $5</p>
 							</div>
 						</td>
 						<td class=" w-64  p-2 h-16 ">
@@ -146,7 +146,7 @@
 						<td class=" w-64 bg-[#F5F5F5] p-4 h-16">
 							<div class="w-full flex space-x-1 items-center">
 								<p class="text-[40px] font-normal text-[#f10a0a]"><sup
-										class="text-[18px] font-normal text-black">{{ __('home.ticket_price.ticket') }}</sup> 10$</p>
+										class="text-[18px] font-normal text-black">{{ __('home.ticket_price.ticket') }}</sup> $10</p>
 							</div>
 						</td>
 						<td class=" w-64  p-2 h-16 ">

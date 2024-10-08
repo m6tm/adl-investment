@@ -1,5 +1,6 @@
 // Importation de la bibliothèque bootstrap
-import 'bootstrap'
+// import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/js/bootstrap.min.js'
 import './templately/js'
 
 
@@ -19,7 +20,11 @@ createIcons({ icons })
 
 window.addEventListener('load', () => {
     const loader = document.querySelector('div[x-show="loaded"]')
-    if (loader) loader.classList.add('invisible');
+    const wrapper = document.querySelector('body > #wrapper')
+    if (loader) {
+        loader.classList.add('invisible')
+        wrapper.classList.replace('hidden', 'flex')
+    }
     notificationTabs();
 }, false)
 

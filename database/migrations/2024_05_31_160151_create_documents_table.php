@@ -14,12 +14,11 @@ return new class extends Migration
     {
         Schema::create('documents', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
-            $table->foreignId('document_autorise_id');
-            $table->enum('statuts', DOCUMENT_STATUS::getValues())->default(DOCUMENT_STATUS::REFUSED);
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('document_autorise_id')->constrained('document_autorises')->onDelete('cascade');
+            $table->enum('statuts', DOCUMENT_STATUS::getValues())->default(DOCUMENT_STATUS::PENDING);
             $table->string('path');
             $table->timestamps();
-
         });
     }
 

@@ -9,8 +9,13 @@ class PaysDocumentAutorise extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'country_id',
+        'document_autorise_id',
+    ];
+
     function documents_autorise() {
-        return $this->belongsTo(DocumentAutorise::class);
+        return $this->belongsTo(DocumentAutorise::class, 'document_autorise_id');
     }
 
     function pays() {

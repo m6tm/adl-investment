@@ -104,29 +104,29 @@ return [
         'title' => 'Testimonials',
         'items' => [
             [
-                'name' => 'Saul Goodman',
-                'position' => 'CEO & Founder',
-                'quote' => 'ADL has changed my life! The draws are incredible and the winnings are real.',
+                'name' => 'Thomas Dubois',
+                'position' => 'Regular player',
+                'quote' => 'ADL has completely transformed my evenings! The draws are thrilling and the winnings are truly impressive. It\'s amazing what you can win with ADL!',
             ],
             [
-                'name' => 'Sara Wilsson',
-                'position' => 'Designer',
-                'quote' => 'I can\'t stop playing on ADL. It\'s addictive and so much fun!',
+                'name' => 'Yuki Tanaka',
+                'position' => 'New player',
+                'quote' => 'I\'ve been hooked on ADL since I signed up! The excitement of the draws is unparalleled, and I\'ve already won in my first week. It\'s so easy to get started!',
             ],
             [
-                'name' => 'Jena Karlis',
-                'position' => 'Store Owner',
-                'quote' => 'ADL has allowed me to earn money while having fun. A unique experience!',
+                'name' => 'Emily Johnson',
+                'position' => 'Regular player',
+                'quote' => 'Thanks to ADL, I\'ve realized my dream! I won the monthly jackpot and it changed my life. If I can do it, you can too!',
             ],
             [
-                'name' => 'Matt Brandon',
-                'position' => 'Freelancer',
-                'quote' => 'The draws on ADL are thrilling! I recommend it to all game enthusiasts.',
+                'name' => 'Emma Leroy',
+                'position' => 'Occasional player',
+                'quote' => 'The draws on ADL are a real moment of pleasure in my week. I\'ve already won several times and it\'s always a nice surprise. I highly recommend it!',
             ],
             [
-                'name' => 'John Larson',
-                'position' => 'Entrepreneur',
-                'quote' => 'ADL is the best online gaming platform I\'ve ever used. Incredible winnings!',
+                'name' => 'Antoine Dupont',
+                'position' => 'VIP player',
+                'quote' => 'ADL is by far the best gaming platform I\'ve tried. The bonuses are generous, the draws are fair, and the winnings are real. Join us, you won\'t regret it!',
             ],
         ],
     ],
@@ -143,7 +143,7 @@ return [
             ],
             [
                 'question' => 'When do the draws take place?',
-                'answer' => 'The draws take place every Monday, Wednesday, and Saturday at 7:00 PM GMT.',
+                'answer' => 'The draws take place every Wednesday and Saturday at 7:00 PM GMT. Bonus draws occur on the first Monday of each month at 7:00 PM GMT.',
             ],
             [
                 'question' => 'Can I buy tickets for multiple draws in advance?',
@@ -200,4 +200,6 @@ return [
             'submit_button' => 'Send Message',
         ],
     ],
+    "registration" => "Registration",
+    "login" => "Login",
 ];

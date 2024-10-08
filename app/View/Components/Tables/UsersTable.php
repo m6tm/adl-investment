@@ -2,6 +2,10 @@
 
 namespace App\View\Components\Tables;
 
+use App\Enums\USER_ROLE;
+use App\Enums\USER_VERIFICATION_STATUS;
+use App\Helpers\AuthHelper;
+use App\Models\User;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Collection;
@@ -14,7 +18,16 @@ class UsersTable extends Component
      */
     public function __construct(public Collection $users)
     {
-        //
+        if (AuthHelper::hasRole(USER_ROLE::ADMIN)) {
+            $this->users = $this->users->filter(function(User $user) {
+                if ($user->hasAnyRole(USER_ROLE::PLAYER)) return $user;
+            });
+        }
+        if (AuthHelper::hasRole(USER_ROLE::SUPER_ADMIN)) {
+            $this->users = $this->users->filter(function(User $user) {
+                if ($user->hasAnyRole([USER_ROLE::PLAYER, USER_ROLE::ADMIN])) return $user;
+            });
+        }
     }
 
     /**
@@ -22,6 +35,8 @@ class UsersTable extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.tables.users-table');
+        $USER_VERIFICATION_STATUS = USER_VERIFICATION_STATUS::class;
+        $USER_ROLE = USER_ROLE::class;
+        return view('components.tables.users-table', compact('USER_VERIFICATION_STATUS', 'USER_ROLE'));
     }
 }
