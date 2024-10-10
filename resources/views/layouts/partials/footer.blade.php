@@ -35,6 +35,6 @@
 	</div>
 </div>
 
-<div class="container copyright text-center mt-4">
+<div class="container copyright text-center mt-4 w-100">
 	<p>© <span>{{ __('partials/footer.copyright') }}</span> <strong class="px-1 sitename">ADL Investment 2024</strong> <span>{{ __('partials/footer.all_rights_reserved') }}</span></p>
 </div>

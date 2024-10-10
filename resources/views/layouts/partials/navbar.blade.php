@@ -2,6 +2,10 @@
 <link rel="stylesheet" href="{{ asset('assets/css/utils.css') }}">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css"/>
 
+@php
+	$routeName = Route::currentRouteName();
+@endphp
+
 <header id="header" class="header fixed-top">
 	<div class="bg-danger-2-500 py-2 px-3 md:px-20">
 		<div class="lg:flex justify-between">
@@ -40,12 +44,13 @@
 		</div>
 		<div class="hidden md:block">
 		  <ul class="menu menu-horizontal px-1">
-			<li><a href="{{ route('home') }}" class="active">{{ __('partials/header.home') }}<br></a></li>
-			<li><a href="{{ route('home') }}#contact" class="text-white">{{ __('partials/header.contact') }}</a></li>
-			<li><a href="{{ route('tutoriel') }}#tutoriel" class="text-white">{{ __('partials/header.tuto') }}</a></li>
-			<li><a href="{{ route('about') }}#aboutus" class="text-white">{{ __('partials/header.about') }}</a></li>
-			<li><a href="{{ route('conditions') }}" class="text-white">{{ __('partials/header.service') }}</a></li>
-			<li><a href="{{ route('privacy') }}" class="text-white">{{ __('partials/header.privacy_policy') }}</a></li>
+			<li><a href="{{ route('home') }}" class="{{ $routeName == 'home' ? 'active' : '' }} text-white">{{ __('partials/header.home') }}<br></a></li>
+			<li><a href="{{ route('home') }}#contact" class="{{ $routeName == 'contact.create' ? 'active' : '' }} text-white">{{ __('partials/header.contact') }}</a></li>
+			<li><a href="{{ route('tutoriel') }}#tutoriel" class="{{ $routeName == 'tutoriel' ? 'active' : '' }} text-white">{{ __('partials/header.tuto') }}</a></li>
+			<li><a href="{{ route('about') }}#aboutus" class="{{ $routeName == 'about' ? 'active' : '' }} text-white">{{ __('partials/header.about') }}</a></li>
+			<li><a href="{{ route('conditions') }}" class="{{ $routeName == 'conditions' ? 'active' : '' }} text-white">{{ __('partials/header.service') }}</a></li>
+			<li><a href="{{ route('privacy') }}" class="{{ $routeName == 'privacy' ? 'active' : '' }} text-white">{{ __('partials/header.privacy_policy') }}</a></li>
+			<li><a href="{{ route('draw-page') }}" class="{{ $routeName == 'draw-page' ? 'active' : '' }} text-white">{{ __('partials/header.drawing') }}</a></li>
 			<li>
 				<div class="dropdown dropdown-left py-0 h-full">
 					<div tabindex="0" role="button" class="px-3 py-2">
@@ -79,12 +84,13 @@
 			<ul
 			  tabindex="0"
 			  class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-			  <li><a href="{{ route('home') }}" class="active">{{ __('partials/header.home') }}<br></a></li>
-			  <li><a href="{{ route('home') }}#contact">{{ __('partials/header.contact') }}</a></li>
-			  <li><a href="{{ route('tutoriel') }}#tutoriel">{{ __('partials/header.tuto') }}</a></li>
-			  <li><a href="{{ route('about') }}#aboutus">{{ __('partials/header.about') }}</a></li>
-			  <li><a href="{{ route('conditions') }}">{{ __('partials/header.service') }}</a></li>
-			  <li><a href="{{ route('privacy') }}">{{ __('partials/header.privacy_policy') }}</a></li>
+			  <li><a href="{{ route('home') }}" class="{{ $routeName == 'home' ? 'active' : '' }}">{{ __('partials/header.home') }}<br></a></li>
+			  <li><a href="{{ route('home') }}#contact" class="{{ $routeName == 'contact.create' ? 'active' : '' }}">{{ __('partials/header.contact') }}</a></li>
+			  <li><a href="{{ route('tutoriel') }}#tutoriel" class="{{ $routeName == 'tutoriel' ? 'active' : '' }}">{{ __('partials/header.tuto') }}</a></li>
+			  <li><a href="{{ route('about') }}#aboutus" class="{{ $routeName == 'about' ? 'active' : '' }}">{{ __('partials/header.about') }}</a></li>
+			  <li><a href="{{ route('conditions') }}" class="{{ $routeName == 'conditions' ? 'active' : '' }}">{{ __('partials/header.service') }}</a></li>
+			  <li><a href="{{ route('privacy') }}" class="{{ $routeName == 'privacy' ? 'active' : '' }}">{{ __('partials/header.privacy_policy') }}</a></li>
+			  <li><a href="{{ route('draw-page') }}" class="{{ $routeName == 'draw-page' ? 'active' : '' }}">{{ __('partials/header.drawing') }}</a></li>
 			</ul>
 		  </div>
 		</div>
@@ -107,6 +113,7 @@
 					<li><a href="{{ route('about') }}#aboutus">{{ __('partials/header.about') }}</a></li>
 					<li><a href="{{ route('conditions') }}">{{ __('partials/header.service') }}</a></li>
 					<li><a href="{{ route('privacy') }}">{{ __('partials/header.privacy_policy') }}</a></li>
+					<li><a href="{{ route('draw-page') }}">{{ __('partials/header.privacy_policy') }}</a></li>
 					<li>
 						<div class="dropdown dropdown-end me-4">
 							<div tabindex="0" role="button" class="p-3">

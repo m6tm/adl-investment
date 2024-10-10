@@ -82,6 +82,7 @@ Route::get('', function () {
     
     return view('welcome', compact('defaultCurrencySymbol', 'currencySymbol', 'currencyCode', 'Country', 'defaultCountry'));
 })->name('home');
+
 Route::get('tutoriel', [StaticPagesController::class, 'tutoriel'])->name('tutoriel');
 Route::get('tutoriel-details', [StaticPagesController::class, 'tutorielDetails'])->name('tutoriel-details');
 Route::get('services-details', [StaticPagesController::class, 'servicesDetails'])->name('services-details');
@@ -93,6 +94,7 @@ Route::get('conditions', [StaticPagesController::class, 'conditions'])->name('co
 Route::get('privacy', [StaticPagesController::class, 'privacy'])->name('privacy');
 Route::get('contact', [ContactController::class, 'create'])->name('contact.create');
 Route::post('contact', [ContactController::class, 'store'])->name('contact.store');
+Route::get('tirage', fn() => view('web.pages.draw-page.index'))->name('draw-page');
 
 Route::get('login', [AuthenticatedSessionController::class, 'create'])->name('login');
 Route::get('register', [RegisteredUserController::class, 'create'])->name('register');

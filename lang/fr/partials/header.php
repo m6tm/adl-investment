@@ -7,4 +7,5 @@ return [
     "about" => "À propos",
     "service" => "Contitions d'utilisation",
     "privacy_policy" => "Politique de confidentialité",
+    "drawing" => "Tirage",
 ];

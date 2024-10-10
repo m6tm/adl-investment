@@ -7,4 +7,5 @@ return [
     "about" => "About",
     "service" => "Terms of Service",
     "privacy_policy" => "Privacy Policy",
+    "drawing" => "Drawing",
 ];
