@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\TicketPrice;
 use App\Models\Country;
+use Illuminate\Support\Facades\Storage;
 
 class TicketPriceController extends Controller
 {
@@ -26,9 +27,12 @@ class TicketPriceController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    function edit() {
+    function edit(int $ticket_id) {
+        $ticket = TicketPrice::find($ticket_id);
+        if (!$ticket) return redirect()->back()->with('error', 'Ticket not found');
+        $currencies = json_decode(Storage::disk('data')->get('Currencies.json'));
         $countries = Country::all();
         
-        return view('dashboard.pages.ticket-prices.edit', compact('countries'));
+        return view('dashboard.pages.ticket-prices.edit', compact('countries', 'ticket', 'currencies'));
     }
 }

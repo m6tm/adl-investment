@@ -12,7 +12,7 @@
 	<main>
 		<div class="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">
 			<!-- Breadcrumb Start -->
-			<x--breadcrumb :breadcrumbs="[['title' => 'Liste des tickets', 'route' => route('dashboard.ticket-prices')], ['title' => $title]]" />
+			<x--breadcrumb :breadcrumb="[['title' => 'Liste des tickets', 'route' => route('dashboard.ticket-prices')], ['title' => $title]]" />
 			<!-- Breadcrumb End -->
 
 			<!-- ====== Profil Creation Start -->
@@ -31,7 +31,7 @@
 										</span>
 										<input
 											class="w-full rounded border border-stroke bg-gray py-3 pl-11.5 pr-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-slate-100 dark:bg-meta-4 dark:text-white dark:focus:border-primary"
-											type="text" name="nom" id="Nom" placeholder="Ticket 1" value="Ticket 1" required>
+											type="text" name="nom" id="Nom" readonly disabled value="Ticket {{ $ticket->id }}" required>
 									</div>
 								</div>
 
@@ -43,32 +43,37 @@
 										</span>
 										<input
 											class="w-full rounded border border-stroke bg-gray py-3 pl-11.5 pr-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-slate-100 dark:bg-meta-4 dark:text-white dark:focus:border-primary"
-											type="integer" name="amount" id="amount" placeholder="105" value="105" required>
+											type="integer" name="amount" id="amount" placeholder="105" value="{{ $ticket->prix }}" required>
 									</div>
 								</div>
 							</div>
 							<div class="mb-5.5 flex flex-col gap-5.5 sm:flex-row">
 								<div class="w-full sm:w-1/2">
-									<label class="mb-3 block text-sm font-medium text-black dark:text-white" for="username">Devise</label>
+									<label class="mb-3 block text-sm font-medium text-black dark:text-white" for="devise">Devise</label>
 									<div class="relative">
 										<span class="absolute left-4.5 top-4">
 											<i data-lucide="badge-dollar-sign" class="size-5"></i>
 										</span>
 										<input
 											class="w-full rounded border border-stroke bg-gray py-3 pl-11.5 pr-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-slate-100 dark:bg-meta-4 dark:text-white dark:focus:border-primary"
-											type="pseudo" name="username" id="username" placeholder="Bonus" value="Bonus">
+											type="text" list="currencies" id="devise" placeholder="$">
+										<datalist id="currencies">
+											@foreach ($currencies as $currency)
+												<option value="{{ $currency->name }}">{{ $currency->name }} ({{ $currency->symbol }})</option>
+											@endforeach
+										</datalist>
 									</div>
 								</div>
 
 								<div class="w-full sm:w-1/2">
-									<label class="mb-3 block text-sm font-medium text-black dark:text-white" for="username">Promotion</label>
+									<label class="mb-3 size-8 block text-sm font-medium text-black dark:text-white" for="username">Promotion</label>
 									<div class="relative">
-										<span class="absolute left-4.5 top-4">
-											<i data-lucide="percent" class="size-5"></i>
-										</span>
-										<input
-											class="w-full rounded border border-stroke bg-gray py-3 pl-11.5 pr-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-slate-100 dark:bg-meta-4 dark:text-white dark:focus:border-primary"
-											type="pseudo" name="username" id="username" placeholder="OUI" value="OUI">
+										<label for="promotion" class="flex items-center">
+											<input
+												class="rounded border border-stroke me-3 bg-gray cursor-pointer font-medium text-primary focus:border-primary focus-visible:outline-none dark:border-slate-100 dark:bg-meta-4 dark:text-white dark:focus:border-primary"
+												type="checkbox" name="promotion" id="promotion" {{ $ticket->is_promotion ? 'checked' : '' }}>
+											En promotion.
+										</label>
 									</div>
 								</div>
 							</div>
@@ -97,7 +102,7 @@
 										</span>
 										<input
 											class="w-full rounded border border-stroke bg-gray py-3 pl-11.5 pr-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-slate-100 dark:bg-meta-4 dark:text-white dark:focus:border-primary"
-											type="pseudo" name="username" id="username" placeholder="Cameroun" value="Cameroun">
+											type="text" id="username" readonly disabled value="{{ $ticket->country->name }}">
 									</div>
 								</div>
 							</div>

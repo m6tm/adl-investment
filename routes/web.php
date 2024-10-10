@@ -76,7 +76,7 @@ Route::get('', function () {
             $currencySymbol = array_values($country)[0]['symbol'];
         }
     }
-    dd($data, $currencySymbol);
+    // dd($data, $currencySymbol);
     return view('welcome');
 })->name('home');
 Route::get('tutoriel', [StaticPagesController::class, 'tutoriel'])->name('tutoriel');
@@ -117,7 +117,7 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function() {
     Route::post('account-verifications/{player_id}', [AccountVerificationController::class, 'adminVerificationsCheckPost'])->name('dashboard.admin.account-verification.check.post')->whereNumber('player_id');
     // Tickets Price
     Route::get('ticket-prices', [TicketPriceController::class, 'index'])->name('dashboard.ticket-prices');
-    Route::get('ticket-prices/edit', [TicketPriceController::class, 'edit'])->name('dashboard.ticket-prices.edit');
+    Route::get('ticket-prices/edit/{ticket_id}', [TicketPriceController::class, 'edit'])->name('dashboard.ticket-prices.edit')->whereNumber('ticket_id');
 
     // Tickets
     Route::get('tickets/buy', [TicketController::class, 'buy'])->name('dashboard.tickets.buy');

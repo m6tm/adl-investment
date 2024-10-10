@@ -12,7 +12,7 @@
 	<main>
 		<div class="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">
 			<!-- Breadcrumb Start -->
-			<x--breadcrumb :breadcrumbs="[['title' => 'Historique de Tirage', 'route' => route('dashboard.histories')], ['title' => $title]]" />
+			<x--breadcrumb :breadcrumb="[['title' => 'Historique de Tirage', 'route' => route('dashboard.histories')], ['title' => $title]]" />
 			<!-- Breadcrumb End -->
 
 			<!-- ====== Profil Creation Start -->
