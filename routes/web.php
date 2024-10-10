@@ -62,22 +62,25 @@ Route::get('', function () {
     $defaultCurrencySymbol = '';
     $currencyCode = null;
     $currencySymbol = null;
+    $Country = null;
+
+    $defaultCountry = Country::where('code', 'us')->first();
 
     if ($data) {
-        // $country = Country::where('code', $data['cc'])->first();
-        $country = Country::where('code', 'na')->first();
-        if ($country) $currencyCode = $country->code;
+        $country = Country::where('code', $data['cc'])->first();
+        if ($Country) $currencyCode = $Country->code;
     }
 
     if ($data && !empty($currencyCode)) {
-        $country = array_filter(json_decode(Storage::disk('data')->get('Currencies.json'), true),
-            fn($currency) => str_starts_with(strtolower($currency['code']), strtolower($currencyCode)));
+        $country = array_filter(json_decode(Storage::disk('data')->get('Countries.json'), true),
+            fn($currency) => strtolower($currency['cca2']) == strtolower($currencyCode));
         if (count($country) > 0) {
-            $currencySymbol = array_values($country)[0]['symbol'];
+            $country_currencies = array_values($country)[0]['currencies'];
+            $currencySymbol = array_values($country_currencies)[0]['symbol'];
         }
     }
-    // dd($data, $currencySymbol);
-    return view('welcome');
+    
+    return view('welcome', compact('defaultCurrencySymbol', 'currencySymbol', 'currencyCode', 'Country', 'defaultCountry'));
 })->name('home');
 Route::get('tutoriel', [StaticPagesController::class, 'tutoriel'])->name('tutoriel');
 Route::get('tutoriel-details', [StaticPagesController::class, 'tutorielDetails'])->name('tutoriel-details');

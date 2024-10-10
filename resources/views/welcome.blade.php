@@ -66,7 +66,12 @@
 		</div>
 
 	</section>
-	@include('web.partials.pricing')
+	@if ($Country)
+		<x-tables.pricing-table :country="$Country" />
+	@else
+		<x-tables.pricing-table :country="$defaultCountry" />
+	@endif
+	{{-- @include('web.partials.pricing') --}}
 	@include('web.partials.winning')
 	<section id="stats" class="stats section padding-vert">
 		<div class="container" data-aos="fade-up" data-aos-delay="100">
