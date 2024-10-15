@@ -64,8 +64,8 @@ Route::get('', function () {
     $currencySymbol = null;
 
     if ($data) {
-        // $country = Country::where('code', $data['cc'])->first();
-        $country = Country::where('code', 'na')->first();
+        $country = Country::where('code', $data['cc'])->first();
+        // $country = Country::where('code', 'na')->first();
         if ($country) $currencyCode = $country->code;
     }
 
@@ -76,7 +76,7 @@ Route::get('', function () {
             $currencySymbol = array_values($country)[0]['symbol'];
         }
     }
-    dd($data, $currencySymbol);
+    // dd($data, $currencySymbol);
     return view('welcome');
 })->name('home');
 Route::get('tutoriel', [StaticPagesController::class, 'tutoriel'])->name('tutoriel');
