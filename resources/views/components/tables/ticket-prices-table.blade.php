@@ -137,7 +137,7 @@
 					<td class="capitalize">{{ $price->country->name }}</td>
 					<td class="flex justify-center space-x-3">
                         <!-- @if (auth()->user()->can('edit.user')) -->
-                            <a href="{{ route('dashboard.ticket-prices.edit') }}" class="float-right text-primary">Edit</a>
+						<a href="{{ route('dashboard.ticket-prices.edit', $price->id) }}" class="float-right text-primary">Edit</a>
                         <!-- @endif -->
 					</td>
 				</tr>

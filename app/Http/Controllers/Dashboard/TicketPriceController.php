@@ -22,13 +22,74 @@ class TicketPriceController extends Controller
     }
 
     /**
-     * Edit a ticket.
+     * Display a listing of the ticket.
      *
      * @return \Illuminate\View\View
      */
-    function edit() {
+    function create() {        
         $countries = Country::all();
         
-        return view('dashboard.pages.ticket-prices.edit', compact('countries'));
+        return view('dashboard.pages.ticket-prices.create', compact('countries'));
     }
+
+    /**
+     * Store a new ticket.
+     *
+     * @return \Illuminate\View\View
+     */
+    function store(Request $request) {        
+        $request->validate([
+            'libelle' => 'required|string|max:255',
+            'prix' => 'required|numeric',
+            'devise' => 'required|string|max:10',
+            'is_promotion' => 'required|boolean',
+            'country_id' => 'required|exists:countries,id',
+        ]);
+
+        TicketPrice::create([
+            'libelle' => $request->libelle,
+            'prix' => $request->prix,
+            'devise' => $request->devise,
+            'is_promotion' => $request->is_promotion,
+            'country_id' => $request->country_id,
+        ]);
+
+        return redirect()->route('dashboard.ticket-prices')->with('success', 'Ticket price created successfully!');
+    }
+
+    /**
+     * Show a ticket.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function edit($id)
+    {
+        $ticket = TicketPrice::findOrFail($id);
+        $countries = Country::all();
+        
+        return view('dashboard.pages.ticket-prices.edit', compact('ticket', 'countries'));
+    }
+
+    /**
+     * Update a ticket.
+     *
+     * @return \Illuminate\View\View
+     */
+    function update(Request $request, $id)
+    {
+        $ticket = TicketPrice::findOrFail($id);
+
+        $validatedData = $request->validate([
+            'libelle' => 'required|string|max:255',
+            'prix' => 'required|numeric',
+            'devise' => 'required|string|max:10',
+            'is_promotion' => 'required|boolean',
+            'country_id' => 'required|exists:countries,id',
+        ]);
+
+        $ticket->update($validatedData);
+
+        return redirect()->route('dashboard.ticket-prices')->with('success', 'Ticket updated successfully.');
+    }
+
 }

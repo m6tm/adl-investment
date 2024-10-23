@@ -10,7 +10,7 @@ class TicketPrice extends Model
     protected $fillable = [
         'libelle',
         'prix',
-        'device',
+        'devise',
         'is_promotion',
         'country_id',
     ];

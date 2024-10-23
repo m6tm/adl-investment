@@ -117,7 +117,11 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function() {
     Route::post('account-verifications/{player_id}', [AccountVerificationController::class, 'adminVerificationsCheckPost'])->name('dashboard.admin.account-verification.check.post')->whereNumber('player_id');
     // Tickets Price
     Route::get('ticket-prices', [TicketPriceController::class, 'index'])->name('dashboard.ticket-prices');
-    Route::get('ticket-prices/edit', [TicketPriceController::class, 'edit'])->name('dashboard.ticket-prices.edit');
+    Route::get('ticket-prices/create', [TicketPriceController::class, 'create'])->name('dashboard.ticket-prices.create');
+    Route::post('ticket-prices', [TicketPriceController::class, 'store'])->name('dashboard.ticket-prices.store');
+    Route::get('ticket-prices/{id}', [TicketPriceController::class, 'edit'])->name('dashboard.ticket-prices.edit');
+    Route::post('ticket-prices/{id}', [TicketPriceController::class, 'update'])->name('dashboard.ticket-prices.update');
+
 
     // Tickets
     Route::get('tickets/buy', [TicketController::class, 'buy'])->name('dashboard.tickets.buy');

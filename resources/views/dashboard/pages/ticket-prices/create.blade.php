@@ -1,5 +1,5 @@
 @php
-	$title = 'Modifier un Ticket';
+	$title = 'Créer un Ticket';
     $breadcrumbs = [['title' => 'Liste des tickets', 'route' => route('dashboard.ticket-prices')], ['title' => $title]];
 @endphp
 
@@ -11,7 +11,7 @@
 			<div class="bg-white dark:bg-meta-4 dark:bg-none px-5 pt-6 pb-8 shadow-default dark:shadow-none rounded-[10px] p-5">
 				<x-error-message-alert class="mb-4" />
 				<div class="grid lg:grid-cols-2 grid-cols-1 gap-5">
-				<form action="{{ route('dashboard.ticket-prices.update', $ticket->id) }}" method="POST" class="lg:col-span-2 col-span-1">
+				<form action="{{ route('dashboard.ticket-prices.store') }}" method="POST" class="lg:col-span-2 col-span-1">
 					@csrf
 					<h2 class="text-black dark:text-white uppercase text-title-md mb-4">Informations ticket</h2>
 					
@@ -24,7 +24,7 @@
 								</span>
 								<input
 									class="w-full rounded border border-stroke bg-gray py-3 pl-11.5 pr-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-slate-100 dark:bg-meta-4 dark:text-white dark:focus:border-primary"
-									type="text" name="libelle" id="libelle" placeholder="Ticket 1" value="{{ $ticket->libelle }}" required>
+									type="text" name="libelle" id="libelle" placeholder="Ticket 1" required>
 							</div>
 						</div>
 						<div class="w-full sm:w-1/2">
@@ -35,7 +35,7 @@
 								</span>
 								<input
 									class="w-full rounded border border-stroke bg-gray py-3 pl-11.5 pr-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-slate-100 dark:bg-meta-4 dark:text-white dark:focus:border-primary"
-									type="number" name="prix" id="prix" placeholder="105" value="{{ $ticket->prix }}" required>
+									type="number" name="prix" id="prix" placeholder="105" required>
 							</div>
 						</div>
 					</div>
@@ -49,7 +49,7 @@
 								</span>
 								<input
 									class="w-full rounded border border-stroke bg-gray py-3 pl-11.5 pr-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-slate-100 dark:bg-meta-4 dark:text-white dark:focus:border-primary"
-									type="text" name="devise" id="devise" placeholder="USD" value="{{ $ticket->devise }}">
+									type="text" name="devise" id="devise" placeholder="USD" >
 							</div>
 						</div>
 						
@@ -60,8 +60,9 @@
 									<i data-lucide="percent" class="size-5"></i>
 								</span>
 								<select id="is_promotion" name="is_promotion" class="w-full rounded border border-stroke bg-gray py-3 pl-11.5 pr-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-slate-100 dark:bg-meta-4 dark:text-white dark:focus:border-primary">
-									<option value="1" {{ $ticket->is_promotion ? 'selected' : '' }}>OUI</option>
-									<option value="0" {{ !$ticket->is_promotion ? 'selected' : '' }}>NON</option>
+									<option value="" disabled selected>Select a choice</option>
+									<option value="1">OUI</option>
+									<option value="0">NON</option>
 								</select>
 							</div>
 						</div>
@@ -75,10 +76,9 @@
 									<i data-lucide="flag" class="size-5"></i>
 								</span>
 								<select id="country" name="country_id" class="w-full rounded border border-stroke bg-gray py-3 pl-11.5 pr-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-slate-100 dark:bg-meta-4 dark:text-white dark:focus:border-primary">
-									@foreach($countries as $country)
-										<option value="{{ $country->id }}" {{ $ticket->country_id == $country->id ? 'selected' : '' }}>
-											({{ $country->dial_code }}) {{ $country->name }}
-										</option>
+									<option value="" disabled selected>Select your country</option>
+									@foreach ($countries as $country)
+										<option value="{{ $country->id }}">({{ $country->dial_code }}) {{ $country->name }}</option>
 									@endforeach
 								</select>
 							</div>
