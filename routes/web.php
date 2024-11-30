@@ -45,43 +45,13 @@ use Illuminate\Support\Facades\Storage;
 Route::get('test-email', function () {
     Mail::raw('This is a test email', function ($message) {
         $message->to('your_email@example.com') // Replace with your email
-                ->subject('Test Email');
+            ->subject('Test Email');
     });
     return 'Test email sent!';
 });
 
 Route::get('locale/{lang}', [LanguageController::class, 'setLocale'])->name('set.locale');
-Route::get('', function () {
-    $guzzle = new Client();
-    $data = null;
-    try {
-        $response = $guzzle->get('https://api.myip.com');
-        $data = json_decode($response->getBody(), true);
-    } catch (GuzzleException $error) {
-    }
-    $defaultCurrencySymbol = '';
-    $currencyCode = null;
-    $currencySymbol = null;
-    $Country = null;
-
-    $defaultCountry = Country::where('code', 'us')->first();
-
-    if ($data) {
-        $country = Country::where('code', $data['cc'])->first();
-        if ($Country) $currencyCode = $Country->code;
-    }
-
-    if ($data && !empty($currencyCode)) {
-        $country = array_filter(json_decode(Storage::disk('data')->get('Countries.json'), true),
-            fn($currency) => strtolower($currency['cca2']) == strtolower($currencyCode));
-        if (count($country) > 0) {
-            $country_currencies = array_values($country)[0]['currencies'];
-            $currencySymbol = array_values($country_currencies)[0]['symbol'];
-        }
-    }
-    
-    return view('welcome', compact('defaultCurrencySymbol', 'currencySymbol', 'currencyCode', 'Country', 'defaultCountry'));
-})->name('home');
+Route::get('', [StaticPagesController::class, 'home'])->name('home');
 
 Route::get('tutoriel', [StaticPagesController::class, 'tutoriel'])->name('tutoriel');
 Route::get('tutoriel-details', [StaticPagesController::class, 'tutorielDetails'])->name('tutoriel-details');
@@ -99,7 +69,7 @@ Route::get('tirage', fn() => view('web.pages.draw-page.index'))->name('draw-page
 Route::get('login', [AuthenticatedSessionController::class, 'create'])->name('login');
 Route::get('register', [RegisteredUserController::class, 'create'])->name('register');
 
-Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function() {
+Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function () {
     Route::get('', [UserController::class, 'index'])->name('dashboard');
 
     // Users
