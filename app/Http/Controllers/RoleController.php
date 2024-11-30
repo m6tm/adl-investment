@@ -11,27 +11,29 @@ use Spatie\Permission\Models\Role;
 
 class RoleController extends Controller
 {
-    function index() {
-        if (!AuthHelper::can('roles')) return redirect()->back()->withErrors(__('dashboard/backend.not-access'));
+    function index()
+    {
+        if (!AuthHelper::can('roles')) return redirect()->back()->withErrors(__('backend.not-access'));
         $roles = Role::all();
         return view('dashboard.pages.roles.index', compact('roles'));
     }
 
-    function roleToUser(int $role_id, RoleToUserRequest $request) {
-        if (!AuthHelper::can('role.to.user')) redirect()->back()->withErrors(__('dashboard/backend.not-access'));
+    function roleToUser(int $role_id, RoleToUserRequest $request)
+    {
+        if (!AuthHelper::can('role.to.user')) redirect()->back()->withErrors(__('backend.not-access'));
         $role = Role::find($role_id);
         if (!$role) {
-            return redirect()->back()->with('error', __('dashboard/backend.role-not-found'));
+            return redirect()->back()->with('error', __('backend.role-not-found'));
         }
 
         $userIds = request('users') ?? [];
-        
-        DB::transaction(function() use ($userIds, $role_id) {
+
+        DB::transaction(function () use ($userIds, $role_id) {
             // Récupérez tous les utilisateurs ayant déjà cette role
-            $usersWithRole = User::whereHas('roles', function($query) use ($role_id) {
+            $usersWithRole = User::whereHas('roles', function ($query) use ($role_id) {
                 $query->where('id', $role_id);
             })->pluck('id')->toArray();
-            
+
             // Révoquez la role pour les utilisateurs qui ne sont pas dans la liste sélectionnée
             $usersToRevoke = array_diff($usersWithRole, $userIds);
             User::whereIn('id', $usersToRevoke)->each(function (User $user) use ($role_id) {
@@ -44,6 +46,6 @@ class RoleController extends Controller
             });
         });
 
-        return redirect()->back()->with('success', __('dashboard/backend.role-to-user'));
+        return redirect()->back()->with('success', __('backend.role-to-user'));
     }
 }

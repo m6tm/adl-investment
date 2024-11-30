@@ -58,6 +58,12 @@ return [
         'birth_date' => 'Date of Birth',
         'city' => 'City',
         'country' => 'Country',
+        'reset_password' => 'Reset password'
+    ],
+    "requests" => [
+        'birth_date_before_or_equal' => "The user must be 19 years old or older.",
+        'not_user' => 'No user found.',
+        'not_admin' => 'You can only modify administrator accounts.',
     ],
     "password_not_same" => "The current password you provided is incorrect.",
     "number_used" => "This number is already in use",

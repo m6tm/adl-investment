@@ -18,15 +18,17 @@ use Illuminate\Support\Str;
 
 class AccountVerificationController extends Controller
 {
-    function index() {
-        if (!AuthHelper::hasRole(USER_ROLE::PLAYER)) return redirect()->back()->withErrors(__('dashboard/backend.not-access'));
+    function index()
+    {
+        if (!AuthHelper::hasRole(USER_ROLE::PLAYER)) return redirect()->back()->withErrors(__('backend.not-access'));
         $DOCUMENT_STATUS = DOCUMENT_STATUS::class;
         $pays = Country::all();
         $DOCUMENT_TYPE = DOCUMENT_TYPE::class;
         return view('dashboard.pages.verification-account.index', compact('DOCUMENT_STATUS', 'pays', 'DOCUMENT_TYPE'));
     }
 
-    function verificationAccount(VerificationAccountPlayerRequest $request) {
+    function verificationAccount(VerificationAccountPlayerRequest $request)
+    {
         /**
          * @var User $user
          */
@@ -58,7 +60,7 @@ class AccountVerificationController extends Controller
                 /**
                  * @var Document $document
                  */
-                $document = $user->documents->filter(function(Document $doc) use ($current_document_autorise) {
+                $document = $user->documents->filter(function (Document $doc) use ($current_document_autorise) {
                     if ($doc->document_autorise->type == $current_document_autorise->type) return $doc;
                 })->first();
                 if ($document->statuts !== DOCUMENT_STATUS::REFUSED) continue;
@@ -77,7 +79,7 @@ class AccountVerificationController extends Controller
                     request()->file('selfie_photo')->move(public_path("$path/SELFIE"), $unique_name);
                     $files_path[] = "$path/SELFIE/$unique_name";
                     break;
-                    
+
                 case DOCUMENT_TYPE::CNI:
                     $has_cni_document = $user_documents->filter(fn(Document $doc) => $doc->document_autorise->type == DOCUMENT_TYPE::CNI)->count() > 0;
                     if ($has_cni_document) $document = $user_documents->filter(fn(Document $doc) => $doc->document_autorise->type == DOCUMENT_TYPE::CNI)->first();
@@ -91,7 +93,7 @@ class AccountVerificationController extends Controller
                     $files_path[] = "$path/CNI/$unique_name_recto";
                     $files_path[] = "$path/CNI/$unique_name_verso";
                     break;
-                        
+
                 case DOCUMENT_TYPE::PASSPORT:
                     $has_passport_document = $user_documents->filter(fn(Document $doc) => $doc->document_autorise->type == DOCUMENT_TYPE::PASSPORT)->count() > 0;
                     if ($has_passport_document) $document = $user_documents->filter(fn(Document $doc) => $doc->document_autorise->type == DOCUMENT_TYPE::PASSPORT)->first();
@@ -105,7 +107,7 @@ class AccountVerificationController extends Controller
                     $files_path[] = "$path/PASSPORT/$unique_name_recto";
                     $files_path[] = "$path/PASSPORT/$unique_name_verso";
                     break;
-                    
+
                 case DOCUMENT_TYPE::PERMIS_CONDUIRE:
                     $has_permis_conduire_document = $user_documents->filter(fn(Document $doc) => $doc->document_autorise->type == DOCUMENT_TYPE::PERMIS_CONDUIRE)->count() > 0;
                     if ($has_permis_conduire_document) $document = $user_documents->filter(fn(Document $doc) => $doc->document_autorise->type == DOCUMENT_TYPE::PERMIS_CONDUIRE)->first();
@@ -119,7 +121,7 @@ class AccountVerificationController extends Controller
                     $files_path[] = "$path/PERMIS_CONDUIRE/$unique_name_recto";
                     $files_path[] = "$path/PERMIS_CONDUIRE/$unique_name_verso";
                     break;
-                        
+
                 case DOCUMENT_TYPE::PREUVE_RESIDENCE:
                     $has_preuve_residence_document = $user_documents->filter(fn(Document $doc) => $doc->document_autorise->type == DOCUMENT_TYPE::PREUVE_RESIDENCE)->count() > 0;
                     if ($has_preuve_residence_document) $document = $user_documents->filter(fn(Document $doc) => $doc->document_autorise->type == DOCUMENT_TYPE::PREUVE_RESIDENCE)->first();
@@ -131,7 +133,7 @@ class AccountVerificationController extends Controller
                         $files_path[] = "$path/PREUVE_RESIDENCE/$unique_name";
                     }
                     break;
-                
+
                 default:
                     break;
             }
@@ -139,19 +141,21 @@ class AccountVerificationController extends Controller
             $document->path = json_encode($files_path);
             $document->save();
         }
-        
+
         $user = User::find(auth()->id());
         $user->verification_status = USER_VERIFICATION_STATUS::PENDING;
         $user->update();
-        
+
         return redirect()->route('dashboard.profile.edit')->with('success', __('settings.verification_account.player-success'));
     }
 
-    function adminVerifications() {
+    function adminVerifications()
+    {
         return view('dashboard.pages.verification-account.admin-verifications');
     }
 
-    function adminVerificationsCheck(int $player_id) {
+    function adminVerificationsCheck(int $player_id)
+    {
         /**
          * @@var User $user
          */
@@ -161,7 +165,8 @@ class AccountVerificationController extends Controller
         return view('dashboard.pages.verification-account.admin-verification-user', compact('user'));
     }
 
-    function adminVerificationsCheckPost(int $player_id) {
+    function adminVerificationsCheckPost(int $player_id)
+    {
         /**
          * @var User $user
          */
@@ -185,7 +190,7 @@ class AccountVerificationController extends Controller
              * @var DocumentAutorise $current_document_autorise
              */
             $current_document_autorise = $documents_autorise->documents_autorise;
-            
+
             switch ($current_document_autorise->type) {
                 case DOCUMENT_TYPE::SELFIE:
                     $has_selfie = !is_null(request('selfie'));
@@ -203,7 +208,7 @@ class AccountVerificationController extends Controller
                         }
                     }
                     break;
-                    
+
                 case DOCUMENT_TYPE::CNI:
                     $has_cni = !is_null(request('cni'));
                     $has_cni_recto = $has_cni && isset(request('cni')['recto']);
@@ -225,7 +230,7 @@ class AccountVerificationController extends Controller
                         }
                     }
                     break;
-                        
+
                 case DOCUMENT_TYPE::PASSPORT:
                     $has_passport = !is_null(request('passport'));
                     $has_passport_recto = $has_passport && isset(request('passport')['recto']);
@@ -247,7 +252,7 @@ class AccountVerificationController extends Controller
                         }
                     }
                     break;
-                    
+
                 case DOCUMENT_TYPE::PERMIS_CONDUIRE:
                     $has_permis = !is_null(request('permis'));
                     $has_permis_recto = $has_permis && isset(request('permis')['recto']);
@@ -269,7 +274,7 @@ class AccountVerificationController extends Controller
                         }
                     }
                     break;
-                        
+
                 case DOCUMENT_TYPE::PREUVE_RESIDENCE:
                     $has_residence = !is_null(request('residence'));
                     /**
@@ -289,14 +294,14 @@ class AccountVerificationController extends Controller
                         }
                     }
                     break;
-                
+
                 default:
                     break;
             }
         }
-        
+
         $all_document_in_progress = $user->documents->filter(fn(Document $doc) => $doc->statuts == DOCUMENT_STATUS::PENDING)->count() == $user->documents->count();
-        if ($all_document_in_progress) $user->documents->filter(function(Document $doc) {
+        if ($all_document_in_progress) $user->documents->filter(function (Document $doc) {
             $doc->statuts = DOCUMENT_STATUS::VERIFIED;
             $doc->update();
         });

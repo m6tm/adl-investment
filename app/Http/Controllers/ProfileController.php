@@ -28,7 +28,7 @@ class ProfileController extends Controller
     {
         if (request('current_password') && !Hash::check(request('current_password'), auth()->user()->password))
             return redirect()->back()->with('error', __('users.password_not_same'));
-        
+
         $telephone = Telephone::where('telephone', request('telephone'))->first();
         if ($telephone && $telephone->user_id !== auth()->id())
             return redirect()->back()->with('error', __('users.number_used'));
@@ -46,7 +46,7 @@ class ProfileController extends Controller
         $telephone->code = $user->pays->code;
         $telephone->telephone = request('telephone');
         $telephone->update();
-        
+
         return redirect()->back()->with('success', __('settings.message_success'));
     }
 
@@ -68,6 +68,6 @@ class ProfileController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect()->back()->with('status', __('dashboard/backend.user-destroyed'));
+        return redirect()->back()->with('status', __('backend.user-destroyed'));
     }
 }

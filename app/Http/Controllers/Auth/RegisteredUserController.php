@@ -25,7 +25,7 @@ class RegisteredUserController extends Controller
     public function create(): View
     {
         $countries = Country::all();
-        
+
         return view('auth.register', compact('countries'));
     }
 
@@ -48,13 +48,13 @@ class RegisteredUserController extends Controller
             'country_id' => $country->id,
         ]);
 
-        $telephone = Telephone::create([
+        Telephone::create([
             'telephone' => request()->phone,
             'code' => $country->dial_code,
             'user_id' => $user->id,
         ]);
 
-        $address = Addresse::create([
+        Addresse::create([
             'city' => request()->city,
             'street' => request()->neighborhood,
             'user_id' => $user->id,

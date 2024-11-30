@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\User;
 
+use App\Models\Country;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Storage;
 
@@ -22,10 +23,24 @@ class CreateUserRequest extends FormRequest
      */
     public function rules(): array
     {
-        $countries = json_decode(Storage::disk('local')->get('data/CountryCodes.json'), true);
-        $countries_name = array_map(fn($country) => $country['name'], $countries);
+        $countries_name = Country::all()->pluck('name')->toArray();
         return [
-            //
+            'avatar' => 'nullable|image|mimes:jpeg,png,jpg|max:500|dimensions:max_width=800,max_height=800',
+            'nom' => 'required|string|max:255',
+            'prenom' => 'required|string|max:255',
+            'email' => 'required|email|max:255|unique:users',
+            'telephone' => 'required|string|max:20',
+            'username' => 'required|string|max:255|unique:users,pseudo',
+            'birth_date' => 'required|date|before_or_equal:' . now()->subYears(19)->format('Y-m-d'),
+            'ville' => 'nullable|string|max:255',
+            'pays' => 'nullable|string|in:' . implode(',', $countries_name)
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'birth_date.before_or_equal' => __('users.requests.birth_date_before_or_equal'),
         ];
     }
 }
