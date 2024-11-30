@@ -95,14 +95,12 @@ class UserController extends Controller
     function editPost(int $user_id, EditUserRequest $request)
     {
         if (!AuthHelper::can('edit.user')) return redirect()->back()->withErrors(__('backend.not-access'));
-        $country = Country::where('name', request('pays'))->first();
         /**
          * @var User $user
          */
         $user = User::find($user_id);
         if (!$user) return redirect()->back()->with('error', __('users.requests.not_user'));
 
-        $user->country_id = $country->id;
         if (request('reset') == 'on') {
             $user->password = Hash::make('password_default');
         }
