@@ -32,7 +32,7 @@ class AuthenticatedSessionController extends Controller
         $request->session()->regenerate();
 
         if ($is_player) return redirect()->route('dashboard.profile.edit');
-        return redirect()->intended(RouteServiceProvider::HOME);
+        return redirect()->route('dashboard.user.list');
     }
 
     /**
