@@ -23,16 +23,25 @@
 					<a href="#" class="linkedin text-white text-sm"><i class="bi bi-linkedin"></i></a>
 				</div>
 			</div>
-			<div class="social-links space-x-3 flex justify-end">
-				<a href="{{ route('login') }}" class="text-neutral-200">
-					<i class="bi bi-person-fill"></i>
-					<span>{{ __('home.login') }}</span>
-				</a>
-				<a href="{{ route('register') }}" class="text-neutral-200">
-					<i class="bi bi-pencil-square"></i>
-					<span>{{ __('home.registration') }}</span>
-				</a>
-			</div>
+			@if (auth()->check())
+				<div class="social-links space-x-3 flex justify-end">
+					<a href="{{ route('dashboard') }}" class="text-neutral-200 hover:text-neutral-300">
+						<i class="bi bi-person-workspace"></i>
+						<span>{{ __('home.dashboard') }}</span>
+					</a>
+				</div>
+			@else
+				<div class="social-links space-x-3 flex justify-end">
+					<a href="{{ route('login') }}" class="text-neutral-200 hover:text-neutral-300">
+						<i class="bi bi-person-fill"></i>
+						<span>{{ __('home.login') }}</span>
+					</a>
+					<a href="{{ route('register') }}" class="text-neutral-200 hover:text-neutral-300">
+						<i class="bi bi-pencil-square"></i>
+						<span>{{ __('home.registration') }}</span>
+					</a>
+				</div>
+			@endif
 		</div>
 	</div>
 	<div class="navbar px-3 md:px-20">

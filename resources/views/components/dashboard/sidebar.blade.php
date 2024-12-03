@@ -1,5 +1,4 @@
-<aside
-  id="sidebar-aside"
+<aside id="sidebar-aside"
 	class="absolute left-0 top-0 z-9999 flex h-screen w-72.5 flex-col bg-black duration-300 ease-linear dark:bg-boxdark lg:static lg:translate-x-0 side-bar-hidden">
 	<!-- SIDEBAR HEADER -->
 	<div class="flex items-center justify-center gap-2 px-6 py-5.5 lg:py-6.5 relative">
@@ -7,9 +6,8 @@
 			<img src="{{ asset('assets/img/Roue_AD-transparent.png') }}" class="w-29" alt="Logo" />
 		</a>
 
-		<button
-      id="sidebar-toggler"
-      class="lg:hidden text-white bg-black size-[40px] flex justify-center items-center rounded-full absolute right-[-3em] duration-300 ease-linear rotate-180">
+		<button id="sidebar-toggler"
+			class="lg:hidden text-white bg-black size-[40px] flex justify-center items-center rounded-full absolute right-[-3em] duration-300 ease-linear rotate-180">
 			<svg class="fill-current" width="20" height="18" viewBox="0 0 20 18" fill="none"
 				xmlns="http://www.w3.org/2000/svg">
 				<path
@@ -20,7 +18,11 @@
 	</div>
 	<!-- SIDEBAR HEADER -->
 
-	<div class="no-scrollbar flex flex-col overflow-y-auto duration-300 ease-linear">
+	<div class="no-scrollbar flex flex-col overflow-y-auto duration-300 ease-linear relative">
+		<a href="{{ route('home') }}"
+			class="text-neutral-300 absolute bottom-0 left-2 size-10 duration-150 bg-slate-50/5 hover:bg-slate-50/10 rounded-full flex justify-center items-center">
+			<i data-lucide="house"></i>
+		</a>
 		<!-- Sidebar Menu -->
 		<nav class="mt-5 px-4 py-4 lg:mt-9 lg:px-6" x-data="{ selected: $persist('Dashboard') }">
 			<!-- Menu Group -->
@@ -70,7 +72,7 @@
 						</a>
 					</li>
 					<!-- Menu Item Tickets -->
-					
+
 					@if (auth()->user()->can('permissions'))
 						<!-- Menu List Tickets -->
 						<li>
@@ -96,7 +98,7 @@
 						</li>
 						<!-- Menu Draw History -->
 					@endif
-					
+
 					@if (auth()->user()->can('permissions'))
 						<!-- Menu Item Permissions -->
 						<li>
