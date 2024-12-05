@@ -58,7 +58,8 @@ return [
         'birth_date' => 'Date of Birth',
         'city' => 'City',
         'country' => 'Country',
-        'reset_password' => 'Reset password'
+        'reset_password' => 'Reset password',
+        'delete' => 'Delete',
     ],
     "requests" => [
         'birth_date_before_or_equal' => "The user must be 19 years old or older.",

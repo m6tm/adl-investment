@@ -78,6 +78,7 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function () 
     Route::post('users/create', [UserController::class, 'createPost'])->name('dashboard.user.create.post');
     Route::get('users/edit/{user_id}', [UserController::class, 'edit'])->name('dashboard.user.edit')->whereNumber('user_id');
     Route::post('users/edit/{user_id}', [UserController::class, 'editPost'])->name('dashboard.user.edit.post')->whereNumber('user_id');
+    Route::get('users/out/{user_id}', [UserController::class, 'destroy'])->name('dashboard.user.out')->whereNumber('user_id');
 
     // Profiles
     Route::get('profil', [ProfileController::class, 'edit'])->name('dashboard.profile.edit');

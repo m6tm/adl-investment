@@ -108,4 +108,13 @@ class UserController extends Controller
 
         return redirect()->route('dashboard.user.list')->with('success', __('backend.success'));
     }
+
+    function destroy(int $user_id)
+    {
+        if (!AuthHelper::can('delete.user')) return redirect()->back()->withErrors(__('backend.not-access'));
+        $user = User::find($user_id);
+        if (!$user) return redirect()->back()->with('error', __('users.requests.not_user'));
+        $user->delete();
+        return redirect()->route('dashboard.user.list')->with('success', __('backend.success'));
+    }
 }

@@ -3,8 +3,6 @@ import MessageBoxHeader from "./MessageBoxHeaderComponent";
 import MessageBoxListComponent from "./content/MessageBoxListComponent";
 import MessageBoxInputComponent from "./content/MessageBoxInputComponent";
 
-
-
 export default class MessageBoxItemComponent extends Component {
     render(): React.ReactNode {
         return (
@@ -12,8 +10,7 @@ export default class MessageBoxItemComponent extends Component {
                 <MessageBoxHeader />
                 <MessageBoxListComponent />
                 <MessageBoxInputComponent />
-                {/* Chat Box End */}
             </div>
-        )
+        );
     }
 }

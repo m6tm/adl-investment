@@ -144,6 +144,10 @@
 							type="submit">
 							{{ __('users.create.save') }}
 						</button>
+						<a href="{{ route('dashboard.user.out', $user->id) }}"
+							class="flex justify-center rounded bg-danger px-6 py-2 font-medium text-gray hover:bg-opacity-90">
+							{{ __('users.update.delete') }}
+						</a>
 					</div>
 				</section>
 			</form>

@@ -58,7 +58,8 @@ return [
         'birth_date' => 'Date de naissance',
         'city' => 'Ville',
         'country' => 'Pays',
-        'reset_password' => 'Réinitialiser le mot de passe'
+        'reset_password' => 'Réinitialiser le mot de passe',
+        'delete' => 'Supprimer',
     ],
     "requests" => [
         'birth_date_before_or_equal' => "L'utilisateur doit être âgé de 19 ans ou plus.",
