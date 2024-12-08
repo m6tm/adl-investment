@@ -3,4 +3,5 @@
 return [
     'label' => 'Ticket',
     'label_price' => 'Prix du ticket',
+    'devise' => 'Devise',
 ];

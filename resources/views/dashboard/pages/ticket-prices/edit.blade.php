@@ -25,7 +25,8 @@
 									</span>
 									<input
 										class="w-full rounded border border-stroke bg-gray py-3 pl-11.5 pr-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-slate-100 dark:bg-meta-4 dark:text-white dark:focus:border-primary"
-										type="text" name="libelle" id="libelle" placeholder="Ticket 1" value="{{ $ticket->libelle }}" required>
+										type="text" readonly disabled id="libelle" placeholder="Ticket 1" value="{{ $ticket->libelle }}"
+										required>
 								</div>
 							</div>
 							<div class="w-full sm:w-1/2">
@@ -50,7 +51,12 @@
 									</span>
 									<input
 										class="w-full rounded border border-stroke bg-gray py-3 pl-11.5 pr-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-slate-100 dark:bg-meta-4 dark:text-white dark:focus:border-primary"
-										type="text" name="devise" id="devise" placeholder="USD" value="{{ $ticket->devise }}">
+										type="text" name="devise" id="devise" placeholder="USD" list="devises" value="{{ $ticket->devise }}">
+									<datalist id="devises">
+										@foreach ($devises as $devise)
+											<option value="{{ $devise['code'] }}">{{ $devise['name'] }}</option>
+										@endforeach
+									</datalist>
 								</div>
 							</div>
 

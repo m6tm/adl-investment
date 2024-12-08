@@ -18,6 +18,17 @@
 			</div>
 			<div class="flex flex-col gap-3 mb-2">
 				<div class="">
+					<label for="devise">{{ __('ticket.devise') }}</label>
+					<input type="text" name="devise" id="devise"
+						class="w-full h-10 rounded border border-stroke py-2 pl-4.5 pr-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-slate-100 dark:bg-meta-4 dark:text-white dark:focus:border-primary"
+						placeholder="$" list="devises" required>
+					<datalist id="devises">
+						@foreach ($devises as $devise)
+							<option value="{{ $devise['code'] }}">{{ $devise['name'] }}</option>
+						@endforeach
+					</datalist>
+				</div>
+				<div class="">
 					<label for="ticket-1">{{ __('ticket.label') }} $1</label>
 					<input type="number" name="ticket_1" id="ticket-1"
 						class="w-full h-10 rounded border border-stroke py-2 pl-4.5 pr-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-slate-100 dark:bg-meta-4 dark:text-white dark:focus:border-primary"

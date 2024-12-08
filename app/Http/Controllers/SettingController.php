@@ -8,6 +8,7 @@ use App\Http\Requests\AssignDocumentToCountryRequest;
 use App\Http\Requests\SetCountryRequest;
 use App\Models\Country;
 use App\Models\PaysDocumentAutorise;
+use App\Models\TicketPrice;
 use App\Models\User;
 use Illuminate\Support\Facades\Storage;
 
@@ -25,7 +26,18 @@ class SettingController extends Controller
         $data_countries = Storage::disk('data')->get('CountryCodes.json');
         $data_countries = json_decode($data_countries, true);
         $data_country = array_filter($data_countries, fn($country) => $country['dial_code'] == request('dial_code'));
-        if (empty($data_country)) return redirect()->back()->with("error", __('settings.pays_autorise.message_error_1'));
+
+        $devises = Storage::disk('data')->get('Currencies.json');
+        $devises = json_decode($devises, true);
+        $devises = array_map(fn($devise) => [
+            'code' => $devise['code'],
+            'name' => $devise['name'],
+        ], array_values($devises));
+        $devise = array_filter($devises, fn($devise) => $devise['code'] == request('devise'));
+        $devise = array_values($devise);
+
+        if (empty($data_country) || empty($devise)) return redirect()->back()->with("error", __('settings.pays_autorise.message_error_1'));
+        $devise = array_values($devise)[0];
         $data_country = array_values($data_country)[0];
 
         /**
@@ -37,10 +49,51 @@ class SettingController extends Controller
             $users = User::withTrashed()->where('country_id', $country->id)->get();
             $users->each(fn(User $user) => $user->restore());
         } else {
+            // dd($request->input());
             $country = Country::create([
                 "name" => $data_country['name'],
                 "code" => $data_country['code'],
                 "dial_code" => $data_country['dial_code'],
+            ]);
+            $country->refresh();
+
+            TicketPrice::insert([
+                [
+                    'libelle' => '$1',
+                    'prix' => $request->ticket_1,
+                    'devise' => $devise['code'],
+                    'is_promotion' => false,
+                    'country_id' => $country->id,
+                    'updated_at' => now(),
+                    'created_at' => now(),
+                ],
+                [
+                    'libelle' => '$2',
+                    'prix' => $request->ticket_2,
+                    'devise' => $devise['code'],
+                    'is_promotion' => false,
+                    'country_id' => $country->id,
+                    'updated_at' => now(),
+                    'created_at' => now(),
+                ],
+                [
+                    'libelle' => '$5',
+                    'prix' => $request->ticket_5,
+                    'devise' => $devise['code'],
+                    'is_promotion' => false,
+                    'country_id' => $country->id,
+                    'updated_at' => now(),
+                    'created_at' => now(),
+                ],
+                [
+                    'libelle' => '$10',
+                    'prix' => $request->ticket_10,
+                    'devise' => $devise['code'],
+                    'is_promotion' => false,
+                    'country_id' => $country->id,
+                    'updated_at' => now(),
+                    'created_at' => now(),
+                ]
             ]);
         }
 

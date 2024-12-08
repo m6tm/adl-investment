@@ -70,8 +70,14 @@ class TicketPriceController extends Controller
     {
         $ticket = TicketPrice::findOrFail($id);
         $countries = Country::all();
+        $devises = Storage::disk('data')->get('Currencies.json');
+        $devises = json_decode($devises, true);
+        $devises = array_map(fn($devise) => [
+            'code' => $devise['code'],
+            'name' => $devise['name'],
+        ], array_values($devises));
 
-        return view('dashboard.pages.ticket-prices.edit', compact('ticket', 'countries'));
+        return view('dashboard.pages.ticket-prices.edit', compact('ticket', 'countries', 'devises'));
     }
 
     /**
