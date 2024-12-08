@@ -37,7 +37,7 @@
 					</span>
 
 					<span class="h-12 w-12 rounded-full">
-						<img src="{{ asset('assets/img/team/team-1.jpg') }}" class="rounded-full" alt="User" />
+						<img src="{{ asset('assets/img/user-06.png') }}" class="rounded-full" alt="User" />
 					</span>
 
 					<svg :class="dropdownOpen && 'rotate-180'" class="hidden fill-current sm:block" width="12" height="8"

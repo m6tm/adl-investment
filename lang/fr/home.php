@@ -201,5 +201,5 @@ return [
     ],
     "registration" => "Inscription",
     "login" => "Connexion",
-    "dashboard" => "Mon espace de jeu",
+    "dashboard" => "Mon espace",
 ];
