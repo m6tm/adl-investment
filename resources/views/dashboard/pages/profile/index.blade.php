@@ -3,7 +3,6 @@
 	$breadcrumbs = [['title' => $title]];
 @endphp
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css"/>
 <x-dashboard.layout :title="$title" :breadcrumb="$breadcrumbs">
 	<div class="flex flex-col gap-5 md:gap-7 2xl:gap-10">
 		<div class="border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark rounded-[10px] pb-5">
@@ -53,13 +52,11 @@
 					<div class="flex">
 						<div
 							class="mx-auto mb-5.5 mt-4.5 grid grid-cols-3 rounded-md border border-stroke py-2.5 shadow-1 dark:border-strokedark dark:bg-[#37404F]">
-							<div
-								class="flex flex-col items-start justify-center gap-1 px-4 dark:border-strokedark xsm:flex-row">
+							<div class="flex flex-col items-start justify-center gap-1 px-4 dark:border-strokedark xsm:flex-row">
 								<span class="font-semibold text-black dark:text-white">15</span>
 								<span class="text-sm">{{ __('profile.winned') }}</span>
 							</div>
-							<div
-								class="flex flex-col items-center justify-center gap-1 px-4 dark:border-strokedark xsm:flex-row">
+							<div class="flex flex-col items-center justify-center gap-1 px-4 dark:border-strokedark xsm:flex-row">
 								<span class="font-semibold text-black dark:text-white">$129K</span>
 								<span class="text-sm">{{ __('profile.wallet') }}</span>
 							</div>
@@ -77,88 +74,104 @@
 					<h3 class="text-title-md">Informations personnelles</h3>
 				</div>
 				<div class="col-span-2">
-					<form action="{{ route('dashboard.profile.update') }}" action="#" id="profil-account-form" autocomplete="off" novalidate="novalidate">
+					<form action="{{ route('dashboard.profile.update') }}" action="#" id="profil-account-form" autocomplete="off"
+						novalidate="novalidate">
 						@csrf
 						<div class="grid grid-cols-2 gap-4">
 							<div class="mb-3">
-								<label class="mb-3 block text-sm font-medium text-black dark:text-white" for="Nom">{{ __('users.create.last_name') }}</label>
+								<label class="mb-3 block text-sm font-medium text-black dark:text-white"
+									for="Nom">{{ __('users.create.last_name') }}</label>
 								<div class="relative">
 									<span class="absolute left-4.5 top-3.5">
 										<i data-lucide="user" class="size-5"></i>
 									</span>
 									<input
 										class="w-full rounded border border-stroke bg-gray py-3 pl-11.5 pr-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-slate-100 dark:bg-meta-4 dark:text-white dark:focus:border-primary"
-										type="text" name="nom" id="Nom" value="{{ auth()->user()->name }}" placeholder="Devid Jhon" required>
+										type="text" name="nom" id="Nom" value="{{ auth()->user()->name }}" placeholder="Devid Jhon"
+										required>
 								</div>
 							</div>
 
 							<div class="mb-3">
-								<label class="mb-3 block text-sm font-medium text-black dark:text-white" for="Prenom">{{ __('users.create.first_name') }}</label>
+								<label class="mb-3 block text-sm font-medium text-black dark:text-white"
+									for="Prenom">{{ __('users.create.first_name') }}</label>
 								<div class="relative">
 									<span class="absolute left-4.5 top-3.5">
 										<i data-lucide="user" class="size-5"></i>
 									</span>
 									<input
 										class="w-full rounded border border-stroke bg-gray py-3 pl-11.5 pr-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-slate-100 dark:bg-meta-4 dark:text-white dark:focus:border-primary"
-										type="text" name="prenom" id="Prenom" value="{{ auth()->user()->first_name }}" placeholder="Rene Mode" required>
+										type="text" name="prenom" id="Prenom" value="{{ auth()->user()->first_name }}" placeholder="Rene Mode"
+										required>
 								</div>
 							</div>
 
 							<div class="mb-3">
-								<label class="mb-3 block text-sm font-medium text-black dark:text-white" for="telephone">{{ __('users.create.phone_number') }}</label>
+								<label class="mb-3 block text-sm font-medium text-black dark:text-white"
+									for="telephone">{{ __('users.create.phone_number') }}</label>
 								<div class="relative">
 									<span class="absolute left-4.5 top-3.5">
 										<i data-lucide="phone" class="size-5"></i>
 									</span>
 									<input
 										class="w-full rounded border border-stroke bg-gray py-3 pl-11.5 pr-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-slate-100 dark:bg-meta-4 dark:text-white dark:focus:border-primary"
-										type="tel" name="telephone" id="telephone" value="{{ auth()->user()->phones->first()?->telephone }}" placeholder="+XXX XXXX XXXX" required>
+										type="tel" name="telephone" id="telephone" value="{{ auth()->user()->phones->first()?->telephone }}"
+										placeholder="+XXX XXXX XXXX" required>
 								</div>
 							</div>
 
 							<div class="mb-3">
-								<label class="mb-3 block text-sm font-medium text-black dark:text-white" for="email">{{ __('users.create.email') }}</label>
+								<label class="mb-3 block text-sm font-medium text-black dark:text-white"
+									for="email">{{ __('users.create.email') }}</label>
 								<div class="relative">
 									<span class="absolute left-4.5 top-3.5">
 										<i data-lucide="mail" class="size-5"></i>
 									</span>
 									<input
 										class="w-full rounded border border-stroke bg-neutral-200 py-3 pl-11.5 pr-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-slate-100 dark:bg-meta-4 dark:text-white dark:focus:border-primary"
-										type="email" readonly disabled id="email" value="{{ auth()->user()->email }}" placeholder="exemple@email.com" required>
+										type="email" readonly disabled id="email" value="{{ auth()->user()->email }}"
+										placeholder="exemple@email.com" required>
 								</div>
 							</div>
 
 							<div class="mb-3">
-								<label class="mb-3 block text-sm font-medium text-black dark:text-white" for="street">{{ __('users.create.town') }}</label>
+								<label class="mb-3 block text-sm font-medium text-black dark:text-white"
+									for="street">{{ __('users.create.town') }}</label>
 								<div class="relative">
 									<span class="absolute left-4.5 top-3.5">
 										<i data-lucide="mail" class="size-5"></i>
 									</span>
 									<input
 										class="w-full rounded border border-stroke bg-neutral-200 py-3 pl-11.5 pr-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-slate-100 dark:bg-meta-4 dark:text-white dark:focus:border-primary"
-										type="street" readonly disabled id="street" value="{{ auth()->user()->address?->street }}" placeholder="{{ __('users.create.town') }}" required>
+										type="street" readonly disabled id="street" value="{{ auth()->user()->address?->street }}"
+										placeholder="{{ __('users.create.town') }}" required>
 								</div>
 							</div>
 
 							<div class="mb-3">
-								<label class="mb-3 block text-sm font-medium text-black dark:text-white" for="username">{{ __('users.create.username') }}</label>
+								<label class="mb-3 block text-sm font-medium text-black dark:text-white"
+									for="username">{{ __('users.create.username') }}</label>
 								<div class="relative">
 									<span class="absolute left-4.5 top-4">
 										<i data-lucide="hash" class="size-5"></i>
 									</span>
 									<input
 										class="w-full rounded border border-stroke bg-neutral-200 py-3 pl-11.5 pr-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-slate-100 dark:bg-meta-4 dark:text-white dark:focus:border-primary"
-										type="pseudo" readonly disabled id="username" value="{{ auth()->user()->pseudo }}" placeholder="charly99">
+										type="pseudo" readonly disabled id="username" value="{{ auth()->user()->pseudo }}"
+										placeholder="charly99">
 								</div>
 							</div>
 
 							<div class="mb-3">
-								<label class="mb-3 block text-sm font-medium text-black dark:text-white" for="username">{{ __('users.create.birth_date') }}</label>
+								<label class="mb-3 block text-sm font-medium text-black dark:text-white"
+									for="username">{{ __('users.create.birth_date') }}</label>
 								<div class="relative">
 									<input
 										class="form-datepicker w-full rounded border-[1.5px] border-stroke bg-neutral-200 px-5 py-3 font-normal outline-none transition focus:border-primary active:border-primary dark:border-slate-100 dark:bg-meta-4 dark:focus:border-primary"
-										placeholder="mm/dd/yyyy" readonly disabled id="birth_day" value="{{ auth()->user()->birth_date ? \Carbon\Carbon::parse(auth()->user()->birth_date)->format('M d, Y') : '' }}" data-class="flatpickr-right" />
-		
+										placeholder="mm/dd/yyyy" readonly disabled id="birth_day"
+										value="{{ auth()->user()->birth_date ? \Carbon\Carbon::parse(auth()->user()->birth_date)->format('M d, Y') : '' }}"
+										data-class="flatpickr-right" />
+
 									<div class="pointer-events-none absolute inset-0 left-auto right-5 flex items-center">
 										<i data-lucide="calendar-days" class="size-5"></i>
 									</div>
@@ -166,38 +179,47 @@
 							</div>
 
 							<div class="mb-3">
-								<label class="mb-3 block text-sm font-medium text-black dark:text-white" for="ville">{{ __('users.create.city') }}</label>
+								<label class="mb-3 block text-sm font-medium text-black dark:text-white"
+									for="ville">{{ __('users.create.city') }}</label>
 								<input
 									class="w-full rounded border border-stroke bg-neutral-200 py-3 px-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-slate-100 dark:bg-meta-4 dark:text-white dark:focus:border-primary"
-									type="ville" readonly disabled id="ville" value="{{ auth()->user()->address?->city }}" placeholder="Montreal">
+									type="ville" readonly disabled id="ville" value="{{ auth()->user()->address?->city }}"
+									placeholder="Montreal">
 							</div>
 
 							<div class="mb-3">
-								<label class="mb-3 block text-sm font-medium text-black dark:text-white" for="pays">{{ __('users.create.country') }}</label>
+								<label class="mb-3 block text-sm font-medium text-black dark:text-white"
+									for="pays">{{ __('users.create.country') }}</label>
 								<input
 									class="w-full rounded border border-stroke bg-neutral-200 py-3 px-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-slate-100 dark:bg-meta-4 dark:text-white dark:focus:border-primary"
-									type="pays" readonly disabled id="pays" value="{{ auth()->user()->pays->name }}" data-code="{{ auth()->user()->pays->code }}" placeholder="Canada">
+									type="pays" readonly disabled id="pays" value="{{ auth()->user()->pays->name }}"
+									data-code="{{ auth()->user()->pays->code }}" placeholder="Canada">
 							</div>
 
 							<div class="mb-3">
-								<label class="mb-3 block text-sm font-medium text-black dark:text-white" for="current_password">{{ __('users.create.current_password') }}</label>
+								<label class="mb-3 block text-sm font-medium text-black dark:text-white"
+									for="current_password">{{ __('users.create.current_password') }}</label>
 								<input
 									class="w-full rounded border border-stroke bg-gray py-3 px-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-slate-100 dark:bg-meta-4 dark:text-white dark:focus:border-primary"
-									type="password" name="current_password" autocomplete="off" id="current_password" placeholder="{{ __('users.create.current_password') }}">
+									type="password" name="current_password" autocomplete="off" id="current_password"
+									placeholder="{{ __('users.create.current_password') }}">
 							</div>
 
 							<div class="mb-3">
-								<label class="mb-3 block text-sm font-medium text-black dark:text-white" for="new_password">{{ __('users.create.new_password') }}</label>
+								<label class="mb-3 block text-sm font-medium text-black dark:text-white"
+									for="new_password">{{ __('users.create.new_password') }}</label>
 								<input
 									class="w-full rounded border border-stroke bg-gray py-3 px-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-slate-100 dark:bg-meta-4 dark:text-white dark:focus:border-primary"
 									type="password" name="new_password" id="new_password" placeholder="{{ __('users.create.new_password') }}">
 							</div>
 
 							<div class="mb-3">
-								<label class="mb-3 block text-sm font-medium text-black dark:text-white" for="new_password_confirmation">{{ __('users.create.new_password_confirmation') }}</label>
+								<label class="mb-3 block text-sm font-medium text-black dark:text-white"
+									for="new_password_confirmation">{{ __('users.create.new_password_confirmation') }}</label>
 								<input
 									class="w-full rounded border border-stroke bg-gray py-3 px-4.5 font-medium text-black focus:border-primary focus-visible:outline-none dark:border-slate-100 dark:bg-meta-4 dark:text-white dark:focus:border-primary"
-									type="password" name="new_password_confirmation" id="new_password_confirmation" placeholder="{{ __('users.create.new_password_confirmation') }}">
+									type="password" name="new_password_confirmation" id="new_password_confirmation"
+									placeholder="{{ __('users.create.new_password_confirmation') }}">
 							</div>
 
 							<div class="col-span-2 flex gap-3">
