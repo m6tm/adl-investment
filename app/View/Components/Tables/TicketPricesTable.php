@@ -7,7 +7,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Support\Collection;
 use Illuminate\View\Component;
 
-class TicketsTable extends Component
+class TicketPricesTable extends Component
 {
     /**
      * Create a new component instance.
@@ -22,6 +22,6 @@ class TicketsTable extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.tables.tickets-table');
+        return view('components.tables.ticket-prices-table');
     }
 }

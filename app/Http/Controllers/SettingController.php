@@ -13,13 +13,15 @@ use Illuminate\Support\Facades\Storage;
 
 class SettingController extends Controller
 {
-    function index() {
-        if (AuthHelper::hasRole(USER_ROLE::PLAYER)) redirect()->back()->with("error", __('dashboard/backend.not-access'));
+    function index()
+    {
+        if (AuthHelper::hasRole(USER_ROLE::PLAYER)) redirect()->back()->with("error", __('backend.not-access'));
         return view('dashboard.pages.settings.index');
     }
 
-    function addCountry(SetCountryRequest $request) {
-        if (!AuthHelper::can('toggle.countries')) redirect()->back()->with("error", __('dashboard/backend.not-access'));
+    function addCountry(SetCountryRequest $request)
+    {
+        if (!AuthHelper::can('toggle.countries')) redirect()->back()->with("error", __('backend.not-access'));
         $data_countries = Storage::disk('data')->get('CountryCodes.json');
         $data_countries = json_decode($data_countries, true);
         $data_country = array_filter($data_countries, fn($country) => $country['dial_code'] == request('dial_code'));
@@ -41,12 +43,13 @@ class SettingController extends Controller
                 "dial_code" => $data_country['dial_code'],
             ]);
         }
-        
+
         return redirect()->back()->with("success", __('settings.message_success'));
     }
 
-    function removeCountry(int $country_id) {
-        if (!AuthHelper::can('toggle.countries')) redirect()->back()->with("error", __('dashboard/backend.not-access'));
+    function removeCountry(int $country_id)
+    {
+        if (!AuthHelper::can('toggle.countries')) redirect()->back()->with("error", __('backend.not-access'));
         $country = Country::find($country_id);
         if (!$country) return redirect()->back()->with('error', __('settings.pays_autorise.message_error_2'));
         $country->users->each(fn(User $user) => $user->delete());
@@ -54,14 +57,15 @@ class SettingController extends Controller
         return redirect()->back()->with('success', __('settings.message_success'));
     }
 
-    function assignDocument(AssignDocumentToCountryRequest $request) {
-        if (!AuthHelper::can('assign.document.to.country')) redirect()->back()->with("error", __('dashboard/backend.not-access'));
+    function assignDocument(AssignDocumentToCountryRequest $request)
+    {
+        if (!AuthHelper::can('assign.document.to.country')) redirect()->back()->with("error", __('backend.not-access'));
         /**
          * @var Country $country
          */
         $country = Country::find(request('country_id'));
         $documentIds = request('documents') ?? [];
-        
+
         $country->documents_autorises->each(fn(PaysDocumentAutorise $document) => $document->delete());
         foreach ($documentIds as $id) {
             PaysDocumentAutorise::create([

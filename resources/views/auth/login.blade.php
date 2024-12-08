@@ -1,7 +1,8 @@
 @extends('auth.layout')
 
 @section('content')
-	<a href="{{ route('home') }}" class="flex items-center justify-center fixed top-4 left-4 rounded-full bg-primary p-3 text-white hover:bg-opacity-90">
+	<a href="{{ route('home') }}"
+		class="flex items-center justify-center fixed top-4 left-4 rounded-full bg-primary p-3 text-white hover:bg-opacity-90">
 		<span data-lucide="home" class="h-5 w-5"></span>
 	</a>
 	<div class="min-h-screen w-full flex flex-col justify-center items-center">
@@ -20,6 +21,7 @@
 
 						<!-- Session Status -->
 						<x-auth-session-status class="mb-4" :status="session('status')" />
+						<x-error-message-alert class="mb-4" />
 
 						<form method="POST" action="{{ route('login') }}">
 							@csrf

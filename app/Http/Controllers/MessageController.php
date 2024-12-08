@@ -8,18 +8,11 @@ class MessageController extends Controller
 {
     public function index()
     {
+        return redirect()->back();
         /**
          * @var User $user
          */
         $user = auth()->user();
-        // $user->load(
-        //     'discussions',
-        //     'discussions.discussion',
-        //     'discussions.discussion.owners',
-        //     'discussions.discussion.messages',
-        //     'discussions.discussion.messages.users',
-        //     'discussions.discussion.messages.users.user',
-        // );
         $discussions = $user->discussions->map(function ($discussion) {
             return $discussion->discussion->token;
         })->toArray();

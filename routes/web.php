@@ -45,40 +45,13 @@ use Illuminate\Support\Facades\Storage;
 Route::get('test-email', function () {
     Mail::raw('This is a test email', function ($message) {
         $message->to('your_email@example.com') // Replace with your email
-                ->subject('Test Email');
+            ->subject('Test Email');
     });
     return 'Test email sent!';
 });
 
 Route::get('locale/{lang}', [LanguageController::class, 'setLocale'])->name('set.locale');
-Route::get('', function () {
-    $guzzle = new Client();
-    $data = null;
-    try {
-        $response = $guzzle->get('https://api.myip.com');
-        $data = json_decode($response->getBody(), true);
-    } catch (GuzzleException $error) {
-    }
-    $defaultCurrencySymbol = '';
-    $currencyCode = null;
-    $currencySymbol = null;
-
-    if ($data) {
-        $country = Country::where('code', $data['cc'])->first();
-        // $country = Country::where('code', 'na')->first();
-        if ($country) $currencyCode = $country->code;
-    }
-
-    if ($data && !empty($currencyCode)) {
-        $country = array_filter(json_decode(Storage::disk('data')->get('Currencies.json'), true),
-            fn($currency) => str_starts_with(strtolower($currency['code']), strtolower($currencyCode)));
-        if (count($country) > 0) {
-            $currencySymbol = array_values($country)[0]['symbol'];
-        }
-    }
-    // dd($data, $currencySymbol);
-    return view('welcome');
-})->name('home');
+Route::get('', [StaticPagesController::class, 'home'])->name('home');
 Route::get('tutoriel', [StaticPagesController::class, 'tutoriel'])->name('tutoriel');
 Route::get('tutoriel-details', [StaticPagesController::class, 'tutorielDetails'])->name('tutoriel-details');
 Route::get('services-details', [StaticPagesController::class, 'servicesDetails'])->name('services-details');
@@ -90,17 +63,21 @@ Route::get('conditions', [StaticPagesController::class, 'conditions'])->name('co
 Route::get('privacy', [StaticPagesController::class, 'privacy'])->name('privacy');
 Route::get('contact', [ContactController::class, 'create'])->name('contact.create');
 Route::post('contact', [ContactController::class, 'store'])->name('contact.store');
+Route::get('tirage', fn() => view('web.pages.draw-page.index'))->name('draw-page');
 
 Route::get('login', [AuthenticatedSessionController::class, 'create'])->name('login');
 Route::get('register', [RegisteredUserController::class, 'create'])->name('register');
 
-Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function() {
+Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function () {
     Route::get('', [UserController::class, 'index'])->name('dashboard');
 
     // Users
     Route::get('users', [UserController::class, 'index'])->name('dashboard.user.list');
     Route::get('users/create', [UserController::class, 'create'])->name('dashboard.user.create');
+    Route::post('users/create', [UserController::class, 'createPost'])->name('dashboard.user.create.post');
     Route::get('users/edit/{user_id}', [UserController::class, 'edit'])->name('dashboard.user.edit')->whereNumber('user_id');
+    Route::post('users/edit/{user_id}', [UserController::class, 'editPost'])->name('dashboard.user.edit.post')->whereNumber('user_id');
+    Route::get('users/out/{user_id}', [UserController::class, 'destroy'])->name('dashboard.user.out')->whereNumber('user_id');
 
     // Profiles
     Route::get('profil', [ProfileController::class, 'edit'])->name('dashboard.profile.edit');
@@ -119,9 +96,8 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function() {
     Route::get('ticket-prices', [TicketPriceController::class, 'index'])->name('dashboard.ticket-prices');
     Route::get('ticket-prices/create', [TicketPriceController::class, 'create'])->name('dashboard.ticket-prices.create');
     Route::post('ticket-prices', [TicketPriceController::class, 'store'])->name('dashboard.ticket-prices.store');
-    Route::get('ticket-prices/{id}', [TicketPriceController::class, 'edit'])->name('dashboard.ticket-prices.edit');
     Route::post('ticket-prices/{id}', [TicketPriceController::class, 'update'])->name('dashboard.ticket-prices.update');
-
+    Route::get('ticket-prices/edit/{ticket_id}', [TicketPriceController::class, 'edit'])->name('dashboard.ticket-prices.edit')->whereNumber('ticket_id');
 
     // Tickets
     Route::get('tickets/buy', [TicketController::class, 'buy'])->name('dashboard.tickets.buy');

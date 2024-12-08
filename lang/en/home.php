@@ -202,4 +202,5 @@ return [
     ],
     "registration" => "Registration",
     "login" => "Login",
+    "dashboard" => "My Game Space",
 ];

@@ -12,13 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('tickets_draws', function (Blueprint $table) {
-             $table->id();
+            $table->id();
             $table->foreignId('coefficient_id');
             $table->foreignId('winning_id');
             $table->integer('nombre_ticket_a_tirer');
             $table->dateTime('created_at')->useCurrent();
             $table->dateTime('updated_at');
-
         });
     }
 

@@ -40,7 +40,7 @@
 						</div>
 					</div>
 				</th>
-                <th>
+				<th>
 					<div class="flex items-center gap-1.5">
 						<p class="text-[16px]">Prix</p>
 						<div class="inline-flex flex-col space-y-[2px]">
@@ -128,7 +128,8 @@
 				$key = 1;
 			@endphp
 			@foreach ($prices as $price)
-				<tr class="h-[20px] odd:bg-white bg-slate-100 duration-300 hover:bg-slate-100 odd:dark:bg-slate-900 even:bg-slate-50 even:dark:bg-slate-800">
+				<tr
+					class="h-[20px] odd:bg-white bg-slate-100 duration-300 hover:bg-slate-100 odd:dark:bg-slate-900 even:bg-slate-50 even:dark:bg-slate-800">
 					<td class="py-1 w-8">#{{ $key }}</td>
 					<td>{{ $price->libelle }}</td>
 					<td>{{ $price->prix }}</td>
@@ -136,9 +137,7 @@
 					<td class="uppercase">{{ $price->is_promotion ? 'oui' : 'non' }}</td>
 					<td class="capitalize">{{ $price->country->name }}</td>
 					<td class="flex justify-center space-x-3">
-                        <!-- @if (auth()->user()->can('edit.user')) -->
 						<a href="{{ route('dashboard.ticket-prices.edit', $price->id) }}" class="float-right text-primary">Edit</a>
-                        <!-- @endif -->
 					</td>
 				</tr>
 				@php

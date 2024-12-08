@@ -1,6 +1,10 @@
 <link rel="stylesheet" href="{{ asset('assets/css/partials/header.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/css/utils.css') }}">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css" />
+
+@php
+	$routeName = Route::currentRouteName();
+@endphp
 
 <header id="header" class="header fixed-top">
 	<div class="bg-danger-2-500 py-2 px-3 md:px-20">
@@ -19,75 +23,89 @@
 					<a href="#" class="linkedin text-white text-sm"><i class="bi bi-linkedin"></i></a>
 				</div>
 			</div>
-			<div class="social-links space-x-3 flex justify-end">
-				<a href="{{ route('login') }}" class="text-neutral-200">
-					<i class="bi bi-person-fill"></i>
-					<span>{{ __('home.login') }}</span>
-				</a>
-				<a href="{{ route('register') }}" class="text-neutral-200">
-					<i class="bi bi-pencil-square"></i>
-					<span>{{ __('home.registration') }}</span>
-				</a>
-			</div>
+			@if (auth()->check())
+				<div class="social-links space-x-3 flex justify-end">
+					<a href="{{ route('dashboard') }}" class="text-neutral-200 hover:text-neutral-300">
+						<i class="bi bi-person-workspace"></i>
+						<span>{{ __('home.dashboard') }}</span>
+					</a>
+				</div>
+			@else
+				<div class="social-links space-x-3 flex justify-end">
+					<a href="{{ route('login') }}" class="text-neutral-200 hover:text-neutral-300">
+						<i class="bi bi-person-fill"></i>
+						<span>{{ __('home.login') }}</span>
+					</a>
+					<a href="{{ route('register') }}" class="text-neutral-200 hover:text-neutral-300">
+						<i class="bi bi-pencil-square"></i>
+						<span>{{ __('home.registration') }}</span>
+					</a>
+				</div>
+			@endif
 		</div>
 	</div>
 	<div class="navbar px-3 md:px-20">
 		<div class="flex-1">
-		  <a href="{{ route('home') }}" class="btn btn-ghost text-xl logo">
-			<h1 class="sitename">ADL - </h1>
-			<span class="accent">Investment</span>
-		  </a>
+			<a href="{{ route('home') }}" class="btn btn-ghost text-xl logo">
+				<h1 class="sitename">ADL - </h1>
+				<span class="accent">Investment</span>
+			</a>
 		</div>
 		<div class="hidden md:block">
-		  <ul class="menu menu-horizontal px-1">
-			<li><a href="{{ route('home') }}" class="active">{{ __('partials/header.home') }}<br></a></li>
-			<li><a href="{{ route('home') }}#contact" class="text-white">{{ __('partials/header.contact') }}</a></li>
-			<li><a href="{{ route('tutoriel') }}#tutoriel" class="text-white">{{ __('partials/header.tuto') }}</a></li>
-			<li><a href="{{ route('about') }}#aboutus" class="text-white">{{ __('partials/header.about') }}</a></li>
-			<li><a href="{{ route('conditions') }}" class="text-white">{{ __('partials/header.service') }}</a></li>
-			<li><a href="{{ route('privacy') }}" class="text-white">{{ __('partials/header.privacy_policy') }}</a></li>
-			<li>
-				<div class="dropdown dropdown-left py-0 h-full">
-					<div tabindex="0" role="button" class="px-3 py-2">
-						<span class="fi fi-{{ app()->getLocale() == 'en' ? 'us' : 'fr' }}"></span>
+			<ul class="menu menu-horizontal px-1">
+				<li><a href="{{ route('home') }}"
+						class="{{ $routeName == 'home' ? 'active' : '' }} text-white">{{ __('header.home') }}<br></a></li>
+				<li><a href="{{ route('home') }}#contact"
+						class="{{ $routeName == 'contact.create' ? 'active' : '' }} text-white">{{ __('header.contact') }}</a></li>
+				<li><a href="{{ route('tutoriel') }}#tutoriel"
+						class="{{ $routeName == 'tutoriel' ? 'active' : '' }} text-white">{{ __('header.tuto') }}</a></li>
+				<li><a href="{{ route('about') }}#aboutus"
+						class="{{ $routeName == 'about' ? 'active' : '' }} text-white">{{ __('header.about') }}</a></li>
+				<li><a href="{{ route('conditions') }}"
+						class="{{ $routeName == 'conditions' ? 'active' : '' }} text-white">{{ __('header.service') }}</a></li>
+				<li><a href="{{ route('privacy') }}"
+						class="{{ $routeName == 'privacy' ? 'active' : '' }} text-white">{{ __('header.privacy_policy') }}</a></li>
+				<li><a href="{{ route('draw-page') }}"
+						class="{{ $routeName == 'draw-page' ? 'active' : '' }} text-white">{{ __('header.drawing') }}</a></li>
+				<li>
+					<div class="dropdown dropdown-left py-0 h-full">
+						<div tabindex="0" role="button" class="px-3 py-2">
+							<span class="fi fi-{{ app()->getLocale() == 'en' ? 'us' : 'fr' }}"></span>
+						</div>
+						<ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+							<li>
+								<a href="{{ route('set.locale', 'fr') }}"><span class="fi fi-fr"></span> Français</a>
+								<a href="{{ route('set.locale', 'en') }}"><span class="fi fi-us"></span> English</a>
+							</li>
+						</ul>
 					</div>
-					<ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
-						<li>
-							<a href="{{ route('set.locale', 'fr') }}"><span class="fi fi-fr"></span> Français</a>
-							<a href="{{ route('set.locale', 'en') }}"><span class="fi fi-us"></span> English</a>
-						</li>
-					</ul>
-				</div>
-			</li>
-		  </ul>
+				</li>
+			</ul>
 		</div>
 		<div class="dropdown dropdown-left md:hidden">
 			<div tabindex="0" role="button" class="btn btn-ghost btn-circle text-white">
-			  <svg
-				xmlns="http://www.w3.org/2000/svg"
-				class="h-5 w-5"
-				fill="none"
-				viewBox="0 0 24 24"
-				stroke="currentColor">
-				<path
-				  stroke-linecap="round"
-				  stroke-linejoin="round"
-				  stroke-width="2"
-				  d="M4 6h16M4 12h16M4 18h7" />
-			  </svg>
+				<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
+				</svg>
 			</div>
-			<ul
-			  tabindex="0"
-			  class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-			  <li><a href="{{ route('home') }}" class="active">{{ __('partials/header.home') }}<br></a></li>
-			  <li><a href="{{ route('home') }}#contact">{{ __('partials/header.contact') }}</a></li>
-			  <li><a href="{{ route('tutoriel') }}#tutoriel">{{ __('partials/header.tuto') }}</a></li>
-			  <li><a href="{{ route('about') }}#aboutus">{{ __('partials/header.about') }}</a></li>
-			  <li><a href="{{ route('conditions') }}">{{ __('partials/header.service') }}</a></li>
-			  <li><a href="{{ route('privacy') }}">{{ __('partials/header.privacy_policy') }}</a></li>
+			<ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+				<li><a href="{{ route('home') }}"
+						class="{{ $routeName == 'home' ? 'active' : '' }}">{{ __('header.home') }}<br></a></li>
+				<li><a href="{{ route('home') }}#contact"
+						class="{{ $routeName == 'contact.create' ? 'active' : '' }}">{{ __('header.contact') }}</a></li>
+				<li><a href="{{ route('tutoriel') }}#tutoriel"
+						class="{{ $routeName == 'tutoriel' ? 'active' : '' }}">{{ __('header.tuto') }}</a></li>
+				<li><a href="{{ route('about') }}#aboutus"
+						class="{{ $routeName == 'about' ? 'active' : '' }}">{{ __('header.about') }}</a></li>
+				<li><a href="{{ route('conditions') }}"
+						class="{{ $routeName == 'conditions' ? 'active' : '' }}">{{ __('header.service') }}</a></li>
+				<li><a href="{{ route('privacy') }}"
+						class="{{ $routeName == 'privacy' ? 'active' : '' }}">{{ __('header.privacy_policy') }}</a></li>
+				<li><a href="{{ route('draw-page') }}"
+						class="{{ $routeName == 'draw-page' ? 'active' : '' }}">{{ __('header.drawing') }}</a></li>
 			</ul>
-		  </div>
 		</div>
+	</div>
 	</div>
 	<!-- End Top Bar -->
 
@@ -101,12 +119,13 @@
 
 			<nav id="navmenu" class="navmenu">
 				<ul>
-					<li><a href="{{ route('home') }}" class="active">{{ __('partials/header.home') }}<br></a></li>
-					<li><a href="{{ route('home') }}#contact">{{ __('partials/header.contact') }}</a></li>
-					<li><a href="{{ route('tutoriel') }}#tutoriel">{{ __('partials/header.tuto') }}</a></li>
-					<li><a href="{{ route('about') }}#aboutus">{{ __('partials/header.about') }}</a></li>
-					<li><a href="{{ route('conditions') }}">{{ __('partials/header.service') }}</a></li>
-					<li><a href="{{ route('privacy') }}">{{ __('partials/header.privacy_policy') }}</a></li>
+					<li><a href="{{ route('home') }}" class="active">{{ __('header.home') }}<br></a></li>
+					<li><a href="{{ route('home') }}#contact">{{ __('header.contact') }}</a></li>
+					<li><a href="{{ route('tutoriel') }}#tutoriel">{{ __('header.tuto') }}</a></li>
+					<li><a href="{{ route('about') }}#aboutus">{{ __('header.about') }}</a></li>
+					<li><a href="{{ route('conditions') }}">{{ __('header.service') }}</a></li>
+					<li><a href="{{ route('privacy') }}">{{ __('header.privacy_policy') }}</a></li>
+					<li><a href="{{ route('draw-page') }}">{{ __('header.privacy_policy') }}</a></li>
 					<li>
 						<div class="dropdown dropdown-end me-4">
 							<div tabindex="0" role="button" class="p-3">

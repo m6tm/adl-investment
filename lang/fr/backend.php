@@ -2,6 +2,7 @@
 
 return [
     "not-access" => "Vous n'êtes pas autorisé à effectuer cette action",
+    "success" => "Opération effectuée avec succès",
     "profile-updated" => "Profil mis à jour avec succès",
     "user-destroyed" => "Utilisateur supprimé avec succès",
     "permission-updated" => "Permission mise à jour avec succès",

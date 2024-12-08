@@ -22,7 +22,11 @@ class SetCountryRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'dial_code' => 'required|regex:/^\+[0-9]{1,}$/'
+            'dial_code' => 'required|regex:/^\+[0-9]{1,}$/',
+            'ticket_1' => 'required|numeric',
+            'ticket_2' => 'required|numeric',
+            'ticket_5' => 'required|numeric',
+            'ticket_10' => 'required|numeric',
         ];
     }
 }

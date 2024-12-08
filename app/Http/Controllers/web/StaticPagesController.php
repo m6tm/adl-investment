@@ -3,14 +3,48 @@
 namespace App\Http\Controllers\web;
 
 use App\Http\Controllers\Controller;
+use App\Models\Country;
+use GuzzleHttp\Client;
+use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class StaticPagesController extends Controller
 {
     // Fichier d'appel des différentes pages du site web
     public function home()
     {
-        return view('web.pages.home.home');
+        $guzzle = new Client();
+        $data = null;
+        try {
+            $response = $guzzle->get('https://api.myip.com');
+            $data = json_decode($response->getBody(), true);
+        } catch (GuzzleException $error) {
+        }
+        $defaultCurrencySymbol = '';
+        $currencyCode = null;
+        $currencySymbol = null;
+        $Country = null;
+
+        $defaultCountry = Country::where('code', 'us')->first();
+
+        if ($data) {
+            $country = Country::where('code', $data['cc'])->first();
+            if ($Country) $currencyCode = $Country->code;
+        }
+
+        if ($data && !empty($currencyCode)) {
+            $country = array_filter(
+                json_decode(Storage::disk('data')->get('Countries.json'), true),
+                fn($currency) => strtolower($currency['cca2']) == strtolower($currencyCode)
+            );
+            if (count($country) > 0) {
+                $country_currencies = array_values($country)[0]['currencies'];
+                $currencySymbol = array_values($country_currencies)[0]['symbol'];
+            }
+        }
+
+        return view('welcome', compact('defaultCurrencySymbol', 'currencySymbol', 'currencyCode', 'Country', 'defaultCountry'));
     }
 
     public function tutoriel()
@@ -56,6 +90,4 @@ class StaticPagesController extends Controller
     {
         return view('web.pages.home.team');
     }
-
 }
-

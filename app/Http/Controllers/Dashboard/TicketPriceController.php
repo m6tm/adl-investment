@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\TicketPrice;
 use App\Models\Country;
+use Illuminate\Support\Facades\Storage;
 
 class TicketPriceController extends Controller
 {
@@ -15,9 +16,10 @@ class TicketPriceController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    function index() {
+    function index()
+    {
         $prices = TicketPrice::with('country')->get();
-        
+
         return view('dashboard.pages.ticket-prices.index', compact('prices'));
     }
 
@@ -26,9 +28,10 @@ class TicketPriceController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    function create() {        
+    function create()
+    {
         $countries = Country::all();
-        
+
         return view('dashboard.pages.ticket-prices.create', compact('countries'));
     }
 
@@ -37,7 +40,8 @@ class TicketPriceController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    function store(Request $request) {        
+    function store(Request $request)
+    {
         $request->validate([
             'libelle' => 'required|string|max:255',
             'prix' => 'required|numeric',
@@ -66,7 +70,7 @@ class TicketPriceController extends Controller
     {
         $ticket = TicketPrice::findOrFail($id);
         $countries = Country::all();
-        
+
         return view('dashboard.pages.ticket-prices.edit', compact('ticket', 'countries'));
     }
 
@@ -91,5 +95,4 @@ class TicketPriceController extends Controller
 
         return redirect()->route('dashboard.ticket-prices')->with('success', 'Ticket updated successfully.');
     }
-
 }
