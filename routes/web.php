@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AccountController;
 use App\Http\Controllers\AccountVerificationController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\web\StaticPagesController;
@@ -70,6 +71,9 @@ Route::get('register', [RegisteredUserController::class, 'create'])->name('regis
 
 Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function () {
     Route::get('', [UserController::class, 'index'])->name('dashboard');
+
+    // Account
+    Route::get('account', [AccountController::class, 'index'])->name('dashboard.account');
 
     // Users
     Route::get('users', [UserController::class, 'index'])->name('dashboard.user.list');
