@@ -90,7 +90,6 @@ class TicketPriceController extends Controller
         $ticket = TicketPrice::findOrFail($id);
 
         $validatedData = $request->validate([
-            'libelle' => 'required|string|max:255',
             'prix' => 'required|numeric',
             'devise' => 'required|string|max:10',
             'is_promotion' => 'required|boolean',
