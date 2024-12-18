@@ -105,7 +105,7 @@
 						class="h-[20px] odd:bg-white bg-slate-100 duration-300 hover:bg-slate-100 odd:dark:bg-slate-900 even:bg-slate-50 even:dark:bg-slate-800">
 						<td class="bg-transparent border-l-0 py-1 w-8">#{{ $key }}</td>
 						<td class="bg-transparent">{{ $country->name }}</td>
-						<td class="bg-transparent">
+						<td class="bg-transparent flex space-x-4">
 							@if (auth()->user()->can('assign.document.to.country'))
 								<button
 									class="text-primary tooltip tooltip-left"
@@ -115,6 +115,12 @@
 									<span class="size-5" data-lucide="user-round-pen"></span>
 								</button>
 							@endif
+                            @if (auth()->user()->can('toggle.countries'))
+                                <a href="{{ route('dashboard.settings.remove-country', ['country_id' => $country->id]) }}"
+                                    class="rounded-full bg-danger text-white size-6 flex justify-center items-center" type="submit">
+                                    <span data-lucide="x" class="size-4"></span>
+                                </a>
+                            @endif
                         </td>
 					</tr>
 					@php

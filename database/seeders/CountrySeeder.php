@@ -25,7 +25,7 @@ class CountrySeeder extends Seeder
         $us_country = array_filter($data_countries, fn($country) => $country['code'] == "US");
         $us_country = array_values($us_country)[0];
 
-        $country = Country::factory()->create($us_country);
+        $country = Country::where('code', $us_country['code'])->first() ?? Country::factory()->create($us_country);
 
         $us_tickets_prices = [
             [

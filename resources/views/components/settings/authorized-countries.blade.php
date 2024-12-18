@@ -55,18 +55,4 @@
 			</div>
 		@endif
 	</form>
-	<ul class="flex flex-col gap-1 max-h-[630px] overflow-y-auto">
-		@foreach ($countries->reverse() as $country)
-			<li
-				class="hover:bg-slate-100 duration-300 ease-linear p-2 rounded-md flex justify-between items-center{{ !auth()->user()->can('toggle.countries') ? ' cursor-pointer' : '' }}">
-				<span>({{ $country->dial_code }}) {{ $country->name }}</span>
-				@if (auth()->user()->can('toggle.countries'))
-					<a href="{{ route('dashboard.settings.remove-country', ['country_id' => $country->id]) }}"
-						class="rounded-full bg-danger text-white size-6 flex justify-center items-center" type="submit">
-						<span data-lucide="x" class="size-4"></span>
-					</a>
-				@endif
-			</li>
-		@endforeach
-	</ul>
 </div>
