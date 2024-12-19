@@ -1,1 +1,10 @@
-[]
+[
+    {
+        "name": "balance",
+        "description": "Permet de consulter le solde du compte et ses historiques"
+    },
+    {
+        "name": "ticket.payment",
+        "description": "Autorise d'acheter un ticket de tirage"
+    }
+]

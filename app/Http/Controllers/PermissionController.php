@@ -75,7 +75,8 @@ class PermissionController extends Controller
 
             // Assigner la permission aux roles sélectionnés
             Role::whereIn('id', $roleIds)->each(function (Role $role) use ($permission_id) {
-                $role->givePermissionTo($permission_id);
+                $permission = Permission::find($permission_id);
+                $role->givePermissionTo($permission);
             });
         });
 

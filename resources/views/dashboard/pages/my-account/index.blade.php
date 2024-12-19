@@ -21,5 +21,8 @@
 		<div class="border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark rounded-[10px] p-5">
 			Historique des achats de ticket
 		</div>
+		<div class="border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark rounded-[10px] p-5">
+			Historique des tirages
+		</div>
 	</div>
 </x-dashboard.layout>
