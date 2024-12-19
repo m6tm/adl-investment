@@ -1,6 +1,6 @@
 import { DataTable } from "simple-datatables";
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
   const roleTable = document.querySelector("#roleTable");
 
   if (roleTable) {
@@ -30,18 +30,18 @@ document.addEventListener("DOMContentLoaded", function () {
           nodeName: "TR",
           childNodes: tHead.childNodes[0].childNodes.map((_th, index) => {
             let name = ''
-            let className = "datatable-input input input-bordered placeholder:text-slate-400 min-w-[70%] font-light data-custom"
-            if (index == 1) name = 'permission'
-            if (index == 2) name = 'description'
-            if (index == 3) return {
+            let className = "datatable-input input input-bordered bg-white dark:bg-[#313d4a] placeholder:text-slate-400 min-w-[70%] font-light data-custom"
+            if (index === 1) name = 'permission'
+            if (index === 2) name = 'description'
+            if (index === 3) return {
               nodeName: "TH",
               childNodes: []
             }
             let placeholder = `Search by ${name} ...`
-            if (index == 0) {
+            if (index === 0) {
               placeholder = 'ID'
               name = 'ID'
-              className = "datatable-input input input-bordered placeholder:text-slate-400 w-12 p-0 font-light data-custom text-center"
+              className = "datatable-input input input-bordered bg-white dark:bg-[#313d4a] placeholder:text-slate-400 w-12 p-0 font-light data-custom text-center"
             }
             return {
                 nodeName: "TH",

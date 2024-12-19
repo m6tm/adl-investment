@@ -1,7 +1,8 @@
 import './toastify'
 
-let textOrientations = document.querySelectorAll("[data-orientation][data-orientation-text]")
+const textOrientations = document.querySelectorAll("[data-orientation][data-orientation-text]")
 
+// biome-ignore lint/complexity/noForEach: <explanation>
 textOrientations.forEach(element => {
     const orientations = ['vertical', 'horizontal']
     const element_value = element.getAttribute('data-orientation')
@@ -10,24 +11,26 @@ textOrientations.forEach(element => {
 
 /**
  * Aligne le texte selon l'orientation
- * @param {HTMLElement} element 
- * @param {'vertical' | 'horizontal'} orientation 
+ * @param {HTMLElement} element
+ * @param {'vertical' | 'horizontal'} orientation
  */
 function aligText(element, orientation) {
     const text = (element.getAttribute('data-orientation-text') ?? '').split('')
     switch (orientation) {
         case 'vertical':
             element.classList.add('d-flex', 'flex-column', 'align-items-center')
+            // biome-ignore lint/complexity/noForEach: <explanation>
             element.childNodes.forEach(child => child.remove())
+            // biome-ignore lint/complexity/noForEach: <explanation>
             text.forEach(letter => {
                 const span = document.createElement('span')
                 span.classList.add('d-block', 'text-center')
-                span.style.height = `20px`
+                span.style.height = "20px"
                 span.textContent = letter
                 element.appendChild(span)
             })
             break;
-    
+
         default:
             break;
     }
@@ -43,9 +46,9 @@ function selectLanguage() {
     const current_language = languauge_input.selectedOptions[0].value
     const current_language_flag = languauge_input.selectedOptions[0].getAttribute('data-lang')
     let url = location.href
-    
+
     if (!languauge_input || !language_icon) return
-    
+
     language_icon.setAttribute('class', `fi fi-${current_language}`)
     languauge_input.addEventListener('change', () => {
         const selected_language = languauge_input.selectedOptions[0].getAttribute('data-lang')
@@ -60,6 +63,7 @@ selectLanguage()
 
 function dataLinkCursor() {
     const links = Array.from(document.querySelectorAll('.cursor-pointer[data-link]'))
+    // biome-ignore lint/complexity/noForEach: <explanation>
     links.forEach(link => {
         link.addEventListener('click', () => {
             const link_str = link.getAttribute('data-link')
@@ -75,7 +79,7 @@ function sidebarToggler() {
     const sidebar_toggler = document.getElementById('sidebar-toggler')
     const sidebar_aside = document.getElementById('sidebar-aside')
     if (!sidebar_toggler || !sidebar_aside) return
-    
+
     sidebar_toggler.addEventListener('click', () => {
         sidebar_aside.classList.toggle('side-bar-hidden')
         sidebar_toggler.classList.toggle('rotate-180')
@@ -93,8 +97,8 @@ function accountVerificationSteps() {
     const finish = steps.querySelector('button#finish')
     const step_items = Array.from(steps.children).filter(child => child.hasAttribute('data-step'))
     const tab_items = Array.from(tabs.children).filter(child => child.hasAttribute('data-tab-step'))
-    let step_count = Array.from(steps.children).filter(child => child.hasAttribute('data-step')).length
-    let current_step = parseInt(steps.getAttribute('data-current-step') ?? '1');
+    const step_count = Array.from(steps.children).filter(child => child.hasAttribute('data-step')).length
+    let current_step = Number.parseInt(steps.getAttribute('data-current-step') ?? '1');
 
     const steps_worker = (() => {
         if (current_step > 1) {
@@ -126,7 +130,7 @@ function accountVerificationSteps() {
         }
         steps_worker()
     })
-    
+
     prev_step.addEventListener('click', () => {
         if (current_step > 1) {
             current_step -= 1
