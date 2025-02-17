@@ -7,8 +7,9 @@ WORKDIR /var/www
 # Copier le code source dans le conteneur
 COPY . /var/www
 
-# Installer la dépendance manquante si elle n'est pas déjà présente dans composer.json
-RUN composer require laravel-lang/locales
+# Installer l'extension bcmath et la dépendance laravel-lang/locales
+RUN docker-php-ext-install bcmath && \
+    composer require laravel-lang/locales
 
 # Installer les dépendances sans les packages de développement
 RUN composer install --no-dev --optimize-autoloader
