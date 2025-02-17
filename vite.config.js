@@ -13,10 +13,10 @@ export default defineConfig({
             refresh: true,
         }),
     ],
-    vite: {
-        define: {
-            global: {},
-        }
+    build: {
+        manifest: true, // 🔥 Ajoute ceci pour générer le manifest.json
+        outDir: 'public/build', // Assure-toi que les fichiers sont générés au bon endroit
+        emptyOutDir: true,
     },
     resolve: {
         alias: {

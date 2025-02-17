@@ -11,5 +11,7 @@ fi
 chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
 chmod -R 775 /var/www/storage /var/www/bootstrap/cache
 
+cp /var/www/public/build/.vite/manifest.json /var/www/public/build/manifest.json
+
 # Lancer la commande passée en argument (apache2-foreground par exemple)
 exec "$@"

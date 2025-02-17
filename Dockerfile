@@ -11,8 +11,16 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install gd bcmath pdo pdo_mysql \
     && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
+# Installer Node.js et Yarn
+RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
+    apt-get install -y nodejs && \
+    npm install -g yarn
+
 # Copier les fichiers du projet dans le conteneur
 COPY . /var/www
+
+RUN yarn \
+    && yarn build
 
 # Définir ServerName pour supprimer les avertissements
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
@@ -35,7 +43,6 @@ RUN a2enmod rewrite
 RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache && \
     chmod -R 775 /var/www/storage /var/www/bootstrap/cache
 
-RUN composer require laravel-lang/locales
 # Installer les dépendances sans les packages de développement
 RUN composer install --no-dev --optimize-autoloader --prefer-dist
 
