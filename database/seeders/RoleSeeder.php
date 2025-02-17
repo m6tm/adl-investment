@@ -26,7 +26,8 @@ class RoleSeeder extends Seeder
         $this->forPlayer();
     }
 
-    function forSuperAdmin() {
+    function forSuperAdmin()
+    {
         /**
          * @var Role $role_super_admin
          */
@@ -38,7 +39,8 @@ class RoleSeeder extends Seeder
         }
     }
 
-    function forAdmin() {
+    function forAdmin()
+    {
         /**
          * @var Role $role_admin
          */
@@ -50,7 +52,8 @@ class RoleSeeder extends Seeder
         }
     }
 
-    function forPlayer() {
+    function forPlayer()
+    {
         /**
          * @var Role $role_player
          */
@@ -58,7 +61,7 @@ class RoleSeeder extends Seeder
         $permissions = AuthHelper::getPermissions(USER_ROLE::PLAYER);
 
         foreach ($permissions as $permission) {
-            $role_player->givePermissionTo($permission);
+            $role_player->givePermissionTo($permission['name']);
         }
     }
 }
