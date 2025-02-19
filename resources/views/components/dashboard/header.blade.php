@@ -13,9 +13,6 @@
                 <!-- Chat Notification Area -->
                 <x-dashboard.header.chat-notification />
                 <!-- Chat Notification Area -->
-                <!-- Dark Mode Toggler -->
-                <x-dashboard.header.theme-mode />
-                <!-- Dark Mode Toggler -->
                 <!-- Language Switcher -->
                 <x-dashboard.header.language-translation />
                 <!-- Language Switcher -->
