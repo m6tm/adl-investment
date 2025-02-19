@@ -13,6 +13,7 @@ import './templately/js'
 import axios from 'axios';
 import { notificationTabs } from './utilities/notification';
 import { createIcons, icons } from 'lucide'
+import { toggleDarkMode } from './utilities/dark-mode';
 window.axios = axios;
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
@@ -26,6 +27,11 @@ window.addEventListener('load', () => {
         wrapper.classList.replace('hidden', 'flex')
     }
     notificationTabs();
+
+    const darkModeToggler = document.getElementById('darkModeToggler')
+    darkModeToggler.addEventListener('change', () => {
+        toggleDarkMode()
+    })
 }, false)
 
 /**

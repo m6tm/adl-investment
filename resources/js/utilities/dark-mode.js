@@ -25,7 +25,7 @@ function updateDarkModeUI(isDark) {
     }
 }
 
-function toggleDarkMode() {
+export function toggleDarkMode() {
     const isDarkMode = document.documentElement.classList.contains('dark');
     updateDarkModeUI(!isDarkMode);
     setDarkModeStorage(!isDarkMode ? 'dark' : 'light');
@@ -40,6 +40,3 @@ document.addEventListener('DOMContentLoaded', () => {
         updateDarkModeUI('light');
     }
 });
-
-// Expose the toggleDarkMode function to the global scope
-window.toggleDarkMode = toggleDarkMode;
