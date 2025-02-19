@@ -13,6 +13,11 @@
                 <!-- Chat Notification Area -->
                 <x-dashboard.header.chat-notification />
                 <!-- Chat Notification Area -->
+
+                <!-- Notification Menu Area -->
+                <x-dashboard.header.theme-mode />
+                <!-- Notification Menu Area -->
+
                 <!-- Language Switcher -->
                 <x-dashboard.header.language-translation />
                 <!-- Language Switcher -->
